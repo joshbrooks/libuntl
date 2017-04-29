@@ -12,3 +12,4 @@ django-rest-swagger
 django-js-reverse
 unidecode
 django-model-utils
+pillow
