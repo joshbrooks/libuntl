@@ -1,0 +1,23 @@
+{   "extends": "airbnb-base/legacy",
+    "rules": {
+        "camelcase": [0, {"properties": "never"}],
+        "indent": [2, 4],
+        "max-len": 0,
+        "func-names": 0,
+        "no-underscore-dangle": 0,
+        "no-param-reassign": 0
+    },
+    "globals": {
+        "_":true,
+        "$":true,
+        "RiotControl":true,
+        "riot": true,
+        "moment": true,
+        "c3": true,
+        "d3": true
+    },
+    "env": {
+        "browser":true,
+        "node": false
+    }
+}

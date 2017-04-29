@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block header %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <h2>{% trans 'Registration' %}</h2>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+    
+<div class="registration_content">
+    {% block registration_content %}
+    {% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "compass": "^0.1.1",
+    "jquery": "^3.2.1",
+    "leaflet": "^1.0.3",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "riot": "^3.4.3",
+    "riotcontrol": "^0.0.3",
+    "webpack": "^2.4.1"
+  }
+}

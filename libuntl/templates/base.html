@@ -1,0 +1,35 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>My Page Title</title>
+
+        <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap-css/js/bootstrap.min.js' %}"></script>
+
+        <link type="text/css" rel="stylesheet" href="{% static 'bootstrap-css/css/bootstrap.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'css/site.css' %}" />
+
+    </head>
+
+    <body>
+
+        {% block header %}
+        {% endblock %}
+
+        <div class="container-fluid">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% block footer %}
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="container">
+                    <p align="center">Copyright <a href="http://catalpa.io">Catalpa International</a> 2016</p>
+                </div>
+            </nav> 
+        {% endblock %}
+
+
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base_site.html' %}
+{% load static %}
+
+{% block content %}
+    <example_tag></example_tag>
+    <script type="riot/tag">
+        {% include 'example_app/example_tag.html' %}
+    </script>
+    <script src="{% static 'riot/riot+compiler.min.js' %}"></script>
+
+    <script>
+        riot.mount('example_tag')
+    </script>
+{% endblock %}

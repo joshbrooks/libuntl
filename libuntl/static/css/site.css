@@ -1,0 +1,12 @@
+.navbar-brand img {
+    height: 100%;
+}
+
+.navbar-fixed-bottom {
+    font-size: smaller;
+}
+
+.registration_content {
+    padding: 40px;
+    text-align:center;
+}

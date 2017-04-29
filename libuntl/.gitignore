@@ -1,7 +1,33 @@
+# Created by https://www.gitignore.io
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
 
 # C extensions
 *.so
@@ -14,7 +40,6 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-.eggs/
 lib/
 lib64/
 parts/
@@ -38,18 +63,13 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .coverage
-.coverage.*
 .cache
 nosetests.xml
 coverage.xml
-*,cover
-.hypothesis/
 
 # Translations
+*.mo
 *.pot
-
-# Django stuff:
-*.log
 
 # Sphinx documentation
 docs/_build/
@@ -57,16 +77,13 @@ docs/_build/
 # PyBuilder
 target/
 
-# Ipython Notebook
-.ipynb_checkpoints
 
-# Exclude sqlite3 files
-*.sqlite3
-*.db
-
-# Exclude Django's local_settings.py
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
 local_settings.py
 
-# Excluding bower files
-bower_components
-node_modules
+.env
+db.sqlite3
