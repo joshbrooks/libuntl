@@ -37,11 +37,13 @@ class Common(Configuration):
         'debug_toolbar',
         'django_js_reverse',
         'javascript_settings',
+        'rest_framework',
         'rest_framework_swagger',
 
 
 
         'libuntl',
+        'library',
         'example_app',
     ]
 
@@ -78,8 +80,10 @@ class Common(Configuration):
     # Database
     # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
     DATABASES = values.DatabaseURLValue(
-        'sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
+        # 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
+        'postgresql://libuntl:libuntl@localhost:5433/libuntl_db'
     )
+
 
     # Password validation
     # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -114,7 +118,7 @@ class Common(Configuration):
     # https://docs.djangoproject.com/en/1.11/howto/static-files/
     STATIC_URL = '/static/'
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'bower_components'),
+        os.path.join(BASE_DIR, 'node_modules'),
         os.path.join(BASE_DIR, 'static'),
     )
 

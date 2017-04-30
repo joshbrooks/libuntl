@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^library/api/', include('library.serializers')),
 ]
 
 if 'rosetta' in settings.INSTALLED_APPS:

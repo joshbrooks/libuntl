@@ -1,6 +1,12 @@
-Copy the environment file and make a secret key
+Required environment variables
+
+    DJANGO_SECRET_KEY=foo
+    DJANGO_CONFIGURATION=Dev
+
+
 pip install -r requirements.txt
-bower install
+
+On running
 
 manage.py migrate
 manage.py collectstatic

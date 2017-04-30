@@ -70,3 +70,4 @@ local_settings.py
 # Excluding bower files
 bower_components
 node_modules
+.idea/
