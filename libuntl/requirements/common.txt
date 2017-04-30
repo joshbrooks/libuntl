@@ -10,6 +10,8 @@ django-rosetta==0.7.11
 django-javascript-settings
 django-rest-swagger
 django-js-reverse
+django-filter
+django-filters
 unidecode
 django-model-utils
 pillow
