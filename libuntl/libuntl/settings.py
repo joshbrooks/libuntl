@@ -81,7 +81,7 @@ class Common(Configuration):
     # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
     DATABASES = values.DatabaseURLValue(
         # 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
-        'postgresql://libuntl:libuntl@localhost:5433/libuntl_db'
+        'postgresql://libuntl:libuntl@localhost:5435/libuntl_db'
     )
 
 

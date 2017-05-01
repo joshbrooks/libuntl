@@ -64,15 +64,15 @@ class PubtypeViewSet(viewsets.ModelViewSet):
 router.register(r'pubtype', PubtypeViewSet)
 
 
-class ResourceBaseModelSerializer(serializers.ModelSerializer):
+class ResourceModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.ResourceBase
+        model = models.Resource
         fields = '__all__'
 
 
 class ResourceBaseViewSet(viewsets.ModelViewSet):
-    queryset = models.ResourceBase.objects.all()
-    serializer_class = ResourceBaseModelSerializer
+    queryset = models.Resource.objects.all()
+    serializer_class = ResourceModelSerializer
 
 
 router.register(r'resourcebase', ResourceBaseViewSet)
@@ -89,4 +89,19 @@ class TagViewSet(viewsets.ModelViewSet):
     serializer_class = TagModelSerializer
 
 router.register(r'tag', TagViewSet)
+
+
+class LinkModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Link
+        fields = '__all__'
+
+
+class LinkViewSet(viewsets.ModelViewSet):
+    queryset = models.Link.objects.all()
+    serializer_class = LinkModelSerializer
+
+
+router.register(r'Link'.lower(), LinkViewSet)
+
 urlpatterns = router.urls

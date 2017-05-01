@@ -1,0 +1,1586 @@
+[
+{
+  "model": "library.author",
+  "pk": 1,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Aliansi Nasion\u00e1l Timor-Leste ba Tribun\u00e1l Internasion\u00e1l"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 2,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Asosiasaun HAK"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 3,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Vicente Maia"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 4,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Alex Cullen"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 5,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Silas Everett"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 6,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Susan Marx"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 7,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "The Asia Foundation"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 8,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "JSMP"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 9,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Todd Wassel"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 10,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Mark Notaras"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 11,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Liam Chinn"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 12,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "N\u00e9lson de Sousa C. Belo"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 13,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Gobie Rajalingam"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 14,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Constantino Escollano Brandao."
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 15,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Asia Development Bank"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 16,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Annika Kovar"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 17,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Jaya Earnest"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 18,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Robert Finger"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 19,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Departamento Hari'I P\u00e1s no Koesaun Sosi\u00e1l"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 20,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "FAO"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 21,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Teresa Nao Tsujimura"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 22,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Lourenco dos Reis Amaral"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 23,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Enrique Alonso"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 24,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Pedro Rodrigues"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 25,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Ministerio de Asuntos Exteriores y de Cooperaci\u00f3n"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 26,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Steve Needham"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 27,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Crispen Wilson"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 28,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Mario Pereira"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 29,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Don Griffiths"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 30,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Food and Agriculture Organisation of the United Nations"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 31,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "World Food Programme"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 32,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Jose Cornelio Guterres"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 33,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Arum Ratnawati"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 34,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "ILO"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 35,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "SEFOPE"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 36,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Republica Democr\u00e1tica de Timor-Leste"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 37,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "IOM"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 38,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Professor Stephen Haslett"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 39,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Dr Geoffrey Jones"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 40,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Ang\u00e9lica Arbul\u00fa"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 41,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Rishi Aryal"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 42,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Tania Santos"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 43,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Carlos Alberto Florindo"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 44,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Marc de Sousa Shields"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 45,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Politimi Kelekis"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 46,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Doug Hindson"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 47,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Asiyati Chiweza"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 48,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Gautem Bizwas"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 49,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "UNCDF"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 50,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "UNDP"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 51,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "RDTL"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 52,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "James Bennett"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 53,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Toby Mendel"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 54,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Susan Nicolai"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 55,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "UNESCO"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 56,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Demetrio do Amaral de Carvalho"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 57,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Adalfredo de Almeida"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 58,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Anita Fatima"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 59,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Muhammad Basri Jafar"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 60,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Timor Aid"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 61,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Nasrin Khan"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 62,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Selma Hyati"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 63,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "UNFPA"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 64,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Suzanne Belton"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 65,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Andrea Whittaker"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 66,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Lesley Barclay"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 67,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Ministry of Health"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 68,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Direc\u00e7\u00e3o Nacional de Estat\u00edstica"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 69,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Megan Hirst and Ann Linnarsson"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 70,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "UNICEF"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 71,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Naazneen Barma"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 72,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "UNWOMEN"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 73,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "WHO"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 74,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Fernandes"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 75,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Geoffrey C. Gunn"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 76,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Catholic Institute for International Relations"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 77,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Amnesty International"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 78,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Joachim K. Metzner"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 79,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Indonesia Department of Foreign Affairs"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 80,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Indonesia Department of Information"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 81,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Kevin P. Sherlock"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 82,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "J. A. Correia de Campos"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 83,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Danielle Boon"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 84,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "United Nations Department of Public Information"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 85,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Seeds of Life"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 86,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Philip Young"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 87,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Liv Pommer Jensen"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 88,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Geoffrey C. Gunn"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 89,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Naazneen H. Barma"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 90,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Elisabeth Huybens"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 91,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Lorena Vinuela"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 92,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Tim Kelly"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 93,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "David Scouter"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 94,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Patricia Justino"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 95,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Marinella Leone"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 96,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Paola Salardi"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 97,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Jose Luis Guasch"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 98,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Vickram Cuttaree"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 99,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Pamela Dale"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 100,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Kristen Himelein"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 101,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Denis Nikitin"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 102,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Angie Bexley"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 103,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Rod Nixon"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 104,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Emilia Pires"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 105,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Alastair McKechnie"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 106,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "The World Bank"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 107,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Joshua Brooks"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 108,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Minist\u00e9rio das Obras P\u00fablicas, Transportes e Comunica\u00e7\u00f5es"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 109,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Minist\u00e9rio das Obras P\u00fablicas, Transportes e Comunica\u00e7\u00f5es"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 110,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Cardno"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 111,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Ernest Chamberlain"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 112,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Takayoshi Kusago"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 113,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Deborah Cummins"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 114,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Kirsti Samuels"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 115,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Ben Moxham"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 116,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Cecilia Brunnstrom"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 117,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Direc\u00e7\u00e3o Nacional de Estat\u00edstica"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 119,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Jo\u00e3o Boavida"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 120,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Sofi Ospina"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 121,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Fokupers"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 122,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "FOKUPERS"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 123,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Vijaya Joshi"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 124,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Maggie Haertsch"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 125,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "CEPAD"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 130,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Joanico Mendonca"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 135,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Belun"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 136,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Belun"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 137,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Grupu Traballu Nasion\u00e1l ba Reziliensia"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 138,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Centro de Estudos para a Paz e Desenvolvimento (CEPAD)"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 139,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "MARIA afonso"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 140,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "leandra"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 141,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "sidalia"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 142,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Emmma"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 144,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "MARCIA"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 145,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "MINU"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 150,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Mia Alves"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 151,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Mia Alves"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 152,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Maria Marilia"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 156,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Izalde Pinto"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 157,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Obed Lopez"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 158,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Obed Lopez"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 159,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Eugenia Alves"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 160,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "MATEUS DE JESUS"
+    }
+  }
+},
+{
+  "model": "library.author",
+  "pk": 161,
+  "fields": {
+    "created": "2017-04-30T16:40:47.700Z",
+    "modified": "2017-04-30T16:40:47.700Z",
+    "name": {
+      "name": "Afonso de Almeida"
+    }
+  }
+}
+]

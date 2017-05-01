@@ -5,9 +5,9 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
 
-class ResourceBase(TimeStampedModel):
+class Resource(TimeStampedModel):
     """
-    Describes a single URL addressable resource
+    Describes a group of URL addressable resources
     """
     year = models.IntegerField(verbose_name=_('Year'), null=True, blank=True)
     name = JSONField(verbose_name=_('name'), null=True, blank=True)
@@ -17,19 +17,20 @@ class ResourceBase(TimeStampedModel):
     author = models.ManyToManyField('Author', blank=True)
     organization = models.ManyToManyField('Organization', blank=True)
 
-    cover = models.ImageField()
-    user = models.ForeignKey(User)
+    cover = models.ImageField(max_length=200, blank=True, null=True)
+    user = models.ForeignKey(User, blank=True, null=True)
 
 
-class ResourceExternal(ResourceBase):
+class Link(TimeStampedModel):
     """
-    URLs which are offsite
+    Link to an internal or external resource
     """
-    url = models.URLField()
-
-
-class ResourceUploaded(ResourceBase):
-    file = models.FileField()
+    cover = models.ImageField(max_length=200, blank=True, null=True)
+    language = models.TextField(blank=True, null=True)
+    title = models.TextField(blank=True, null=True)
+    resource_base = models.ForeignKey('Resource')
+    url = models.URLField(blank=True, null=True)
+    file = models.FileField(max_length=200, blank=True, null=True)
 
 
 class Pubtype(models.Model):
@@ -48,24 +49,30 @@ class Pubtype(models.Model):
         ordering = ('name',)
 
 
-class Author(models.Model):
+class Author(TimeStampedModel):
     name = JSONField(max_length=128, null=True, blank=True)
-    description = JSONField(max_length=128, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.name.get('name', '')
 
     class Meta:
         verbose_name_plural = _("Authors")
         ordering = ('name',)
 
 
-class Organization(models.Model):
+class Organization(TimeStampedModel):
     name = models.TextField()
     acronyms = JSONField(null=True, blank=True)
     description = JSONField(null=True, blank=True)
+    contact = JSONField(null=True, blank=True)
+    type = models.ForeignKey('OrgType', verbose_name=_('Organization Type'), null=True, blank=True)
 
 
-class Tag(models.Model):
+class Tag(TimeStampedModel):
+    name = JSONField()
+    description = JSONField(null=True, blank=True)
+
+class OrgType(models.Model):
+    id = models.TextField(primary_key=True)
     name = JSONField()
     description = JSONField(null=True, blank=True)

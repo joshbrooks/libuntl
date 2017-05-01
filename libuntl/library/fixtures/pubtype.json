@@ -1,0 +1,142 @@
+[
+{
+  "model": "library.pubtype",
+  "pk": "02",
+  "fields": {
+    "name": "{\"en\": \"LIBRARY\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "BK",
+  "fields": {
+    "name": "{\"en\": \"Book\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "BLG",
+  "fields": {
+    "name": "{\"en\": \"Blog\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "BRC",
+  "fields": {
+    "name": "{\"en\": \"Brochure\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "BRF",
+  "fields": {
+    "name": "{\"en\": \"Brief\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "FCT",
+  "fields": {
+    "name": "{\"en\": \"Factsheet\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "GDB",
+  "fields": {
+    "name": "{\"en\": \"Guidebook\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "GDL",
+  "fields": {
+    "name": "{\"en\": \"Guideline\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "GLS",
+  "fields": {
+    "name": "{\"en\": \"Glossary\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "IMG",
+  "fields": {
+    "name": "{\"tet\": \"Image\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "JRN",
+  "fields": {
+    "name": "{\"en\": \"Journal article\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "MP",
+  "fields": {
+    "name": "{\"en\": \"Map\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "NWS",
+  "fields": {
+    "name": "{\"en\": \"Newsletter\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "OFF",
+  "fields": {
+    "name": "{\"en\": \"Job Offer\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "PRI",
+  "fields": {
+    "name": "{\"en\": \"Primary Source\", \"tet\": \"Informasaun Primerio\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "PST",
+  "fields": {
+    "name": "{\"en\": \"Poster\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "RPR",
+  "fields": {
+    "name": "{\"en\": \"Report\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "TBL",
+  "fields": {
+    "name": "{\"en\": \"Table\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "WB",
+  "fields": {
+    "name": "{\"en\": \"Web\"}"
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "WB,",
+  "fields": {
+    "name": "{\"en\": \"Web, Media\"}"
+  }
+}
+]

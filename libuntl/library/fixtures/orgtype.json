@@ -1,0 +1,82 @@
+[
+{
+  "model": "library.orgtype",
+  "pk": "AC",
+  "fields": {
+    "name": {
+      "en": "Academic / Research Agency"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.orgtype",
+  "pk": "BI",
+  "fields": {
+    "name": {
+      "en": "Bilateral Agency"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.orgtype",
+  "pk": "CBO",
+  "fields": {
+    "name": {
+      "en": "Community Based Organization"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.orgtype",
+  "pk": "GOV",
+  "fields": {
+    "name": {
+      "en": "Government agency"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.orgtype",
+  "pk": "INGO",
+  "fields": {
+    "name": {
+      "en": "International NGO"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.orgtype",
+  "pk": "LNGO",
+  "fields": {
+    "name": {
+      "en": "Local NGO"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.orgtype",
+  "pk": "NN",
+  "fields": {
+    "name": {
+      "en": "Unknown"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.orgtype",
+  "pk": "UN",
+  "fields": {
+    "name": {
+      "en": "United Nations agency"
+    },
+    "description": null
+  }
+}
+]
