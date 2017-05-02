@@ -19,6 +19,7 @@ from django.contrib import admin
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
+
 urlpatterns = [
     url(r'^', include('example_app.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
@@ -38,6 +39,12 @@ if 'rest_framework_swagger' in settings.INSTALLED_APPS:
     from rest_framework_swagger.views import get_swagger_view
     urlpatterns += [
         url(r'^swagger/', get_swagger_view(title='My Swagger'))
+    ]
+
+if 'graphene_django' in settings.INSTALLED_APPS:
+    from graphene_django.views import GraphQLView
+    urlpatterns += [
+        url(r'^graphql', GraphQLView.as_view(graphiql=True))
     ]
 
 # For django_js_reverse

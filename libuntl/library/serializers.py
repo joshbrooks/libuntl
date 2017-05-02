@@ -73,9 +73,10 @@ class ResourceModelSerializer(serializers.ModelSerializer):
 class ResourceBaseViewSet(viewsets.ModelViewSet):
     queryset = models.Resource.objects.all()
     serializer_class = ResourceModelSerializer
+    filter_backends=(TimeStampFilter,)
+    ordering_fields='modified'
 
-
-router.register(r'resourcebase', ResourceBaseViewSet)
+router.register(r'resource', ResourceBaseViewSet)
 
 
 class TagModelSerializer(serializers.ModelSerializer):

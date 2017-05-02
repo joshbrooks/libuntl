@@ -39,6 +39,7 @@ class Common(Configuration):
         'javascript_settings',
         'rest_framework',
         'rest_framework_swagger',
+        'graphene_django',
 
 
 
@@ -121,6 +122,10 @@ class Common(Configuration):
         os.path.join(BASE_DIR, 'node_modules'),
         os.path.join(BASE_DIR, 'static'),
     )
+
+    GRAPHENE = {
+        'SCHEMA': 'libuntl.schema.schema'
+    }
 
 class Development(Common):
     """

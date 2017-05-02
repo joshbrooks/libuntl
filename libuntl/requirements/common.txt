@@ -12,6 +12,7 @@ django-rest-swagger
 django-js-reverse
 django-filter
 django-filters
+graphene-django
 unidecode
 django-model-utils
 pillow
