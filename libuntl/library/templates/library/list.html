@@ -1,0 +1,22 @@
+{%  extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block script %}
+        <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
+        <script type="text/javascript" src="{% static 'riot/library/resource.store.js' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>
+    <script>
+    $(document).ready(function(){riot.mount('library-resource_list')})
+    </script>
+{% endblock %}
+{% block content %}
+    <h4>Hello-World</h4>
+
+    <p>Here goes list of things</p>
+    {% get_current_language as lang %}
+    {{ lang }}
+
+    <library-resource_list></library-resource_list>
+
+{% endblock %}
