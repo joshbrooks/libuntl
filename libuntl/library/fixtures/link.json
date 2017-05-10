@@ -4148,7 +4148,7 @@
   "pk": 340,
   "fields": {
     "created": "2017-04-30T16:38:05.118Z",
-    "modified": "2017-05-02T06:38:57Z",
+    "modified": "2017-05-02T06:38:57.000Z",
     "cover": "publication_covers/WHO_2005_Child_malnutrition_estimates_by_NCHS_WHO_reference_7f6WY2F.jpg",
     "language": "en",
     "title": null,
@@ -18148,7 +18148,7 @@
   "pk": 1340,
   "fields": {
     "created": "2017-04-30T16:38:05.118Z",
-    "modified": "2017-05-02T06:38:58Z",
+    "modified": "2017-05-02T06:38:58.000Z",
     "cover": "",
     "language": "tet",
     "title": null,

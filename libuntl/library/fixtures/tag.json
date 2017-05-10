@@ -4072,7 +4072,7 @@
   "pk": 340,
   "fields": {
     "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-05-02T06:38:57Z",
+    "modified": "2017-05-02T06:38:57.000Z",
     "name": {
       "en": "bullying"
     },
@@ -4842,10 +4842,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.064Z",
     "name": {
-      "en": "seeds",
-      "pt": "",
+      "tet": "fini",
       "ind": "",
-      "tet": "fini"
+      "en": "seeds",
+      "pt": ""
     },
     "description": null
   }
@@ -4857,10 +4857,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.065Z",
     "name": {
-      "en": "rice",
-      "pt": "arroz",
+      "tet": "hare, etu, foos",
       "ind": "beras",
-      "tet": "hare, etu, foos"
+      "en": "rice",
+      "pt": "arroz"
     },
     "description": null
   }
@@ -4872,10 +4872,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.066Z",
     "name": {
-      "en": "maize",
-      "pt": "milho",
+      "tet": "batar",
       "ind": "jagung",
-      "tet": "batar"
+      "en": "maize",
+      "pt": "milho"
     },
     "description": null
   }
@@ -4887,10 +4887,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.067Z",
     "name": {
-      "en": "storage",
-      "pt": "armazenamento",
+      "tet": "armaz\u00e9n",
       "ind": "penyimpanan",
-      "tet": "armaz\u00e9n"
+      "en": "storage",
+      "pt": "armazenamento"
     },
     "description": null
   }
@@ -4902,10 +4902,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.068Z",
     "name": {
-      "en": "seed production",
-      "pt": "produ\u00e7\u00e3o de sementes",
+      "tet": "fini produsaun",
       "ind": "produksi benih",
-      "tet": "fini produsaun"
+      "en": "seed production",
+      "pt": "produ\u00e7\u00e3o de sementes"
     },
     "description": null
   }
@@ -4917,10 +4917,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.069Z",
     "name": {
-      "en": "farmer groups",
-      "pt": "grupos de agricultores",
+      "tet": "grupu toos nain",
       "ind": "kelompok tani",
-      "tet": "grupu toos nain"
+      "en": "farmer groups",
+      "pt": "grupos de agricultores"
     },
     "description": null
   }
@@ -4932,10 +4932,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.070Z",
     "name": {
-      "en": "savings and loans groups",
-      "pt": "grupos de poupan\u00e7a e empr\u00e9stimos",
+      "tet": "",
       "ind": "kelompok simpan pinjaman",
-      "tet": ""
+      "en": "savings and loans groups",
+      "pt": "grupos de poupan\u00e7a e empr\u00e9stimos"
     },
     "description": null
   }
@@ -4947,10 +4947,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.071Z",
     "name": {
-      "en": "seed adoption",
-      "pt": "ado\u00e7\u00e3o de sementes",
+      "tet": "hakiak fini",
       "ind": "adopsi benih",
-      "tet": "hakiak fini"
+      "en": "seed adoption",
+      "pt": "ado\u00e7\u00e3o de sementes"
     },
     "description": null
   }
@@ -4962,10 +4962,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.072Z",
     "name": {
-      "en": "foodcrops",
-      "pt": "culturas alimentares",
+      "tet": "to'os fuan",
       "ind": "tanaman pangan",
-      "tet": "to'os fuan"
+      "en": "foodcrops",
+      "pt": "culturas alimentares"
     },
     "description": null
   }
@@ -4977,10 +4977,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.074Z",
     "name": {
-      "en": "FFDTL",
-      "pt": "FFDTL",
+      "tet": "FFDTL",
       "ind": "FFDTL",
-      "tet": "FFDTL"
+      "en": "FFDTL",
+      "pt": "FFDTL"
     },
     "description": null
   }
@@ -6138,10 +6138,10 @@
     "created": "2017-04-30T13:11:19.954Z",
     "modified": "2017-05-02T06:38:57.170Z",
     "name": {
-      "en": "expenditure",
-      "pt": "despesa",
+      "tet": "gastu",
       "ind": "pengeluaran",
-      "tet": "gastu"
+      "en": "expenditure",
+      "pt": "despesa"
     },
     "description": null
   }
