@@ -1,142 +1,193 @@
 [
 {
   "model": "library.pubtype",
-  "pk": "02",
-  "fields": {
-    "name": "{\"en\": \"LIBRARY\"}"
-  }
-},
-{
-  "model": "library.pubtype",
   "pk": "BK",
   "fields": {
-    "name": "{\"en\": \"Book\"}"
+    "name": {
+      "en": "Book"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "BLG",
   "fields": {
-    "name": "{\"en\": \"Blog\"}"
+    "name": {
+      "en": "Blog"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "BRC",
   "fields": {
-    "name": "{\"en\": \"Brochure\"}"
+    "name": {
+      "en": "Brochure"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "BRF",
   "fields": {
-    "name": "{\"en\": \"Brief\"}"
+    "name": {
+      "en": "Brief"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "FCT",
   "fields": {
-    "name": "{\"en\": \"Factsheet\"}"
+    "name": {
+      "en": "Factsheet"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "GDB",
   "fields": {
-    "name": "{\"en\": \"Guidebook\"}"
+    "name": {
+      "en": "Guidebook"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "GDL",
   "fields": {
-    "name": "{\"en\": \"Guideline\"}"
+    "name": {
+      "en": "Guideline"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "GLS",
   "fields": {
-    "name": "{\"en\": \"Glossary\"}"
+    "name": {
+      "en": "Glossary"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "IMG",
   "fields": {
-    "name": "{\"tet\": \"Image\"}"
+    "name": {
+      "en": "Image"
+    },
+    "description": null
+  }
+},
+{
+  "model": "library.pubtype",
+  "pk": "JOB",
+  "fields": {
+    "name": {
+      "en": "Job Offer"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "JRN",
   "fields": {
-    "name": "{\"en\": \"Journal article\"}"
+    "name": {
+      "en": "Journal article"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "MP",
   "fields": {
-    "name": "{\"en\": \"Map\"}"
+    "name": {
+      "en": "Map"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "NWS",
   "fields": {
-    "name": "{\"en\": \"Newsletter\"}"
-  }
-},
-{
-  "model": "library.pubtype",
-  "pk": "OFF",
-  "fields": {
-    "name": "{\"en\": \"Job Offer\"}"
+    "name": {
+      "en": "Newsletter"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "PRI",
   "fields": {
-    "name": "{\"en\": \"Primary Source\", \"tet\": \"Informasaun Primerio\"}"
+    "name": {
+      "tet": "Informasaun Primerio",
+      "en": "Primary Source"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "PST",
   "fields": {
-    "name": "{\"en\": \"Poster\"}"
+    "name": {
+      "en": "Poster"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "RPR",
   "fields": {
-    "name": "{\"en\": \"Report\"}"
+    "name": {
+      "en": "Report"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "TBL",
   "fields": {
-    "name": "{\"en\": \"Table\"}"
+    "name": {
+      "en": "Table"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
   "pk": "WB",
   "fields": {
-    "name": "{\"en\": \"Web\"}"
+    "name": {
+      "en": "Web, Media"
+    },
+    "description": null
   }
 },
 {
   "model": "library.pubtype",
-  "pk": "WB,",
+  "pk": "WEB",
   "fields": {
-    "name": "{\"en\": \"Web, Media\"}"
+    "name": {
+      "en": "Web"
+    },
+    "description": null
   }
 }
 ]

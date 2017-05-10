@@ -8,7 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
-
+import django.conf.locale
+from django.utils.translation import ugettext_lazy as _
 from configurations import Configuration, values
 
 
@@ -126,6 +127,32 @@ class Common(Configuration):
     GRAPHENE = {
         'SCHEMA': 'libuntl.schema.schema'
     }
+
+
+    LANGUAGES = [
+        ('en', _('English')),
+        ('tet', _('Tetum')),
+        ('id', _('Bahasa Indonesia')),
+        ('pt', _('Portugese')),
+
+    ]
+
+    EXTRA_LANG_INFO = {
+        'tet': {
+            'bidi': False,  # right-to-left
+            'code': 'tet',
+            'name': 'Tetum',
+            'name_local': 'Tetum',  # unicode codepoints here
+        },
+    }
+
+    LOCALE_PATHS = (
+        os.path.join(BASE_DIR, 'locale'),
+    )
+
+    # Add custom languages not provided by Django
+    # LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
+    django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 
 class Development(Common):
     """

@@ -3,9 +3,7 @@
   "model": "library.orgtype",
   "pk": "AC",
   "fields": {
-    "name": {
-      "en": "Academic / Research Agency"
-    },
+    "name": null,
     "description": null
   }
 },
@@ -13,9 +11,7 @@
   "model": "library.orgtype",
   "pk": "BI",
   "fields": {
-    "name": {
-      "en": "Bilateral Agency"
-    },
+    "name": null,
     "description": null
   }
 },
@@ -23,9 +19,7 @@
   "model": "library.orgtype",
   "pk": "CBO",
   "fields": {
-    "name": {
-      "en": "Community Based Organization"
-    },
+    "name": null,
     "description": null
   }
 },
@@ -33,9 +27,7 @@
   "model": "library.orgtype",
   "pk": "GOV",
   "fields": {
-    "name": {
-      "en": "Government agency"
-    },
+    "name": null,
     "description": null
   }
 },
@@ -43,9 +35,7 @@
   "model": "library.orgtype",
   "pk": "INGO",
   "fields": {
-    "name": {
-      "en": "International NGO"
-    },
+    "name": null,
     "description": null
   }
 },
@@ -53,9 +43,7 @@
   "model": "library.orgtype",
   "pk": "LNGO",
   "fields": {
-    "name": {
-      "en": "Local NGO"
-    },
+    "name": null,
     "description": null
   }
 },
@@ -63,9 +51,7 @@
   "model": "library.orgtype",
   "pk": "NN",
   "fields": {
-    "name": {
-      "en": "Unknown"
-    },
+    "name": null,
     "description": null
   }
 },
@@ -73,9 +59,7 @@
   "model": "library.orgtype",
   "pk": "UN",
   "fields": {
-    "name": {
-      "en": "United Nations agency"
-    },
+    "name": null,
     "description": null
   }
 }

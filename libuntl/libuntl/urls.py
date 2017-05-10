@@ -21,11 +21,11 @@ from django.contrib import admin
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
-    url(r'^', include('example_app.urls')),
+    url(r'^', include('library.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^library/api/', include('library.serializers')),
+    url(r'^api/', include('library.serializers')),
 ]
 
 if 'rosetta' in settings.INSTALLED_APPS:
@@ -45,6 +45,12 @@ if 'graphene_django' in settings.INSTALLED_APPS:
     from graphene_django.views import GraphQLView
     urlpatterns += [
         url(r'^graphql', GraphQLView.as_view(graphiql=True))
+    ]
+
+if 'django_js_reverse' in settings.INSTALLED_APPS:
+    from django_js_reverse.views import urls_js
+    urlpatterns += [
+        url(r'^jsreverse/$', urls_js, name='js_reverse'),
     ]
 
 # For django_js_reverse

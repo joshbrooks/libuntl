@@ -38,11 +38,12 @@ class Pubtype(models.Model):
     Describes an object based on its type (eg newsletter, report...)
     """
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return u'{}'.format(self.name)
 
-    code = models.CharField(max_length=3, primary_key=True)
-    name = models.CharField(max_length=128)
+    id = models.TextField(primary_key=True)
+    name = JSONField()
+    description = JSONField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = _("Publication Types")

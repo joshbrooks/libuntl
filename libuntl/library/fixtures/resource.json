@@ -3,12 +3,12 @@
   "model": "library.resource",
   "pk": 1,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.308Z",
+    "modified": "2017-05-02T06:38:56.661Z",
     "year": 2014,
     "name": {
-      "en": "Benvindu Prezidente SBY mai vizita Timor-Leste! Labele fase liman ba krime kontra umanidade husi 1975-1999.",
-      "tet": "Benvindu Prezidente SBY mai vizita Timor-Leste! Labele fase liman ba krime kontra umanidade husi 1975-1999."
+      "tet": "Benvindu Prezidente SBY mai vizita Timor-Leste! Labele fase liman ba krime kontra umanidade husi 1975-1999.",
+      "en": "Benvindu Prezidente SBY mai vizita Timor-Leste! Labele fase liman ba krime kontra umanidade husi 1975-1999."
     },
     "description": {},
     "pubtype": "RPR",
@@ -18,21 +18,21 @@
       1
     ],
     "organization": [
-      2391,
-      669,
       2427,
-      186,
-      1049,
-      694,
-      310,
-      818,
-      653,
+      2391,
       2125,
-      298,
       1194,
+      1049,
       999,
+      818,
+      694,
+      677,
+      669,
+      653,
+      310,
+      298,
       295,
-      677
+      186
     ]
   }
 },
@@ -40,12 +40,12 @@
   "model": "library.resource",
   "pk": 2,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.309Z",
+    "modified": "2017-05-02T06:38:56.662Z",
     "year": 2013,
     "name": {
-      "en": "Haforsa lei hodi hametin estady de direitu no demokratika",
-      "tet": "Haforsa lei hodi hametin estady de direitu no demokratika"
+      "tet": "Haforsa lei hodi hametin estady de direitu no demokratika",
+      "en": "Haforsa lei hodi hametin estady de direitu no demokratika"
     },
     "description": {},
     "pubtype": "RPR",
@@ -63,12 +63,12 @@
   "model": "library.resource",
   "pk": 3,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.310Z",
+    "modified": "2017-05-02T06:38:56.663Z",
     "year": 2013,
     "name": {
-      "en": "Lian Direitus Umanus No. 1",
-      "tet": "Lian Direitus Umanus No. 1"
+      "tet": "Lian Direitus Umanus No. 1",
+      "en": "Lian Direitus Umanus No. 1"
     },
     "description": {},
     "pubtype": "RPR",
@@ -86,12 +86,12 @@
   "model": "library.resource",
   "pk": 4,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.311Z",
+    "modified": "2017-05-02T06:38:56.664Z",
     "year": 2014,
     "name": {
-      "en": "\u201cIha Timor Leste : Lia-los ho Justisa Namlele no Hahu Namlaek\u201d",
-      "tet": "\u201cIha Timor Leste : Lia-los ho Justisa Namlele no Hahu Namlaek\u201d"
+      "tet": "\u201cIha Timor Leste : Lia-los ho Justisa Namlele no Hahu Namlaek\u201d",
+      "en": "\u201cIha Timor Leste : Lia-los ho Justisa Namlele no Hahu Namlaek\u201d"
     },
     "description": {},
     "pubtype": "RPR",
@@ -109,12 +109,12 @@
   "model": "library.resource",
   "pk": 5,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.312Z",
+    "modified": "2017-05-02T06:38:56.665Z",
     "year": 2014,
     "name": {
-      "en": "Komemora Tinan 72 Ba Loron Invazaun Tropas Japonez mai Timor-Leste (Fevereiru 1942 \u2013 Agustu 1945). \u201cRekuinhesementu Istoria Pasadu Okupasaun Militar Japaun\u201d",
-      "tet": "Komemora Tinan 72 Ba Loron Invazaun Tropas Japonez mai Timor-Leste (Fevereiru 1942 \u2013 Agustu 1945). \u201cRekuinhesementu Istoria Pasadu Okupasaun Militar Japaun\u201d"
+      "tet": "Komemora Tinan 72 Ba Loron Invazaun Tropas Japonez mai Timor-Leste (Fevereiru 1942 \u2013 Agustu 1945). \u201cRekuinhesementu Istoria Pasadu Okupasaun Militar Japaun\u201d",
+      "en": "Komemora Tinan 72 Ba Loron Invazaun Tropas Japonez mai Timor-Leste (Fevereiru 1942 \u2013 Agustu 1945). \u201cRekuinhesementu Istoria Pasadu Okupasaun Militar Japaun\u201d"
     },
     "description": {},
     "pubtype": "RPR",
@@ -132,13 +132,13 @@
   "model": "library.resource",
   "pk": 6,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.313Z",
+    "modified": "2017-05-02T06:38:56.666Z",
     "year": 2013,
     "name": {
+      "tet": "Komemora loron internasion\u00e1l ba ema lakon forsada \"Lori sira fila mai uma\"",
       "pt": "COMEMORA\u00c7\u00c3O DO DIA INTERNACIONAL DOS DESAPARECIDOS \u201cTragam-nos para casa!\u201d",
-      "en": "Commemoration of International Day of Enforced Disappearances \"Bring them home\"",
-      "tet": "Komemora loron internasion\u00e1l ba ema lakon forsada \"Lori sira fila mai uma\""
+      "en": "Commemoration of International Day of Enforced Disappearances \"Bring them home\""
     },
     "description": {},
     "pubtype": "RPR",
@@ -148,21 +148,21 @@
       1
     ],
     "organization": [
-      2391,
-      669,
       2427,
-      186,
-      1049,
-      694,
-      310,
-      818,
+      2391,
       2125,
-      653,
-      298,
       1194,
+      1049,
       999,
+      818,
+      694,
+      677,
+      669,
+      653,
+      310,
+      298,
       295,
-      677
+      186
     ]
   }
 },
@@ -170,13 +170,13 @@
   "model": "library.resource",
   "pk": 7,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.314Z",
+    "modified": "2017-05-02T06:38:56.667Z",
     "year": 2013,
     "name": {
+      "tet": "Lialoos no Justisa nu\u2019udar Aliserse ba Prosesu Dezenvolvimentu Demokr\u00e1sia iha Timor-Leste",
       "pt": "Verdade e Justi\u00e7a s\u00e3o os fundamentos para o desenvolvimento da Democracia em Timor-Leste",
-      "en": "Truth and Justice are the foundations for developing democracy in Timor-Leste",
-      "tet": "Lialoos no Justisa nu\u2019udar Aliserse ba Prosesu Dezenvolvimentu Demokr\u00e1sia iha Timor-Leste"
+      "en": "Truth and Justice are the foundations for developing democracy in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -186,21 +186,21 @@
       1
     ],
     "organization": [
-      2391,
-      669,
       2427,
-      186,
-      1049,
-      694,
-      310,
-      818,
+      2391,
       2125,
-      653,
-      298,
       1194,
+      1049,
       999,
+      818,
+      694,
+      677,
+      669,
+      653,
+      310,
+      298,
       295,
-      677
+      186
     ]
   }
 },
@@ -208,12 +208,12 @@
   "model": "library.resource",
   "pk": 8,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.315Z",
+    "modified": "2017-05-02T06:38:56.668Z",
     "year": 2014,
     "name": {
-      "en": "COMMEMORATION OF THE LIQUISA CHURCH MASSACRE ON 5-6 APRIL 1999: \u201cFamilies of the Victim continue to live with uncertainty\u201d",
-      "tet": "KOMEMORA LORON MASAKRE IGREIJA LIQUISA 5 \u2013 6 ABRIL: \u201cFamilia Vitima sira nafatin hela iha inserteza nia laran\u201d"
+      "tet": "KOMEMORA LORON MASAKRE IGREIJA LIQUISA 5 \u2013 6 ABRIL: \u201cFamilia Vitima sira nafatin hela iha inserteza nia laran\u201d",
+      "en": "COMMEMORATION OF THE LIQUISA CHURCH MASSACRE ON 5-6 APRIL 1999: \u201cFamilies of the Victim continue to live with uncertainty\u201d"
     },
     "description": {},
     "pubtype": "RPR",
@@ -223,21 +223,21 @@
       1
     ],
     "organization": [
-      669,
       2427,
-      186,
-      1049,
-      694,
       2391,
-      310,
-      818,
-      653,
       2125,
-      298,
       1194,
+      1049,
       999,
+      818,
+      694,
+      677,
+      669,
+      653,
+      310,
+      298,
       295,
-      677
+      186
     ]
   }
 },
@@ -245,12 +245,12 @@
   "model": "library.resource",
   "pk": 9,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.316Z",
+    "modified": "2017-05-02T06:38:56.669Z",
     "year": 2014,
     "name": {
-      "en": "Report to Amnesty International Committee on the Rights of a Child",
-      "tet": "Report to Amnesty International Committee on the Rights of a Child"
+      "tet": "Report to Amnesty International Committee on the Rights of a Child",
+      "en": "Report to Amnesty International Committee on the Rights of a Child"
     },
     "description": {},
     "pubtype": "RPR",
@@ -260,21 +260,21 @@
       1
     ],
     "organization": [
-      2391,
-      669,
       2427,
-      186,
-      1049,
-      694,
-      310,
-      818,
+      2391,
       2125,
-      653,
-      298,
       1194,
+      1049,
       999,
+      818,
+      694,
+      677,
+      669,
+      653,
+      310,
+      298,
       295,
-      677
+      186
     ]
   }
 },
@@ -282,12 +282,12 @@
   "model": "library.resource",
   "pk": 10,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.317Z",
+    "modified": "2017-05-02T06:38:56.670Z",
     "year": 2013,
     "name": {
-      "en": "Human Rights Voice No. 2",
-      "tet": "Lian Direitus Umanus No. 2"
+      "tet": "Lian Direitus Umanus No. 2",
+      "en": "Human Rights Voice No. 2"
     },
     "description": {},
     "pubtype": "RPR",
@@ -305,8 +305,8 @@
   "model": "library.resource",
   "pk": 11,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.318Z",
+    "modified": "2017-05-02T06:38:56.671Z",
     "year": 2013,
     "name": {
       "en": "Submission No. 77. Inquiry into Australia\u2019s Relationship with Timor-Leste"
@@ -327,12 +327,12 @@
   "model": "library.resource",
   "pk": 12,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.319Z",
+    "modified": "2017-05-02T06:38:56.672Z",
     "year": 2014,
     "name": {
-      "en": "Human Rights Voice No. 3",
-      "tet": "Lian Direitus Umanus No. 3"
+      "tet": "Lian Direitus Umanus No. 3",
+      "en": "Human Rights Voice No. 3"
     },
     "description": {},
     "pubtype": "RPR",
@@ -350,8 +350,8 @@
   "model": "library.resource",
   "pk": 13,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.320Z",
+    "modified": "2017-05-02T06:38:56.673Z",
     "year": 2009,
     "name": {
       "en": "Fundasaun Mahein blogs (2009)"
@@ -370,8 +370,8 @@
   "model": "library.resource",
   "pk": 14,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.321Z",
+    "modified": "2017-05-02T06:38:56.674Z",
     "year": 2010,
     "name": {
       "en": "Fundasaun Mahein blogs (2010)"
@@ -390,8 +390,8 @@
   "model": "library.resource",
   "pk": 15,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.322Z",
+    "modified": "2017-05-02T06:38:56.675Z",
     "year": 2011,
     "name": {
       "en": "Fundasaun Mahein blogs (2011)"
@@ -410,8 +410,8 @@
   "model": "library.resource",
   "pk": 16,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.323Z",
+    "modified": "2017-05-02T06:38:56.676Z",
     "year": 2012,
     "name": {
       "en": "Fundasaun Mahein blogs (2012)"
@@ -430,8 +430,8 @@
   "model": "library.resource",
   "pk": 17,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.324Z",
+    "modified": "2017-05-02T06:38:56.677Z",
     "year": 2013,
     "name": {
       "en": "Fundasaun Mahein blogs (2013)"
@@ -450,8 +450,8 @@
   "model": "library.resource",
   "pk": 18,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.325Z",
+    "modified": "2017-05-02T06:38:56.678Z",
     "year": 2014,
     "name": {
       "en": "Fundasaun Mahein blogs (2014)"
@@ -470,8 +470,8 @@
   "model": "library.resource",
   "pk": 19,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.326Z",
+    "modified": "2017-05-02T06:38:56.679Z",
     "year": 2012,
     "name": {
       "en": "Trends of local governance in Timor-Leste"
@@ -494,8 +494,8 @@
   "model": "library.resource",
   "pk": 20,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.327Z",
+    "modified": "2017-05-02T06:38:56.680Z",
     "year": 2013,
     "name": {
       "en": "Law and Justice Survey 2013"
@@ -516,8 +516,8 @@
   "model": "library.resource",
   "pk": 21,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.328Z",
+    "modified": "2017-05-02T06:38:56.681Z",
     "year": 2001,
     "name": {
       "en": "East Timor National Survey of Voter Knowledge"
@@ -538,8 +538,8 @@
   "model": "library.resource",
   "pk": 22,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.329Z",
+    "modified": "2017-05-02T06:38:56.682Z",
     "year": 2003,
     "name": {
       "en": "Supporting economic growth in East Timor"
@@ -560,8 +560,8 @@
   "model": "library.resource",
   "pk": 23,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.330Z",
+    "modified": "2017-05-02T06:38:56.683Z",
     "year": 2004,
     "name": {
       "en": "Law and Justice in East Timor"
@@ -582,8 +582,8 @@
   "model": "library.resource",
   "pk": 24,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.331Z",
+    "modified": "2017-05-02T06:38:56.684Z",
     "year": 2006,
     "name": {
       "en": "Timor-Leste"
@@ -596,8 +596,8 @@
       7
     ],
     "organization": [
-      906,
-      987
+      987,
+      906
     ]
   }
 },
@@ -605,8 +605,8 @@
   "model": "library.resource",
   "pk": 25,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.332Z",
+    "modified": "2017-05-02T06:38:56.685Z",
     "year": 2009,
     "name": {
       "en": "Governance and civil society in Timor-Leste"
@@ -627,8 +627,8 @@
   "model": "library.resource",
   "pk": 26,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.333Z",
+    "modified": "2017-05-02T06:38:56.686Z",
     "year": 2010,
     "name": {
       "en": "Ministry of Finance quality of service perception survey"
@@ -641,8 +641,8 @@
       7
     ],
     "organization": [
-      906,
-      2394
+      2394,
+      906
     ]
   }
 },
@@ -650,8 +650,8 @@
   "model": "library.resource",
   "pk": 27,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.334Z",
+    "modified": "2017-05-02T06:38:56.687Z",
     "year": 2011,
     "name": {
       "en": "Institutionalising community policing in Timor-Leste: Exploring the politics of police reform"
@@ -673,8 +673,8 @@
   "model": "library.resource",
   "pk": 28,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.335Z",
+    "modified": "2017-05-02T06:38:56.688Z",
     "year": 2012,
     "name": {
       "en": "\u201cAmi Sei V\u00edtima Beibeik\u201d: Looking to the needs of domestic violence victims"
@@ -685,8 +685,8 @@
     "user": null,
     "author": [],
     "organization": [
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -694,8 +694,8 @@
   "model": "library.resource",
   "pk": 29,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.336Z",
+    "modified": "2017-05-02T06:38:56.689Z",
     "year": 2012,
     "name": {
       "en": "Careers Pathways for Law Graduates: A Survey of Law Graduates in Timor-Leste"
@@ -708,8 +708,8 @@
       7
     ],
     "organization": [
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -717,8 +717,8 @@
   "model": "library.resource",
   "pk": 30,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.337Z",
+    "modified": "2017-05-02T06:38:56.690Z",
     "year": 2012,
     "name": {
       "en": "Community experiences of decentralised development in Timor-Leste"
@@ -731,8 +731,8 @@
       7
     ],
     "organization": [
-      640,
-      906
+      906,
+      640
     ]
   }
 },
@@ -740,8 +740,8 @@
   "model": "library.resource",
   "pk": 31,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.338Z",
+    "modified": "2017-05-02T06:38:56.691Z",
     "year": 2012,
     "name": {
       "en": "Information and communication technology for development"
@@ -762,8 +762,8 @@
   "model": "library.resource",
   "pk": 32,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.339Z",
+    "modified": "2017-05-02T06:38:56.692Z",
     "year": 2012,
     "name": {
       "en": "Teaching children to read"
@@ -784,8 +784,8 @@
   "model": "library.resource",
   "pk": 33,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.340Z",
+    "modified": "2017-05-02T06:38:56.693Z",
     "year": 2012,
     "name": {
       "en": "Timor-Leste celebrates a decade of Independence"
@@ -798,8 +798,8 @@
       7
     ],
     "organization": [
-      906,
-      2438
+      2438,
+      906
     ]
   }
 },
@@ -807,8 +807,8 @@
   "model": "library.resource",
   "pk": 34,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.341Z",
+    "modified": "2017-05-02T06:38:56.694Z",
     "year": 2012,
     "name": {
       "en": "Working with female clients: A guideline for legal aid partners"
@@ -829,8 +829,8 @@
   "model": "library.resource",
   "pk": 35,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.342Z",
+    "modified": "2017-05-02T06:38:56.695Z",
     "year": 2013,
     "name": {
       "en": "Reflection on Law No. 3/2009: Community leadership and their election"
@@ -843,8 +843,8 @@
       7
     ],
     "organization": [
-      906,
-      2382
+      2382,
+      906
     ]
   }
 },
@@ -852,8 +852,8 @@
   "model": "library.resource",
   "pk": 36,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.343Z",
+    "modified": "2017-05-02T06:38:56.696Z",
     "year": 2013,
     "name": {
       "en": "Tara Bandu: Its role and use in community conflict prevention in Timor-Leste"
@@ -867,9 +867,9 @@
       9
     ],
     "organization": [
-      906,
-      1116,
       2418,
+      1116,
+      906,
       89
     ]
   }
@@ -878,8 +878,8 @@
   "model": "library.resource",
   "pk": 38,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.345Z",
+    "modified": "2017-05-02T06:38:56.698Z",
     "year": 2014,
     "name": {
       "en": "Institutionalising community policing in Timor-Leste"
@@ -900,12 +900,12 @@
   "model": "library.resource",
   "pk": 39,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.346Z",
+    "modified": "2017-05-02T06:38:56.699Z",
     "year": 2008,
     "name": {
-      "en": "A Survey of Community-Police Perceptions, 2008",
-      "tet": "Peskiza kona ba percepsaun polisia-communidade: Timor-Leste 2008"
+      "tet": "Peskiza kona ba percepsaun polisia-communidade: Timor-Leste 2008",
+      "en": "A Survey of Community-Police Perceptions, 2008"
     },
     "description": {},
     "pubtype": "RPR",
@@ -924,12 +924,12 @@
   "model": "library.resource",
   "pk": 40,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.347Z",
+    "modified": "2017-05-02T06:38:56.700Z",
     "year": 2008,
     "name": {
-      "en": "Law and Justice in Timor-Leste: A Survey of Citizen Awareness and Attitudes Regarding Law and Justice 2008",
-      "tet": "Lei no Justisa iha Timor-leste: Peskiza ba Sidadaun nian Konsiensa no Atitude kona-b\u00e1 Lei no Justisa 2008"
+      "tet": "Lei no Justisa iha Timor-leste: Peskiza ba Sidadaun nian Konsiensa no Atitude kona-b\u00e1 Lei no Justisa 2008",
+      "en": "Law and Justice in Timor-Leste: A Survey of Citizen Awareness and Attitudes Regarding Law and Justice 2008"
     },
     "description": {},
     "pubtype": "RPR",
@@ -947,12 +947,12 @@
   "model": "library.resource",
   "pk": 41,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.348Z",
+    "modified": "2017-05-02T06:38:56.701Z",
     "year": 2014,
     "name": {
-      "en": "Local leadership of community policing practices in Timor-Leste",
-      "tet": "Lideransa lok\u00e1l kona-ba pr\u00e1tika polisiamentu komunit\u00e1ria iha Timor-Leste"
+      "tet": "Lideransa lok\u00e1l kona-ba pr\u00e1tika polisiamentu komunit\u00e1ria iha Timor-Leste",
+      "en": "Local leadership of community policing practices in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -963,8 +963,8 @@
       12
     ],
     "organization": [
-      906,
-      2436
+      2436,
+      906
     ]
   }
 },
@@ -972,12 +972,12 @@
   "model": "library.resource",
   "pk": 42,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.349Z",
+    "modified": "2017-05-02T06:38:56.702Z",
     "year": 2006,
     "name": {
-      "en": "Legal reform in East Timor",
-      "tet": "Reforma leg\u00e1l iha Timor-Leste"
+      "tet": "Reforma leg\u00e1l iha Timor-Leste",
+      "en": "Legal reform in East Timor"
     },
     "description": {},
     "pubtype": "RPR",
@@ -995,12 +995,12 @@
   "model": "library.resource",
   "pk": 43,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.350Z",
+    "modified": "2017-05-02T06:38:56.703Z",
     "year": 2007,
     "name": {
-      "en": "Books for Asia - East Timor",
-      "tet": "Livru ba \u00c1zia"
+      "tet": "Livru ba \u00c1zia",
+      "en": "Books for Asia - East Timor"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1016,12 +1016,12 @@
   "model": "library.resource",
   "pk": 44,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.351Z",
+    "modified": "2017-05-02T06:38:56.704Z",
     "year": 2007,
     "name": {
-      "en": "Conflict management and prevention in East Timor",
-      "tet": "Jestaun no prevensaun ba konflitu iha Timor-Leste"
+      "tet": "Jestaun no prevensaun ba konflitu iha Timor-Leste",
+      "en": "Conflict management and prevention in East Timor"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1039,12 +1039,12 @@
   "model": "library.resource",
   "pk": 45,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.352Z",
+    "modified": "2017-05-02T06:38:56.705Z",
     "year": 2007,
     "name": {
-      "en": "Women's empowerment programs in East Timor",
-      "tet": "Programa habiit feto sira iha Timor-Leste"
+      "tet": "Programa habiit feto sira iha Timor-Leste",
+      "en": "Women's empowerment programs in East Timor"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1062,13 +1062,13 @@
   "model": "library.resource",
   "pk": 46,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.353Z",
+    "modified": "2017-05-02T06:38:56.706Z",
     "year": 2012,
     "name": {
+      "tet": "Introdusaun ba responsabilidade profision\u00e1l iha Timor-Leste",
       "pt": "Deontologia Profissional em Timor-Leste",
-      "en": "Professional responsibility in Timor-Leste",
-      "tet": "Introdusaun ba responsabilidade profision\u00e1l iha Timor-Leste"
+      "en": "Professional responsibility in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1079,8 +1079,8 @@
     ],
     "organization": [
       2423,
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1088,12 +1088,12 @@
   "model": "library.resource",
   "pk": 47,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.354Z",
+    "modified": "2017-05-02T06:38:56.707Z",
     "year": 2012,
     "name": {
-      "en": "Handbook for legal aid lawyers: A practical guide",
-      "tet": "Manu\u00e1l ba advogadu iha \u00e1rea asist\u00e9nsia leg\u00e1l. Matadalan ba pr\u00e1tika"
+      "tet": "Manu\u00e1l ba advogadu iha \u00e1rea asist\u00e9nsia leg\u00e1l. Matadalan ba pr\u00e1tika",
+      "en": "Handbook for legal aid lawyers: A practical guide"
     },
     "description": {},
     "pubtype": "GDL",
@@ -1103,8 +1103,8 @@
       7
     ],
     "organization": [
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1112,12 +1112,12 @@
   "model": "library.resource",
   "pk": 48,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.355Z",
+    "modified": "2017-05-02T06:38:56.708Z",
     "year": 2012,
     "name": {
-      "en": "Matadalan ba kazu paternidade",
-      "tet": "Matadalan ba kazu paternidade"
+      "tet": "Matadalan ba kazu paternidade",
+      "en": "Matadalan ba kazu paternidade"
     },
     "description": {},
     "pubtype": "GDL",
@@ -1127,8 +1127,8 @@
       7
     ],
     "organization": [
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1136,12 +1136,12 @@
   "model": "library.resource",
   "pk": 49,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.356Z",
+    "modified": "2017-05-02T06:38:56.709Z",
     "year": 2012,
     "name": {
-      "en": "Matadalan be Xefe Suku nia knaar",
-      "tet": "Matadalan be Xefe Suku nia knaar"
+      "tet": "Matadalan be Xefe Suku nia knaar",
+      "en": "Matadalan be Xefe Suku nia knaar"
     },
     "description": {},
     "pubtype": "GDL",
@@ -1152,8 +1152,8 @@
     ],
     "organization": [
       2373,
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1161,12 +1161,12 @@
   "model": "library.resource",
   "pk": 50,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.357Z",
+    "modified": "2017-05-02T06:38:56.710Z",
     "year": 2012,
     "name": {
-      "en": "Matadalan espes\u00edfiku kona-ba kazu div\u00f3rsiu",
-      "tet": "Matadalan espes\u00edfiku kona-ba kazu div\u00f3rsiu"
+      "tet": "Matadalan espes\u00edfiku kona-ba kazu div\u00f3rsiu",
+      "en": "Matadalan espes\u00edfiku kona-ba kazu div\u00f3rsiu"
     },
     "description": {},
     "pubtype": "GDL",
@@ -1176,8 +1176,8 @@
       7
     ],
     "organization": [
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1185,12 +1185,12 @@
   "model": "library.resource",
   "pk": 51,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.358Z",
+    "modified": "2017-05-02T06:38:56.711Z",
     "year": 2012,
     "name": {
-      "en": "Saida mak viol\u00e9nsia dom\u00e9stika?",
-      "tet": "Saida mak viol\u00e9nsia dom\u00e9stika?"
+      "tet": "Saida mak viol\u00e9nsia dom\u00e9stika?",
+      "en": "Saida mak viol\u00e9nsia dom\u00e9stika?"
     },
     "description": {},
     "pubtype": "BRC",
@@ -1200,8 +1200,8 @@
       7
     ],
     "organization": [
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1209,13 +1209,13 @@
   "model": "library.resource",
   "pk": 52,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.359Z",
+    "modified": "2017-05-02T06:38:56.712Z",
     "year": 2013,
     "name": {
+      "tet": "Lei Konstitusion\u00e1l iha Timor-Leste",
       "pt": "Direito Constitucional em Timor-Leste",
-      "en": "Constitutional law in Timor-Leste",
-      "tet": "Lei Konstitusion\u00e1l iha Timor-Leste"
+      "en": "Constitutional law in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1226,8 +1226,8 @@
     ],
     "organization": [
       2423,
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1235,13 +1235,13 @@
   "model": "library.resource",
   "pk": 53,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.360Z",
+    "modified": "2017-05-02T06:38:56.713Z",
     "year": 2013,
     "name": {
+      "tet": "Lei Kontratus iha Timor-Leste",
       "pt": "Direito dos Contratos em Timor-Leste",
-      "en": "Contract law in Timor-Leste",
-      "tet": "Lei Kontratus iha Timor-Leste"
+      "en": "Contract law in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1252,8 +1252,8 @@
     ],
     "organization": [
       2423,
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1261,12 +1261,12 @@
   "model": "library.resource",
   "pk": 54,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.361Z",
+    "modified": "2017-05-02T06:38:56.714Z",
     "year": 2013,
     "name": {
-      "en": "Glos\u00e1riu jur\u00eddiku ba pratikante sira iha Timor-Leste",
-      "tet": "Glos\u00e1riu jur\u00eddiku ba pratikante sira iha Timor-Leste"
+      "tet": "Glos\u00e1riu jur\u00eddiku ba pratikante sira iha Timor-Leste",
+      "en": "Glos\u00e1riu jur\u00eddiku ba pratikante sira iha Timor-Leste"
     },
     "description": {},
     "pubtype": "GLS",
@@ -1276,8 +1276,8 @@
       7
     ],
     "organization": [
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1285,12 +1285,12 @@
   "model": "library.resource",
   "pk": 55,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.362Z",
+    "modified": "2017-05-02T06:38:56.715Z",
     "year": 2013,
     "name": {
-      "en": "Timor Leste Public Opinion Poll - March 2013",
-      "tet": "Timor-Leste Survey Opiniaun P\u00fabliku - Marsu 2013"
+      "tet": "Timor-Leste Survey Opiniaun P\u00fabliku - Marsu 2013",
+      "en": "Timor Leste Public Opinion Poll - March 2013"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1308,12 +1308,12 @@
   "model": "library.resource",
   "pk": 56,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.363Z",
+    "modified": "2017-05-02T06:38:56.716Z",
     "year": 2013,
     "name": {
-      "en": "Timor Leste Public Opinion Poll - September 2013",
-      "tet": "Timor-Leste Survey Opiniaun P\u00fabliku - Setembru 2013"
+      "tet": "Timor-Leste Survey Opiniaun P\u00fabliku - Setembru 2013",
+      "en": "Timor Leste Public Opinion Poll - September 2013"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1331,12 +1331,12 @@
   "model": "library.resource",
   "pk": 57,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.364Z",
+    "modified": "2017-05-02T06:38:56.717Z",
     "year": 2013,
     "name": {
-      "en": "Tara-Bandu ho nia pap\u00e9l ba prevensaun konflitu iha komunidade Timor-Leste",
-      "tet": "Tara-Bandu ho nia pap\u00e9l ba prevensaun konflitu iha komunidade Timor-Leste"
+      "tet": "Tara-Bandu ho nia pap\u00e9l ba prevensaun konflitu iha komunidade Timor-Leste",
+      "en": "Tara-Bandu ho nia pap\u00e9l ba prevensaun konflitu iha komunidade Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1346,9 +1346,9 @@
       14
     ],
     "organization": [
-      906,
-      1116,
       2418,
+      1116,
+      906,
       89
     ]
   }
@@ -1357,12 +1357,12 @@
   "model": "library.resource",
   "pk": 58,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.365Z",
+    "modified": "2017-05-02T06:38:56.718Z",
     "year": 2014,
     "name": {
-      "en": "Community policing in Timor-Leste",
-      "tet": "Polisiamentu Komunit\u00e1ria iha Timor-Leste"
+      "tet": "Polisiamentu Komunit\u00e1ria iha Timor-Leste",
+      "en": "Community policing in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1373,8 +1373,8 @@
     ],
     "organization": [
       2420,
-      906,
-      969
+      969,
+      906
     ]
   }
 },
@@ -1382,12 +1382,12 @@
   "model": "library.resource",
   "pk": 59,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.366Z",
+    "modified": "2017-05-02T06:38:56.719Z",
     "year": 2014,
     "name": {
-      "en": "Timor Leste Public Opinion Poll - March 2014",
-      "tet": "Timor-Leste Survey Opiniaun P\u00fabliku - Marsu 2014"
+      "tet": "Timor-Leste Survey Opiniaun P\u00fabliku - Marsu 2014",
+      "en": "Timor Leste Public Opinion Poll - March 2014"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1405,12 +1405,12 @@
   "model": "library.resource",
   "pk": 60,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.367Z",
+    "modified": "2017-05-02T06:38:56.720Z",
     "year": 2013,
     "name": {
-      "en": "A Survey of Community-Police Perceptions, 2013",
-      "tet": "Levantamentu kona-ba persepsaun pol\u00edsia komunidade iha Timor-Leste 2013"
+      "tet": "Levantamentu kona-ba persepsaun pol\u00edsia komunidade iha Timor-Leste 2013",
+      "en": "A Survey of Community-Police Perceptions, 2013"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1429,12 +1429,12 @@
   "model": "library.resource",
   "pk": 61,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.368Z",
+    "modified": "2017-05-02T06:38:56.721Z",
     "year": 2014,
     "name": {
-      "en": "In Focus: Community-Police cooperation",
-      "tet": "Iha Foku: Kooperasaun Komunidade no Pol\u00edsia"
+      "tet": "Iha Foku: Kooperasaun Komunidade no Pol\u00edsia",
+      "en": "In Focus: Community-Police cooperation"
     },
     "description": {},
     "pubtype": "BRF",
@@ -1452,12 +1452,12 @@
   "model": "library.resource",
   "pk": 62,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.369Z",
+    "modified": "2017-05-02T06:38:56.722Z",
     "year": 2014,
     "name": {
-      "en": "In Focus: Justice-seeking behavior",
-      "tet": "Iha Foku: Lala\u2019ok buka justisa"
+      "tet": "Iha Foku: Lala\u2019ok buka justisa",
+      "en": "In Focus: Justice-seeking behavior"
     },
     "description": {},
     "pubtype": "BRF",
@@ -1475,12 +1475,12 @@
   "model": "library.resource",
   "pk": 63,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.370Z",
+    "modified": "2017-05-02T06:38:56.723Z",
     "year": 2014,
     "name": {
-      "en": "In Focus: PNTL background and performance",
-      "tet": "Iha Foku: Antesed\u00e9nsia & Dezenpe\u00f1u PNTL nian"
+      "tet": "Iha Foku: Antesed\u00e9nsia & Dezenpe\u00f1u PNTL nian",
+      "en": "In Focus: PNTL background and performance"
     },
     "description": {},
     "pubtype": "BRF",
@@ -1498,12 +1498,12 @@
   "model": "library.resource",
   "pk": 64,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.371Z",
+    "modified": "2017-05-02T06:38:56.724Z",
     "year": 2014,
     "name": {
-      "en": "In Focus: Security Situation",
-      "tet": "Iha Foku: Situasaun Seguransa"
+      "tet": "Iha Foku: Situasaun Seguransa",
+      "en": "In Focus: Security Situation"
     },
     "description": {},
     "pubtype": "BRF",
@@ -1521,16 +1521,16 @@
   "model": "library.resource",
   "pk": 65,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.372Z",
+    "modified": "2017-05-02T06:38:56.725Z",
     "year": 0,
     "name": {
-      "en": "Belun EWER Situation Review",
-      "tet": "ATRES Revista Situasaun"
+      "tet": "ATRES Revista Situasaun",
+      "en": "Belun EWER Situation Review"
     },
     "description": {
-      "en": "Belun EWER Situation Review",
-      "tet": "ATRES Revista Situasaun"
+      "tet": "ATRES Revista Situasaun",
+      "en": "Belun EWER Situation Review"
     },
     "pubtype": "RPR",
     "cover": "",
@@ -1545,12 +1545,12 @@
   "model": "library.resource",
   "pk": 66,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.373Z",
+    "modified": "2017-05-02T06:38:56.726Z",
     "year": 0,
     "name": {
-      "en": "Belun Trimester Report",
-      "tet": "Relatoriu Trimestral"
+      "tet": "Relatoriu Trimestral",
+      "en": "Belun Trimester Report"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1566,12 +1566,12 @@
   "model": "library.resource",
   "pk": 67,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.374Z",
+    "modified": "2017-05-02T06:38:56.727Z",
     "year": 0,
     "name": {
-      "en": "Alerts from Early Warning, Early Response (EWER)",
-      "tet": "Alerta husi Sistema Atensaun no Responde Sedu (AtRes)"
+      "tet": "Alerta husi Sistema Atensaun no Responde Sedu (AtRes)",
+      "en": "Alerts from Early Warning, Early Response (EWER)"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1587,12 +1587,12 @@
   "model": "library.resource",
   "pk": 68,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.375Z",
+    "modified": "2017-05-02T06:38:56.728Z",
     "year": null,
     "name": {
-      "en": "Policy brief (EWER)",
-      "tet": "Relatoriu politika (AtRes)"
+      "tet": "Relatoriu politika (AtRes)",
+      "en": "Policy brief (EWER)"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1608,8 +1608,8 @@
   "model": "library.resource",
   "pk": 69,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.376Z",
+    "modified": "2017-05-02T06:38:56.729Z",
     "year": 2009,
     "name": {
       "en": "Arte futus nian husi naroman ba nakukun"
@@ -1628,8 +1628,8 @@
   "model": "library.resource",
   "pk": 70,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.377Z",
+    "modified": "2017-05-02T06:38:56.730Z",
     "year": 2011,
     "name": {
       "en": "Regional Fisheries Livelihoods Programme"
@@ -1648,8 +1648,8 @@
   "model": "library.resource",
   "pk": 71,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.378Z",
+    "modified": "2017-05-02T06:38:56.731Z",
     "year": 2013,
     "name": {
       "en": "Country Gender Assessment"
@@ -1663,8 +1663,8 @@
     ],
     "organization": [
       2406,
-      961,
-      1033
+      1033,
+      961
     ]
   }
 },
@@ -1672,12 +1672,12 @@
   "model": "library.resource",
   "pk": 72,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.379Z",
+    "modified": "2017-05-02T06:38:56.732Z",
     "year": 2012,
     "name": {
-      "en": "Approaches to domestic violence against women in Timor-Leste. A review and critique",
-      "tet": "Abordajen ba Viol\u00eansia Dom\u00e9stika hasoru Feto iha Timor-Leste: Revizaun ho Kr\u00edtika hosi Literatura"
+      "tet": "Abordajen ba Viol\u00eansia Dom\u00e9stika hasoru Feto iha Timor-Leste: Revizaun ho Kr\u00edtika hosi Literatura",
+      "en": "Approaches to domestic violence against women in Timor-Leste. A review and critique"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1688,8 +1688,8 @@
     ],
     "organization": [
       2431,
-      966,
-      2386
+      2386,
+      966
     ]
   }
 },
@@ -1697,8 +1697,8 @@
   "model": "library.resource",
   "pk": 73,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.380Z",
+    "modified": "2017-05-02T06:38:56.733Z",
     "year": 2011,
     "name": {
       "en": "Matenek Lokal Timor Nian Haktuir husi workshop Matenek Tradisional Riku soin ba Dezenvolvimentu, Dili, 7-8 Junhu 2011"
@@ -1717,8 +1717,8 @@
   "model": "library.resource",
   "pk": 74,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.381Z",
+    "modified": "2017-05-02T06:38:56.734Z",
     "year": 2006,
     "name": {
       "en": "Migration patterns survey and HIV vulnerability assessment mapping in selected districts of Timor-Leste"
@@ -1732,8 +1732,8 @@
       18
     ],
     "organization": [
-      631,
-      2403
+      2403,
+      631
     ]
   }
 },
@@ -1741,12 +1741,12 @@
   "model": "library.resource",
   "pk": 75,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.382Z",
+    "modified": "2017-05-02T06:38:56.735Z",
     "year": 2012,
     "name": {
-      "en": "Guide to facilitating dialogue and mediation in the community",
-      "tet": "Mata dalan fasilitasaun di\u00e1logu no mediasaun komunit\u00e1ria"
+      "tet": "Mata dalan fasilitasaun di\u00e1logu no mediasaun komunit\u00e1ria",
+      "en": "Guide to facilitating dialogue and mediation in the community"
     },
     "description": {},
     "pubtype": "RPR",
@@ -1757,8 +1757,8 @@
     ],
     "organization": [
       2415,
-      966,
-      2373
+      2373,
+      966
     ]
   }
 },
@@ -1766,8 +1766,8 @@
   "model": "library.resource",
   "pk": 76,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.383Z",
+    "modified": "2017-05-02T06:38:56.736Z",
     "year": 2000,
     "name": {
       "en": "Teaching Free Timor"
@@ -1786,8 +1786,8 @@
   "model": "library.resource",
   "pk": 78,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.385Z",
+    "modified": "2017-05-02T06:38:56.738Z",
     "year": 2012,
     "name": {
       "en": "Safety at sea assessment in Timor-Leste small-scale fisheries sector"
@@ -1803,10 +1803,10 @@
       21
     ],
     "organization": [
-      1167,
-      299,
+      2441,
       2426,
-      2441
+      1167,
+      299
     ]
   }
 },
@@ -1814,8 +1814,8 @@
   "model": "library.resource",
   "pk": 79,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.386Z",
+    "modified": "2017-05-02T06:38:56.739Z",
     "year": 2012,
     "name": {
       "en": "A visual guide of key findings from the baseline survey of the Regional Fisheries Livelihoods Programme for South and Southeast Asia (RFLP) in Timor Leste"
@@ -1829,8 +1829,8 @@
       25
     ],
     "organization": [
-      299,
-      2426
+      2426,
+      299
     ]
   }
 },
@@ -1838,8 +1838,8 @@
   "model": "library.resource",
   "pk": 80,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.387Z",
+    "modified": "2017-05-02T06:38:56.740Z",
     "year": 2013,
     "name": {
       "en": "Community based data gathering and co-management of marine resources in Timor-Leste"
@@ -1857,8 +1857,8 @@
       26
     ],
     "organization": [
-      299,
-      2426
+      2426,
+      299
     ]
   }
 },
@@ -1866,8 +1866,8 @@
   "model": "library.resource",
   "pk": 81,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.388Z",
+    "modified": "2017-05-02T06:38:56.741Z",
     "year": 2007,
     "name": {
       "en": "FAO/WFP Crop and food supply assessment mission"
@@ -1881,8 +1881,8 @@
       31
     ],
     "organization": [
-      299,
-      986
+      986,
+      299
     ]
   }
 },
@@ -1890,8 +1890,8 @@
   "model": "library.resource",
   "pk": 82,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.389Z",
+    "modified": "2017-05-02T06:38:56.742Z",
     "year": 2014,
     "name": {
       "en": "Local and indigenous knowledge for community resilience"
@@ -1910,8 +1910,8 @@
   "model": "library.resource",
   "pk": 84,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.391Z",
+    "modified": "2017-05-02T06:38:56.744Z",
     "year": 2006,
     "name": {
       "en": "Timor-Leste special edition, January 2006"
@@ -1932,8 +1932,8 @@
   "model": "library.resource",
   "pk": 85,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.392Z",
+    "modified": "2017-05-02T06:38:56.745Z",
     "year": 2014,
     "name": {
       "en": "ILO Timor-Leste newsletter, April 2004"
@@ -1954,8 +1954,8 @@
   "model": "library.resource",
   "pk": 86,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.393Z",
+    "modified": "2017-05-02T06:38:56.746Z",
     "year": 2014,
     "name": {
       "en": "ILO works in Timor-Leste: 2013 results"
@@ -1976,12 +1976,12 @@
   "model": "library.resource",
   "pk": 87,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.394Z",
+    "modified": "2017-05-02T06:38:56.747Z",
     "year": 2007,
     "name": {
-      "en": "Rapid assessment on child labour in Timor-Leste",
-      "tet": "Estudu sum\u00e1riu kona-ba servicu labarik iha Timor-Leste"
+      "tet": "Estudu sum\u00e1riu kona-ba servicu labarik iha Timor-Leste",
+      "en": "Rapid assessment on child labour in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -2000,13 +2000,13 @@
   "model": "library.resource",
   "pk": 88,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.395Z",
+    "modified": "2017-05-02T06:38:56.748Z",
     "year": 2009,
     "name": {
+      "tet": " Planu Asaun Nasional Empregu ba Foin-sa'e sira",
       "pt": "Plano de Ac\u00e7\u00e3o Nacional para o Emprego dos Jovens. ",
-      "en": "Timor-Leste national youth employment action plan (NYEAP) 2009",
-      "tet": " Planu Asaun Nasional Empregu ba Foin-sa'e sira"
+      "en": "Timor-Leste national youth employment action plan (NYEAP) 2009"
     },
     "description": {},
     "pubtype": "RPR",
@@ -2028,8 +2028,8 @@
   "model": "library.resource",
   "pk": 89,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.396Z",
+    "modified": "2017-05-02T06:38:56.749Z",
     "year": 2012,
     "name": {
       "en": "Report on value change analysis of the cattle sector in Bobonaro and Lautem districts, Timor-Leste"
@@ -2042,11 +2042,11 @@
       34
     ],
     "organization": [
-      2373,
       2411,
-      629,
       2379,
-      640
+      2373,
+      640,
+      629
     ]
   }
 },
@@ -2054,8 +2054,8 @@
   "model": "library.resource",
   "pk": 90,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.397Z",
+    "modified": "2017-05-02T06:38:56.750Z",
     "year": 2009,
     "name": {
       "en": "Decent work country programme"
@@ -2069,8 +2069,8 @@
       36
     ],
     "organization": [
-      629,
-      2373
+      2373,
+      629
     ]
   }
 },
@@ -2078,8 +2078,8 @@
   "model": "library.resource",
   "pk": 91,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.398Z",
+    "modified": "2017-05-02T06:38:56.751Z",
     "year": 2008,
     "name": {
       "en": "Timor-Leste key labour market indicators December 2008"
@@ -2093,8 +2093,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2102,8 +2102,8 @@
   "model": "library.resource",
   "pk": 92,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.399Z",
+    "modified": "2017-05-02T06:38:56.752Z",
     "year": 2008,
     "name": {
       "en": "Timor-Leste national employment strategy December 2008"
@@ -2117,8 +2117,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2126,8 +2126,8 @@
   "model": "library.resource",
   "pk": 93,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.400Z",
+    "modified": "2017-05-02T06:38:56.753Z",
     "year": 2009,
     "name": {
       "en": "Employment-intensive infrastructure works (TIM-Works) in Timor-Leste"
@@ -2141,8 +2141,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2150,8 +2150,8 @@
   "model": "library.resource",
   "pk": 94,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.401Z",
+    "modified": "2017-05-02T06:38:56.754Z",
     "year": 2009,
     "name": {
       "en": "Enterpreneurship Education"
@@ -2165,8 +2165,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2174,8 +2174,8 @@
   "model": "library.resource",
   "pk": 95,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.402Z",
+    "modified": "2017-05-02T06:38:56.755Z",
     "year": 2009,
     "name": {
       "en": "Fact sheet on labour market information (LMI) project in Timor-Leste"
@@ -2189,8 +2189,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2198,8 +2198,8 @@
   "model": "library.resource",
   "pk": 96,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.403Z",
+    "modified": "2017-05-02T06:38:56.756Z",
     "year": 2009,
     "name": {
       "en": "Self employment promotion and enterprise development in Timor-Leste"
@@ -2213,8 +2213,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2222,8 +2222,8 @@
   "model": "library.resource",
   "pk": 97,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.404Z",
+    "modified": "2017-05-02T06:38:56.757Z",
     "year": 2009,
     "name": {
       "en": "Youth employment creation through self-employment promotion and micro and small enterprise development in Timor -Leste rural areas"
@@ -2237,8 +2237,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2246,8 +2246,8 @@
   "model": "library.resource",
   "pk": 98,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.405Z",
+    "modified": "2017-05-02T06:38:56.758Z",
     "year": 2009,
     "name": {
       "en": "Youth employment in Timor-Leste"
@@ -2261,8 +2261,8 @@
       35
     ],
     "organization": [
-      629,
-      2413
+      2413,
+      629
     ]
   }
 },
@@ -2270,8 +2270,8 @@
   "model": "library.resource",
   "pk": 99,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.406Z",
+    "modified": "2017-05-02T06:38:56.759Z",
     "year": 2008,
     "name": {
       "en": "Gender dimensions in vocational training in Timor-Leste"
@@ -2285,11 +2285,11 @@
       35
     ],
     "organization": [
-      2398,
       2413,
       2405,
-      629,
-      966
+      2398,
+      966,
+      629
     ]
   }
 },
@@ -2297,8 +2297,8 @@
   "model": "library.resource",
   "pk": 100,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.407Z",
+    "modified": "2017-05-02T06:38:56.760Z",
     "year": 2007,
     "name": {
       "en": "Yes Youth Employment Study Timor-Leste 2007"
@@ -2311,10 +2311,10 @@
       34
     ],
     "organization": [
-      1030,
-      629,
       2405,
+      1030,
       966,
+      629,
       538
     ]
   }
@@ -2323,8 +2323,8 @@
   "model": "library.resource",
   "pk": 101,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.408Z",
+    "modified": "2017-05-02T06:38:56.761Z",
     "year": 2008,
     "name": {
       "en": "IOM Community Based Data Collect and Analysis for Sustainable Return: July-August 2008 results"
@@ -2345,8 +2345,8 @@
   "model": "library.resource",
   "pk": 102,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.409Z",
+    "modified": "2017-05-02T06:38:56.762Z",
     "year": 2008,
     "name": {
       "en": "IOM October- November 2008 Monitoring  Report: Community and IDP Survey"
@@ -2367,8 +2367,8 @@
   "model": "library.resource",
   "pk": 103,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.410Z",
+    "modified": "2017-05-02T06:38:56.763Z",
     "year": 2008,
     "name": {
       "en": "IOM September-November 2008 Monitoring Report, Chefe Aldeias Surveys"
@@ -2389,8 +2389,8 @@
   "model": "library.resource",
   "pk": 104,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.411Z",
+    "modified": "2017-05-02T06:38:56.764Z",
     "year": 2008,
     "name": {
       "en": "Revised Methodology for Return Monitoring Survey"
@@ -2411,8 +2411,8 @@
   "model": "library.resource",
   "pk": 105,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.412Z",
+    "modified": "2017-05-02T06:38:56.765Z",
     "year": 2009,
     "name": {
       "en": "IOM December 2008 - February 2009 Monitoring report: Chefes Aldeias Surveys"
@@ -2433,8 +2433,8 @@
   "model": "library.resource",
   "pk": 106,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.413Z",
+    "modified": "2017-05-02T06:38:56.766Z",
     "year": 2009,
     "name": {
       "en": "IOM Return Monitoring Report: Community and Former IDP Household Surveys"
@@ -2455,8 +2455,8 @@
   "model": "library.resource",
   "pk": 107,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.414Z",
+    "modified": "2017-05-02T06:38:56.767Z",
     "year": 2009,
     "name": {
       "en": "Returned, Resettled, Redisplaced Families by Suco 2006-2009: Chefes de Aldeais "
@@ -2477,8 +2477,8 @@
   "model": "library.resource",
   "pk": 108,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.415Z",
+    "modified": "2017-05-02T06:38:56.768Z",
     "year": 2013,
     "name": {
       "en": "IOM Timor-Leste Strategic Plan 2011-2013 "
@@ -2499,8 +2499,8 @@
   "model": "library.resource",
   "pk": 109,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.416Z",
+    "modified": "2017-05-02T06:38:56.769Z",
     "year": 2008,
     "name": {
       "en": "Potential for small area estimation and poverty mapping in Timor-Leste"
@@ -2514,8 +2514,8 @@
       38
     ],
     "organization": [
-      986,
-      2416
+      2416,
+      986
     ]
   }
 },
@@ -2523,8 +2523,8 @@
   "model": "library.resource",
   "pk": 110,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.417Z",
+    "modified": "2017-05-02T06:38:56.770Z",
     "year": 2012,
     "name": {
       "en": "MDG Achievement Fund Final Evaluation Timor-Leste"
@@ -2545,8 +2545,8 @@
   "model": "library.resource",
   "pk": 111,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.418Z",
+    "modified": "2017-05-02T06:38:56.771Z",
     "year": 2014,
     "name": {
       "en": "Mapping of migration data sources iin Timor-Leste"
@@ -2559,12 +2559,12 @@
       41
     ],
     "organization": [
-      1116,
-      2393,
-      631,
       2422,
       2402,
-      1025
+      2393,
+      1116,
+      1025,
+      631
     ]
   }
 },
@@ -2572,13 +2572,13 @@
   "model": "library.resource",
   "pk": 112,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.419Z",
+    "modified": "2017-05-02T06:38:56.772Z",
     "year": 2013,
     "name": {
+      "tet": "Novo pa\u00eds, novas necessidades, novas respostas: A migra\u00e7\u00e3o irregular de trabalhadores em Timor-Leste",
       "pt": "Um pa\u00eds em movimento: Perfil das migra\u00e7\u00f5es internas em Timor-Leste",
-      "en": "New country, new needs, new responses: Irregular labour migration to Timor-Leste",
-      "tet": "Novo pa\u00eds, novas necessidades, novas respostas: A migra\u00e7\u00e3o irregular de trabalhadores em Timor-Leste"
+      "en": "New country, new needs, new responses: Irregular labour migration to Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -2589,14 +2589,14 @@
       42
     ],
     "organization": [
-      1116,
-      2393,
-      631,
       2422,
       2417,
-      2377,
       2402,
-      1025
+      2393,
+      2377,
+      1116,
+      1025,
+      631
     ]
   }
 },
@@ -2604,8 +2604,8 @@
   "model": "library.resource",
   "pk": 113,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.420Z",
+    "modified": "2017-05-02T06:38:56.773Z",
     "year": 2011,
     "name": {
       "en": "Timor-Leste strategic development plan 2011-2030"
@@ -2624,8 +2624,8 @@
   "model": "library.resource",
   "pk": 114,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.421Z",
+    "modified": "2017-05-02T06:38:56.774Z",
     "year": 2010,
     "name": {
       "en": "RDTL Millennium development goals"
@@ -2644,13 +2644,13 @@
   "model": "library.resource",
   "pk": 115,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.422Z",
+    "modified": "2017-05-02T06:38:56.775Z",
     "year": 2010,
     "name": {
+      "tet": "Set\u00f3r justisa planu estrat\u00e9jiku ba Timor-Leste 2011-2030",
       "pt": "Setor da justi\u00e7a plano estrat\u00e9gico para Timor-Leste 2011-2030",
-      "en": "Justice sector strategic plan for Timor-Leste 2011-2030",
-      "tet": "Set\u00f3r justisa planu estrat\u00e9jiku ba Timor-Leste 2011-2030"
+      "en": "Justice sector strategic plan for Timor-Leste 2011-2030"
     },
     "description": {},
     "pubtype": "RPR",
@@ -2660,8 +2660,8 @@
       36
     ],
     "organization": [
-      966,
-      2373
+      2373,
+      966
     ]
   }
 },
@@ -2669,8 +2669,8 @@
   "model": "library.resource",
   "pk": 116,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.423Z",
+    "modified": "2017-05-02T06:38:56.776Z",
     "year": 2010,
     "name": {
       "en": "Timor-Leste labour force survey"
@@ -2691,8 +2691,8 @@
   "model": "library.resource",
   "pk": 117,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.424Z",
+    "modified": "2017-05-02T06:38:56.777Z",
     "year": 2011,
     "name": {
       "en": "UNCDF special projects implementation review exercise (SPIRE)"
@@ -2714,8 +2714,8 @@
   "model": "library.resource",
   "pk": 118,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.425Z",
+    "modified": "2017-05-02T06:38:56.778Z",
     "year": 2007,
     "name": {
       "en": " Local governance support programme Timor-Leste"
@@ -2734,8 +2734,8 @@
   "model": "library.resource",
   "pk": 119,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.426Z",
+    "modified": "2017-05-02T06:38:56.779Z",
     "year": 2008,
     "name": {
       "en": "INFUSE"
@@ -2754,8 +2754,8 @@
   "model": "library.resource",
   "pk": 120,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.427Z",
+    "modified": "2017-05-02T06:38:56.780Z",
     "year": 2010,
     "name": {
       "en": "Mid-term evaluation. Local government support programme (LGSP). Volume 1: Main report"
@@ -2770,8 +2770,8 @@
       48
     ],
     "organization": [
-      949,
-      2401
+      2401,
+      949
     ]
   }
 },
@@ -2779,8 +2779,8 @@
   "model": "library.resource",
   "pk": 121,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.428Z",
+    "modified": "2017-05-02T06:38:56.781Z",
     "year": 2014,
     "name": {
       "en": "Consolidated annual report on activities implemented under the joint programme \"Local Governance Support\" (LGSP) in Timor-Leste"
@@ -2794,8 +2794,8 @@
       50
     ],
     "organization": [
-      949,
-      966
+      966,
+      949
     ]
   }
 },
@@ -2803,8 +2803,8 @@
   "model": "library.resource",
   "pk": 122,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.429Z",
+    "modified": "2017-05-02T06:38:56.782Z",
     "year": 2002,
     "name": {
       "en": "East Timor Development Report"
@@ -2823,8 +2823,8 @@
   "model": "library.resource",
   "pk": 123,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.430Z",
+    "modified": "2017-05-02T06:38:56.783Z",
     "year": 2006,
     "name": {
       "en": "Human Development Report Timor-Leste"
@@ -2843,12 +2843,12 @@
   "model": "library.resource",
   "pk": 124,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.431Z",
+    "modified": "2017-05-02T06:38:56.784Z",
     "year": 2013,
     "name": {
-      "en": "Breaking the cycle of domestic violence in Timor-Leste",
-      "tet": "Hafahe siklu viol\u00e9nsia dom\u00e9stika iha Timor-Leste"
+      "tet": "Hafahe siklu viol\u00e9nsia dom\u00e9stika iha Timor-Leste",
+      "en": "Breaking the cycle of domestic violence in Timor-Leste"
     },
     "description": {},
     "pubtype": "RPR",
@@ -2866,8 +2866,8 @@
   "model": "library.resource",
   "pk": 125,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.432Z",
+    "modified": "2017-05-02T06:38:56.785Z",
     "year": 2014,
     "name": {
       "en": "Assessment of development result: Evaluation of UNDP contribution to Timor-Leste"
@@ -2888,8 +2888,8 @@
   "model": "library.resource",
   "pk": 126,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.433Z",
+    "modified": "2017-05-02T06:38:56.786Z",
     "year": 2011,
     "name": {
       "en": "The national biodiversity strategy and action plan of Timor-Leste (2011-2020)"
@@ -2902,8 +2902,8 @@
       36
     ],
     "organization": [
-      966,
-      2373
+      2373,
+      966
     ]
   }
 },
@@ -2911,8 +2911,8 @@
   "model": "library.resource",
   "pk": 127,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.434Z",
+    "modified": "2017-05-02T06:38:56.787Z",
     "year": 2011,
     "name": {
       "en": "Timor-Leste's  fourth national report to the UN convention on biological diversity"
@@ -2925,8 +2925,8 @@
       36
     ],
     "organization": [
-      966,
-      2373
+      2373,
+      966
     ]
   }
 },
@@ -2934,8 +2934,8 @@
   "model": "library.resource",
   "pk": 128,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.435Z",
+    "modified": "2017-05-02T06:38:56.788Z",
     "year": 2012,
     "name": {
       "en": "Summary Report. Consultation on post 2015-MDG in Timor-Leste "
@@ -2949,8 +2949,8 @@
       50
     ],
     "organization": [
-      966,
-      2373
+      2373,
+      966
     ]
   }
 },
@@ -2958,8 +2958,8 @@
   "model": "library.resource",
   "pk": 129,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.436Z",
+    "modified": "2017-05-02T06:38:56.789Z",
     "year": 2004,
     "name": {
       "en": "Timor-Leste millennium development goals report"
@@ -2973,8 +2973,8 @@
       50
     ],
     "organization": [
-      966,
-      2373
+      2373,
+      966
     ]
   }
 },
@@ -2982,8 +2982,8 @@
   "model": "library.resource",
   "pk": 130,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.437Z",
+    "modified": "2017-05-02T06:38:56.790Z",
     "year": 2009,
     "name": {
       "en": "The Millennium Development Goals, Timor-Leste"
@@ -2997,8 +2997,8 @@
       50
     ],
     "organization": [
-      966,
-      2373
+      2373,
+      966
     ]
   }
 },
@@ -3006,8 +3006,8 @@
   "model": "library.resource",
   "pk": 131,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.438Z",
+    "modified": "2017-05-02T06:38:56.791Z",
     "year": 2010,
     "name": {
       "en": "National adaptation program of action on climate change"
@@ -3020,9 +3020,9 @@
       36
     ],
     "organization": [
-      966,
+      2396,
       2373,
-      2396
+      966
     ]
   }
 },
@@ -3030,8 +3030,8 @@
   "model": "library.resource",
   "pk": 132,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.439Z",
+    "modified": "2017-05-02T06:38:56.792Z",
     "year": 2014,
     "name": {
       "en": "Sub-national governance and development programme"
@@ -3044,9 +3044,9 @@
       50
     ],
     "organization": [
-      949,
+      2373,
       966,
-      2373
+      949
     ]
   }
 },
@@ -3054,8 +3054,8 @@
   "model": "library.resource",
   "pk": 133,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.440Z",
+    "modified": "2017-05-02T06:38:56.793Z",
     "year": 2003,
     "name": {
       "en": "A role for keeping places in the Timor Sea region"
@@ -3076,8 +3076,8 @@
   "model": "library.resource",
   "pk": 134,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.441Z",
+    "modified": "2017-05-02T06:38:56.794Z",
     "year": 2011,
     "name": {
       "en": "Assessment of media development in Timor-Leste based on UNESCO's media development indicators"
@@ -3098,8 +3098,8 @@
   "model": "library.resource",
   "pk": 135,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.442Z",
+    "modified": "2017-05-02T06:38:56.795Z",
     "year": 2004,
     "name": {
       "en": "Learning independence: education in emergency and transition in Timor-Leste since 1999"
@@ -3120,8 +3120,8 @@
   "model": "library.resource",
   "pk": 136,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.443Z",
+    "modified": "2017-05-02T06:38:56.796Z",
     "year": 2000,
     "name": {
       "en": "No surrender in East Timor. Choosing the truth instead of sides"
@@ -3140,8 +3140,8 @@
   "model": "library.resource",
   "pk": 137,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.444Z",
+    "modified": "2017-05-02T06:38:56.797Z",
     "year": 2010,
     "name": {
       "en": "UNESCO Office Jakarta: Regional Science Bureau for Asia & Pacific, Cluster Office to Brunei Darussalam, Indonesia, Malaysia, Philippines, Timor-Leste"
@@ -3162,8 +3162,8 @@
   "model": "library.resource",
   "pk": 138,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.445Z",
+    "modified": "2017-05-02T06:38:56.798Z",
     "year": 2011,
     "name": {
       "en": "Education for sustainable development country guidelines"
@@ -3182,8 +3182,8 @@
   "model": "library.resource",
   "pk": 139,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.446Z",
+    "modified": "2017-05-02T06:38:56.799Z",
     "year": 2011,
     "name": {
       "en": "Final report UNESCO JFIT STRESCOM regional workshop.pdf"
@@ -3202,8 +3202,8 @@
   "model": "library.resource",
   "pk": 140,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.447Z",
+    "modified": "2017-05-02T06:38:56.800Z",
     "year": 2011,
     "name": {
       "en": "Human rights protections for sexual minorities in insular Southeast Asia: issues and implications for effective HIV prevention"
@@ -3224,8 +3224,8 @@
   "model": "library.resource",
   "pk": 141,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.448Z",
+    "modified": "2017-05-02T06:38:56.801Z",
     "year": 2011,
     "name": {
       "en": "Promoting sub-regional education for sustainable development in South-East Asia"
@@ -3246,8 +3246,8 @@
   "model": "library.resource",
   "pk": 142,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.449Z",
+    "modified": "2017-05-02T06:38:56.802Z",
     "year": 2011,
     "name": {
       "en": "UNESCO Timor Leste newsletter, volume 2, issue 1, April 2011"
@@ -3268,8 +3268,8 @@
   "model": "library.resource",
   "pk": 143,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.450Z",
+    "modified": "2017-05-02T06:38:56.803Z",
     "year": 2011,
     "name": {
       "en": "UNESCO Timor Leste newsletter, volume 2, issue 3, June 2011"
@@ -3290,8 +3290,8 @@
   "model": "library.resource",
   "pk": 144,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.451Z",
+    "modified": "2017-05-02T06:38:56.804Z",
     "year": 2011,
     "name": {
       "en": "UNESCO Timor Leste newsletter, volume 2, no. 4., July-Oct 2011"
@@ -3312,8 +3312,8 @@
   "model": "library.resource",
   "pk": 145,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.452Z",
+    "modified": "2017-05-02T06:38:56.805Z",
     "year": 2013,
     "name": {
       "en": "UNESCO Timor-Leste Newsletter, year 3, issue 1, March 2013"
@@ -3334,12 +3334,12 @@
   "model": "library.resource",
   "pk": 146,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.453Z",
+    "modified": "2017-05-02T06:38:56.806Z",
     "year": 2011,
     "name": {
-      "en": "Habiit Reziliensia Komunidade iha Tasi-ibun no Illa Ki'ik sira hodi hasoru Perigu Idrometeorol\u00f3jiku no Impaktu Mudansa Klima nian",
-      "tet": "Habiit Reziliensia Komunidade iha Tasi-ibun no Illa Ki'ik sira hodi hasoru Perigu Idrometeorol\u00f3jiku no Impaktu Mudansa Klima nian"
+      "tet": "Habiit Reziliensia Komunidade iha Tasi-ibun no Illa Ki'ik sira hodi hasoru Perigu Idrometeorol\u00f3jiku no Impaktu Mudansa Klima nian",
+      "en": "Habiit Reziliensia Komunidade iha Tasi-ibun no Illa Ki'ik sira hodi hasoru Perigu Idrometeorol\u00f3jiku no Impaktu Mudansa Klima nian"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3357,12 +3357,12 @@
   "model": "library.resource",
   "pk": 147,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.454Z",
+    "modified": "2017-05-02T06:38:56.807Z",
     "year": 2013,
     "name": {
-      "en": "Revitalizing community traditional knowledge for sustainable livelihoods: fishing method",
-      "tet": "Hamoris fali komunidade nia matenek tradision\u00e1l ba moris ne'eb\u00e9 sustent\u00e1vel: m\u00e9todu peska"
+      "tet": "Hamoris fali komunidade nia matenek tradision\u00e1l ba moris ne'eb\u00e9 sustent\u00e1vel: m\u00e9todu peska",
+      "en": "Revitalizing community traditional knowledge for sustainable livelihoods: fishing method"
     },
     "description": {},
     "pubtype": "PST",
@@ -3380,12 +3380,12 @@
   "model": "library.resource",
   "pk": 148,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.455Z",
+    "modified": "2017-05-02T06:38:56.808Z",
     "year": 2013,
     "name": {
-      "en": "Hamoris fali komunidade nia matenek tradision\u00e1l",
-      "tet": "Hamoris fali komunidade nia matenek tradision\u00e1l"
+      "tet": "Hamoris fali komunidade nia matenek tradision\u00e1l",
+      "en": "Hamoris fali komunidade nia matenek tradision\u00e1l"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3401,12 +3401,12 @@
   "model": "library.resource",
   "pk": 149,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.456Z",
+    "modified": "2017-05-02T06:38:56.809Z",
     "year": 2013,
     "name": {
-      "en": "Serim\u00f3nia dada r\u00f3 no haree bubur",
-      "tet": "Serim\u00f3nia dada r\u00f3 no haree bubur"
+      "tet": "Serim\u00f3nia dada r\u00f3 no haree bubur",
+      "en": "Serim\u00f3nia dada r\u00f3 no haree bubur"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3422,8 +3422,8 @@
   "model": "library.resource",
   "pk": 150,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.457Z",
+    "modified": "2017-05-02T06:38:56.810Z",
     "year": 2011,
     "name": {
       "en": "Local knowledge of Timor, based on the national workshop on Promoting LINKS and SIDS Programmes in Timor Leste, Dili, Timor Leste, 7-8 June 2011"
@@ -3436,8 +3436,8 @@
       56
     ],
     "organization": [
-      545,
-      1026
+      1026,
+      545
     ]
   }
 },
@@ -3445,8 +3445,8 @@
   "model": "library.resource",
   "pk": 151,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.458Z",
+    "modified": "2017-05-02T06:38:56.811Z",
     "year": 2013,
     "name": {
       "en": "Effective literacy practices in Timor-Leste"
@@ -3461,8 +3461,8 @@
       59
     ],
     "organization": [
-      1026,
-      2409
+      2409,
+      1026
     ]
   }
 },
@@ -3470,12 +3470,12 @@
   "model": "library.resource",
   "pk": 152,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.459Z",
+    "modified": "2017-05-02T06:38:56.812Z",
     "year": 2004,
     "name": {
-      "en": "Obstacles to the effective participation of women in adult education program: focus on social-cultural factors",
-      "tet": " Timor Leste"
+      "tet": " Timor Leste",
+      "en": "Obstacles to the effective participation of women in adult education program: focus on social-cultural factors"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3485,8 +3485,8 @@
       55
     ],
     "organization": [
-      802,
-      1026
+      1026,
+      802
     ]
   }
 },
@@ -3494,8 +3494,8 @@
   "model": "library.resource",
   "pk": 153,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.460Z",
+    "modified": "2017-05-02T06:38:56.813Z",
     "year": 2009,
     "name": {
       "en": "Timor-Leste: UNESCO country programming document 2009-2013"
@@ -3508,8 +3508,8 @@
       55
     ],
     "organization": [
-      1026,
-      2373
+      2373,
+      1026
     ]
   }
 },
@@ -3517,8 +3517,8 @@
   "model": "library.resource",
   "pk": 154,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.461Z",
+    "modified": "2017-05-02T06:38:56.814Z",
     "year": 2014,
     "name": {
       "en": "Timor-Leste UNESCO country programming document, 2013-2014"
@@ -3531,8 +3531,8 @@
       55
     ],
     "organization": [
-      1026,
-      2373
+      2373,
+      1026
     ]
   }
 },
@@ -3540,12 +3540,12 @@
   "model": "library.resource",
   "pk": 155,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.462Z",
+    "modified": "2017-05-02T06:38:56.815Z",
     "year": 2013,
     "name": {
-      "en": "Safeguarding our traditional ecological knowledge related to coastal ecosystem",
-      "tet": "Kaer metin ita-nia matenek ekol\u00f3jiku tradision\u00e1l ne'eb\u00e9 iha relasaun ho moris peska mian"
+      "tet": "Kaer metin ita-nia matenek ekol\u00f3jiku tradision\u00e1l ne'eb\u00e9 iha relasaun ho moris peska mian",
+      "en": "Safeguarding our traditional ecological knowledge related to coastal ecosystem"
     },
     "description": {},
     "pubtype": "PST",
@@ -3555,8 +3555,8 @@
       55
     ],
     "organization": [
-      855,
-      1026
+      1026,
+      855
     ]
   }
 },
@@ -3564,12 +3564,12 @@
   "model": "library.resource",
   "pk": 156,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.463Z",
+    "modified": "2017-05-02T06:38:56.816Z",
     "year": 2013,
     "name": {
-      "en": "Let's value and enrich our coastal ecosystem for the sustainable future of our community",
-      "tet": "Mai ita hafolin no haburas ita-nia ekosistema tasi-ibun ba ita-nia komunidade nia futuro sustentavel"
+      "tet": "Mai ita hafolin no haburas ita-nia ekosistema tasi-ibun ba ita-nia komunidade nia futuro sustentavel",
+      "en": "Let's value and enrich our coastal ecosystem for the sustainable future of our community"
     },
     "description": {},
     "pubtype": "PST",
@@ -3579,8 +3579,8 @@
       55
     ],
     "organization": [
-      855,
-      1026
+      1026,
+      855
     ]
   }
 },
@@ -3588,12 +3588,12 @@
   "model": "library.resource",
   "pk": 157,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.464Z",
+    "modified": "2017-05-02T06:38:56.817Z",
     "year": 2013,
     "name": {
-      "en": "Ways to improve your traditional fishing methods to be more eco-friendly",
-      "tet": "Mai ita-hotu hafolin matenek bei\u2019ala nian: hametin ita-nia lisan no tradisaun hodi salva ita-nia ambiente tasi"
+      "tet": "Mai ita-hotu hafolin matenek bei\u2019ala nian: hametin ita-nia lisan no tradisaun hodi salva ita-nia ambiente tasi",
+      "en": "Ways to improve your traditional fishing methods to be more eco-friendly"
     },
     "description": {},
     "pubtype": "PST",
@@ -3603,8 +3603,8 @@
       55
     ],
     "organization": [
-      855,
-      1026
+      1026,
+      855
     ]
   }
 },
@@ -3612,12 +3612,12 @@
   "model": "library.resource",
   "pk": 158,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.465Z",
+    "modified": "2017-05-02T06:38:56.818Z",
     "year": 2011,
     "name": {
-      "en": "Plants in Timor Leste for textile production process",
-      "tet": "Ai-horis sira ne'eb\u00e9 ami uza iha Timor-Leste"
+      "tet": "Ai-horis sira ne'eb\u00e9 ami uza iha Timor-Leste",
+      "en": "Plants in Timor Leste for textile production process"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3628,8 +3628,8 @@
       55
     ],
     "organization": [
-      917,
-      1026
+      1026,
+      917
     ]
   }
 },
@@ -3637,12 +3637,12 @@
   "model": "library.resource",
   "pk": 159,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.466Z",
+    "modified": "2017-05-02T06:38:56.819Z",
     "year": 2011,
     "name": {
-      "en": "Producing red and blue colors from native dye plants",
-      "tet": "Ai-horis sira ne'eb\u00e9 bele uza hodi halo k\u00f3r mean no az\u00fal iha tais"
+      "tet": "Ai-horis sira ne'eb\u00e9 bele uza hodi halo k\u00f3r mean no az\u00fal iha tais",
+      "en": "Producing red and blue colors from native dye plants"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3653,8 +3653,8 @@
       55
     ],
     "organization": [
-      917,
-      1026
+      1026,
+      917
     ]
   }
 },
@@ -3662,12 +3662,12 @@
   "model": "library.resource",
   "pk": 160,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.467Z",
+    "modified": "2017-05-02T06:38:56.820Z",
     "year": 2011,
     "name": {
-      "en": "Nino Konis Santa National Park",
-      "tet": "Parque Nacional Nino Konis Santana"
+      "tet": "Parque Nacional Nino Konis Santana",
+      "en": "Nino Konis Santa National Park"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3678,8 +3678,8 @@
       55
     ],
     "organization": [
-      917,
-      1026
+      1026,
+      917
     ]
   }
 },
@@ -3687,8 +3687,8 @@
   "model": "library.resource",
   "pk": 161,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.468Z",
+    "modified": "2017-05-02T06:38:56.821Z",
     "year": 2012,
     "name": {
       "en": "A situation-response analysis of the education sector's response to HIV, drugs and sexual health in Timor-Leste"
@@ -3701,9 +3701,9 @@
       55
     ],
     "organization": [
-      1026,
       2409,
-      2384
+      2384,
+      1026
     ]
   }
 },
@@ -3711,8 +3711,8 @@
   "model": "library.resource",
   "pk": 162,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.469Z",
+    "modified": "2017-05-02T06:38:56.822Z",
     "year": 2009,
     "name": {
       "en": "Early impact assessment of the global financial crisis on education financing: country case studies"
@@ -3725,8 +3725,8 @@
       55
     ],
     "organization": [
-      1026,
-      2437
+      2437,
+      1026
     ]
   }
 },
@@ -3734,12 +3734,12 @@
   "model": "library.resource",
   "pk": 163,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.470Z",
+    "modified": "2017-05-02T06:38:56.823Z",
     "year": 2013,
     "name": {
-      "en": "Human rights handbook for journalists in Timor-Leste",
-      "tet": "Manu\u00e1l direitus umanus ba Jornalista sira iha Timor-Leste "
+      "tet": "Manu\u00e1l direitus umanus ba Jornalista sira iha Timor-Leste ",
+      "en": "Human rights handbook for journalists in Timor-Leste"
     },
     "description": {},
     "pubtype": "GDB",
@@ -3759,8 +3759,8 @@
   "model": "library.resource",
   "pk": 164,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.471Z",
+    "modified": "2017-05-02T06:38:56.824Z",
     "year": 2012,
     "name": {
       "en": "Bride-price and domestic violence in Timor-Leste: A comparative study of married-in and married-out cultures in four districts"
@@ -3782,8 +3782,8 @@
   "model": "library.resource",
   "pk": 165,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.472Z",
+    "modified": "2017-05-02T06:38:56.825Z",
     "year": 2012,
     "name": {
       "en": "Drug use in Timor-Leste - an assessment"
@@ -3796,8 +3796,8 @@
       63
     ],
     "organization": [
-      1025,
-      2440
+      2440,
+      1025
     ]
   }
 },
@@ -3805,8 +3805,8 @@
   "model": "library.resource",
   "pk": 166,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.473Z",
+    "modified": "2017-05-02T06:38:56.826Z",
     "year": 2009,
     "name": {
       "en": "Maternal mortality, unplanned pregnancy and unsafe abortion in Timor-Leste: A situational analysis"
@@ -3821,8 +3821,8 @@
       64
     ],
     "organization": [
-      353,
-      1025
+      1025,
+      353
     ]
   }
 },
@@ -3830,8 +3830,8 @@
   "model": "library.resource",
   "pk": 167,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.474Z",
+    "modified": "2017-05-02T06:38:56.827Z",
     "year": 2013,
     "name": {
       "en": "Motherhood in childhood"
@@ -3844,8 +3844,8 @@
       63
     ],
     "organization": [
-      1025,
-      2390
+      2390,
+      1025
     ]
   }
 },
@@ -3853,8 +3853,8 @@
   "model": "library.resource",
   "pk": 168,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.475Z",
+    "modified": "2017-05-02T06:38:56.828Z",
     "year": 2004,
     "name": {
       "en": "National family planning policy"
@@ -3867,8 +3867,8 @@
       67
     ],
     "organization": [
-      1025,
-      2387
+      2387,
+      1025
     ]
   }
 },
@@ -3876,8 +3876,8 @@
   "model": "library.resource",
   "pk": 169,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.476Z",
+    "modified": "2017-05-02T06:38:56.829Z",
     "year": 2009,
     "name": {
       "en": "Country action plan (CPAP) Timor-Leste"
@@ -3891,8 +3891,8 @@
       63
     ],
     "organization": [
-      1025,
-      2373
+      2373,
+      1025
     ]
   }
 },
@@ -3900,12 +3900,12 @@
   "model": "library.resource",
   "pk": 170,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.477Z",
+    "modified": "2017-05-02T06:38:56.830Z",
     "year": 2004,
     "name": {
-      "en": "Mortality monograph. Census population and housing 2004",
-      "tet": "Mortalidade monografia"
+      "tet": "Mortalidade monografia",
+      "en": "Mortality monograph. Census population and housing 2004"
     },
     "description": {},
     "pubtype": "RPR",
@@ -3927,8 +3927,8 @@
   "model": "library.resource",
   "pk": 171,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.478Z",
+    "modified": "2017-05-02T06:38:56.831Z",
     "year": 2008,
     "name": {
       "en": "Total, urban and rural population"
@@ -3953,8 +3953,8 @@
   "model": "library.resource",
   "pk": 172,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.479Z",
+    "modified": "2017-05-02T06:38:56.832Z",
     "year": 2010,
     "name": {
       "en": "Children and the Commission for Reception, Truth and Reconciliation in Timor-Leste "
@@ -3975,8 +3975,8 @@
   "model": "library.resource",
   "pk": 173,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.480Z",
+    "modified": "2017-05-02T06:38:56.833Z",
     "year": 2007,
     "name": {
       "en": "Innocenti Insight, Birth Registration and Armed Conflict"
@@ -3997,8 +3997,8 @@
   "model": "library.resource",
   "pk": 174,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.481Z",
+    "modified": "2017-05-02T06:38:56.834Z",
     "year": 2007,
     "name": {
       "en": "Timor-Leste donor update"
@@ -4019,8 +4019,8 @@
   "model": "library.resource",
   "pk": 175,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.482Z",
+    "modified": "2017-05-02T06:38:56.835Z",
     "year": 2008,
     "name": {
       "en": "Expert Discussion on Children and Transitional Justice "
@@ -4041,8 +4041,8 @@
   "model": "library.resource",
   "pk": 176,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.483Z",
+    "modified": "2017-05-02T06:38:56.836Z",
     "year": 2010,
     "name": {
       "en": "Children and youth commissions"
@@ -4063,8 +4063,8 @@
   "model": "library.resource",
   "pk": 177,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.484Z",
+    "modified": "2017-05-02T06:38:56.837Z",
     "year": 2012,
     "name": {
       "en": "UNICEF annual report 2012 for Timor-Leste, EAPRO"
@@ -4085,8 +4085,8 @@
   "model": "library.resource",
   "pk": 178,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.485Z",
+    "modified": "2017-05-02T06:38:56.838Z",
     "year": 2013,
     "name": {
       "en": "UNICEF annual report 2013 - Timor-Leste"
@@ -4107,8 +4107,8 @@
   "model": "library.resource",
   "pk": 179,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.486Z",
+    "modified": "2017-05-02T06:38:56.839Z",
     "year": 2013,
     "name": {
       "en": "UNICEF Timor-Leste flood emergency - situation report"
@@ -4129,8 +4129,8 @@
   "model": "library.resource",
   "pk": 180,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.487Z",
+    "modified": "2017-05-02T06:38:56.840Z",
     "year": 2014,
     "name": {
       "en": "A statistical snapshot of violence against adolescent girls"
@@ -4151,8 +4151,8 @@
   "model": "library.resource",
   "pk": 181,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.488Z",
+    "modified": "2017-05-02T06:38:56.841Z",
     "year": 2014,
     "name": {
       "en": "Water, sanitation and hygiene annual report 2013"
@@ -4173,8 +4173,8 @@
   "model": "library.resource",
   "pk": 182,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.489Z",
+    "modified": "2017-05-02T06:38:56.842Z",
     "year": 2006,
     "name": {
       "en": "Brokered democracy-building: developing democracy through transitional governance in Cambodia, East Timor and Afghanistan"
@@ -4187,8 +4187,8 @@
       71
     ],
     "organization": [
-      1026,
-      2428
+      2428,
+      1026
     ]
   }
 },
@@ -4196,8 +4196,8 @@
   "model": "library.resource",
   "pk": 183,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.490Z",
+    "modified": "2017-05-02T06:38:56.843Z",
     "year": null,
     "name": {
       "en": "UNWOMEN Timor-Leste factsheet"
@@ -4218,8 +4218,8 @@
   "model": "library.resource",
   "pk": 184,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.491Z",
+    "modified": "2017-05-02T06:38:56.844Z",
     "year": 2005,
     "name": {
       "en": "Gender and nation building in Timor-Leste. Country gender assessment"
@@ -4232,8 +4232,8 @@
       72
     ],
     "organization": [
-      961,
-      1033
+      1033,
+      961
     ]
   }
 },
@@ -4241,8 +4241,8 @@
   "model": "library.resource",
   "pk": 185,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.492Z",
+    "modified": "2017-05-02T06:38:56.845Z",
     "year": 2007,
     "name": {
       "en": "Baseline study on feminization of poverty in Timor-Leste. Deprivation of women across sectors"
@@ -4255,9 +4255,9 @@
       72
     ],
     "organization": [
-      966,
       2389,
       1116,
+      966,
       961
     ]
   }
@@ -4266,8 +4266,8 @@
   "model": "library.resource",
   "pk": 186,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.493Z",
+    "modified": "2017-05-02T06:38:56.846Z",
     "year": 2005,
     "name": {
       "en": "Child malnutrition estimates by NCHS/WHO reference"
@@ -4288,8 +4288,8 @@
   "model": "library.resource",
   "pk": 187,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.494Z",
+    "modified": "2017-05-02T06:38:56.847Z",
     "year": 2009,
     "name": {
       "en": "WHO Country cooperation strategy 2009-2013 Timor-Leste"
@@ -4310,8 +4310,8 @@
   "model": "library.resource",
   "pk": 188,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.495Z",
+    "modified": "2017-05-02T06:38:56.848Z",
     "year": 2013,
     "name": {
       "en": "Timor-Leste. Tobacco"
@@ -4332,8 +4332,8 @@
   "model": "library.resource",
   "pk": 189,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.496Z",
+    "modified": "2017-05-02T06:38:56.849Z",
     "year": 2013,
     "name": {
       "en": "World Malaria Report. Timor-Leste"
@@ -4354,8 +4354,8 @@
   "model": "library.resource",
   "pk": 190,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.497Z",
+    "modified": "2017-05-02T06:38:56.850Z",
     "year": 2012,
     "name": {
       "en": "Timor-Leste child malnutrition estimates by WHO Child Growth Standards"
@@ -4376,8 +4376,8 @@
   "model": "library.resource",
   "pk": 191,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.498Z",
+    "modified": "2017-05-02T06:38:56.851Z",
     "year": 2014,
     "name": {
       "en": "Timor-Leste. Non-communicable disease"
@@ -4398,8 +4398,8 @@
   "model": "library.resource",
   "pk": 192,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.499Z",
+    "modified": "2017-05-02T06:38:56.852Z",
     "year": 2013,
     "name": {
       "en": "Timor-Leste Tuberculosis"
@@ -4418,8 +4418,8 @@
   "model": "library.resource",
   "pk": 193,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.500Z",
+    "modified": "2017-05-02T06:38:56.853Z",
     "year": 2014,
     "name": {
       "en": "Timor-Leste. Alcohol"
@@ -4440,8 +4440,8 @@
   "model": "library.resource",
   "pk": 194,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.501Z",
+    "modified": "2017-05-02T06:38:56.854Z",
     "year": 2014,
     "name": {
       "en": "Timor-Leste: health profile"
@@ -4462,8 +4462,8 @@
   "model": "library.resource",
   "pk": 195,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.502Z",
+    "modified": "2017-05-02T06:38:56.855Z",
     "year": 2014,
     "name": {
       "en": "Timor-Leste"
@@ -4476,8 +4476,8 @@
       73
     ],
     "organization": [
-      906,
-      987
+      987,
+      906
     ]
   }
 },
@@ -4485,8 +4485,8 @@
   "model": "library.resource",
   "pk": 196,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.503Z",
+    "modified": "2017-05-02T06:38:56.856Z",
     "year": 2007,
     "name": {
       "en": "Timor-Leste - Dili emergency food security assessment"
@@ -4507,8 +4507,8 @@
   "model": "library.resource",
   "pk": 197,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.504Z",
+    "modified": "2017-05-02T06:38:56.857Z",
     "year": 2013,
     "name": {
       "en": "Timor Leste: An evaluation of WFP's portfolio (2008 \u2013 2012)"
@@ -4529,8 +4529,8 @@
   "model": "library.resource",
   "pk": 198,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.505Z",
+    "modified": "2017-05-02T06:38:56.858Z",
     "year": 2012,
     "name": {
       "en": "Timor-Leste MDG-F case study evaluation"
@@ -4549,14 +4549,14 @@
   "model": "library.resource",
   "pk": 199,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.506Z",
+    "modified": "2017-05-02T06:38:56.859Z",
     "year": 2014,
     "name": {
       "en": "Timor-Leste: Strong malaria control programme cuts cases"
     },
     "description": {},
-    "pubtype": "WB,",
+    "pubtype": "WB",
     "cover": "",
     "user": null,
     "author": [],
@@ -4569,14 +4569,14 @@
   "model": "library.resource",
   "pk": 200,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.507Z",
+    "modified": "2017-05-02T06:38:56.860Z",
     "year": 2013,
     "name": {
       "en": "Timor-Leste: Better epilepsy services means better care"
     },
     "description": {},
-    "pubtype": "WB,",
+    "pubtype": "WB",
     "cover": "",
     "user": null,
     "author": [],
@@ -4589,8 +4589,8 @@
   "model": "library.resource",
   "pk": 201,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.508Z",
+    "modified": "2017-05-02T06:38:56.861Z",
     "year": 2014,
     "name": {
       "en": "Retaining doctors in rural Timor-Leste: a critical appraisal of the opportunities and challenges"
@@ -4609,8 +4609,8 @@
   "model": "library.resource",
   "pk": 202,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.509Z",
+    "modified": "2017-05-02T06:38:56.862Z",
     "year": 2011,
     "name": {
       "en": "The tyranny of distance: maternity waiting homes and access to birthing facilities in rural Timor-Leste"
@@ -4629,8 +4629,8 @@
   "model": "library.resource",
   "pk": 203,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.510Z",
+    "modified": "2017-05-02T06:38:56.863Z",
     "year": 1999,
     "name": {
       "en": "Grave humanitarian and food crisis developing in East Timor"
@@ -4649,8 +4649,8 @@
   "model": "library.resource",
   "pk": 204,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.511Z",
+    "modified": "2017-05-02T06:38:56.864Z",
     "year": 1999,
     "name": {
       "en": "FAO/WFP Crop and food supply assessment mission to Timor-Leste"
@@ -4669,8 +4669,8 @@
   "model": "library.resource",
   "pk": 205,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.512Z",
+    "modified": "2017-05-02T06:38:56.865Z",
     "year": 1997,
     "name": {
       "en": "East Timor and the United Nations: the case for intervention"
@@ -4691,8 +4691,8 @@
   "model": "library.resource",
   "pk": 206,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.513Z",
+    "modified": "2017-05-02T06:38:56.866Z",
     "year": 1996,
     "name": {
       "en": "East Timor: the continuing betrayal"
@@ -4705,8 +4705,8 @@
       76
     ],
     "organization": [
-      1116,
-      2407
+      2407,
+      1116
     ]
   }
 },
@@ -4714,12 +4714,12 @@
   "model": "library.resource",
   "pk": 207,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.514Z",
+    "modified": "2017-05-02T06:38:56.867Z",
     "year": 1994,
     "name": {
-      "en": "Indonesia and East Timor: power and impunity",
-      "tet": " human rights under the new order"
+      "tet": " human rights under the new order",
+      "en": "Indonesia and East Timor: power and impunity"
     },
     "description": {},
     "pubtype": "BK",
@@ -4737,8 +4737,8 @@
   "model": "library.resource",
   "pk": 208,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.515Z",
+    "modified": "2017-05-02T06:38:56.868Z",
     "year": 1977,
     "name": {
       "en": "Man and environment in Eastern Timor: a geoecological analysis of Baucau-Viqueque area as a possible basis for regional planning"
@@ -4751,8 +4751,8 @@
       78
     ],
     "organization": [
-      2399,
-      2419
+      2419,
+      2399
     ]
   }
 },
@@ -4760,8 +4760,8 @@
   "model": "library.resource",
   "pk": 209,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.516Z",
+    "modified": "2017-05-02T06:38:56.869Z",
     "year": 1977,
     "name": {
       "en": "Decolonization in East Timor"
@@ -4785,8 +4785,8 @@
   "model": "library.resource",
   "pk": 210,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.517Z",
+    "modified": "2017-05-02T06:38:56.870Z",
     "year": 1976,
     "name": {
       "en": "An Interim bibliography of the Island of Timor"
@@ -4805,8 +4805,8 @@
   "model": "library.resource",
   "pk": 211,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.518Z",
+    "modified": "2017-05-02T06:38:56.871Z",
     "year": 1973,
     "name": {
       "en": "Os Mitos e a imagina\u00e7\u00e3o contista no estudo das origens do povo timorense"
@@ -4825,8 +4825,8 @@
   "model": "library.resource",
   "pk": 212,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.519Z",
+    "modified": "2017-05-02T06:38:56.872Z",
     "year": 2011,
     "name": {
       "en": "Adult literacy teaching and learning in multilingual Timor-Leste"
@@ -4847,8 +4847,8 @@
   "model": "library.resource",
   "pk": 213,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.520Z",
+    "modified": "2017-05-02T06:38:56.873Z",
     "year": 2000,
     "name": {
       "en": "The United Nations and East Timor: self-determination through popular consultation"
@@ -4861,8 +4861,8 @@
       84
     ],
     "organization": [
-      1026,
-      2407
+      2407,
+      1026
     ]
   }
 },
@@ -4870,8 +4870,8 @@
   "model": "library.resource",
   "pk": 214,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.521Z",
+    "modified": "2017-05-02T06:38:56.874Z",
     "year": 2008,
     "name": {
       "en": "Women in Self Employment (WISE) Project in Timor-Leste"
@@ -4890,8 +4890,8 @@
   "model": "library.resource",
   "pk": 215,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.522Z",
+    "modified": "2017-05-02T06:38:56.875Z",
     "year": 2007,
     "name": {
       "en": "Assessment report of the vocational training in Timor-Leste: October 2007"
@@ -4902,11 +4902,11 @@
     "user": null,
     "author": [],
     "organization": [
-      2398,
-      629,
+      2413,
       2405,
+      2398,
       966,
-      2413
+      629
     ]
   }
 },
@@ -4914,8 +4914,8 @@
   "model": "library.resource",
   "pk": 218,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.525Z",
+    "modified": "2017-05-02T06:38:56.878Z",
     "year": 2015,
     "name": {
       "en": "Donor mapping proposal outline"
@@ -4936,8 +4936,8 @@
   "model": "library.resource",
   "pk": 219,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.526Z",
+    "modified": "2017-05-02T06:38:56.879Z",
     "year": 2013,
     "name": {
       "en": "Impact of Rice Imports on Rice Production in Timor-Leste\r\n"
@@ -4960,8 +4960,8 @@
   "model": "library.resource",
   "pk": 220,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.527Z",
+    "modified": "2017-05-02T06:38:56.880Z",
     "year": 2013,
     "name": {
       "en": "Effects of importing maize and rice seed on agricultural seed production in Timor-Leste\r\n"
@@ -4982,8 +4982,8 @@
   "model": "library.resource",
   "pk": 221,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.528Z",
+    "modified": "2017-05-02T06:38:56.881Z",
     "year": 2013,
     "name": {
       "en": "Benefits of targeted vs non-targeted seed distribution"
@@ -5006,8 +5006,8 @@
   "model": "library.resource",
   "pk": 222,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.529Z",
+    "modified": "2017-05-02T06:38:56.882Z",
     "year": 2013,
     "name": {
       "en": "Complementarity between maize seed production and good storage\r\n"
@@ -5030,8 +5030,8 @@
   "model": "library.resource",
   "pk": 223,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.530Z",
+    "modified": "2017-05-02T06:38:56.883Z",
     "year": 2014,
     "name": {
       "en": "Sustainability and Development of Farmer Groups in Bobonaro and Liqui\u00e7a\r\n"
@@ -5054,8 +5054,8 @@
   "model": "library.resource",
   "pk": 224,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.531Z",
+    "modified": "2017-05-02T06:38:56.884Z",
     "year": 2013,
     "name": {
       "en": "Drivers and Determinants of Sustainability and Development of Savings and Loans Groups\r\n"
@@ -5078,8 +5078,8 @@
   "model": "library.resource",
   "pk": 225,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.532Z",
+    "modified": "2017-05-02T06:38:56.885Z",
     "year": 2013,
     "name": {
       "en": "Adoption of agricultural technologies: Factors related to adoption of improved food crop varieties in Timor-Leste\r\n"
@@ -5102,8 +5102,8 @@
   "model": "library.resource",
   "pk": 226,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.533Z",
+    "modified": "2017-05-02T06:38:56.886Z",
     "year": 2012,
     "name": {
       "en": "Seeds of Life 3 Baseline Survey - Main report\r\n"
@@ -5126,8 +5126,8 @@
   "model": "library.resource",
   "pk": 227,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.534Z",
+    "modified": "2017-05-02T06:38:56.887Z",
     "year": 2012,
     "name": {
       "en": "Seeds of Life 3 Baseline Survey - Vol 2: Data tables\r\n"
@@ -5150,8 +5150,8 @@
   "model": "library.resource",
   "pk": 228,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.535Z",
+    "modified": "2017-05-02T06:38:56.888Z",
     "year": 2012,
     "name": {
       "en": "Seeds of Life 3 Baseline Survey - Vol 3: Annexes\r\n"
@@ -5174,8 +5174,8 @@
   "model": "library.resource",
   "pk": 229,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.536Z",
+    "modified": "2017-05-02T06:38:56.889Z",
     "year": 2013,
     "name": {
       "en": "Seeds of Life 3 Mid-Term Survey\r\n"
@@ -5198,8 +5198,8 @@
   "model": "library.resource",
   "pk": 230,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.537Z",
+    "modified": "2017-05-02T06:38:56.890Z",
     "year": 2014,
     "name": {
       "en": "Adoption survey 2014\r\n"
@@ -5222,8 +5222,8 @@
   "model": "library.resource",
   "pk": 232,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.539Z",
+    "modified": "2017-05-02T06:38:56.892Z",
     "year": 2014,
     "name": {
       "en": "Institutions Taking Root: Building State Capacity in Challenging Contexts\r\n"
@@ -5248,15 +5248,15 @@
   "model": "library.resource",
   "pk": 233,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.540Z",
+    "modified": "2017-05-02T06:38:56.893Z",
     "year": null,
     "name": {
       "tet": "Fundasaun Mahein Nia Hanoin "
     },
     "description": {
-      "en": "Fundasaun Mahein Nia Hanoin is an investagion piece into Timor-Leste Security Sector. This is FM's largest report with FM having a stated goal of producing four per year",
-      "tet": "Fundasaun Mahein Nia Hanoin, ne'e relatoriu boot halo iha tinan ida hasai dala ida kona-ba Seitor Siguransa iha Timor-Leste. "
+      "tet": "Fundasaun Mahein Nia Hanoin, ne'e relatoriu boot halo iha tinan ida hasai dala ida kona-ba Seitor Siguransa iha Timor-Leste. ",
+      "en": "Fundasaun Mahein Nia Hanoin is an investagion piece into Timor-Leste Security Sector. This is FM's largest report with FM having a stated goal of producing four per year"
     },
     "pubtype": "RPR",
     "cover": "",
@@ -5271,15 +5271,15 @@
   "model": "library.resource",
   "pk": 234,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.541Z",
+    "modified": "2017-05-02T06:38:56.894Z",
     "year": null,
     "name": {
       "tet": "Fundasaun Mahein Nia Lian: No 40 - 76"
     },
     "description": {
-      "en": "Fundasaun Mahein's report, published once every three weeks, analysis of events and trends in the Security Sector",
-      "tet": "Fundasaun Mahein Lian Relatoriu konaba Seitor Siguransa"
+      "tet": "Fundasaun Mahein Lian Relatoriu konaba Seitor Siguransa",
+      "en": "Fundasaun Mahein's report, published once every three weeks, analysis of events and trends in the Security Sector"
     },
     "pubtype": "RPR",
     "cover": "",
@@ -5294,8 +5294,8 @@
   "model": "library.resource",
   "pk": 235,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.542Z",
+    "modified": "2017-05-02T06:38:56.895Z",
     "year": null,
     "name": {
       "tet": "Fundasaun Mahein Nia Lian: No 1 - 39"
@@ -5316,15 +5316,15 @@
   "model": "library.resource",
   "pk": 237,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.544Z",
+    "modified": "2017-05-02T06:38:56.897Z",
     "year": null,
     "name": {
       "tet": "Fundasaun Mahein Nia Lian - No. 77 -"
     },
     "description": {
-      "en": "These reports present the latest findings of FM's research into the Security Sector",
-      "tet": "Relatroiu nee presentasaun FM nia peskiza laran Sectro Siguransa"
+      "tet": "Relatroiu nee presentasaun FM nia peskiza laran Sectro Siguransa",
+      "en": "These reports present the latest findings of FM's research into the Security Sector"
     },
     "pubtype": "RPR",
     "cover": "",
@@ -5339,12 +5339,12 @@
   "model": "library.resource",
   "pk": 238,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.545Z",
+    "modified": "2017-05-02T06:38:56.898Z",
     "year": 2014,
     "name": {
-      "en": "Primary source files for Oxfam Funding Opportunities",
-      "tet": "Informasaun primerio kona ba Opportunidade Fundus - Oxfam"
+      "tet": "Informasaun primerio kona ba Opportunidade Fundus - Oxfam",
+      "en": "Primary source files for Oxfam Funding Opportunities"
     },
     "description": {},
     "pubtype": "PRI",
@@ -5362,8 +5362,8 @@
   "model": "library.resource",
   "pk": 239,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.546Z",
+    "modified": "2017-05-02T06:38:56.899Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Kona ba Seguransa 17 Abril 2015"
@@ -5382,8 +5382,8 @@
   "model": "library.resource",
   "pk": 240,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.547Z",
+    "modified": "2017-05-02T06:38:56.900Z",
     "year": 2014,
     "name": {
       "tet": "Relatoriu Orsamentu Komisaun Organizadora Inagurasaun Kapela S\u00e3o Pedro Memo, Diocese Maliana"
@@ -5400,8 +5400,8 @@
   "model": "library.resource",
   "pk": 241,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.548Z",
+    "modified": "2017-05-02T06:38:56.901Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Kona ba Seguransa 18 Abril 2015"
@@ -5420,8 +5420,8 @@
   "model": "library.resource",
   "pk": 242,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.549Z",
+    "modified": "2017-05-02T06:38:56.902Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 19 Abril 2015 "
@@ -5440,8 +5440,8 @@
   "model": "library.resource",
   "pk": 243,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.550Z",
+    "modified": "2017-05-02T06:38:56.903Z",
     "year": 2015,
     "name": {
       "tet": "FM Artigu Kona ba Seguransa 20 Abril 2015"
@@ -5460,8 +5460,8 @@
   "model": "library.resource",
   "pk": 245,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.552Z",
+    "modified": "2017-05-02T06:38:56.905Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 21 Abril 2015"
@@ -5480,8 +5480,8 @@
   "model": "library.resource",
   "pk": 246,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.553Z",
+    "modified": "2017-05-02T06:38:56.906Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 22 Abril 2015"
@@ -5500,8 +5500,8 @@
   "model": "library.resource",
   "pk": 247,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.554Z",
+    "modified": "2017-05-02T06:38:56.907Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 23 Abril 2015"
@@ -5520,8 +5520,8 @@
   "model": "library.resource",
   "pk": 248,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.555Z",
+    "modified": "2017-05-02T06:38:56.908Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 24 Abril 2015"
@@ -5540,8 +5540,8 @@
   "model": "library.resource",
   "pk": 249,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.556Z",
+    "modified": "2017-05-02T06:38:56.909Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 25 Abril 2015"
@@ -5560,8 +5560,8 @@
   "model": "library.resource",
   "pk": 250,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.557Z",
+    "modified": "2017-05-02T06:38:56.910Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 27 Abril 2015"
@@ -5580,8 +5580,8 @@
   "model": "library.resource",
   "pk": 252,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.559Z",
+    "modified": "2017-05-02T06:38:56.912Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 28 Abril 2015"
@@ -5600,8 +5600,8 @@
   "model": "library.resource",
   "pk": 253,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.560Z",
+    "modified": "2017-05-02T06:38:56.913Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 29 Abril 2015"
@@ -5620,8 +5620,8 @@
   "model": "library.resource",
   "pk": 254,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.561Z",
+    "modified": "2017-05-02T06:38:56.914Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 30 Abril 2015"
@@ -5640,8 +5640,8 @@
   "model": "library.resource",
   "pk": 255,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.562Z",
+    "modified": "2017-05-02T06:38:56.915Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 04 Maiu 2015"
@@ -5660,8 +5660,8 @@
   "model": "library.resource",
   "pk": 256,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.563Z",
+    "modified": "2017-05-02T06:38:56.916Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 03 Maiu 2015"
@@ -5680,8 +5680,8 @@
   "model": "library.resource",
   "pk": 257,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.564Z",
+    "modified": "2017-05-02T06:38:56.917Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 05 Maiu 2015"
@@ -5700,8 +5700,8 @@
   "model": "library.resource",
   "pk": 258,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.565Z",
+    "modified": "2017-05-02T06:38:56.918Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 06 Maiu 2015"
@@ -5720,8 +5720,8 @@
   "model": "library.resource",
   "pk": 260,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.567Z",
+    "modified": "2017-05-02T06:38:56.920Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 07 Maiu 2015"
@@ -5740,8 +5740,8 @@
   "model": "library.resource",
   "pk": 261,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.568Z",
+    "modified": "2017-05-02T06:38:56.921Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 08 Maiu 2015"
@@ -5760,8 +5760,8 @@
   "model": "library.resource",
   "pk": 262,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.569Z",
+    "modified": "2017-05-02T06:38:56.922Z",
     "year": 2014,
     "name": {
       "en": "Analysis of Poverty and Gender in Agriculture in Timor-Leste"
@@ -5777,8 +5777,8 @@
     ],
     "organization": [
       2434,
-      74,
-      2400
+      2400,
+      74
     ]
   }
 },
@@ -5786,16 +5786,16 @@
   "model": "library.resource",
   "pk": 263,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.570Z",
+    "modified": "2017-05-02T06:38:56.923Z",
     "year": 2015,
     "name": {
-      "en": "SOCIAL SAFEGUARDS FRAMEWORK for Rural Road Works",
-      "tet": "PLATAFORMA BA SALVAGUARDA SOSIAL Ba Servisu Estrada Rural"
+      "tet": "PLATAFORMA BA SALVAGUARDA SOSIAL Ba Servisu Estrada Rural",
+      "en": "SOCIAL SAFEGUARDS FRAMEWORK for Rural Road Works"
     },
     "description": {
-      "en": "This Social Safeguards Framework (SSF) for the R4D Program has been designed to guide the implementation of inclusive and rights-based practices in rural road programs in Timor-Leste, and to prevent and mitigate their possible negative social impacts. The SSF has three objectives:\r\n(1) Increase the likelihood that social and economic benefits of rural road investments are as inclusive and equitable as possible.\r\n(2) Ensure that social concerns of different stakeholder groups are adequately addressed.\r\n(3) Establish practices that mitigate identified social risks associated with the planning, design and implementation of rural road programs.",
-      "tet": "Plataforma Salvaguarda Social (SSF) ba Estrada ba Desenvolvementu (R4D) desenha\r\nnudar matadalan ba implementasaun inklusivu no praktika ne\u2019ebe los iha programa\r\nestrada rural iha Timor-Leste, no atu prevene no halo mitigasaun ba posibilidade\r\nimpaktu social negativu. SSF ne\u2019e iha objetivu tolu:\r\n(1) Hasae posibilidade ba benefisiu social husi investementu estrada rural nebe inklusivu\r\nno igual?\r\n(2) Garantia katak preokupasaun sosial husi entidade oin-oin sira bele hetan responde ho\r\nnaton/adekuadu.\r\n(3) Estabelese praktika sira hodi hamenus risku sosial ne\u2019ebe identifika iha planeamentu,\r\ndesenhu no implementasaun ba programa estrada rural."
+      "tet": "Plataforma Salvaguarda Social (SSF) ba Estrada ba Desenvolvementu (R4D) desenha\r\nnudar matadalan ba implementasaun inklusivu no praktika ne\u2019ebe los iha programa\r\nestrada rural iha Timor-Leste, no atu prevene no halo mitigasaun ba posibilidade\r\nimpaktu social negativu. SSF ne\u2019e iha objetivu tolu:\r\n(1) Hasae posibilidade ba benefisiu social husi investementu estrada rural nebe inklusivu\r\nno igual?\r\n(2) Garantia katak preokupasaun sosial husi entidade oin-oin sira bele hetan responde ho\r\nnaton/adekuadu.\r\n(3) Estabelese praktika sira hodi hamenus risku sosial ne\u2019ebe identifika iha planeamentu,\r\ndesenhu no implementasaun ba programa estrada rural.",
+      "en": "This Social Safeguards Framework (SSF) for the R4D Program has been designed to guide the implementation of inclusive and rights-based practices in rural road programs in Timor-Leste, and to prevent and mitigate their possible negative social impacts. The SSF has three objectives:\r\n(1) Increase the likelihood that social and economic benefits of rural road investments are as inclusive and equitable as possible.\r\n(2) Ensure that social concerns of different stakeholder groups are adequately addressed.\r\n(3) Establish practices that mitigate identified social risks associated with the planning, design and implementation of rural road programs."
     },
     "pubtype": "RPR",
     "cover": "",
@@ -5804,8 +5804,8 @@
       109
     ],
     "organization": [
-      629,
       2373,
+      629,
       74
     ]
   }
@@ -5814,8 +5814,8 @@
   "model": "library.resource",
   "pk": 264,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.571Z",
+    "modified": "2017-05-02T06:38:56.924Z",
     "year": 2014,
     "name": {
       "en": "Roads for Development Program (R4D) - Contractors' Tracer Study"
@@ -5830,9 +5830,9 @@
       108
     ],
     "organization": [
-      629,
-      2373,
       2378,
+      2373,
+      629,
       74
     ]
   }
@@ -5841,8 +5841,8 @@
   "model": "library.resource",
   "pk": 265,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.572Z",
+    "modified": "2017-05-02T06:38:56.925Z",
     "year": 2013,
     "name": {
       "en": "Roads for Development (R4D) ENVIRONMENTAL SAFEGUARDS FRAMEWORK"
@@ -5857,10 +5857,10 @@
       109
     ],
     "organization": [
-      629,
+      2378,
       2373,
-      74,
-      2378
+      629,
+      74
     ]
   }
 },
@@ -5868,8 +5868,8 @@
   "model": "library.resource",
   "pk": 266,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.573Z",
+    "modified": "2017-05-02T06:38:56.926Z",
     "year": 2005,
     "name": {
       "en": "Faltering Steps: Independence Movements in East Timor in the 1950s and 1960s"
@@ -5888,8 +5888,8 @@
   "model": "library.resource",
   "pk": 267,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.574Z",
+    "modified": "2017-05-02T06:38:56.927Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 09 Maiu 2015"
@@ -5908,8 +5908,8 @@
   "model": "library.resource",
   "pk": 268,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.575Z",
+    "modified": "2017-05-02T06:38:56.928Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 11 Maiu 2015"
@@ -5928,8 +5928,8 @@
   "model": "library.resource",
   "pk": 272,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.579Z",
+    "modified": "2017-05-02T06:38:56.932Z",
     "year": 2005,
     "name": {
       "en": "Post-conflict pro-poor private-sector development: The case of Timor-Leste"
@@ -5952,8 +5952,8 @@
   "model": "library.resource",
   "pk": 273,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.580Z",
+    "modified": "2017-05-02T06:38:56.933Z",
     "year": 2011,
     "name": {
       "en": "The problem of gender quotas: women's representatives on Timor-Leste's suku councils"
@@ -5976,8 +5976,8 @@
   "model": "library.resource",
   "pk": 274,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.581Z",
+    "modified": "2017-05-02T06:38:56.934Z",
     "year": 2005,
     "name": {
       "en": "Sustainability and peace building: a key challenge"
@@ -6000,8 +6000,8 @@
   "model": "library.resource",
   "pk": 275,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.582Z",
+    "modified": "2017-05-02T06:38:56.935Z",
     "year": 2005,
     "name": {
       "en": "The World Bank's land of kiosks: Community driven development in Timor-Leste"
@@ -6024,8 +6024,8 @@
   "model": "library.resource",
   "pk": 276,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.583Z",
+    "modified": "2017-05-02T06:38:56.936Z",
     "year": 2003,
     "name": {
       "en": "Another invasion: Lessons from international support to East Timorese NGOs"
@@ -6048,8 +6048,8 @@
   "model": "library.resource",
   "pk": 278,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.585Z",
+    "modified": "2017-05-02T06:38:56.938Z",
     "year": 2015,
     "name": {
       "tet": "Fundasaun Mahein Blogs (2015)"
@@ -6068,8 +6068,8 @@
   "model": "library.resource",
   "pk": 279,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.586Z",
+    "modified": "2017-05-02T06:38:56.939Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 13 Maiu 2015"
@@ -6088,8 +6088,8 @@
   "model": "library.resource",
   "pk": 280,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.587Z",
+    "modified": "2017-05-02T06:38:56.940Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 12 Maiu 2015"
@@ -6108,8 +6108,8 @@
   "model": "library.resource",
   "pk": 281,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.588Z",
+    "modified": "2017-05-02T06:38:56.941Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 14 Maiu 2015"
@@ -6128,8 +6128,8 @@
   "model": "library.resource",
   "pk": 282,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.589Z",
+    "modified": "2017-05-02T06:38:56.942Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 15 Maiu 2015"
@@ -6148,12 +6148,12 @@
   "model": "library.resource",
   "pk": 283,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.590Z",
+    "modified": "2017-05-02T06:38:56.943Z",
     "year": 2014,
     "name": {
-      "en": "2014 Survey of Travelers to Timor-Leste",
-      "tet": "Levantamentu kona-ba viajante sira iha Timor-Leste 2014"
+      "tet": "Levantamentu kona-ba viajante sira iha Timor-Leste 2014",
+      "en": "2014 Survey of Travelers to Timor-Leste"
     },
     "description": {
       "en": "A research publication launched by The Asia Foundation's office in Timor-Leste proves that the country's tourism sector is indeed promising. Based on inbound arrivals, the study estimates that the industry is currently worth US$14.6 million per annum \u2013 placing it close behind coffee, which remains Timor-Leste's primary export in the non-oil economy, at US$15 million per annum. The study also indicates high satisfaction where 83% of travelers believed their experience met their expectations and almost equal proportions said they would recommend Timor-Leste to their friends and family.\n\nThe 2014 Survey of Travelers to Timor-Leste, conducted in partnership between The Asia Foundation and Timor-Leste's Ministry of Tourism, not only quantifies the economic contribution of tourism but also provides an indication of the prerequisites required to further develop Timor-Leste's tourism industry."
@@ -6165,10 +6165,10 @@
       13
     ],
     "organization": [
-      906,
-      74,
       2385,
-      89
+      906,
+      89,
+      74
     ]
   }
 },
@@ -6176,8 +6176,8 @@
   "model": "library.resource",
   "pk": 284,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.591Z",
+    "modified": "2017-05-02T06:38:56.944Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 16 Maiu 2015"
@@ -6196,8 +6196,8 @@
   "model": "library.resource",
   "pk": 285,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.592Z",
+    "modified": "2017-05-02T06:38:56.945Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 18 Maiu 2015"
@@ -6216,8 +6216,8 @@
   "model": "library.resource",
   "pk": 286,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.593Z",
+    "modified": "2017-05-02T06:38:56.946Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 18 Maiu 2015"
@@ -6236,8 +6236,8 @@
   "model": "library.resource",
   "pk": 287,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.594Z",
+    "modified": "2017-05-02T06:38:56.947Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 19 Maiu 2015"
@@ -6256,8 +6256,8 @@
   "model": "library.resource",
   "pk": 288,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.595Z",
+    "modified": "2017-05-02T06:38:56.948Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 21 Maiu 2015"
@@ -6276,8 +6276,8 @@
   "model": "library.resource",
   "pk": 289,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.596Z",
+    "modified": "2017-05-02T06:38:56.949Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 22 Maiu 2015"
@@ -6296,8 +6296,8 @@
   "model": "library.resource",
   "pk": 290,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.597Z",
+    "modified": "2017-05-02T06:38:56.950Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 25 Maiu 2015"
@@ -6316,8 +6316,8 @@
   "model": "library.resource",
   "pk": 291,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.598Z",
+    "modified": "2017-05-02T06:38:56.951Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 26 Maiu 2015"
@@ -6336,8 +6336,8 @@
   "model": "library.resource",
   "pk": 292,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.599Z",
+    "modified": "2017-05-02T06:38:56.952Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 27 Maiu 2015"
@@ -6356,8 +6356,8 @@
   "model": "library.resource",
   "pk": 293,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.600Z",
+    "modified": "2017-05-02T06:38:56.953Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 28 Maiu 2015"
@@ -6376,8 +6376,8 @@
   "model": "library.resource",
   "pk": 294,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.601Z",
+    "modified": "2017-05-02T06:38:56.954Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 29 Maiu 2015"
@@ -6396,8 +6396,8 @@
   "model": "library.resource",
   "pk": 295,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.602Z",
+    "modified": "2017-05-02T06:38:56.955Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 1 Ju\u00f1u 2015"
@@ -6416,8 +6416,8 @@
   "model": "library.resource",
   "pk": 296,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.603Z",
+    "modified": "2017-05-02T06:38:56.956Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 2 Ju\u00f1u 2015"
@@ -6436,8 +6436,8 @@
   "model": "library.resource",
   "pk": 297,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.604Z",
+    "modified": "2017-05-02T06:38:56.957Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 3 Ju\u00f1u 2015"
@@ -6456,8 +6456,8 @@
   "model": "library.resource",
   "pk": 298,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.605Z",
+    "modified": "2017-05-02T06:38:56.958Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 8 Ju\u00f1u 2015"
@@ -6476,8 +6476,8 @@
   "model": "library.resource",
   "pk": 299,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.606Z",
+    "modified": "2017-05-02T06:38:56.959Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 5 Ju\u00f1u 2015"
@@ -6496,8 +6496,8 @@
   "model": "library.resource",
   "pk": 300,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.607Z",
+    "modified": "2017-05-02T06:38:56.960Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 6 Ju\u00f1u 2015"
@@ -6516,8 +6516,8 @@
   "model": "library.resource",
   "pk": 301,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.608Z",
+    "modified": "2017-05-02T06:38:56.961Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 9 Ju\u00f1u 2015"
@@ -6536,8 +6536,8 @@
   "model": "library.resource",
   "pk": 302,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.609Z",
+    "modified": "2017-05-02T06:38:56.962Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 10 Ju\u00f1u 2015"
@@ -6556,8 +6556,8 @@
   "model": "library.resource",
   "pk": 303,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.610Z",
+    "modified": "2017-05-02T06:38:56.963Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 11 Ju\u00f1u 2015"
@@ -6576,8 +6576,8 @@
   "model": "library.resource",
   "pk": 304,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.611Z",
+    "modified": "2017-05-02T06:38:56.964Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 12 Ju\u00f1u 2015"
@@ -6596,8 +6596,8 @@
   "model": "library.resource",
   "pk": 305,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.612Z",
+    "modified": "2017-05-02T06:38:56.965Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 13 Ju\u00f1u 2015"
@@ -6616,8 +6616,8 @@
   "model": "library.resource",
   "pk": 306,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.613Z",
+    "modified": "2017-05-02T06:38:56.966Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 15 Ju\u00f1u 2015"
@@ -6636,8 +6636,8 @@
   "model": "library.resource",
   "pk": 307,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.614Z",
+    "modified": "2017-05-02T06:38:56.967Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 16 Ju\u00f1u 2015"
@@ -6656,8 +6656,8 @@
   "model": "library.resource",
   "pk": 308,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.615Z",
+    "modified": "2017-05-02T06:38:56.968Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 17 Ju\u00f1u 2015\r\n"
@@ -6676,8 +6676,8 @@
   "model": "library.resource",
   "pk": 310,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.617Z",
+    "modified": "2017-05-02T06:38:56.970Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu KonabaSeguransa 18 Ju\u00f1u 2015"
@@ -6696,8 +6696,8 @@
   "model": "library.resource",
   "pk": 311,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.618Z",
+    "modified": "2017-05-02T06:38:56.971Z",
     "year": 2003,
     "name": {
       "tet": "Timor-Leste 2003 Demographic and Health Survey"
@@ -6714,8 +6714,8 @@
     "organization": [
       2397,
       2395,
-      2387,
-      2392
+      2392,
+      2387
     ]
   }
 },
@@ -6723,8 +6723,8 @@
   "model": "library.resource",
   "pk": 312,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.619Z",
+    "modified": "2017-05-02T06:38:56.972Z",
     "year": 2010,
     "name": {
       "en": "Timor-Leste Demographic and Health Survey 2009-10"
@@ -6739,16 +6739,16 @@
       68
     ],
     "organization": [
-      987,
-      954,
+      2394,
       2390,
       2387,
-      2394,
-      74,
+      1025,
+      987,
       969,
       966,
-      1025,
-      640
+      954,
+      640,
+      74
     ]
   }
 },
@@ -6756,8 +6756,8 @@
   "model": "library.resource",
   "pk": 313,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.620Z",
+    "modified": "2017-05-02T06:38:56.973Z",
     "year": 2011,
     "name": {
       "en": "Timor-Leste Household Income and Expenditure Survey 2011"
@@ -6772,10 +6772,10 @@
       117
     ],
     "organization": [
+      2394,
       2390,
-      2373,
       2380,
-      2394
+      2373
     ]
   }
 },
@@ -6783,8 +6783,8 @@
   "model": "library.resource",
   "pk": 314,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.621Z",
+    "modified": "2017-05-02T06:38:56.974Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 19 Ju\u00f1u 2015"
@@ -6803,8 +6803,8 @@
   "model": "library.resource",
   "pk": 315,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.622Z",
+    "modified": "2017-05-02T06:38:56.975Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 22 Ju\u00f1u 2015"
@@ -6823,8 +6823,8 @@
   "model": "library.resource",
   "pk": 316,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.623Z",
+    "modified": "2017-05-02T06:38:56.976Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 23 Ju\u00f1u 2015"
@@ -6843,8 +6843,8 @@
   "model": "library.resource",
   "pk": 317,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.624Z",
+    "modified": "2017-05-02T06:38:56.977Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 24 Ju\u00f1u 2015"
@@ -6863,8 +6863,8 @@
   "model": "library.resource",
   "pk": 318,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.625Z",
+    "modified": "2017-05-02T06:38:56.978Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 25 Ju\u00f1u 2015"
@@ -6883,8 +6883,8 @@
   "model": "library.resource",
   "pk": 319,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.626Z",
+    "modified": "2017-05-02T06:38:56.979Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Segurana 26 Ju\u00f1u 2015"
@@ -6903,8 +6903,8 @@
   "model": "library.resource",
   "pk": 320,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.627Z",
+    "modified": "2017-05-02T06:38:56.980Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 29 Ju\u00f1u 2015"
@@ -6923,8 +6923,8 @@
   "model": "library.resource",
   "pk": 321,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.628Z",
+    "modified": "2017-05-02T06:38:56.981Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 30 Ju\u00f1u 2015"
@@ -6943,8 +6943,8 @@
   "model": "library.resource",
   "pk": 322,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.629Z",
+    "modified": "2017-05-02T06:38:56.982Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 27 Ju\u00f1u 2015"
@@ -6963,8 +6963,8 @@
   "model": "library.resource",
   "pk": 323,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.630Z",
+    "modified": "2017-05-02T06:38:56.983Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 01 Jullu 2015"
@@ -6983,8 +6983,8 @@
   "model": "library.resource",
   "pk": 324,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.631Z",
+    "modified": "2017-05-02T06:38:56.984Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 02 Jullu 2015"
@@ -7003,8 +7003,8 @@
   "model": "library.resource",
   "pk": 325,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.632Z",
+    "modified": "2017-05-02T06:38:56.985Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 03 Jullu 2015"
@@ -7023,8 +7023,8 @@
   "model": "library.resource",
   "pk": 326,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.633Z",
+    "modified": "2017-05-02T06:38:56.986Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 04 Jullu 2015"
@@ -7043,8 +7043,8 @@
   "model": "library.resource",
   "pk": 327,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.634Z",
+    "modified": "2017-05-02T06:38:56.987Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 06 Jullu 2015"
@@ -7063,8 +7063,8 @@
   "model": "library.resource",
   "pk": 328,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.635Z",
+    "modified": "2017-05-02T06:38:56.988Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 07 Jullu 2015"
@@ -7083,8 +7083,8 @@
   "model": "library.resource",
   "pk": 329,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.636Z",
+    "modified": "2017-05-02T06:38:56.989Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 08 Jullu 2015"
@@ -7103,8 +7103,8 @@
   "model": "library.resource",
   "pk": 330,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.637Z",
+    "modified": "2017-05-02T06:38:56.990Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 10 Jullu 2015"
@@ -7123,8 +7123,8 @@
   "model": "library.resource",
   "pk": 331,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.638Z",
+    "modified": "2017-05-02T06:38:56.991Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 13 Jullu 2015"
@@ -7143,8 +7143,8 @@
   "model": "library.resource",
   "pk": 332,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.639Z",
+    "modified": "2017-05-02T06:38:56.992Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu KOnaba Seguransa 09 Jullu 2015"
@@ -7163,8 +7163,8 @@
   "model": "library.resource",
   "pk": 333,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.640Z",
+    "modified": "2017-05-02T06:38:56.993Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 11 Jullu 2015"
@@ -7183,8 +7183,8 @@
   "model": "library.resource",
   "pk": 334,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.641Z",
+    "modified": "2017-05-02T06:38:56.994Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 14 Jullu 2015"
@@ -7203,8 +7203,8 @@
   "model": "library.resource",
   "pk": 335,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.642Z",
+    "modified": "2017-05-02T06:38:56.995Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 15 Jullu 2015"
@@ -7223,8 +7223,8 @@
   "model": "library.resource",
   "pk": 336,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.643Z",
+    "modified": "2017-05-02T06:38:56.996Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 20 Jullu 2015"
@@ -7243,8 +7243,8 @@
   "model": "library.resource",
   "pk": 337,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.644Z",
+    "modified": "2017-05-02T06:38:56.997Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 16 Jullu 2015"
@@ -7263,8 +7263,8 @@
   "model": "library.resource",
   "pk": 338,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.645Z",
+    "modified": "2017-05-02T06:38:56.998Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 21 Jullu 2015\r\n"
@@ -7283,8 +7283,8 @@
   "model": "library.resource",
   "pk": 339,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.646Z",
+    "modified": "2017-05-02T06:38:56.999Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 22 Jullu 2015"
@@ -7303,8 +7303,8 @@
   "model": "library.resource",
   "pk": 340,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.647Z",
+    "modified": "2017-05-02T06:38:57.000Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 23 Jullu 2015"
@@ -7323,8 +7323,8 @@
   "model": "library.resource",
   "pk": 341,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.648Z",
+    "modified": "2017-05-02T06:38:57.001Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 27 Jullu 2015"
@@ -7343,8 +7343,8 @@
   "model": "library.resource",
   "pk": 342,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.649Z",
+    "modified": "2017-05-02T06:38:57.002Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 28 Jullu 2015"
@@ -7363,8 +7363,8 @@
   "model": "library.resource",
   "pk": 343,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.650Z",
+    "modified": "2017-05-02T06:38:57.003Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 29 Jullu 2015"
@@ -7383,8 +7383,8 @@
   "model": "library.resource",
   "pk": 344,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.651Z",
+    "modified": "2017-05-02T06:38:57.004Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 30 Jullu 2015"
@@ -7403,8 +7403,8 @@
   "model": "library.resource",
   "pk": 345,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.652Z",
+    "modified": "2017-05-02T06:38:57.005Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 31 Jullu 2015"
@@ -7423,8 +7423,8 @@
   "model": "library.resource",
   "pk": 346,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.653Z",
+    "modified": "2017-05-02T06:38:57.006Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 3 Agostu 2015"
@@ -7443,8 +7443,8 @@
   "model": "library.resource",
   "pk": 347,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.654Z",
+    "modified": "2017-05-02T06:38:57.007Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 4 Agostu 2015"
@@ -7463,8 +7463,8 @@
   "model": "library.resource",
   "pk": 348,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.655Z",
+    "modified": "2017-05-02T06:38:57.008Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 5 Agostu 2015 "
@@ -7483,8 +7483,8 @@
   "model": "library.resource",
   "pk": 349,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.656Z",
+    "modified": "2017-05-02T06:38:57.009Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 10 Agostu 2015"
@@ -7503,8 +7503,8 @@
   "model": "library.resource",
   "pk": 350,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.657Z",
+    "modified": "2017-05-02T06:38:57.010Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 11 Agostu 2015"
@@ -7523,12 +7523,12 @@
   "model": "library.resource",
   "pk": 351,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.658Z",
+    "modified": "2017-05-02T06:38:57.011Z",
     "year": 2015,
     "name": {
-      "en": "Understanding Resilience from a Local Perspective; Timor-Leste Country Note",
-      "tet": "Reziliensia husi Perspektiva Lokal; Timor-Leste Relatoriu Nasional "
+      "tet": "Reziliensia husi Perspektiva Lokal; Timor-Leste Relatoriu Nasional ",
+      "en": "Understanding Resilience from a Local Perspective; Timor-Leste Country Note"
     },
     "description": {
       "en": "This report presents the findings of six months of participatory consultations across Timor-Leste, in which CEPAD asked Timorese what, in their opinion, constitutes and contributes to their resilience as a people and nation, in the face of violent conflict. This consultation concludes the first phase of a two year research project entitled Frameworks for Assessing Resilience (FAR)."
@@ -7540,8 +7540,8 @@
       125
     ],
     "organization": [
-      158,
-      1051
+      1051,
+      158
     ]
   }
 },
@@ -7549,8 +7549,8 @@
   "model": "library.resource",
   "pk": 352,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.659Z",
+    "modified": "2017-05-02T06:38:57.012Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 12 Agostu 2015"
@@ -7569,26 +7569,26 @@
   "model": "library.resource",
   "pk": 353,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.660Z",
+    "modified": "2017-05-02T06:38:57.013Z",
     "year": 2014,
     "name": {
-      "en": "Women\u2019s Access to Land and Property Rights in the Plural Justice System of Timor-Leste.",
-      "tet": "Fetonia Asesu b\u00e1 Rai no Direitu ba Propriedade iha Sistema Justisa Plur\u00e1l Timor-Leste."
+      "tet": "Fetonia Asesu b\u00e1 Rai no Direitu ba Propriedade iha Sistema Justisa Plur\u00e1l Timor-Leste.",
+      "en": "Women\u2019s Access to Land and Property Rights in the Plural Justice System of Timor-Leste."
     },
     "description": {
-      "en": "The Centre of Studies for Peace and Development (CEPAD) with support from UN Women, conducted\r\nparticipatory action research over a period of 12 months in order to examine women\u2019s access to justice\r\nin the plural legal system of Timor-Leste with a focus on women\u2019s rights to land and property. The\r\ninterconnection between land, gender and justice in Timor-Leste is particularly important to examine in\r\nlight of draft land legislation which is currently tabled in the National Parliament as well as a\r\nforthcoming law on customary justice and a forthcoming law on mediation which are in the drafting\r\nstages within the Ministry of Justice. CEPAD hopes this research can make a contribution to the\r\ndevelopment and implementation of these pieces of legislation, as well as serving as a reference for\r\njustice actors in the state and customary systems.",
-      "tet": "Sentru Estudu b\u00e1 Dame no Dezenvolvimentu (CEPAD) ho apoiu hosi UN Women, hala'o peskiza asaun\r\npartisipat\u00f3ria durante fulan 12 atu nune'e bele ezamina feto sira-nia asesu b\u00e1 justisa iha sistema Justisa\r\nplur\u00e1l iha Timor-Leste ho fokus b\u00e1 feto sira-nia direitu b\u00e1 rai no propriedade. Importante tebes atu\r\nezamina inter-ligasaun entre rai, j\u00e9neru no justisa iha Timor-Leste ho razaun projetu lei ba rai ne\u2019eb\u00e9\r\nmak iha hela meza Parlamentu Nasion\u00e1l no m\u00f3s lei tuirmai kona-ba justisa kostum\u00e9ira kona-ba\r\nmediasaun ne'eb\u00e9 sei iha hela faze esbosu iha Minist\u00e9riu Justisa. CEPAD hein katak peskiza ida-ne'e\r\nbele f\u00f3 kontribuisaun b\u00e1 dezenvolvimentu no implementasaun hosi revizaun lejislasaun hirak-ne'e, no\r\nm\u00f3s serve hanesan refer\u00e9nsia b\u00e1 at\u00f3r justisa sira iha sistema estadu no kostum\u00e9ira. CEPAD halo ona\r\nesforsu konsider\u00e1vel atu asegura katak prosesu peskiza asaun partisipat\u00f3ria posibilita ona feto\r\nsira,ne'eb\u00e9 envolve, bele artikula no define sira-nia pozisaun no asaun ne'eb\u00e9 presizu atu hadi'a sira-nia\r\nasesu b\u00e1 justisa."
+      "tet": "Sentru Estudu b\u00e1 Dame no Dezenvolvimentu (CEPAD) ho apoiu hosi UN Women, hala'o peskiza asaun\r\npartisipat\u00f3ria durante fulan 12 atu nune'e bele ezamina feto sira-nia asesu b\u00e1 justisa iha sistema Justisa\r\nplur\u00e1l iha Timor-Leste ho fokus b\u00e1 feto sira-nia direitu b\u00e1 rai no propriedade. Importante tebes atu\r\nezamina inter-ligasaun entre rai, j\u00e9neru no justisa iha Timor-Leste ho razaun projetu lei ba rai ne\u2019eb\u00e9\r\nmak iha hela meza Parlamentu Nasion\u00e1l no m\u00f3s lei tuirmai kona-ba justisa kostum\u00e9ira kona-ba\r\nmediasaun ne'eb\u00e9 sei iha hela faze esbosu iha Minist\u00e9riu Justisa. CEPAD hein katak peskiza ida-ne'e\r\nbele f\u00f3 kontribuisaun b\u00e1 dezenvolvimentu no implementasaun hosi revizaun lejislasaun hirak-ne'e, no\r\nm\u00f3s serve hanesan refer\u00e9nsia b\u00e1 at\u00f3r justisa sira iha sistema estadu no kostum\u00e9ira. CEPAD halo ona\r\nesforsu konsider\u00e1vel atu asegura katak prosesu peskiza asaun partisipat\u00f3ria posibilita ona feto\r\nsira,ne'eb\u00e9 envolve, bele artikula no define sira-nia pozisaun no asaun ne'eb\u00e9 presizu atu hadi'a sira-nia\r\nasesu b\u00e1 justisa.",
+      "en": "The Centre of Studies for Peace and Development (CEPAD) with support from UN Women, conducted\r\nparticipatory action research over a period of 12 months in order to examine women\u2019s access to justice\r\nin the plural legal system of Timor-Leste with a focus on women\u2019s rights to land and property. The\r\ninterconnection between land, gender and justice in Timor-Leste is particularly important to examine in\r\nlight of draft land legislation which is currently tabled in the National Parliament as well as a\r\nforthcoming law on customary justice and a forthcoming law on mediation which are in the drafting\r\nstages within the Ministry of Justice. CEPAD hopes this research can make a contribution to the\r\ndevelopment and implementation of these pieces of legislation, as well as serving as a reference for\r\njustice actors in the state and customary systems."
     },
     "pubtype": "RPR",
     "cover": "",
     "user": null,
     "author": [],
     "organization": [
-      158,
+      2424,
       1051,
       961,
-      2424
+      158
     ]
   }
 },
@@ -7596,8 +7596,8 @@
   "model": "library.resource",
   "pk": 354,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.661Z",
+    "modified": "2017-05-02T06:38:57.014Z",
     "year": 2012,
     "name": {
       "en": "The people\u2019s voice on corruption in Timor-Leste"
@@ -7608,9 +7608,9 @@
     "user": null,
     "author": [],
     "organization": [
-      158,
       2388,
-      1051
+      1051,
+      158
     ]
   }
 },
@@ -7618,8 +7618,8 @@
   "model": "library.resource",
   "pk": 355,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.662Z",
+    "modified": "2017-05-02T06:38:57.015Z",
     "year": 2013,
     "name": {
       "en": "Promoting Social and Economic Inclusion for Women and Youth in Timor-Leste"
@@ -7634,9 +7634,9 @@
       125
     ],
     "organization": [
-      158,
       1051,
-      1026
+      1026,
+      158
     ]
   }
 },
@@ -7644,8 +7644,8 @@
   "model": "library.resource",
   "pk": 356,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.663Z",
+    "modified": "2017-05-02T06:38:57.016Z",
     "year": null,
     "name": {
       "tet": "Hakb\u00edt Partisipasaun Feto iha Prosesu Konsolidasaun Demokrasia iha Timor-Leste"
@@ -7656,9 +7656,9 @@
     "user": null,
     "author": [],
     "organization": [
-      158,
       2412,
-      1051
+      1051,
+      158
     ]
   }
 },
@@ -7666,8 +7666,8 @@
   "model": "library.resource",
   "pk": 357,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.664Z",
+    "modified": "2017-05-02T06:38:57.017Z",
     "year": 2012,
     "name": {
       "en": "A Monitoring and Evaluation Framework for the National Action Plan on Gender-Based Violence"
@@ -7688,8 +7688,8 @@
   "model": "library.resource",
   "pk": 358,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.665Z",
+    "modified": "2017-05-02T06:38:57.018Z",
     "year": 2002,
     "name": {
       "tet": "CEDAW Konvensaun atu halakon diskriminasaun hotu kontra feto"
@@ -7710,8 +7710,8 @@
   "model": "library.resource",
   "pk": 359,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.666Z",
+    "modified": "2017-05-02T06:38:57.019Z",
     "year": null,
     "name": {
       "tet": "Deklarasaun Univers\u00e1l Direitus Umanus"
@@ -7730,8 +7730,8 @@
   "model": "library.resource",
   "pk": 360,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.667Z",
+    "modified": "2017-05-02T06:38:57.020Z",
     "year": 2003,
     "name": {
       "en": "Final report on workshop and district consultations for domestic violence legislation"
@@ -7744,10 +7744,10 @@
       122
     ],
     "organization": [
-      295,
       2406,
       2373,
-      1025
+      1025,
+      295
     ]
   }
 },
@@ -7755,8 +7755,8 @@
   "model": "library.resource",
   "pk": 361,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.668Z",
+    "modified": "2017-05-02T06:38:57.021Z",
     "year": 2002,
     "name": {
       "en": "Gender-Based Violence: Challenges and Way Forward. A Report of Focus Groups in Four Districts"
@@ -7775,8 +7775,8 @@
   "model": "library.resource",
   "pk": 362,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.669Z",
+    "modified": "2017-05-02T06:38:57.022Z",
     "year": 2003,
     "name": {
       "en": "Prevalence of Gender-Based Violence in East Timor"
@@ -7798,8 +7798,8 @@
   "model": "library.resource",
   "pk": 363,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.670Z",
+    "modified": "2017-05-02T06:38:57.023Z",
     "year": 2007,
     "name": {
       "en": "Voicing the Experience of Silenced Women. A Report of Violence Against Women 2005-2006"
@@ -7818,8 +7818,8 @@
   "model": "library.resource",
   "pk": 364,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.671Z",
+    "modified": "2017-05-02T06:38:57.024Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 17 Agostu 2015"
@@ -7838,8 +7838,8 @@
   "model": "library.resource",
   "pk": 365,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.672Z",
+    "modified": "2017-05-02T06:38:57.025Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 18 Agostu 2015"
@@ -7858,8 +7858,8 @@
   "model": "library.resource",
   "pk": 366,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.673Z",
+    "modified": "2017-05-02T06:38:57.026Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 19 Agostu 2015"
@@ -7878,8 +7878,8 @@
   "model": "library.resource",
   "pk": 367,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.674Z",
+    "modified": "2017-05-02T06:38:57.027Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Kona-ba Seguransa 27 Agostu 2015"
@@ -7898,8 +7898,8 @@
   "model": "library.resource",
   "pk": 368,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.675Z",
+    "modified": "2017-05-02T06:38:57.028Z",
     "year": 2015,
     "name": {
       "tet": "FM Nia Artigu Konaba Seguransa 16 Setembru 2015"
@@ -7918,8 +7918,8 @@
   "model": "library.resource",
   "pk": 369,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.676Z",
+    "modified": "2017-05-02T06:38:57.029Z",
     "year": 2015,
     "name": {
       "en": "Map of Atauro"
@@ -7936,12 +7936,12 @@
   "model": "library.resource",
   "pk": 370,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.677Z",
+    "modified": "2017-05-02T06:38:57.030Z",
     "year": 0,
     "name": {
-      "en": "Seminar Report Belun",
-      "tet": "Relatoriu Seminariu Belun"
+      "tet": "Relatoriu Seminariu Belun",
+      "en": "Seminar Report Belun"
     },
     "description": {},
     "pubtype": "RPR",
@@ -7957,8 +7957,8 @@
   "model": "library.resource",
   "pk": 371,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.678Z",
+    "modified": "2017-05-02T06:38:57.031Z",
     "year": 0,
     "name": {
       "tet": "Relatoriu Annual Belun Nian 2011"
@@ -7979,12 +7979,12 @@
   "model": "library.resource",
   "pk": 406,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.713Z",
+    "modified": "2017-05-02T06:38:57.066Z",
     "year": 2016,
     "name": {
-      "en": "CORAL TRIANGLE SUSTAINABLE \nMARINE TOURISM PROJECT Timor Leste, Solomon Islands & Papua New Guinea: 2016 \u2013 2017",
-      "tet": "CORAL TRIANGLE SUSTAINABLE MARINE TOURISM PROJECT Timor Leste, Solomon Islands & Papua New Guinea: 2016 \u2013 2017"
+      "tet": "CORAL TRIANGLE SUSTAINABLE MARINE TOURISM PROJECT Timor Leste, Solomon Islands & Papua New Guinea: 2016 \u2013 2017",
+      "en": "CORAL TRIANGLE SUSTAINABLE \nMARINE TOURISM PROJECT Timor Leste, Solomon Islands & Papua New Guinea: 2016 \u2013 2017"
     },
     "description": {
       "en": "INFORMATION FOR THE GOVERNMENT & COMMUNITIES OF TIMOR LESTE"
@@ -8002,8 +8002,8 @@
   "model": "library.resource",
   "pk": 408,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.715Z",
+    "modified": "2017-05-02T06:38:57.068Z",
     "year": 2016,
     "name": {
       "en": "TIMOR LESTE OVERVIEW OF FINDINGS"
@@ -8020,8 +8020,8 @@
   "model": "library.resource",
   "pk": 409,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.716Z",
+    "modified": "2017-05-02T06:38:57.069Z",
     "year": 2015,
     "name": {
       "en": "TIMOR-LESTE ECONOMIC DIVERSIFICATION ANALYSIS: CANDLENUT, MOBILE FINANCE MARKET & TOURISM  ASSESSMENTS"
@@ -8040,8 +8040,8 @@
   "model": "library.resource",
   "pk": 410,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.717Z",
+    "modified": "2017-05-02T06:38:57.070Z",
     "year": 2016,
     "name": {
       "en": "Timor Tourism- Donor Activities and Resources"
@@ -8062,8 +8062,8 @@
   "model": "library.resource",
   "pk": 412,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.719Z",
+    "modified": "2017-05-02T06:38:57.072Z",
     "year": 2016,
     "name": {
       "en": "Timor Leste Tourism Project"
@@ -8084,8 +8084,8 @@
   "model": "library.resource",
   "pk": 414,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.721Z",
+    "modified": "2017-05-02T06:38:57.074Z",
     "year": 2012,
     "name": {
       "tet": "Mata Dalan Fasilitasaun Di\u00e1logu no Mediasaun Komunit\u00e1ria"
@@ -8108,8 +8108,8 @@
   "model": "library.resource",
   "pk": 416,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.723Z",
+    "modified": "2017-05-02T06:38:57.076Z",
     "year": 2013,
     "name": {
       "tet": "Breaking The Cycle Of Domestic Violence In Timor-Leste"
@@ -8132,8 +8132,8 @@
   "model": "library.resource",
   "pk": 419,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.726Z",
+    "modified": "2017-05-02T06:38:57.079Z",
     "year": 2010,
     "name": {
       "tet": "National Adaption Programme Of Action (NAPA) On climate Change"
@@ -8146,8 +8146,8 @@
     "user": null,
     "author": [],
     "organization": [
-      966,
-      2396
+      2396,
+      966
     ]
   }
 },
@@ -8155,8 +8155,8 @@
   "model": "library.resource",
   "pk": 420,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.727Z",
+    "modified": "2017-05-02T06:38:57.080Z",
     "year": 2011,
     "name": {
       "tet": "The National Biodiversity Strategy and Action Plan of Timor-Leste (2011-2020)"
@@ -8169,8 +8169,8 @@
     "user": null,
     "author": [],
     "organization": [
-      966,
-      2531
+      2531,
+      966
     ]
   }
 },
@@ -8178,8 +8178,8 @@
   "model": "library.resource",
   "pk": 422,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.729Z",
+    "modified": "2017-05-02T06:38:57.082Z",
     "year": 2010,
     "name": {
       "tet": "Set\u00f3r Justisa  Planu Estrat\u00e9jiku ba Timor Leste  2011-2030"
@@ -8190,8 +8190,8 @@
     "user": null,
     "author": [],
     "organization": [
-      966,
-      2532
+      2532,
+      966
     ]
   }
 },
@@ -8199,8 +8199,8 @@
   "model": "library.resource",
   "pk": 423,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.730Z",
+    "modified": "2017-05-02T06:38:57.083Z",
     "year": 2016,
     "name": {
       "tet": "Mekanizmu atu Kompriende Reziliensia \u2013 Timor-Leste Relat\u00f3riu Final"
@@ -8216,10 +8216,10 @@
       137
     ],
     "organization": [
-      966,
-      158,
+      2505,
       1122,
-      2505
+      966,
+      158
     ]
   }
 },
@@ -8227,8 +8227,8 @@
   "model": "library.resource",
   "pk": 424,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.731Z",
+    "modified": "2017-05-02T06:38:57.084Z",
     "year": 2012,
     "name": {
       "en": "Branchless Banking/Mobile Money  Market Research in Timor-Leste"
@@ -8251,8 +8251,8 @@
   "model": "library.resource",
   "pk": 435,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.742Z",
+    "modified": "2017-05-02T06:38:57.095Z",
     "year": 2014,
     "name": {
       "tet": "Hist\u00f3ria de Timor Leste"
@@ -8274,8 +8274,8 @@
   "model": "library.resource",
   "pk": 440,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.747Z",
+    "modified": "2017-05-02T06:38:57.100Z",
     "year": 2016,
     "name": {
       "tet": "Relatoriu Progresu ba fulan 6 husi April - Setembru 2016"
@@ -8301,16 +8301,16 @@
   "model": "library.resource",
   "pk": 441,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.748Z",
+    "modified": "2017-05-02T06:38:57.101Z",
     "year": 2016,
     "name": {
-      "en": "EWER Alert\n10 November 2016",
-      "tet": "Alerta AtRes, 10 Nov 2016"
+      "tet": "Alerta AtRes, 10 Nov 2016",
+      "en": "EWER Alert\n10 November 2016"
     },
     "description": {
-      "en": "35 INCIDENTS RECORDED BEFORE, DURING AND AFTER LOCAL ELECTIONS\nDili, 10 November 2016",
-      "tet": "INSIDENTE VIOL\u00c9NSIA ELEITOR\u00c1L 35 AKONTESE ANTES, DURANTE NO DEPOIS VOTASAUN IHA ELEISAUN SUKU\nDili, 10 Novembru 2016"
+      "tet": "INSIDENTE VIOL\u00c9NSIA ELEITOR\u00c1L 35 AKONTESE ANTES, DURANTE NO DEPOIS VOTASAUN IHA ELEISAUN SUKU\nDili, 10 Novembru 2016",
+      "en": "35 INCIDENTS RECORDED BEFORE, DURING AND AFTER LOCAL ELECTIONS\nDili, 10 November 2016"
     },
     "pubtype": "RPR",
     "cover": "",
@@ -8327,8 +8327,8 @@
   "model": "library.resource",
   "pk": 442,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.749Z",
+    "modified": "2017-05-02T06:38:57.102Z",
     "year": 2015,
     "name": {
       "tet": "Hametin Jestaun, Manutensaun no Kapasidade Liuhusi Dezamina Informasaun ne\u2019eb\u00e9 Sustent\u00e1vel no Reforsa Li\u00f1a Koordenasaun Entre Governu ba Garantia Seguransa Umanu ne\u2019eb\u00e9 Di\u2019ak Iha Timor \u2013 Leste\u201d"
@@ -8351,8 +8351,8 @@
   "model": "library.resource",
   "pk": 447,
   "fields": {
-    "created": "2017-04-30T13:11:19.954Z",
-    "modified": "2017-04-30T13:11:19.954Z",
+    "created": "2017-05-02T06:37:01.754Z",
+    "modified": "2017-05-02T06:38:57.107Z",
     "year": 2012,
     "name": {
       "tet": "violencia"

@@ -71,7 +71,7 @@ class ResourceModelSerializer(serializers.ModelSerializer):
 
 
 class ResourceBaseViewSet(viewsets.ModelViewSet):
-    queryset = models.Resource.objects.all()
+    queryset = models.Resource.objects.prefetch_related('author', 'organization')
     serializer_class = ResourceModelSerializer
     filter_backends=(TimeStampFilter,)
     ordering_fields='modified'
