@@ -1,4 +1,5 @@
 from rest_framework.filters import BaseFilterBackend
+from rest_framework.pagination import LimitOffsetPagination
 
 from . import models
 from rest_framework import serializers, viewsets
@@ -16,7 +17,7 @@ class TimeStampFilter(BaseFilterBackend):
         if 'modified__gt' in request.GET:
             queryset = queryset.filter(modified__gt=request.GET['modified__gt'])
         if 'modified__lt' in request.GET:
-            queryset = queryset.filter(modified__gt=request.GET['modified__gt'])
+            queryset = queryset.filter(modified__lt=request.GET['modified__lt'])
         return queryset
 
 
@@ -73,6 +74,7 @@ class ResourceModelSerializer(serializers.ModelSerializer):
 class ResourceBaseViewSet(viewsets.ModelViewSet):
     queryset = models.Resource.objects.prefetch_related('author', 'organization')
     serializer_class = ResourceModelSerializer
+    pagination_class = LimitOffsetPagination
     filter_backends=(TimeStampFilter,)
     ordering_fields='modified'
 

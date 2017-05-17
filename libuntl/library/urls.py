@@ -7,5 +7,5 @@ from . import views
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
-    url(r'^', views.ResourceList.as_view())
+    url(r'^$', views.ResourceList.as_view())
 ]

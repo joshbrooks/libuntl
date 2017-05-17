@@ -1,4 +1,6 @@
-{%  extends 'base.html' %}
+{% extends 'base_site.html' %}
+
+
 {% load i18n %}
 {% load static %}
 {% block script %}
@@ -11,12 +13,9 @@
     </script>
 {% endblock %}
 {% block content %}
-    <h4>Hello-World</h4>
-
-    <p>Here goes list of things</p>
-    {% get_current_language as lang %}
-    {{ lang }}
+    <row>
+    <h1>Welcome to the UNTL Online Library</h1>
 
     <library-resource_list></library-resource_list>
-
+</row>
 {% endblock %}
