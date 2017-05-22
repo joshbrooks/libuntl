@@ -6,83 +6,68 @@ window.stores = window.stores || {};
 (function(stores, resources){
     var store_name = 'resource';
     var store;
-    function ResourceIdb(database_opts){
-        var opts = {'dbname': 'libuntl', 'version': 1, 'table': 'resources'};
-        _(opts).extend(database_opts);
+
+    /**
+     * Initialize the database
+     * @param database_opts
+     * @returns {Promise<DB>}
+     */
+    function initialiseIdb(database_opts){
+        /**
+         * options include name for the database, name for the table, version, keyPath, indexes
+         * @type {{dbname: string, version: number, objectStoreName: string, keyPath: string, indexes: [*]}}
+         */
+        // TODO: Input validation for this function
+        var opts = _.extend({}, database_opts);
+
         return idb.open(opts.dbname, opts.version, function(upgradeDb){
             switch(upgradeDb.oldVersion){
+                /* Add additional schema upgrades here */
                 case 0:
-                    var idbstore = upgradeDb.createObjectStore(opts.table, {keyPath: 'id'})
-                    idbstore.createIndex('by-modified', 'timestamp')
-                    idbstore.createIndex('by-pubtype', 'pubtype')
+                    var idbstore = upgradeDb.createObjectStore(opts.objectStoreName, {keyPath: opts.keyPath});
+                    _.each(indexes, function initIndex(i){
+                        idbstore.createIndex(i.indexName, i.field)
+                    });
             }
         })
     }
 
-    ResourceIdb();
-
     function ResourceStore(resources, store_opts) {
         var store = this;
-        var opts = {
-            baseName: 'libuntl',
+
+        var defaults = {
+            functionprefix: 'resources',
+            dbname: 'libuntl',
+            version: 1,
             objectStoreName: 'resources',
-            indexName: 'by-modified'
+            keyPath: 'id',
+            indexName: 'by-modified',
+            indexes: [{
+                indexName: 'by-modified',
+                field: 'timestamp'
+            }, {
+                indexName: 'by-pubtype',
+                field: 'pubtype'
+            }]
         };
-        _(opts).extend(store_opts);
+
+        store.opts = _.defaults({}, defaults, store_opts);
+
         riot.observable(this);
         store.urls = {
             list: function(){return Urls.resource_list()},
             detail: function(detail_id){return Urls.resource_detail(detail_id)}
         };
 
-        function addToStore(data){
-           idb.open(opts.baseName).then(function(db) {
-               var objectStore = db.transaction(opts.objectStoreName, 'readwrite').objectStore(opts.objectStoreName);
-               _.each(data.results, function (d) {
-                   d.timestamp = _.toInteger(moment(d.modified).format('X'))
-                   objectStore.put(d)
-               });
-           });
-        }
-
-        function updateModifiedSince(last_modified, _opts) {
-            var opts = _opts || {};
-            _.defaults(opts, {offset: 0, limit: 100});
-            console.log(opts);
-            var request = $.getJSON(store.urls.list(), {
-                modified__gt: last_modified,
-                limit: opts.limit,
-                offset: opts.offset
-            });
-            request.done(
-                function (data) {
-                    addToStore(data.results);
-                    if (data.next) {
-                        opts.offset += 100
-                        updateModifiedSince(last_modified, opts)
-                    }
-                });
-        }
-
-        function refresh() {
-            idb.open(opts.baseName)
-                .then(function (db) {
-                    db.transaction(opts.objectStoreName, 'readonly')
-                        .objectStore(opts.objectStoreName).index(opts.indexName)
-                        .openCursor(null, 'prev')
-                        .then(function (cursor) {
-                        if (cursor.value.modified) {
-                            stores.resource.trigger('refresh', cursor.value.modified)
-                        }
-                    })
-                });
-            }
-        store.on('refresh', function(last_modified){updateModifiedSince(last_modified)});
-        refresh();
+        // store.on('refresh', function(last_modified){updateModifiedSince(last_modified)});
+        // store.refresh();
     }
 
     _.extend( ResourceStore.prototype, StoreMixin );
+    _.extend( ResourceStore.prototype, StoreIDBMixin );
+
     stores[store_name] = new ResourceStore(resources);
+
     store = stores[store_name];
 
 }(window.stores, []));
