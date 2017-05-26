@@ -1,4 +1,16 @@
 <library-resource_list>
+    <p>{page}</p>
+    <p onclick="{fn.pagination.next}">Next {page} + 1</p>
+    <p onclick="{fn.pagination.prev}">Prev {page} - 1</p>
+
+
+    <div class="panel panel-default" if="{ !resources }">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                There are no resources to display
+            </h3>
+        </div>
+    </div>
 
     <div class="panel panel-default" each="{ resource in resources }">
         <div class="panel-heading">
@@ -34,6 +46,13 @@
 
     <script type="text/javascript">
         var tag = this;
+        tag.page = 1;
+        tag.page_size = 10;
+        tag.actions = [];
+
+        function message(message){
+            tag.message = message;
+        }
 
         function store(){
             return window.stores.resource;
@@ -52,17 +71,45 @@
             });
             store().on('resources_restored', function(){
                 tag.update()});
+            store().on('*', function(){
+                tag.actions.push(arguments);
+                tag.update();
+                var action = arguments[0];
+                switch (action) {
+                    case 'update-start':
+                        message('Downloading new resources');
+                        break;
+                    case 'update-continued':
+                        tag.update();
+                        message('Downloading new resources');
+                        break;
+                    case 'update-done':
+                        tag.update();
+                        message('Have a nice day');
+                        break;
+                    case 'pagination':
+                        tag.resources = arguments[1];
+                        tag.update();
+                        break;
+                    default:
+                        break;
+                        message(action)
+                }
+            })
         });
 
         tag.fn = {
             display:{
                 name: function(name){return JSON.stringify(name)}
+            },
+            pagination: {
+                next: function(){tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
+                prev: function(){tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
+                first: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
+                last: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})}
             }
         };
 
-        tag.on('update', function(){
-            tag.resources = store().resources; //TODO: Pagination and Filtering
-        })
     </script>
 
 </library-resource_list>
