@@ -10,6 +10,8 @@
         <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>
     <script>
     $(document).ready(function(){riot.mount('library-resource_list')})
+    route(function(id){console.log(id)})
+    route.start(true)
     </script>
 {% endblock %}
 {% block content %}
