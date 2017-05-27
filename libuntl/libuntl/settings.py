@@ -35,7 +35,7 @@ class Common(Configuration):
         'django.contrib.staticfiles',
 
         'django_extensions',
-        'debug_toolbar',
+        # 'debug_toolbar',
         'django_js_reverse',
         'javascript_settings',
         'rest_framework',
@@ -166,9 +166,9 @@ class Development(Common):
         '127.0.0.1'
     ]
 
-    MIDDLEWARE = Common.MIDDLEWARE + [
-        'debug_toolbar.middleware.DebugToolbarMiddleware'
-    ]
+    # MIDDLEWARE = Common.MIDDLEWARE + [
+    #     'debug_toolbar.middleware.DebugToolbarMiddleware'
+    # ]
 
 
 class Staging(Common):

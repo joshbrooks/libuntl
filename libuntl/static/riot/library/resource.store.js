@@ -3,86 +3,65 @@
  */
 
 window.stores = window.stores || {};
-(function(stores, resources){
-    var store_name = 'resource';
+(function (stores, resources) {
     var store;
-    function ResourceIdb(database_opts){
-        var opts = {'dbname': 'libuntl', 'version': 1, 'table': 'resources'};
-        _(opts).extend(database_opts);
-        return idb.open(opts.dbname, opts.version, function(upgradeDb){
-            switch(upgradeDb.oldVersion){
-                case 0:
-                    var idbstore = upgradeDb.createObjectStore(opts.table, {keyPath: 'id'})
-                    idbstore.createIndex('by-modified', 'timestamp')
-                    idbstore.createIndex('by-pubtype', 'pubtype')
-            }
-        })
-    }
+    var store_name = 'resource';
 
-    ResourceIdb();
+    /**
+     * Initialize the database
+     * @param database_opts
+     * @returns {Promise<DB>}
+     */
 
-    function ResourceStore(resources, store_opts) {
+    function ResourceStore(store_opts) {
         var store = this;
-        var opts = {
-            baseName: 'libuntl',
+        var defaults = {
+            functionprefix: 'resources',
+            dbname: 'libuntl',
+            version: 1,
             objectStoreName: 'resources',
-            indexName: 'by-modified'
+            keyPath: 'id',
+            indexName: 'by-modified',
+            indexes: [{
+                indexName: 'by-modified',
+                field: 'timestamp'
+            }, {
+                indexName: 'by-pubtype',
+                field: 'pubtype'
+            }]
         };
-        _(opts).extend(store_opts);
+
+        store.opts = _.defaults({}, defaults, store_opts);
+
         riot.observable(this);
         store.urls = {
-            list: function(){return Urls.resource_list()},
-            detail: function(detail_id){return Urls.resource_detail(detail_id)}
+            list: function () {
+                return Urls.resource_list();
+            },
+            detail: function (detail_id) {
+                return Urls.resource_detail(detail_id);
+            }
         };
 
-        function addToStore(data){
-           idb.open(opts.baseName).then(function(db) {
-               var objectStore = db.transaction(opts.objectStoreName, 'readwrite').objectStore(opts.objectStoreName);
-               _.each(data.results, function (d) {
-                   d.timestamp = _.toInteger(moment(d.modified).format('X'))
-                   objectStore.put(d)
-               });
-           });
-        }
+        store.initialiseIdb(store.opts);
+        store.on('refresh', function (last_modified) {
+            store.update(last_modified);
+        });
 
-        function updateModifiedSince(last_modified, _opts) {
-            var opts = _opts || {};
-            _.defaults(opts, {offset: 0, limit: 100});
-            console.log(opts);
-            var request = $.getJSON(store.urls.list(), {
-                modified__gt: last_modified,
-                limit: opts.limit,
-                offset: opts.offset
-            });
-            request.done(
-                function (data) {
-                    addToStore(data.results);
-                    if (data.next) {
-                        opts.offset += 100
-                        updateModifiedSince(last_modified, opts)
-                    }
-                });
-        }
+        store.on('update-start',function(opts){console.log('update-start', store, opts);})
+        store.on('update-continued',function(opts){store.getAll()})
+        store.on('update-end',function(opts){store.getAll()})
+        store.on('refresh',function(opts){console.log('refresh', store, opts);})
 
-        function refresh() {
-            idb.open(opts.baseName)
-                .then(function (db) {
-                    db.transaction(opts.objectStoreName, 'readonly')
-                        .objectStore(opts.objectStoreName).index(opts.indexName)
-                        .openCursor(null, 'prev')
-                        .then(function (cursor) {
-                        if (cursor.value.modified) {
-                            stores.resource.trigger('refresh', cursor.value.modified)
-                        }
-                    })
-                });
-            }
-        store.on('refresh', function(last_modified){updateModifiedSince(last_modified)});
-        refresh();
+        // store.refresh();
     }
 
-    _.extend( ResourceStore.prototype, StoreMixin );
+    _.extend(ResourceStore.prototype, mixins.StoreMixin);
+    _.extend(ResourceStore.prototype, mixins.StoreIDBMixin);
+
     stores[store_name] = new ResourceStore(resources);
     store = stores[store_name];
+    store.initialiseIdb(store.opts);
+    store.get_last_modified();
 
 }(window.stores, []));
