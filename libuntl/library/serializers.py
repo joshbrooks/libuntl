@@ -38,15 +38,17 @@ router.register(r'organization', OrganizationViewSet)
 
 
 class AuthorModelSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.Author
-        fields = '__all__'
+        fields = ('name','modified','id')
 
 
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = models.Author.objects.all()
     serializer_class = AuthorModelSerializer
-
+    pagination_class = LimitOffsetPagination
+    filter_backends=(TimeStampFilter,)
 
 router.register(r'author', AuthorViewSet)
 

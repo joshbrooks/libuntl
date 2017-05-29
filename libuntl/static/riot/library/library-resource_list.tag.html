@@ -36,6 +36,7 @@
                 <div class="col col-xs-1">{ resource.pubtype_id }</div>
                 <div class="col col-xs-1">{ resource.user_id }</div>
             </div>
+            <a href="#resources/{resource.id}" class="btn btn-primary">More</a>
         </div>
     </div>
     <style>
@@ -58,44 +59,59 @@
             return window.stores.resource;
         }
 
+        function update(){
+            tag.update();
+        }
+
+        function listener() {
+            tag.actions.push(arguments);
+            tag.update();
+            var action = arguments[0];
+            switch (action) {
+                case 'update-start':
+                    message('Downloading new resources');
+                    break;
+                case 'update-continued':
+                    update();
+                    message('Downloading new resources');
+                    break;
+                case 'update-done':
+                    update();
+                    message('Have a nice day');
+                    break;
+                case 'pagination':
+                    tag.resources = arguments[1];
+                    update();
+                    break;
+                case 'resources_restored':
+                    update();
+                    break;
+                case 'detail_for':
+                    console(arguments);
+                    break;
+                default:
+                    break;
+                    message(action)
+            }
+        }
+
         tag.header = {
             id:'id',
             description:'description',
             pubtype_id: 'Publication type'
         };
-        tag.on('mount', function(){
 
+        tag.on('unmount', function(){
+            store().off('*', listener);
+        });
+
+        tag.on('mount', function(){
             tag.opts = _.defaults(tag.opts, {
                 page: 1,
                 per_page:10
             });
-            store().on('resources_restored', function(){
-                tag.update()});
-            store().on('*', function(){
-                tag.actions.push(arguments);
-                tag.update();
-                var action = arguments[0];
-                switch (action) {
-                    case 'update-start':
-                        message('Downloading new resources');
-                        break;
-                    case 'update-continued':
-                        tag.update();
-                        message('Downloading new resources');
-                        break;
-                    case 'update-done':
-                        tag.update();
-                        message('Have a nice day');
-                        break;
-                    case 'pagination':
-                        tag.resources = arguments[1];
-                        tag.update();
-                        break;
-                    default:
-                        break;
-                        message(action)
-                }
-            })
+            store().on('*', listener);
+          store().page({page: tag.page, page_size: tag.page_size});
         });
 
         tag.fn = {
@@ -109,6 +125,7 @@
                 last: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})}
             }
         };
+
 
     </script>
 

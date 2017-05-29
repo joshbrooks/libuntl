@@ -1,0 +1,24 @@
+<library-resource_detail>
+    <p>{JSON.stringify(message)}</p>
+    <h4>Authors</h4>
+    <p>{JSON.stringify(authors)}</p>
+    <h4>Organisations</h4>
+    <p>{JSON.stringify(organisations)}</p>
+
+
+    <script>
+        var tag = this;
+        function store(){ return window.stores.resource; }
+        function filter(result){return _.includes(tag.message.author, result.id)};
+        function setAuthor (a) {tag.authors = a; console.log(a); tag.update();}
+
+        tag.store = store();
+        tag.on('route', function(id) {
+            tag.message = 'now loading...';
+            store().find(_.toInteger(id)).then(function(thing) {
+                tag.update({ message: thing });
+                window.db.authors.filter(filter).toArray(setAuthor);
+            })
+        })
+    </script>
+</library-resource_detail>

@@ -44,66 +44,52 @@
      */
     mixins.StoreIDBMixin = {
 
-        load: function load(data) {
+        load: function load(data, load_opts) {
             var store = this;
-            var database;
-            var transaction;
-            var objectstore;
+            var opts = _.defaults({}, store.opts, load_opts);
+            var db = window.db;
+
             if (!_.isArray(data)) {
                 data = [data];
             }
+            if (_.isFunction(opts.modify_on_load)) {
+                _.each(data, opts.modify_on_load);
+            }
             store.trigger('load-start');
-            idb.open(store.opts.dbname).then(function (db) {
-                database = db;
-                transaction = database.transaction(store.opts.objectStoreName, 'readwrite');
-                objectstore = transaction.objectStore(store.opts.objectStoreName);
+            window.db.transaction('rw?', db[opts.objectStoreName], function () {
                 _.each(data, function (d) {
-                    d.timestamp = _.toInteger(moment(d.modified).format('X')); // Specific to certain stores only!
-                    objectstore.put(d);
+                    if (_.has(d, 'modified')) {
+                        d.timestamp = _.toInteger(moment(d.modified).format('X')); // Specific to certain stores only!
+                    }
+                    db[opts.objectStoreName].put(d);
                 });
+            }).then(function () {
                 store.trigger('load-end');
             });
         },
 
+        find: function (id, fn_opts) {
+            var defaults = { limit: 10, offset: 0 };
+            var store = this;
+            var opts = _.defaults({}, store.opts, defaults, fn_opts);
+            return window.db[opts.objectStoreName].get(id);
+        },
+
         getAll: function getAll(opts_) {
             var store = this;
-            var opts = {};
-            _.defaults(opts, store.opts, opts_);
-
-            idb.open(opts.dbname).then(function (db) {
-                return db.transaction(opts.objectStoreName, 'readonly')
-                    .objectStore(opts.objectStoreName)
-                    .index(opts.indexName)
-                    .getAll();
-            }).then(
-                function (resources) {
-                    store.resources = resources;
-                    store.trigger(opts.functionprefix + '_restored');
-                });
+            var opts = _.defaults({}, store.opts, opts_);
+            return window.db[opts.objectStoreName].toArray();
         },
         /**
          * Limit-offset pagination function which triggers 'pagination' with the results
          * @param opts_
          */
         get: function (opts_) {
-            var results = [];
             var store = this;
-            var opts = { limit: 10, offset: 0 };
-            _.defaults(opts, store.opts, opts_);
-            console.log(opts);
-            idb.open(opts.dbname).then(function openCursor(db) {
-                return db.transaction(opts.objectStoreName, 'readonly')
-                    .objectStore(opts.objectStoreName)
-                    .index(opts.indexName)
-                    .openCursor();
-            }).then(function addObject(cursor) {
-                if (opts.offset && !opts.advanced){opts.advanced=true; cursor.advance(offset)};
-                if (!cursor || results.length >= opts.limit) {
-                    store.trigger('pagination', results);
-                } else {
-                    results.push(cursor.value);
-                    return cursor.continue().then(addObject);
-                }
+            var defaults = { limit: 10, offset: 0 };
+            var opts = _.defaults(opts_, store.opts, defaults);
+            return window.db[opts.objectStoreName].offset(opts.offset).limit(opts.limit).toArray().then(function(resources){
+                store.trigger('pagination', resources)
             });
         },
 
@@ -112,7 +98,6 @@
             var defaults = { page: 1, page_size: 10 };
             var opts = _.defaults(opts_, store.opts, defaults);
             var pagination = { offset: (opts.page - 1) * opts.page_size, limit: (opts.page_size) };
-            debugger;
             store.get(pagination);
         },
 
@@ -148,23 +133,14 @@
         get_last_modified: function (opts_) {
             var store = this;
             var opts = _.defaults(this.opts, opts_);
-            var database;
 
-            // Obtain the first result of the "index"
-            idb.open(opts.dbname)
-                .then(function (db) {
-                    database = db;
-                    return database
-                        .transaction(opts.objectStoreName, 'readonly')
-                        .objectStore(opts.objectStoreName)
-                        .openCursor(null, 'prev');
-                }).then(function (last) {
-                    if (_.isUndefined(last)) {
-                        store.trigger('refresh');
-                    } else {
-                        store.trigger('refresh', last.value.modified);
-                    }
-                });
+            return window.db[opts.objectStoreName].orderBy('modified').last().then(function (last_value) {
+                if (_.isUndefined(last_value)) {
+                    store.trigger('refresh');
+                } else {
+                    store.trigger('refresh', last_value.modified);
+                }
+            });
         },
 
         /* Push a clone of the store's "template" onto the stack */
@@ -184,40 +160,6 @@
 
         },
 
-        count: function (opts_) {
-            var store = this;
-            var opts = _.defaults(this.opts, opts_);
-            idb.open(opts.dbname)
-                .then(function (db) {
-                    return db
-                        .transaction(opts.objectStoreName, 'readonly')
-                        .objectStore(opts.objectStoreName)
-                        .count();
-                }).then(function (count) {
-                    store.trigger('count', count);
-                });
-        },
-
-        initialiseIdb: function initializeIdb(database_opts) {
-            /**
-             * options include name for the database, name for the table, version, keyPath, indexes
-             * @type {{dbname: string, version: number, objectStoreName: string, keyPath: string, indexes: [*]}}
-             */
-                // TODO: Input validation for this function
-            var opts = _.extend({}, database_opts);
-
-            return idb.open(opts.dbname, opts.version, function (upgradeDb) {
-                var idbstore;
-                // eslint-disable-next-line default-case
-                switch (upgradeDb.oldVersion) {
-                    /* Add additional schema upgrades here */
-                case 0:
-                    idbstore = upgradeDb.createObjectStore(opts.objectStoreName, { keyPath: opts.keyPath });
-                    _.each(opts.indexes, function initIndex(i) {
-                        idbstore.createIndex(i.indexName, i.field);
-                    });
-                }
-            });
-        }
-    };
+        count: function (opts_) { console.warn('Not Implemented Yet'); return 0 }
+    }
 }(window.mixins = window.mixins || {}));

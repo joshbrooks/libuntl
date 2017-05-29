@@ -4,21 +4,39 @@
 {% load i18n %}
 {% load static %}
 {% block script %}
+        <script>
+            window.db = new Dexie('libuntl');
+            console.log('dexie is up')
+            db.version(0.3).stores({
+                authors: 'id',
+                resources: 'id,timestamp,modified,pubtype'
+            });
+            db.version(0.4).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype'
+            });
+        </script>
+
         <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
         <script type="text/javascript" src="{% static 'riot/library/resource.store.js' %}"></script>
 
+        <script type="riot/tag" src="{%  static 'riot/app.tag.html' %}"></script>
         <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-resource_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-author_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-author_detail.tag.html' %}"></script>
     <script>
-    $(document).ready(function(){riot.mount('library-resource_list')})
-    route(function(id){console.log(id)})
-    route.start(true)
+    riot.compile(function() {
+        riot.mount('app');
+        route.start(true)
+      });
     </script>
 {% endblock %}
 {% block content %}
     <div class="row">
         <div class="col col-xs-12">
             <h1>Welcome to the UNTL Online Library</h1>
-            <library-resource_list></library-resource_list>
+            <app></app>
         </div>
     </div>
 {% endblock %}
