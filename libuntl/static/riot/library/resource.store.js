@@ -100,3 +100,88 @@ window.stores = window.stores || {};
     stores[store_name].get_last_modified();
 
 }(window.stores, []));
+
+(function (stores) {
+    var store_name = 'organizations';
+
+    /**
+     * Initialize the database
+     * @returns {Promise<DB>}
+     * @param store_opts
+     */
+
+    function OrganizationStore(store_opts) {
+        var store = this;
+        var defaults = {
+            functionprefix: 'organizations',
+            dbname: 'libuntl',
+            objectStoreName: 'organizations'
+        };
+        store.opts = _.defaults({}, defaults, store_opts);
+        riot.observable(this);
+        store.urls = {
+            list: function () {
+                return Urls.organization_list();
+            },
+            detail: function (detail_id) {
+                return Urls.organization_detail(detail_id);
+            }
+        };
+
+        store.on('refresh', function (last_modified) {
+            store.update(last_modified);
+        });
+
+        store.on('update-start', function (opts) { console.log('update-start', store, opts); });
+        store.on('update-continued', function (opts) { store.getAll(); });
+        store.on('update-end', function (opts) { store.getAll(); });
+        store.on('refresh', function (opts) { console.log('refresh', store, opts); });
+
+    }
+    _.extend(OrganizationStore.prototype, mixins.StoreMixin);
+    _.extend(OrganizationStore.prototype, mixins.StoreIDBMixin);
+    stores[store_name] = new OrganizationStore();
+    stores[store_name].get_last_modified();
+}(window.stores, []));
+
+(function (stores, authors) {
+    var store_name = 'tags';
+
+    /**
+     * Initialize the database
+     * @returns {Promise<DB>}
+     * @param store_opts
+     */
+
+    function TagStore(store_opts) {
+        var store = this;
+        var defaults = {
+            functionprefix: store_name,
+            dbname: 'libuntl',
+            objectStoreName: store_name
+        };
+        store.opts = _.defaults({}, defaults, store_opts);
+        riot.observable(this);
+        store.urls = {
+            list: function () {
+                return Urls.tag_list();
+            },
+            detail: function (detail_id) {
+                return Urls.tag_detail(detail_id);
+            }
+        };
+
+        store.on('refresh', function (last_modified) {
+            store.update(last_modified);
+        });
+
+        store.on('update-start', function (opts) { console.log('update-start', store, opts); });
+        store.on('update-continued', function (opts) { store.getAll(); });
+        store.on('update-end', function (opts) { store.getAll(); });
+        store.on('refresh', function (opts) { console.log('refresh', store, opts); });
+    }
+    _.extend(TagStore.prototype, mixins.StoreMixin);
+    _.extend(TagStore.prototype, mixins.StoreIDBMixin);
+    stores[store_name] = new TagStore();
+    stores[store_name].get_last_modified();
+}(window.stores, []));

@@ -16,6 +16,7 @@ class Resource(TimeStampedModel):
 
     author = models.ManyToManyField('Author', blank=True)
     organization = models.ManyToManyField('Organization', blank=True)
+    tag = models.ManyToManyField('Tag', blank=True)
 
     cover = models.ImageField(max_length=200, blank=True, null=True)
     user = models.ForeignKey(User, blank=True, null=True)
@@ -33,7 +34,7 @@ class Link(TimeStampedModel):
     file = models.FileField(max_length=200, blank=True, null=True)
 
 
-class Pubtype(models.Model):
+class Pubtype(TimeStampedModel):
     """
     Describes an object based on its type (eg newsletter, report...)
     """

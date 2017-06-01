@@ -1,0 +1,32 @@
+<library-organization_detail>
+     <h4>Organization Detail</h4>
+    <p>{JSON.stringify(message)}</p>
+
+    <h4>Publications</h4>
+
+    <p each="{resource in resources}">
+        <a href="#resources/{resource.id}">{JSON.stringify(resource)}</a>
+    </p>
+
+    <script>
+        var tag = this;
+        function store(){
+            return window.stores.organizations;
+        }
+        function filterResources(result){
+            return _.includes(result.organization, tag.message.id)
+        };
+        function setResources (a) {tag.update({resources:a});};
+        tag.store = store();
+
+        tag.on('route', function(id) {
+            tag.message = 'now loading...';
+            store().find(_.toInteger(id)).then(function(thing) {
+                tag.update({
+                    message: thing
+                });
+                window.db.resources.filter(filterResources).toArray(setResources);
+            })
+        })
+    </script>
+</library-organization_detail>

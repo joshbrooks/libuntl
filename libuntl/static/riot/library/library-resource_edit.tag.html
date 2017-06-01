@@ -1,14 +1,9 @@
-<library-resource_detail>
+<library-resource_edit>
     <p>{JSON.stringify(message)}</p>
-        <a href="#resources">Return to list</a>
-
     <h4>Authors</h4>
-    <p each="{auth in authors}"><a href="#authors/{auth.id}"> {auth.name.name} </a></p>
-
+    <p>{JSON.stringify(authors)}</p>
     <h4>Organizations</h4>
-    <p each="{organization in organizations}">
-        <a href="#organizations/{organization.id}"> {organization.name} </a>
-    </p>
+    <p>{JSON.stringify(organizations)}</p>
 
     <script>
         var tag = this;
@@ -19,11 +14,10 @@
         function setOrganizations (a) {tag.update({organizations:a})};
 
         tag.store = store();
-        tag.authors = [];
-        tag.authors = [];
-        tag.organizations = [];
         tag.on('route', function(id) {
             tag.message = 'now loading...';
+            tag.authors = 'now loading...';
+            tag.organizations = 'now loading...';
             store().find(_.toInteger(id)).then(function(thing) {
                 tag.update({ message: thing });
                 window.db.authors.filter(filter).toArray(setAuthor);
@@ -31,4 +25,4 @@
             })
         })
     </script>
-</library-resource_detail>
+</library-resource_edit>

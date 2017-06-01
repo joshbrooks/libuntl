@@ -118,8 +118,14 @@
             request.done(
                 function (data) {
                     store.trigger('update-start', opts);
-                    store.load(data.results);
-                    store.count(); // Sends a "count" signal with the number of records in the store
+                    // If result is paginated
+                    if (!_.isUndefined(data.results)){
+                        store.load(data.results);
+                    } else {
+                        store.load(data);
+                    }
+                    // store.count(); // Sends a "count" signal with the number of records in the store
+
                     if (data.next) {
                         opts.offset += 100;
                         store.trigger('update-continued', _.extend(opts, { data: data }));
@@ -160,6 +166,14 @@
 
         },
 
-        count: function (opts_) { console.warn('Not Implemented Yet'); return 0 }
+        count: function (opts_) {
+            var store = this;
+            var opts = _.defaults(this.opts, opts_);
+            return window.db[opts.objectStoreName]
+                .count()
+                .then(function (count) {
+                    store.trigger('count', count);
+                });
+        }
     }
 }(window.mixins = window.mixins || {}));

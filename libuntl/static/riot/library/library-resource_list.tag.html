@@ -1,8 +1,32 @@
-<library-resource_list>
-    <p>{page}</p>
-    <p onclick="{fn.pagination.next}">Next {page} + 1</p>
-    <p onclick="{fn.pagination.prev}">Prev {page} - 1</p>
+<library-resource_item>
 
+    <p each="{ label, code in opts.resource.name }">{label} <span class="small">{code}</span></p>
+
+    <library-resource-authors  if="{expanded}" resource="{opts.resource}"></library-resource-authors>
+    <library-resource-organizations if="{expanded}" resource="{opts.resource}"></library-resource-organizations>
+
+    <div class="btn-group" role="group" aria-label="...">
+      <a type="button" class="btn btn-default disabled">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Download </a>
+      <a type="button" class="btn btn-default" href="#/resources/{opts.resource.id}">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Details </a>
+    </div>
+
+    <script>
+        var tag = this;
+        tag.expanded = false;
+        tag.on('mount', function(){})
+        tag.expand = function(){
+            tag.expanded = !tag.expanded;
+        }
+
+    </script>
+</library-resource_item>
+
+
+<library-resource_list>
+
+    <bootstrap-pagination page="{page}" pages="{pages}"></bootstrap-pagination>
 
     <div class="panel panel-default" if="{ !resources }">
         <div class="panel-heading">
@@ -12,33 +36,10 @@
         </div>
     </div>
 
-    <div class="panel panel-default" each="{ resource in resources }">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-            <span each="{ label, code in resource.name }">
-                <p>{label} <span class="small">{code}</span></p>
-            </span>
-            </h3>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col col-xs-2">{ resource.year }</div>
-                <div class="col col-xs-3">
-                </div>
+    <library-resource_item each="{ resource in resources }" resource="{resource}" />
 
-                <div class="col col-xs-4">
-                    <div class="row" each="{ label, code in resource.description }">
-                        <div class="col col-xs-12"><p>{label} <span class="small">{code}</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-xs-1">{ resource.cover }</div>
-                <div class="col col-xs-1">{ resource.pubtype_id }</div>
-                <div class="col col-xs-1">{ resource.user_id }</div>
-            </div>
-            <a href="#resources/{resource.id}" class="btn btn-primary">More</a>
-        </div>
-    </div>
+
+
     <style>
         library-resource_list .small {
             color: #a3a3a3;
@@ -59,13 +60,19 @@
             return window.stores.resource;
         }
 
-        function update(){
-            tag.update();
+        function update(opts){
+            tag.update(opts);
         }
 
+        tag.on('update', function(){
+            tag.resources = tag.resources || [];
+            store().count();
+            tag.pages = _.ceil(tag.count / tag.page_size);
+        });
+
         function listener() {
-            tag.actions.push(arguments);
-            tag.update();
+            // tag.actions.push(arguments);
+            // tag.update();
             var action = arguments[0];
             switch (action) {
                 case 'update-start':
@@ -81,13 +88,18 @@
                     break;
                 case 'pagination':
                     tag.resources = arguments[1];
-                    update();
+                    update({resources: arguments[1]});
                     break;
                 case 'resources_restored':
                     update();
                     break;
                 case 'detail_for':
                     console(arguments);
+                    break;
+                case 'count':
+                    if (arguments[1] !== tag.count){
+                        update({count: arguments[1]});
+                    }
                     break;
                 default:
                     break;
@@ -119,10 +131,12 @@
                 name: function(name){return JSON.stringify(name)}
             },
             pagination: {
-                next: function(){tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
-                prev: function(){tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
-                first: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
-                last: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})}
+                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
+                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
+                first: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
+                last: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
+                set_page: function(e){e.preventDefault(); tag.page = e.item.page; store().page({page: tag.page, page_size: tag.page_size})},
+                back: function(){return Urls.resource_list()}
             }
         };
 
@@ -130,3 +144,33 @@
     </script>
 
 </library-resource_list>
+
+<library-resource-authors>
+    <h4>Authors</h4>
+    <p each="{auth in authors}"><a href="#authors/{auth.id}"> {auth.name.name} </a></p>
+    <script>
+        var tag = this;
+        tag.items = _.map(opts.resource.author, function(i){return {name: '...'}});
+        function filter(result){return _.includes(tag.opts.resource.author, result.id)}
+        function setAuthor (a) {tag.update({authors:a});}
+        tag.on('mount', function() {
+
+            window.db.authors.filter(filter).toArray(setAuthor);
+        })
+    </script>
+
+</library-resource-authors>
+
+<library-resource-organizations>
+     <h4>Organizations</h4>
+    <p each="{item in items}"><a href="#organizations/{item.id}"> {item.name} </a></p>
+    <script>
+        var tag = this;
+        tag.items = _.map(opts.resource.organization, function(i){return {name: '...'}});
+        function filter(result){return _.includes(tag.opts.resource.organization, result.id)}
+        function set (a) {tag.update({items:a})}
+        tag.on('mount', function() {
+            window.db.organizations.filter(filter).toArray(set);
+        })
+    </script>
+</library-resource-organizations>

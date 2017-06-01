@@ -30,6 +30,7 @@ class OrganizationModelSerializer(serializers.ModelSerializer):
 class OrganizationViewSet(viewsets.ModelViewSet):
     queryset = models.Organization.objects.all()
     serializer_class = OrganizationModelSerializer
+    pagination_class = LimitOffsetPagination
     filter_backends=(TimeStampFilter,)
     ordering_fields='modified'
 
@@ -91,7 +92,9 @@ class TagModelSerializer(serializers.ModelSerializer):
 
 class TagViewSet(viewsets.ModelViewSet):
     queryset = models.Tag.objects.all()
+    pagination_class = LimitOffsetPagination
     serializer_class = TagModelSerializer
+    filter_backends = (TimeStampFilter,)
 
 router.register(r'tag', TagViewSet)
 

@@ -15,16 +15,44 @@
                 authors: 'id,modified',
                 resources: 'id,timestamp,modified,pubtype'
             });
+            db.version(0.5).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype',
+                organizations: 'id,modified,name,type'
+            });
+            db.version(0.6).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name'
+            });
         </script>
 
         <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
         <script type="text/javascript" src="{% static 'riot/library/resource.store.js' %}"></script>
 
         <script type="riot/tag" src="{%  static 'riot/app.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-pagination.tag.html' %}"></script>
+
         <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>
         <script type="riot/tag" src="{%  static 'riot/library/library-resource_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-resource_edit.tag.html' %}"></script>
+
         <script type="riot/tag" src="{%  static 'riot/library/library-author_list.tag.html' %}"></script>
         <script type="riot/tag" src="{%  static 'riot/library/library-author_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-author_edit.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-organization_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-organization_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-organization_edit.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-tag_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-tag_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-tag_edit.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-home.tag.html' %}"></script>
+
     <script>
     riot.compile(function() {
         riot.mount('app');
@@ -35,7 +63,7 @@
 {% block content %}
     <div class="row">
         <div class="col col-xs-12">
-            <h1>Welcome to the UNTL Online Library</h1>
+
             <app></app>
         </div>
     </div>
