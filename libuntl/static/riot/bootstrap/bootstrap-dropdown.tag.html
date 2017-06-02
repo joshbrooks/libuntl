@@ -1,0 +1,44 @@
+<!-- Single button -->
+<bootstrap-dropdown>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {display || 'All types'} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li each="{opt in options}" role="{separator: opt[0] == '_'}" class="{divider: opt[0] == '_'}" onclick="{invoke}">
+            <a href="#">{opt[1]}</a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+        var tag = this;
+        var defaults = {
+            options: [
+                ['BK', 'Book'],
+                ['BLG', 'Blog posts'],
+                ['_', ''],
+                ['','All types']
+            ]
+        };
+        tag.on('mount', function(){
+            _.defaults(tag.opts, defaults);
+            // Publication types example
+            tag.options = tag.opts.options;
+            console.log();
+
+            if (tag.opts.promise){
+                tag.opts.promise().then(function(response){
+                    console.log('BOOM', response)
+                    tag.update({options:response})})
+            }
+        });
+        tag.invoke = function(e){
+            e.preventDefault()
+            tag.parent.trigger('dropdown_select', tag, e);
+        }
+
+
+    </script>
+
+</bootstrap-dropdown>

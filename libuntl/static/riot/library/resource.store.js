@@ -136,7 +136,6 @@ window.stores = window.stores || {};
         store.on('update-continued', function (opts) { store.getAll(); });
         store.on('update-end', function (opts) { store.getAll(); });
         store.on('refresh', function (opts) { console.log('refresh', store, opts); });
-
     }
     _.extend(OrganizationStore.prototype, mixins.StoreMixin);
     _.extend(OrganizationStore.prototype, mixins.StoreIDBMixin);
@@ -183,5 +182,48 @@ window.stores = window.stores || {};
     _.extend(TagStore.prototype, mixins.StoreMixin);
     _.extend(TagStore.prototype, mixins.StoreIDBMixin);
     stores[store_name] = new TagStore();
+    stores[store_name].get_last_modified();
+}(window.stores, []));
+
+
+(function (stores, authors) {
+    var store_name = 'pubtypes';
+
+    /**
+     * Initialize the database
+     * @returns {Promise<DB>}
+     * @param store_opts
+     */
+
+    function PubTypeStore(store_opts) {
+        var store = this;
+        var defaults = {
+            functionprefix: store_name,
+            dbname: 'libuntl',
+            objectStoreName: store_name
+        };
+        store.opts = _.defaults({}, defaults, store_opts);
+        riot.observable(this);
+        store.urls = {
+            list: function () {
+                return Urls.pubtype_list();
+            },
+            detail: function (detail_id) {
+                return Urls.pubtype_detail(detail_id);
+            }
+        };
+
+        store.on('refresh', function (last_modified) {
+            store.update(last_modified);
+        });
+
+        store.on('update-start', function (opts) { console.log('update-start', store, opts); });
+        store.on('update-continued', function (opts) { store.getAll(); });
+        store.on('update-end', function (opts) { store.getAll(); });
+        store.on('refresh', function (opts) { console.log('refresh', store, opts); });
+    }
+    _.extend(PubTypeStore.prototype, mixins.StoreMixin);
+    _.extend(PubTypeStore.prototype, mixins.StoreIDBMixin);
+    stores[store_name] = new PubTypeStore();
     stores[store_name].get_last_modified();
 }(window.stores, []));

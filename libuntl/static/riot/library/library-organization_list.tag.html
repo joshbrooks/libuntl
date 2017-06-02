@@ -1,3 +1,118 @@
 <library-organization_list>
-    <h4>organization List</h4>
+
+    <bootstrap-pagination page="{page}" pages="{pages}"></bootstrap-pagination>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr if={organization} each="{organization in organizations}">
+                <td>{organization.id}</td>
+                <td><a href="#organizations/{organization.id}">{organization.name}</a></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="panel panel-default" if="{ !organizations }">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                There are no organizations to display
+            </h3>
+        </div>
+    </div>
+
+    <style>
+        library-organization_list .small {
+            color: #a3a3a3;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var tag = this;
+        tag.page = 1;
+        tag.page_size = 10;
+        tag.actions = [];
+
+        function message(message){
+            tag.update({message: message});
+        }
+
+        function store(){
+            return window.stores.organizations;
+        }
+
+        function update(opts){
+            tag.pages = _.ceil(tag.count / tag.page_size);
+            tag.update(opts);
+        }
+
+        function listener() {
+            tag.actions.push(arguments);
+            tag.update();
+            var action = arguments[0];
+            switch (action) {
+                case 'update-start':
+                    message('Downloading new organizations');
+                    break;
+                case 'update-continued':
+                    update();
+                    message('Downloading new organizations');
+                    break;
+                case 'update-done':
+                    update();
+                    message('Have a nice day');
+                    break;
+                case 'pagination':
+                    update({organizations: arguments[1]});
+                    break;
+                case 'organizations_restored':
+                    update();
+                    break;
+                case 'detail_for':
+                    console(arguments);
+                    break;
+                case 'count':
+                    if (arguments[1] !== tag.count){
+                        update({count: arguments[1]});
+                    }
+                    break;
+                default:
+                    break;
+                    message(action)
+            }
+        }
+
+        tag.on('unmount', function(){
+            store().off('*', listener);
+        });
+
+        tag.on('mount', function(){
+            store().on('*', listener);
+            store().page({page: tag.page, page_size: tag.page_size});
+        });
+
+        tag.fn = {
+            display:{
+                name: function(name){return JSON.stringify(name)}
+            },
+            pagination: {
+                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
+                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
+                first: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
+                last: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
+                set_page: function(e){e.preventDefault(); tag.page = e.item.page; store().page({page: tag.page, page_size: tag.page_size})},
+                back: function(){return Urls.resource_list()}
+            }
+        };
+
+
+    </script>
 </library-organization_list>

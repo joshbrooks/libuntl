@@ -1,7 +1,6 @@
 <library-author_list>
-    <p>{page}</p>
-    <p onclick="{fn.pagination.next}">Next {page} + 1</p>
-    <p onclick="{fn.pagination.prev}">Prev {page} - 1</p>
+
+    <bootstrap-pagination page="{page}" pages="{pages}"></bootstrap-pagination>
 
     <table class="table">
         <thead>
@@ -15,9 +14,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr each="{author in authors}">
-                <td>{JSON.stringify(author.id)}</td>
-                <td>{JSON.stringify(author.name.name)}</td>
+            <tr if={author} each="{author in authors}">
+                <td>{author.id}</td>
+                <td><a href="#authors/{author.id}">{author.name.name}</a></td>
             </tr>
         </tbody>
 
@@ -50,8 +49,9 @@
             return window.stores.authors;
         }
 
-        function update(){
-            tag.update();
+        function update(opts){
+            tag.pages = _.ceil(tag.count / tag.page_size);
+            tag.update(opts);
         }
 
         function listener() {
@@ -79,6 +79,11 @@
                     break;
                 case 'detail_for':
                     console(arguments);
+                    break;
+                case 'count':
+                    if (arguments[1] !== tag.count){
+                        update({count: arguments[1]});
+                    }
                     break;
                 default:
                     break;
@@ -110,10 +115,12 @@
                 name: function(name){return JSON.stringify(name)}
             },
             pagination: {
-                next: function(){tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
-                prev: function(){tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
-                first: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
-                last: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})}
+                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
+                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
+                first: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
+                last: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
+                set_page: function(e){e.preventDefault(); tag.page = e.item.page; store().page({page: tag.page, page_size: tag.page_size})},
+                back: function(){return Urls.resource_list()}
             }
         };
 

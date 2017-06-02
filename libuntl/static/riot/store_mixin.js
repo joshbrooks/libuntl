@@ -86,18 +86,45 @@
          */
         get: function (opts_) {
             var store = this;
-            var defaults = { limit: 10, offset: 0 };
+            var defaults = { limit: 10, offset: 0, search_: { type: 'startsWithIgnoreCase', word: 'communication', field: 'searchIndex' } };
             var opts = _.defaults(opts_, store.opts, defaults);
-            return window.db[opts.objectStoreName].offset(opts.offset).limit(opts.limit).toArray().then(function(resources){
-                store.trigger('pagination', resources)
-            });
+            var action = _.get(opts, ['search', 'type']);
+            function search() {
+                var objectStore = window.db[opts.objectStoreName]
+                if (_.has(opts, 'search')) {
+                    switch (action) {
+                    case 'startsWithIgnoreCase':
+                        return objectStore
+                            .where(opts.search.field)
+                            .startsWithIgnoreCase(opts.search.word)
+                            .distinct();
+                    case 'equals':
+                        return objectStore
+                            .where(opts.search.field)
+                            .equals(opts.search.word)
+                            .distinct();
+                    default:
+                        return objectStore;
+                    }
+                } else {
+                    return objectStore;
+                }
+            }
+
+            search().count(function(count){store.trigger('count', count)})
+            search().offset(opts.offset)
+                .limit(opts.limit)
+                .toArray(function (resources) {
+                    store.trigger('pagination', resources);
+                })
+                .then();
         },
 
         page: function (opts_) {
             var store = this;
             var defaults = { page: 1, page_size: 10 };
             var opts = _.defaults(opts_, store.opts, defaults);
-            var pagination = { offset: (opts.page - 1) * opts.page_size, limit: (opts.page_size) };
+            var pagination = _.defaults({ offset: (opts.page - 1) * opts.page_size, limit: (opts.page_size) }, opts);
             store.get(pagination);
         },
 
@@ -119,7 +146,7 @@
                 function (data) {
                     store.trigger('update-start', opts);
                     // If result is paginated
-                    if (!_.isUndefined(data.results)){
+                    if (!_.isUndefined(data.results)) {
                         store.load(data.results);
                     } else {
                         store.load(data);
@@ -139,6 +166,10 @@
         get_last_modified: function (opts_) {
             var store = this;
             var opts = _.defaults(this.opts, opts_);
+            if (_.isUndefined(window.db[opts.objectStoreName])) {
+                console.error('Expected to find a store at db.' + opts.objectStoreName);
+                console.error('Hint: Maybe this is not defined in db.version(x.x).stores({})')
+            }
 
             return window.db[opts.objectStoreName].orderBy('modified').last().then(function (last_value) {
                 if (_.isUndefined(last_value)) {
@@ -175,5 +206,5 @@
                     store.trigger('count', count);
                 });
         }
-    }
+    };
 }(window.mixins = window.mixins || {}));

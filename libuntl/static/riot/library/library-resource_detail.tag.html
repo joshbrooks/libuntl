@@ -1,6 +1,19 @@
 <library-resource_detail>
-    <p>{JSON.stringify(message)}</p>
-        <a href="#resources">Return to list</a>
+
+    <nav aria-label="...">
+      <ul class="pager">
+        <li class="previous">
+            <a href="#resources">
+                <span aria-hidden="true">&larr;</span> Publication list
+            </a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1 each="{code, val in message.name}">{code} <span class="small">({val})</span></h1>
+    <p><strong>Type: {message.pubtype}</strong></p>
+    <p><strong>Year: {message.year} </strong> </p>
+    <p><strong>Modified: {message.modified}</strong></p>
 
     <h4>Authors</h4>
     <p each="{auth in authors}"><a href="#authors/{auth.id}"> {auth.name.name} </a></p>
@@ -12,11 +25,24 @@
 
     <script>
         var tag = this;
+        tag.message = {};
         function store(){ return window.stores.resource; }
         function filter(result){return _.includes(tag.message.author, result.id)};
         function setAuthor (a) {tag.update({authors:a})};
         function filterOrganizations(result){return _.includes(tag.message.organization, result.id)};
         function setOrganizations (a) {tag.update({organizations:a})};
+
+        function orgs(){
+             window.db.organizations.where("id").anyOf(tag.message.organization).toArray(
+                function(a) {tag.update({organizations:a});}
+             )
+        }
+
+        function authors(){
+             window.db.authors.where("id").anyOf(tag.message.author).toArray(
+                function(a) {tag.update({authors:a});}
+             )
+        }
 
         tag.store = store();
         tag.authors = [];
@@ -26,8 +52,9 @@
             tag.message = 'now loading...';
             store().find(_.toInteger(id)).then(function(thing) {
                 tag.update({ message: thing });
-                window.db.authors.filter(filter).toArray(setAuthor);
-                window.db.organizations.filter(filterOrganizations).toArray(setOrganizations);
+                authors();
+                //window.db.authors.filter(filter).toArray(setAuthor);
+                orgs()
             })
         })
     </script>

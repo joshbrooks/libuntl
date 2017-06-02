@@ -26,6 +26,35 @@
                 organizations: 'id,modified,name,type',
                 tags: 'id,modified,name'
             });
+            db.version(0.7).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype,*searchIndex',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name'
+            });
+            db.version(0.9).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype,*searchIndex,*organization,*author',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name'
+            });
+            db.version(1.0).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype,*searchIndex,*organization,*author',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name',
+                pubtypes: 'id,modified,name'
+            });
+            db.resources.hook("creating", function (primKey, obj, trans) {
+
+                obj.searchIndex = _.uniq(_.values(obj.name).join(' ').split(' '));
+                console.log(obj.searchIndex);
+            });
+            db.resources.hook("updating", function (mods, primKey, obj, trans) {
+                if (_.has(mods, 'name')) {
+                    return {search: console.log(_.values(obj.name).join(' ').split(' '))};
+                }
+            });
         </script>
 
         <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
@@ -34,6 +63,7 @@
         <script type="riot/tag" src="{%  static 'riot/app.tag.html' %}"></script>
 
         <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-pagination.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-dropdown.tag.html' %}"></script>
 
         <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>
         <script type="riot/tag" src="{%  static 'riot/library/library-resource_detail.tag.html' %}"></script>

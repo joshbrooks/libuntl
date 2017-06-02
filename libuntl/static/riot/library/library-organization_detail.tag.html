@@ -1,31 +1,69 @@
-<library-organization_detail>
-     <h4>Organization Detail</h4>
-    <p>{JSON.stringify(message)}</p>
+<library-organization_detail_publication>
 
-    <h4>Publications</h4>
-
-    <p each="{resource in resources}">
-        <a href="#resources/{resource.id}">{JSON.stringify(resource)}</a>
-    </p>
+    <td>
+        <a href="#resources/{opts.resource.id}">{opts.resource.id}</a>
+    </td>
+    <td>
+        <p each="{code, val in opts.resource.name}">{code} ({val})</p>
+    </td>
 
     <script>
         var tag = this;
+    </script>
+
+</library-organization_detail_publication>
+
+
+<library-organization_detail>
+
+    <nav aria-label="...">
+      <ul class="pager">
+        <li class="previous"><a href="#organizations"><span aria-hidden="true">&larr;</span> Organization list</a></li>
+      </ul>
+    </nav>
+
+    <h1>{message.name}</h1>
+    <strong>{message.type} - Last updated {message.modified}</strong>
+    <hr>
+    <h3>Contact Details</h3>
+     <p each="{i,j in message.contact}">{j} : {i}</p>
+    <hr>
+
+
+    <h4>Publications</h4>
+
+    <table class="table table-condensed table-bordered">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr data-is="library-organization_detail_publication" each="{resource in resources}" resource="{resource}"></tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        var tag = this;
+        tag.message = {};
         function store(){
             return window.stores.organizations;
         }
-        function filterResources(result){
-            return _.includes(result.organization, tag.message.id)
-        };
-        function setResources (a) {tag.update({resources:a});};
+        function resources(){
+            window.db.resources.where("organization").anyOf(tag.message.id).toArray(
+                function setResources (a) {
+                    tag.update({resources:a});
+                }
+            );
+        }
         tag.store = store();
-
         tag.on('route', function(id) {
-            tag.message = 'now loading...';
+            tag.update({message:'now loading...'});
             store().find(_.toInteger(id)).then(function(thing) {
-                tag.update({
-                    message: thing
-                });
-                window.db.resources.filter(filterResources).toArray(setResources);
+                tag.update({message: thing || {}});
+                resources();
             })
         })
     </script>

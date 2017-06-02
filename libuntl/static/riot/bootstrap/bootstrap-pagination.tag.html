@@ -25,13 +25,24 @@
 
     <script type="text/javascript">
         var tag = this;
+
+        tag.defaults = {
+            pages: 5,
+            this_page:1,
+            show_pages: 4
+        };
+
         tag.on('mount', function(){
-            tag.opts.pages = tag.opts.pages || 5;
-            tag.opts.this_page = tag.opts.this_page || 1;
+            _.extend(tag.opts, tag.defaults);
         });
 
         tag.on('update', function(){
             tag.page_range = _.range(1, tag.opts.pages  +1 );
+            if (tag.page_range.length > tag.opts.show_pages){
+                var min = _.min([_.max([1, tag.opts.page - tag.opts.show_pages] ), (tag.opts.pages - tag.opts.show_pages * 2)]);
+                var max = _.min([tag.opts.pages, min+tag.opts.show_pages * 2])
+                tag.page_range = _.range(min, max + 1);
+            }
         });
 
         tag.fn = {

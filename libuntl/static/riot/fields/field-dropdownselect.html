@@ -1,0 +1,333 @@
+<field-dropdownselect>
+    <div class="dropdown {classes.dropdown} {open:dropdown_open}">
+
+        <button class="btn btn-block btn-default dropdown-toggle" type="button" onclick="{toggle_dropdown}" disabled="{opts.is_disabled}">
+            {fn.display.name()} <span if="{opts.show_code}" class="small">{fn.display.code()}</span>
+            <span class="right"><span class="caret"></span></span>
+        </button>
+
+        <span if="{opts.helptext}" class="help-block in-line-help">{opts.helptext}</span>
+         <ul if="{dropdown_open}" class="dropdown-menu">
+             <li if="{choice_count > 6 || (search && search.value != '')}">
+                 <div class="input-group search">
+                      <input type="text" class="form-control" placeholder="{opts.placeholder|| 'Search for...'}" ref="search" oninput="{ get_choices }">
+                     <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                    </div><!-- /input-group -->
+             </li>
+
+             <li if="{choice_count > 6 || opts.choice_fieldname_short}" role="separator" class="divider"></li>
+             <li if="{!opts.no_null_choice}"><a href="#" data-code="" onclick="{nullify_dropdown_select}"> ------ </a></li>
+
+            <li each="{choice in choose.solo}">
+                <a href="#" data-code="{choice.code}" class="btn btn-link {btn-disabled: !choice.meta.enabled}" disabled="{!choice.meta.enabled}" onclick="{fn.choose}">
+                    {choice.name}
+                    <span if="{opts.show_code}">{choice.code}</span>
+                </a>
+            </li>
+
+            <li if="{opts.too_many_options}">
+                 <div class="input-group" style="padding:10px;">
+                     <div class="alert alert-info options-hidden">
+                         There are many options so some are not displayed. Please use the search box to limit the options.
+                     </div>
+                 </div>
+            </li>
+
+             <li if="{opts.short_list}">
+                 <div class="input-group" style="padding:10px;">
+                     <div class="alert alert-info options-hidden">
+                         Only selected options are displayed.
+                         <button role="button" class="btn btn-default btn-xs show_more" onclick="{show_more}">Show all</button>
+                     </div>
+                 </div>
+             </li>
+
+             <li if="{opts.short_list_codes && !opts.short_list && !opts.too_many_options}">
+                 <div class="input-group" style="padding:10px;">
+                     <div class="alert alert-info options-hidden">
+                         All options are displayed.
+                         <button role="button" class="btn btn-default btn-xs show_less" onclick="{show_less}">Show less</button>
+                     </div>
+                 </div>
+            </li>
+         </ul>
+    </div>
+
+    <div if="{dropdown_open}" class='modal' onclick="{toggle_dropdown}">
+    </div>
+
+    <style>
+
+    field-dropdownselect .right {
+        float:right;
+    }
+
+    field-dropdownselect .dropdown-toggle {
+        border-radius: 0;
+        background-color:white;
+    }
+
+    field-dropdownselect .dropdown-menu {
+            height: auto;
+            width: 100%;
+            max-height: 200px;
+            overflow-x: hidden;
+            margin-left: 15px;
+        }
+
+    field-dropdownselect .input-group {
+            width: 100%;
+        }
+
+    field-dropdownselect .btn, field-dropdownselect .btn:hover  {
+        white-space: normal;
+        text-align: left;
+        padding: 5px;
+        background-color:white!important;
+    }
+
+    field-dropdownselect .input-group.search {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    field-dropdownselect .input-group.search input {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-width: 1px 0 1px 1px;
+        border-style: solid;
+        border-color: #ccc !important;
+    }
+
+    field-dropdownselect .input-group.search .input-group-addon {
+        background-color:white;
+        border-left-width:0;
+    }
+
+    field-dropdownselect .matched-search {
+        color: black;
+        font-weight: bold;
+    }
+
+    field-dropdownselect .alert.options-hidden {
+        display: block;
+
+        width: 100%;
+        margin:3px 0px;
+    }
+
+    field-dropdownselect input {
+        width: 100%;
+        height: auto !important;
+        min-height: 26px;
+        padding: 4px 20px 4px 5px;
+        margin: 0;
+        outline: 0;
+        font-family: sans-serif;
+        font-size: 1em;
+        border: 1px solid #aaa;
+        box-shadow:none!important;
+        border-right-width:0;
+    }
+
+
+    field-dropdownselect .dropdown-menu li {
+        list-style: none;
+
+    }
+    
+    field-dropdownselect .dropdown-menu li a {
+        display: block;
+        padding: 3px 20px!important;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.428571429;
+        color: #333;
+        white-space: nowrap;
+    }
+
+    field-dropdownselect .dropdown-menu li a:hover {
+        background: #3875d7!important;
+        color: #fff;
+    }
+
+    </style>
+
+    <script type="text/javascript">
+        var tag = this;
+        var fn;
+        tag.mixin('SerializerMixin');
+        tag.mixin('FormFieldMixin');
+        tag.mixin('ValidationMixin');
+        tag.dropdown_open = false;
+
+
+        /**
+         * Show less options
+         * For example, only the top 10 curencies in use
+         */
+        function show_less() {
+            tag.opts.short_list = true;
+            tag.dropdown_open = true;
+            tag.get_choices();
+            tag.update();
+        }
+        /**
+         * Show more options
+         */
+        function show_more() {
+            tag.opts.short_list = false;
+            tag.get_choices();
+            tag.update();
+        }
+        /**
+         * Toggle the dropdown
+         */
+        function toggle_dropdown() {
+            if (tag.dropdown_open === false) {
+                tag.dropdown_open = true;
+                tag.get_choices();
+                tag.one('updated', function () {
+                    $('input[ref="search"]', tag.root).focus();
+                });
+            } else {
+                tag.choose = {};
+                tag.dropdown_open = false;
+                tag.update();
+            }
+        }
+
+        /**
+         * Define the input choices in descending order of preference for
+         * specific field names set in options
+         * @returns {*}
+         */
+        function get_choices() {
+            var c = tag.store.choices || {};
+            var inputChoices;
+            var outputChoices;
+            var expression;
+            var opts = tag.opts;
+
+            if (tag.refs.search !== undefined && tag.refs.search.value !== '') {
+                expression = new RegExp(_.escapeRegExp(tag.refs.search.value), 'gi');
+            } else {
+                expression = null;
+            }
+
+            opts.short_list = !!((opts.short_list === undefined || opts.short_list === true) && _.isArray(opts.short_list_codes) && opts.short_list_codes.length > 0);
+
+            if (expression) { opts.short_list = false; }
+
+            function create_choice(choice) {
+                var returned_choice = {
+                    code: choice[0],
+                    name: choice[1] || choice[0],
+
+                    meta: {
+                        group: choice[2] || 'solo',
+                        enabled: _.indexOf(opts.disabled_choices, choice[0]) === -1,
+                        hidden: false
+                    }
+                };
+
+                if (expression !== null) {
+                    if (expression.test(returned_choice.name) === false && expression.test(returned_choice.code) === false) {
+                        returned_choice.meta.hidden = true;
+                    }
+                }
+
+                if (opts.short_list && opts.short_list_codes && _.indexOf(opts.short_list_codes, returned_choice.code) === -1) {
+                    returned_choice.meta.hidden = true;
+                }
+                return returned_choice;
+            }
+
+            if (opts.choice_fieldname !== undefined) {
+                inputChoices = c[opts.choice_fieldname];
+            } else if (opts.fieldname !== undefined) {
+                inputChoices = c[opts.fieldname];
+            } else (inputChoices = [[1, 'one'], [2, 'two']]);
+
+            tag.choice_count = inputChoices.length;
+
+            /* Reformat a choice list of 2-element lists/tuples to an object for iteration */
+            outputChoices = _(inputChoices).map(create_choice)
+                .filter(function (choice) { return !choice.meta.hidden; })
+                .groupBy('meta.group')
+                .value();
+
+            outputChoices.solo = outputChoices.solo || [];
+            if (outputChoices.solo.length > 100) {
+                outputChoices.solo = _(outputChoices.solo).slice(0, 100).value();
+                tag.choose = outputChoices;
+                opts.too_many_options = true;
+            } else {
+                tag.choose = outputChoices;
+                opts.too_many_options = false;
+            }
+        }
+
+        tag.on('updated', function wrap() {
+            var expression;
+            var content;
+            var replacement = '<span class="matched-search">$&</span>';
+
+            if (!tag.refs.search || !tag.refs.search.value) {
+                return;
+            }
+            expression = new RegExp(tag.refs.search.value, 'gi');
+
+            $('a[data-code]', tag.root).each(function () {
+                content = $(this).text();
+                if (expression.test(content)) {
+                    $(this).html(content.replace(expression, replacement));
+                }
+            });
+        });
+
+        function handleClickOutside(e) {
+            /* Click outside the dropdown to close it, unless the target of the click is a "show_more" or "show_less" button */
+            if (
+                !tag.root.contains(e.target) && tag.dropdown_open && !($(e.target).hasClass('show_more') || $(e.target).hasClass('show_less'))) {
+                tag.toggle_dropdown();
+            }
+            tag.update();
+        }
+
+        tag.on('mount', function () {
+            document.addEventListener('click', handleClickOutside);
+        });
+
+        tag.on('unmount', function () {
+            document.removeEventListener('click', handleClickOutside);
+        });
+
+
+        fn = {
+            display: {
+                name: function () {
+                    if (_.isString(tag.data)) { return tag.store.get_choice(tag.opts.choice_fieldname, tag.data); }
+                    return tag.data.name || tag.opts.select_name || tag.data.code;
+                },
+                code: function () {
+                    return tag.data.code;
+                }
+            },
+            choose: function (e) {
+                var data;
+                if (_.isString(tag.data)) { data = e.item.choice.code; } else (data = { code: e.item.choice.code, name: e.item.choice.name });
+                if (_.includes(tag.opts.disabled_choices, data.code || data)) { return; }
+                tag.set_dropdown_select(e, data); // This function is from mixin-formfield
+            }
+        };
+
+        tag.fn = fn;
+
+
+        tag.show_more = show_more;
+        tag.get_choices = get_choices;
+        tag.toggle_dropdown = toggle_dropdown;
+        tag.show_less = show_less;
+    </script>
+</field-dropdownselect>

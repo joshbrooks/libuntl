@@ -1,16 +1,13 @@
 <library-resource_item>
+    <td>
+        <p each="{ label, code in opts.resource.name }">
+            <span class="small">{code} </span>
+            <a href="#/resources/{parent.opts.resource.id}">
+                {label}
+            </a>
+        </p>
 
-    <p each="{ label, code in opts.resource.name }">{label} <span class="small">{code}</span></p>
-
-    <library-resource-authors  if="{expanded}" resource="{opts.resource}"></library-resource-authors>
-    <library-resource-organizations if="{expanded}" resource="{opts.resource}"></library-resource-organizations>
-
-    <div class="btn-group" role="group" aria-label="...">
-      <a type="button" class="btn btn-default disabled">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Download </a>
-      <a type="button" class="btn btn-default" href="#/resources/{opts.resource.id}">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Details </a>
-    </div>
+    </td>
 
     <script>
         var tag = this;
@@ -25,7 +22,9 @@
 
 
 <library-resource_list>
+    <h1>Publications</h1>
 
+    <bootstrap-dropdown event="hello_world" promise="{get_choices_pubtype}"></bootstrap-dropdown>
     <bootstrap-pagination page="{page}" pages="{pages}"></bootstrap-pagination>
 
     <div class="panel panel-default" if="{ !resources }">
@@ -35,10 +34,16 @@
             </h3>
         </div>
     </div>
-
-    <library-resource_item each="{ resource in resources }" resource="{resource}" />
-
-
+    <table class="table table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Hello</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-is="library-resource_item" each="{ resource in resources }" if="{resource}" resource="{resource}" ></tr>
+        </tbody>
+    </table>
 
     <style>
         library-resource_list .small {
@@ -56,6 +61,14 @@
             tag.message = message;
         }
 
+        function get_choices_pubtype(){
+            return window.db.pubtypes.toArray().then(
+                function(i){ return _.map(i, function(i){return [i.id , i.name.en]})}
+            )
+        }
+
+        tag.get_choices_pubtype = get_choices_pubtype;
+
         function store(){
             return window.stores.resource;
         }
@@ -66,7 +79,6 @@
 
         tag.on('update', function(){
             tag.resources = tag.resources || [];
-            store().count();
             tag.pages = _.ceil(tag.count / tag.page_size);
         });
 
@@ -107,6 +119,30 @@
             }
         }
 
+        tag.on('dropdown_select', function(){
+            console.log(arguments);
+            var triggering_tag = arguments[0];
+            var event = arguments[1];
+            var option = event.item.opt;
+            var action = option[0];
+            triggering_tag.update({display:option[1]});
+
+            switch(action){
+                case 'BK':
+                    tag.search = { type: 'equals', word: action, field: 'pubtype' };
+                    page();
+                    break;
+                case 'BLG':
+                    tag.search = { type: 'equals', word: action, field: 'pubtype' };
+                    page();
+                    break;
+                default:
+                    debugger;
+            }
+
+
+        });
+
         tag.header = {
             id:'id',
             description:'description',
@@ -123,19 +159,28 @@
                 per_page:10
             });
             store().on('*', listener);
-          store().page({page: tag.page, page_size: tag.page_size});
+            store().page({page: tag.page, page_size: tag.page_size});
         });
+
+        function page(){
+            var opts = {page: tag.page, page_size: tag.page_size};
+            if (tag.search){
+                opts.search = tag.search;
+            }
+            console.log(opts);
+            store().page(opts);
+        }
 
         tag.fn = {
             display:{
                 name: function(name){return JSON.stringify(name)}
             },
             pagination: {
-                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
-                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
-                first: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
-                last: function(e){e.preventDefault(); tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
-                set_page: function(e){e.preventDefault(); tag.page = e.item.page; store().page({page: tag.page, page_size: tag.page_size})},
+                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; page();},
+                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1;  page();},
+                first: function(e){e.preventDefault(); tag.page = 1;  page();},
+                last: function(e){e.preventDefault(); tag.page = 1;  page();},
+                set_page: function(e){e.preventDefault(); tag.page = e.item.page;  page();},
                 back: function(){return Urls.resource_list()}
             }
         };
