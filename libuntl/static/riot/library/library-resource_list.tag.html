@@ -24,8 +24,9 @@
 <library-resource_list>
     <h1>Publications</h1>
 
-    <bootstrap-dropdown event="hello_world" promise="{get_choices_pubtype}"></bootstrap-dropdown>
+    <bootstrap-dropdown trigger="change_pubtype" promise="{get_choices_pubtype}"></bootstrap-dropdown>
     <bootstrap-pagination page="{page}" pages="{pages}"></bootstrap-pagination>
+    <bootstrap-input-group placeholder="Search title..." btn="Search" trigger="search"></bootstrap-input-group>
 
     <div class="panel panel-default" if="{ !resources }">
         <div class="panel-heading">
@@ -80,12 +81,14 @@
         tag.on('update', function(){
             tag.resources = tag.resources || [];
             tag.pages = _.ceil(tag.count / tag.page_size);
+            if (tag.page > tag.pages) { tag.page = 1 };
         });
 
         function listener() {
             // tag.actions.push(arguments);
             // tag.update();
             var action = arguments[0];
+
             switch (action) {
                 case 'update-start':
                     message('Downloading new resources');
@@ -100,6 +103,7 @@
                     break;
                 case 'pagination':
                     tag.resources = arguments[1];
+                    /* When the current page is out of range reset to 1 */
                     update({resources: arguments[1]});
                     break;
                 case 'resources_restored':
@@ -119,28 +123,26 @@
             }
         }
 
-        tag.on('dropdown_select', function(){
+        tag.on('change_pubtype', function(){
             console.log(arguments);
             var triggering_tag = arguments[0];
             var event = arguments[1];
+            var event_name = triggering_tag.opts.event;
             var option = event.item.opt;
             var action = option[0];
+
             triggering_tag.update({display:option[1]});
 
-            switch(action){
-                case 'BK':
-                    tag.search = { type: 'equals', word: action, field: 'pubtype' };
-                    page();
-                    break;
-                case 'BLG':
-                    tag.search = { type: 'equals', word: action, field: 'pubtype' };
-                    page();
-                    break;
-                default:
-                    debugger;
-            }
+            tag.update({page: 1, search : { type: 'equals', word: action, field: 'pubtype' }});
+            page();
 
-
+        });
+        tag.on('search', function(){
+            var triggering_tag = arguments[0];
+            var event = arguments[1];
+            var text = triggering_tag.refs.text.value;
+            tag.update({page:1, search: {type: 'startsWithIgnoreCase', word:text, field:'searchIndex'}});
+            page();
         });
 
         tag.header = {

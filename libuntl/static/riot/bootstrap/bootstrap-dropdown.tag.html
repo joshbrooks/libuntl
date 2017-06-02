@@ -19,7 +19,8 @@
                 ['BLG', 'Blog posts'],
                 ['_', ''],
                 ['','All types']
-            ]
+            ],
+            trigger: 'dropdown_select'
         };
         tag.on('mount', function(){
             _.defaults(tag.opts, defaults);
@@ -35,7 +36,7 @@
         });
         tag.invoke = function(e){
             e.preventDefault()
-            tag.parent.trigger('dropdown_select', tag, e);
+            tag.parent.trigger(tag.opts.trigger, tag, e);
         }
 
 
