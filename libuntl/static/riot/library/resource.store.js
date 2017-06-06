@@ -3,53 +3,32 @@
 var db_schema_version = 2;
 window.stores = window.stores || {};
 
-(function (stores, resources) {
-    var store_name = 'resource';
+/**
+ * Attach some sensible events
+ */
+function storeDecorator( store ){
+    riot.observable(store);
+    store.on('refresh', function (last_modified) {
+        store.update(last_modified);
+    });
+    store.on('update-start', function (opts) { console.log('update-start', store, opts); });
+    store.on('update-continued', function (opts) { store.getAll(); });
+    store.on('update-end', function (opts) { store.getAll(); });
+    store.on('refresh', function (opts) { console.log('refresh', store, opts); });
+}
 
-    /**
-     * Initialize the database
-     * @param database_opts
-     * @returns {Promise<DB>}
-     */
 
-    function ResourceStore(store_opts) {
-        var store = this;
-        var defaults = {
-            functionprefix: 'resources',
-            dbname: 'libuntl',
-            objectStoreName: 'resources',
-            keyPath: 'id',
-            indexName: 'by-modified'
-        };
-        store.opts = _.defaults({}, defaults, store_opts);
-
-        riot.observable(this);
-        store.urls = {
-            list: function () {
-                return Urls.resource_list();
-            },
-            detail: function (detail_id) {
-                return Urls.resource_detail(detail_id);
-            }
-        };
-        store.on('refresh', function (last_modified) {
-            store.update(last_modified);
-        });
-
-        store.on('update-start', function (opts) { console.log('update-start', store, opts); });
-        store.on('update-continued', function (opts) { store.getAll(); });
-        store.on('update-end', function (opts) { store.getAll(); });
-        store.on('refresh', function (opts) { console.log('refresh', store, opts); });
-
-        // store.refresh();
-    }
-
-    _.extend(ResourceStore.prototype, mixins.StoreMixin);
-    _.extend(ResourceStore.prototype, mixins.StoreIDBMixin);
-
-    stores[store_name] = new ResourceStore(resources);
-    stores[store_name].get_last_modified();
-}(window.stores, []));
+function ResourceStore() {
+    this.opts = { objectStoreName: 'resources' };
+    this.urls = {
+        list: function () {return Urls.resource_list();},
+        detail: function (detail_id) {return Urls.resource_detail(detail_id);}
+    };
+    storeDecorator(this);
+}
+_.extend(ResourceStore.prototype, mixins.StoreMixin);
+_.extend(ResourceStore.prototype, mixins.StoreIDBMixin);
+window.stores.resource = new ResourceStore();
 
 (function (stores, authors) {
     var store_name = 'authors';

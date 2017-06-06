@@ -86,11 +86,12 @@
          */
         get: function (opts_) {
             var store = this;
-            var defaults = { limit: 10, offset: 0, search_: { type: 'startsWithIgnoreCase', word: 'communication', field: 'searchIndex' } };
+            var defaults = { limit: 10, offset: 0 };
+            // Example search: search_: { type: 'startsWithIgnoreCase', word: 'communication', field: 'searchIndex' }
             var opts = _.defaults(opts_, store.opts, defaults);
             var action = _.get(opts, ['search', 'type']);
             function search() {
-                var objectStore = window.db[opts.objectStoreName]
+                var objectStore = window.db[opts.objectStoreName];
                 if (_.has(opts, 'search')) {
                     switch (action) {
                     case 'startsWithIgnoreCase':
@@ -153,8 +154,8 @@
                     }
                     // store.count(); // Sends a "count" signal with the number of records in the store
 
-                    if (data.next) {
-                        opts.offset += 100;
+                    if (data.next && opts.getAll) {
+                        opts.offset += opts.limit;
                         store.trigger('update-continued', _.extend(opts, { data: data }));
                         store.update(last_modified, opts);
                     } else {
