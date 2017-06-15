@@ -1,4 +1,5 @@
 <library-resource_item>
+    <h1>{message}</h1>
     <td>
         <p each="{ label, code in opts.resource.name }">
             <span class="small">{code} </span>
@@ -25,7 +26,7 @@
     <h1>Publications</h1>
 
     <bootstrap-dropdown trigger="change_pubtype" promise="{get_choices_pubtype}"></bootstrap-dropdown>
-    <bootstrap-pagination page="{page}" pages="{pages}"></bootstrap-pagination>
+    <bootstrap-pager page="{page}" pages="{pages}"></bootstrap-pager>
     <bootstrap-input-group placeholder="Search title..." btn="Search" trigger="search"></bootstrap-input-group>
 
     <div class="panel panel-default" if="{ !resources }">
@@ -60,6 +61,7 @@
 
         function message(message){
             tag.message = message;
+            console.log(tag.message, tag)
         }
 
         function get_choices_pubtype(){
@@ -97,8 +99,9 @@
                     update();
                     message('Downloading new resources');
                     break;
-                case 'update-done':
-                    update();
+                case 'update-end':
+                    store().get();
+
                     message('Have a nice day');
                     break;
                 case 'pagination':
@@ -109,6 +112,9 @@
                 case 'resources_restored':
                     update();
                     break;
+                case 'load-end':
+                    store().get();
+
                 case 'detail_for':
                     console(arguments);
                     break;

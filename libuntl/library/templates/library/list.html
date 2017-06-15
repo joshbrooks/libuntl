@@ -5,8 +5,14 @@
 {% load static %}
 {% block script %}
         <script>
+            window.globals = {stats: {{ counts }}};
+        </script>
+        <script>
+
+            idb.delete('libuntl');
+
+
             window.db = new Dexie('libuntl');
-            console.log('dexie is up')
             db.version(0.3).stores({
                 authors: 'id',
                 resources: 'id,timestamp,modified,pubtype'
@@ -48,11 +54,11 @@
             db.resources.hook("creating", function (primKey, obj, trans) {
 
                 obj.searchIndex = _.uniq(_.values(obj.name).join(' ').split(' '));
-                console.log(obj.searchIndex);
+                // console.log(obj.searchIndex);
             });
             db.resources.hook("updating", function (mods, primKey, obj, trans) {
                 if (_.has(mods, 'name')) {
-                    return {search: console.log(_.values(obj.name).join(' ').split(' '))};
+                    // return {search: console.log(_.values(obj.name).join(' ').split(' '))};
                 }
             });
         </script>

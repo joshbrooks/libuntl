@@ -9,5 +9,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.ResourceList.as_view()),
     url(r'stats/$', views.Stats.as_view()),
+    url(r'index/$', views.Index.as_view()),
     url(r'modified/$', views.Modified.as_view())
 ]

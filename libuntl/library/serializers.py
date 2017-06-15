@@ -54,18 +54,18 @@ class AuthorViewSet(viewsets.ModelViewSet):
 router.register(r'author', AuthorViewSet)
 
 
-class PubtypeModelSerializer(serializers.ModelSerializer):
+class PublicationTypeModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Pubtype
+        model = models.PublicationType
         fields = '__all__'
 
 
-class PubtypeViewSet(viewsets.ModelViewSet):
-    queryset = models.Pubtype.objects.all()
-    serializer_class = PubtypeModelSerializer
+class PublicationTypeViewSet(viewsets.ModelViewSet):
+    queryset = models.PublicationType.objects.all()
+    serializer_class = PublicationTypeModelSerializer
 
 
-router.register(r'pubtype', PubtypeViewSet)
+router.register(r'pubtype', PublicationTypeViewSet)
 
 
 class ResourceModelSerializer(serializers.ModelSerializer):

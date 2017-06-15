@@ -26,11 +26,9 @@
             _.defaults(tag.opts, defaults);
             // Publication types example
             tag.options = tag.opts.options;
-            console.log();
-
             if (tag.opts.promise){
                 tag.opts.promise().then(function(response){
-                    console.log('BOOM', response)
+                    console.log('dropdown options updated', response)
                     tag.update({options:response})})
             }
         });

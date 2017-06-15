@@ -60,8 +60,30 @@
 <bootstrap-pager>
     <nav aria-label="Page navigation">
       <ul class="pager">
-        <li class="previous"><a href="#" disabled="{no_previous_page}"><span aria-hidden="true">&larr;</span> {previous_text || 'Next' }</a></li>
-        <li class="next"><a href="#" disabled="{no_next_page}">{next_text || 'Next' } <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="previous" onclick="{fn.pagination.prev}"><a href="#" disabled="{no_previous_page}"><span aria-hidden="true">&larr;</span> {previous_text || 'Previous' }</a></li>
+          <li>Page {parent.page} of {parent.pages} </li>
+        <li class="next"><a href="#" disabled="{no_next_page}" onclick="{fn.pagination.next}">{next_text || 'Next' } <span aria-hidden="true">&rarr;</span></a></li>
       </ul>
     </nav>
+
+    <script type="text/javascript">
+        var tag = this;
+
+        tag.defaults = {
+            this_page:1
+        };
+
+        tag.on('mount', function(){
+            _.extend(tag.opts, tag.defaults);
+        });
+
+        tag.fn = {
+            pagination: {
+                prev: function(e){ e.preventDefault(); tag.parent.fn.pagination.prev(e) },
+                set_page: function(e){ tag.parent.fn.pagination.set_page(e) },
+                next: function(e){ e.preventDefault(); tag.parent.fn.pagination.next(e) }
+            }
+        }
+    </script>
+
 </bootstrap-pager>

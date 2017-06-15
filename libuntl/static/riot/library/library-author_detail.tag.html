@@ -45,7 +45,7 @@
         var tag = this;
         tag.message = {'name':{'name':'author'}, 'modified': '?'}
         function store(){
-            return window.stores.authors;
+            return window.stores.author;
         }
         tag.store = store();
 
@@ -53,6 +53,7 @@
             window.db.resources.where("author").anyOf(tag.message.id).toArray(
                 function setResources (a) {
                     tag.update({resources:a});
+                    debugger;
                 }
             );
         }

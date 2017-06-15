@@ -50,7 +50,7 @@
         var tag = this;
         tag.message = {};
         function store(){
-            return window.stores.organizations;
+            return window.stores.organization;
         }
         function resources(){
             window.db.resources.where("organization").anyOf(tag.message.id).toArray(
