@@ -12,8 +12,8 @@ function storeDecorator(store) {
         store.update(last_modified);
     });
     store.on('update-start', function (opts) { console.log('update-start', store, opts); });
-    store.on('update-continued', function (opts) { console.log('update-continued'); store.getAll(); });
-    store.on('update-end', function (opts) { console.log('update-end'); store.getAll(); });
+    store.on('update-continued', function (opts) { console.log('update-continued'); });
+    store.on('update-end', function (opts) { console.log('update-end'); });
     store.on('refresh', function (opts) { console.log('refresh', store, opts); });
 }
 
@@ -61,8 +61,8 @@ window.stores.organization.get_last_modified();
 function PublicationTypeStore() {
     this.opts = { objectStoreName: 'pubtypes' };
     this.urls = {
-        list: function () { return Urls.pubtype_list(); },
-        detail: function (detail_id) { return Urls.pubtype_detail(detail_id); }
+        list: function () { return Urls.publicationtype_list(); },
+        detail: function (detail_id) { return Urls.publicationtype_detail(detail_id); }
     };
     storeDecorator(this);
 }

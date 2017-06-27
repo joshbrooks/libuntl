@@ -18,6 +18,7 @@
         "mixins": true,
         "Urls": true,
         "stores": true,
+        "gettext": true,
         "d3": true
     },
     "env": {

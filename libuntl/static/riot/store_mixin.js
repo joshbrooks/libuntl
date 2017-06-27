@@ -64,7 +64,9 @@
                     db[opts.objectStoreName].put(d);
                 });
             }).then(function () {
-                store.trigger('load-end');
+                store.getAll().then(function (r) {
+                    store.trigger('load-end', r);
+                });
             });
         },
 
@@ -78,7 +80,9 @@
         getAll: function getAll(opts_) {
             var store = this;
             var opts = _.defaults({}, store.opts, opts_);
-            return window.db[opts.objectStoreName].toArray();
+            var promise = window.db[opts.objectStoreName].toArray();
+            promise.then(function (objects) { store.objects = objects; return objects});
+            return promise;
         },
         /**
          * Limit-offset pagination function which triggers 'pagination' with the results
@@ -112,7 +116,7 @@
                 }
             }
 
-            search().count(function(count){store.trigger('count', count)})
+            search().count(function (count) { store.trigger('count', count); });
             search().offset(opts.offset)
                 .limit(opts.limit)
                 .toArray(function (resources) {
@@ -145,7 +149,8 @@
             });
             request.done(
                 function (data) {
-                    store.trigger('update-start', opts);
+                    store.trigger('update-start', opts, store.getAll());
+                    store.objects = store.getAll();
                     // If result is paginated
                     if (!_.isUndefined(data.results)) {
                         store.load(data.results);
@@ -156,10 +161,10 @@
 
                     if (data.next && opts.getAll) {
                         opts.offset += opts.limit;
-                        store.trigger('update-continued', _.extend(opts, { data: data }));
+                        store.trigger('update-continued', _.extend(opts, { data: data }), store.getAll());
                         store.update(last_modified, opts);
                     } else {
-                        store.trigger('update-end', opts);
+                        store.trigger('update-end', opts, store.getAll());
                     }
                 });
         },
@@ -169,7 +174,7 @@
             var opts = _.defaults(this.opts, opts_);
             if (_.isUndefined(window.db[opts.objectStoreName])) {
                 console.error('Expected to find a store at db.' + opts.objectStoreName);
-                console.error('Hint: Maybe this is not defined in db.version(x.x).stores({})')
+                console.error('Hint: Maybe this is not defined in db.version(x.x).stores({})');
             }
 
             return window.db[opts.objectStoreName].orderBy('modified').last().then(function (last_value) {

@@ -1,16 +1,41 @@
 <library-home>
-    <h1>Welcome to the UNTL Online Library</h1>
-    <p>Recently Updated</p>
-    <ul>
-        <li>A new author, <a href="#authors/1">New Author</a> was added</li>
-        <li>A new publication, <a href="#authors/1">Belun's January EWER report</a> was added</li>
-        <li>A new publication, <a href="#authors/1">Belun's February EWER report</a> was added</li>
-        <li>A new publication, <a href="#authors/1">Biology Textbook</a> was added</li>
+    <div class="row">
+        <div class="col-sm-8 col-sm-push-2 col-md-6 col-md-push-3">
+            <h1>Welcome to the UNTL Online Library</h1>
 
-    </ul>
-    <p><a href="#resources">Browse Resources</a></p>
-    <p><a href="#authors">Browse Authors</a></p>
-    <p><a href="#organizations">Browse Organization</a></p>
-    <p><a href="#tags">Browse by Tag</a></p>
+            <recently-updated>
+
+            </recently-updated>
+            <h2><a href="#resources">{gettext('All Resources')}</a></h2>
+            <h2><a href="#subjects">{gettext('Subjects')}</a></h2>
+            <h2><a href="#authors">{gettext('Authors')}</a></h2>
+            <h2><a href="#organizations">{gettext('Organizations')}</a></h2>
+            <h2><a href="#tags">{gettext('Tags')}</a></h2>
+            <h2><a href="#upload">{gettext('Upload')}</a></h2>
+
+
+            <script type="text/javascript">
+            </script>
+        </div>
+    </div>
 
 </library-home>
+
+<recently-updated>
+    <p>Recently Updated</p>
+    <ul>
+        <li each="{m in messages}">{m.msg}
+            <a href="{m.url}">{m.label}</a>
+        </li>
+    </ul>
+
+    <script>
+        var tag = this;
+
+        tag.messages = [
+                {msg: 'A new author was added', label: 'Joshua Brooks', url: '#authors/1'},
+                {msg: 'A new publication was added', label: 'My cool file', url: '#publications/1'},
+            ]
+
+    </script>
+</recently-updated>
