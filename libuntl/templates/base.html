@@ -9,8 +9,12 @@
         <script type="text/javascript" src="{% static 'lodash/lodash.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'riot/riot+compiler.js' %}"></script>
         <script type="text/javascript" src="{% static 'riotcontrol/riotcontrol.js' %}"></script>
+        <script type="text/javascript" src="{% static 'riot-route/dist/route+tag.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'moment/min/moment.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'idb/lib/idb.js' %}"></script>
+        <script type="text/javascript" src="{% static 'dexie/dist/dexie.js' %}"></script>
+        <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+
         <script src="/jsreverse" type="text/javascript"></script>
 
 
@@ -35,7 +39,7 @@
         {% block footer %}
             <nav class="navbar navbar-default navbar-fixed-bottom">
                 <div class="container">
-                    <p align="center">Copyright <a href="http://catalpa.io">Catalpa International</a> 2016</p>
+                    <p align="center">Copyright The Asia Foundation, UNTL, <a href="http://github.com/joshbrooks">Joshua Brooks</a> 2017</p>
                 </div>
             </nav> 
         {% endblock %}

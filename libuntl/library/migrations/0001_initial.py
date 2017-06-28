@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='OrgType',
+            name='OrganizationType',
             fields=[
                 ('id', models.TextField(primary_key=True, serialize=False)),
                 ('name', django.contrib.postgres.fields.jsonb.JSONField()),
@@ -75,7 +75,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Pubtype',
+            name='PublicationType',
             fields=[
                 ('code', models.CharField(max_length=3, primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=128)),
@@ -97,7 +97,7 @@ class Migration(migrations.Migration):
                 ('cover', models.ImageField(blank=True, max_length=200, null=True, upload_to='')),
                 ('author', models.ManyToManyField(blank=True, to='library.Author')),
                 ('organization', models.ManyToManyField(blank=True, to='library.Organization')),
-                ('pubtype', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='library.Pubtype', verbose_name='Type')),
+                ('pubtype', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='library.PublicationType', verbose_name='Type')),
                 ('user', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
@@ -124,7 +124,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='organization',
             name='type',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='library.OrgType', verbose_name='Organization Type'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='library.OrganizationType', verbose_name='Organization Type'),
         ),
         migrations.AddField(
             model_name='link',

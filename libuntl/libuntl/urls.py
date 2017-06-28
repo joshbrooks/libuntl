@@ -53,6 +53,12 @@ if 'django_js_reverse' in settings.INSTALLED_APPS:
         url(r'^jsreverse/$', urls_js, name='js_reverse'),
     ]
 
+from django.views.i18n import JavaScriptCatalog
+
+urlpatterns += [
+    url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+]
+
 # For django_js_reverse
 def javascript_settings():
     return {

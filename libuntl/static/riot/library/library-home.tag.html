@@ -1,0 +1,41 @@
+<library-home>
+    <div class="row">
+        <div class="col-sm-8 col-sm-push-2 col-md-6 col-md-push-3">
+            <h1>Welcome to the UNTL Online Library</h1>
+
+            <recently-updated>
+
+            </recently-updated>
+            <h2><a href="#resources">{gettext('All Resources')}</a></h2>
+            <h2><a href="#subjects">{gettext('Subjects')}</a></h2>
+            <h2><a href="#authors">{gettext('Authors')}</a></h2>
+            <h2><a href="#organizations">{gettext('Organizations')}</a></h2>
+            <h2><a href="#tags">{gettext('Tags')}</a></h2>
+            <h2><a href="#upload">{gettext('Upload')}</a></h2>
+
+
+            <script type="text/javascript">
+            </script>
+        </div>
+    </div>
+
+</library-home>
+
+<recently-updated>
+    <p>Recently Updated</p>
+    <ul>
+        <li each="{m in messages}">{m.msg}
+            <a href="{m.url}">{m.label}</a>
+        </li>
+    </ul>
+
+    <script>
+        var tag = this;
+
+        tag.messages = [
+                {msg: 'A new author was added', label: 'Joshua Brooks', url: '#authors/1'},
+                {msg: 'A new publication was added', label: 'My cool file', url: '#publications/1'},
+            ]
+
+    </script>
+</recently-updated>

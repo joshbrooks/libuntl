@@ -460,6 +460,10 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
+dexie@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/dexie/-/dexie-1.5.1.tgz#ac3ad5a0ebaf7e6e42760db58710418d4a756624"
+
 diffie-hellman@^5.0.0:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.2.tgz#b5835739270cfe26acf632099fded2a07f209e5e"
@@ -1479,6 +1483,12 @@ riot-compiler@^3.2.1:
 riot-observable@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/riot-observable/-/riot-observable-3.0.0.tgz#8bbd2daf72a2141bb043082df4023dc504bad2eb"
+
+riot-route@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/riot-route/-/riot-route-3.1.1.tgz#5d73688944d0090b1cb1cbd190eb323fefec5c9c"
+  dependencies:
+    riot-observable "^3.0.0"
 
 riot-tmpl@^3.0.3:
   version "3.0.3"

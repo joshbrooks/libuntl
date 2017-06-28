@@ -1,0 +1,89 @@
+<bootstrap-pagination>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="#" disabled="{no_previous_page}" onclick="{ fn.pagination.prev }" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li each="{page in page_range}">
+            <a href="#" onclick="{ fn.pagination.set_page }" class="{selected: parent.opts.page == page}">{ page }</a></li>
+        <li>
+          <a href="#" disabled="{no_next_page}" onclick="{ fn.pagination.next }" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <style>
+        bootstrap-pagination li a.selected {
+            font-weight: bold;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var tag = this;
+
+        tag.defaults = {
+            pages: 5,
+            this_page:1,
+            show_pages: 4
+        };
+
+        tag.on('mount', function(){
+            _.extend(tag.opts, tag.defaults);
+        });
+
+        tag.on('update', function(){
+            tag.page_range = _.range(1, tag.opts.pages  +1 );
+            if (tag.page_range.length > tag.opts.show_pages){
+                var min = _.min([_.max([1, tag.opts.page - tag.opts.show_pages] ), (tag.opts.pages - tag.opts.show_pages * 2)]);
+                var max = _.min([tag.opts.pages, min+tag.opts.show_pages * 2])
+                tag.page_range = _.range(min, max + 1);
+            }
+        });
+
+        tag.fn = {
+            pagination: {
+                prev: function(e){ tag.parent.fn.pagination.prev(e) },
+                set_page: function(e){ tag.parent.fn.pagination.set_page(e) },
+                next: function(e){ tag.parent.fn.pagination.next(e) }
+            }
+        }
+
+    </script>
+
+</bootstrap-pagination>
+
+<bootstrap-pager>
+    <nav aria-label="Page navigation">
+      <ul class="pager">
+        <li class="previous" onclick="{fn.pagination.prev}"><a href="#" disabled="{no_previous_page}"><span aria-hidden="true">&larr;</span> {previous_text || 'Previous' }</a></li>
+          <li>Page {parent.page} of {parent.pages} </li>
+        <li class="next"><a href="#" disabled="{no_next_page}" onclick="{fn.pagination.next}">{next_text || 'Next' } <span aria-hidden="true">&rarr;</span></a></li>
+      </ul>
+    </nav>
+
+    <script type="text/javascript">
+        var tag = this;
+
+        tag.defaults = {
+            this_page:1
+        };
+
+        tag.on('mount', function(){
+            _.extend(tag.opts, tag.defaults);
+        });
+
+        tag.fn = {
+            pagination: {
+                prev: function(e){ e.preventDefault(); tag.parent.fn.pagination.prev(e) },
+                set_page: function(e){ tag.parent.fn.pagination.set_page(e) },
+                next: function(e){ e.preventDefault(); tag.parent.fn.pagination.next(e) }
+            }
+        }
+    </script>
+
+</bootstrap-pager>

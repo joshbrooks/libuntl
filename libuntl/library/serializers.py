@@ -30,6 +30,7 @@ class OrganizationModelSerializer(serializers.ModelSerializer):
 class OrganizationViewSet(viewsets.ModelViewSet):
     queryset = models.Organization.objects.all()
     serializer_class = OrganizationModelSerializer
+    pagination_class = LimitOffsetPagination
     filter_backends=(TimeStampFilter,)
     ordering_fields='modified'
 
@@ -38,31 +39,33 @@ router.register(r'organization', OrganizationViewSet)
 
 
 class AuthorModelSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = models.Author
-        fields = '__all__'
+        fields = ('name','modified','id')
 
 
 class AuthorViewSet(viewsets.ModelViewSet):
     queryset = models.Author.objects.all()
     serializer_class = AuthorModelSerializer
-
+    pagination_class = LimitOffsetPagination
+    filter_backends=(TimeStampFilter,)
 
 router.register(r'author', AuthorViewSet)
 
 
-class PubtypeModelSerializer(serializers.ModelSerializer):
+class PublicationTypeModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Pubtype
+        model = models.PublicationType
         fields = '__all__'
 
 
-class PubtypeViewSet(viewsets.ModelViewSet):
-    queryset = models.Pubtype.objects.all()
-    serializer_class = PubtypeModelSerializer
+class PublicationTypeViewSet(viewsets.ModelViewSet):
+    queryset = models.PublicationType.objects.all()
+    serializer_class = PublicationTypeModelSerializer
 
 
-router.register(r'pubtype', PubtypeViewSet)
+router.register(r'pubtype', PublicationTypeViewSet)
 
 
 class ResourceModelSerializer(serializers.ModelSerializer):
@@ -89,7 +92,9 @@ class TagModelSerializer(serializers.ModelSerializer):
 
 class TagViewSet(viewsets.ModelViewSet):
     queryset = models.Tag.objects.all()
+    pagination_class = LimitOffsetPagination
     serializer_class = TagModelSerializer
+    filter_backends = (TimeStampFilter,)
 
 router.register(r'tag', TagViewSet)
 

@@ -1,0 +1,28 @@
+<bootstrap-input-group>
+    <div class="input-group">
+      <input ref="text" type="text" class="form-control" placeholder="{opts.placeholder}">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" onclick="{fn.search}">{opts.btn}</button>
+      </span>
+    </div><!-- /input-group -->
+
+    <script type="text/javascript">
+        // TODO: On clicking 'enter' in the search field, trigger "fn.search"
+        var tag = this;
+        var defaults = {
+            placeholder: "Search for...",
+            btn: "Go!",
+            trigger:"search"
+        };
+        tag.on('mount', function(){
+            tag.opts = _.defaults(tag.opts, defaults);
+        });
+
+        (function(fn){
+            fn.search = function(e){
+                tag.parent.trigger(tag.opts.trigger, tag, e);
+            }
+        }(tag.fn = tag.fn || {}));
+
+    </script>
+</bootstrap-input-group>

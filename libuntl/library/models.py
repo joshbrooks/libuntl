@@ -12,10 +12,11 @@ class Resource(TimeStampedModel):
     year = models.IntegerField(verbose_name=_('Year'), null=True, blank=True)
     name = JSONField(verbose_name=_('name'), null=True, blank=True)
     description = JSONField(null=True, blank=True, verbose_name=_('description'))
-    pubtype = models.ForeignKey('Pubtype', verbose_name=_("Type"))
+    pubtype = models.ForeignKey('PublicationType', verbose_name=_("Type"))
 
     author = models.ManyToManyField('Author', blank=True)
     organization = models.ManyToManyField('Organization', blank=True)
+    tag = models.ManyToManyField('Tag', blank=True)
 
     cover = models.ImageField(max_length=200, blank=True, null=True)
     user = models.ForeignKey(User, blank=True, null=True)
@@ -33,7 +34,7 @@ class Link(TimeStampedModel):
     file = models.FileField(max_length=200, blank=True, null=True)
 
 
-class Pubtype(models.Model):
+class PublicationType(TimeStampedModel):
     """
     Describes an object based on its type (eg newsletter, report...)
     """
@@ -66,14 +67,15 @@ class Organization(TimeStampedModel):
     acronyms = JSONField(null=True, blank=True)
     description = JSONField(null=True, blank=True)
     contact = JSONField(null=True, blank=True)
-    type = models.ForeignKey('OrgType', verbose_name=_('Organization Type'), null=True, blank=True)
+    type = models.ForeignKey('OrganizationType', verbose_name=_('Organization Type'), null=True, blank=True)
 
 
 class Tag(TimeStampedModel):
     name = JSONField()
     description = JSONField(null=True, blank=True)
 
-class OrgType(models.Model):
+
+class OrganizationType(models.Model):
     id = models.TextField(primary_key=True)
     name = JSONField()
     description = JSONField(null=True, blank=True)

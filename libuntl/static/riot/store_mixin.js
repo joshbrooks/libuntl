@@ -44,75 +44,92 @@
      */
     mixins.StoreIDBMixin = {
 
-        load: function load(data) {
+        load: function load(data, load_opts) {
             var store = this;
-            var database;
-            var transaction;
-            var objectstore;
+            var opts = _.defaults({}, store.opts, load_opts);
+            var db = window.db;
+
             if (!_.isArray(data)) {
                 data = [data];
             }
+            if (_.isFunction(opts.modify_on_load)) {
+                _.each(data, opts.modify_on_load);
+            }
             store.trigger('load-start');
-            idb.open(store.opts.dbname).then(function (db) {
-                database = db;
-                transaction = database.transaction(store.opts.objectStoreName, 'readwrite');
-                objectstore = transaction.objectStore(store.opts.objectStoreName);
+            window.db.transaction('rw?', db[opts.objectStoreName], function () {
                 _.each(data, function (d) {
-                    d.timestamp = _.toInteger(moment(d.modified).format('X')); // Specific to certain stores only!
-                    objectstore.put(d);
+                    if (_.has(d, 'modified')) {
+                        d.timestamp = _.toInteger(moment(d.modified).format('X')); // Specific to certain stores only!
+                    }
+                    db[opts.objectStoreName].put(d);
                 });
-                store.trigger('load-end');
+            }).then(function () {
+                store.getAll().then(function (r) {
+                    store.trigger('load-end', r);
+                });
             });
+        },
+
+        find: function (id, fn_opts) {
+            var defaults = { limit: 10, offset: 0 };
+            var store = this;
+            var opts = _.defaults({}, store.opts, defaults, fn_opts);
+            return window.db[opts.objectStoreName].get(id);
         },
 
         getAll: function getAll(opts_) {
             var store = this;
-            var opts = {};
-            _.defaults(opts, store.opts, opts_);
-
-            idb.open(opts.dbname).then(function (db) {
-                return db.transaction(opts.objectStoreName, 'readonly')
-                    .objectStore(opts.objectStoreName)
-                    .index(opts.indexName)
-                    .getAll();
-            }).then(
-                function (resources) {
-                    store.resources = resources;
-                    store.trigger(opts.functionprefix + '_restored');
-                });
+            var opts = _.defaults({}, store.opts, opts_);
+            var promise = window.db[opts.objectStoreName].toArray();
+            promise.then(function (objects) { store.objects = objects; return objects});
+            return promise;
         },
         /**
          * Limit-offset pagination function which triggers 'pagination' with the results
          * @param opts_
          */
         get: function (opts_) {
-            var results = [];
             var store = this;
-            var opts = { limit: 10, offset: 0 };
-            _.defaults(opts, store.opts, opts_);
-            console.log(opts);
-            idb.open(opts.dbname).then(function openCursor(db) {
-                return db.transaction(opts.objectStoreName, 'readonly')
-                    .objectStore(opts.objectStoreName)
-                    .index(opts.indexName)
-                    .openCursor();
-            }).then(function addObject(cursor) {
-                if (opts.offset && !opts.advanced){opts.advanced=true; cursor.advance(offset)};
-                if (!cursor || results.length >= opts.limit) {
-                    store.trigger('pagination', results);
+            var defaults = { limit: 10, offset: 0 };
+            // Example search: search_: { type: 'startsWithIgnoreCase', word: 'communication', field: 'searchIndex' }
+            var opts = _.defaults(opts_, store.opts, defaults);
+            var action = _.get(opts, ['search', 'type']);
+            function search() {
+                var objectStore = window.db[opts.objectStoreName];
+                if (_.has(opts, 'search')) {
+                    switch (action) {
+                    case 'startsWithIgnoreCase':
+                        return objectStore
+                            .where(opts.search.field)
+                            .startsWithIgnoreCase(opts.search.word)
+                            .distinct();
+                    case 'equals':
+                        return objectStore
+                            .where(opts.search.field)
+                            .equals(opts.search.word)
+                            .distinct();
+                    default:
+                        return objectStore;
+                    }
                 } else {
-                    results.push(cursor.value);
-                    return cursor.continue().then(addObject);
+                    return objectStore;
                 }
-            });
+            }
+
+            search().count(function (count) { store.trigger('count', count); });
+            search().offset(opts.offset)
+                .limit(opts.limit)
+                .toArray(function (resources) {
+                    store.trigger('pagination', resources);
+                })
+                .then();
         },
 
         page: function (opts_) {
             var store = this;
             var defaults = { page: 1, page_size: 10 };
             var opts = _.defaults(opts_, store.opts, defaults);
-            var pagination = { offset: (opts.page - 1) * opts.page_size, limit: (opts.page_size) };
-            debugger;
+            var pagination = _.defaults({ offset: (opts.page - 1) * opts.page_size, limit: (opts.page_size) }, opts);
             store.get(pagination);
         },
 
@@ -132,15 +149,22 @@
             });
             request.done(
                 function (data) {
-                    store.trigger('update-start', opts);
-                    store.load(data.results);
-                    store.count(); // Sends a "count" signal with the number of records in the store
-                    if (data.next) {
-                        opts.offset += 100;
-                        store.trigger('update-continued', _.extend(opts, { data: data }));
+                    store.trigger('update-start', opts, store.getAll());
+                    store.objects = store.getAll();
+                    // If result is paginated
+                    if (!_.isUndefined(data.results)) {
+                        store.load(data.results);
+                    } else {
+                        store.load(data);
+                    }
+                    // store.count(); // Sends a "count" signal with the number of records in the store
+
+                    if (data.next && opts.getAll) {
+                        opts.offset += opts.limit;
+                        store.trigger('update-continued', _.extend(opts, { data: data }), store.getAll());
                         store.update(last_modified, opts);
                     } else {
-                        store.trigger('update-end', opts);
+                        store.trigger('update-end', opts, store.getAll());
                     }
                 });
         },
@@ -148,23 +172,18 @@
         get_last_modified: function (opts_) {
             var store = this;
             var opts = _.defaults(this.opts, opts_);
-            var database;
+            if (_.isUndefined(window.db[opts.objectStoreName])) {
+                console.error('Expected to find a store at db.' + opts.objectStoreName);
+                console.error('Hint: Maybe this is not defined in db.version(x.x).stores({})');
+            }
 
-            // Obtain the first result of the "index"
-            idb.open(opts.dbname)
-                .then(function (db) {
-                    database = db;
-                    return database
-                        .transaction(opts.objectStoreName, 'readonly')
-                        .objectStore(opts.objectStoreName)
-                        .openCursor(null, 'prev');
-                }).then(function (last) {
-                    if (_.isUndefined(last)) {
-                        store.trigger('refresh');
-                    } else {
-                        store.trigger('refresh', last.value.modified);
-                    }
-                });
+            return window.db[opts.objectStoreName].orderBy('modified').last().then(function (last_value) {
+                if (_.isUndefined(last_value)) {
+                    store.trigger('refresh');
+                } else {
+                    store.trigger('refresh', last_value.modified);
+                }
+            });
         },
 
         /* Push a clone of the store's "template" onto the stack */
@@ -187,37 +206,11 @@
         count: function (opts_) {
             var store = this;
             var opts = _.defaults(this.opts, opts_);
-            idb.open(opts.dbname)
-                .then(function (db) {
-                    return db
-                        .transaction(opts.objectStoreName, 'readonly')
-                        .objectStore(opts.objectStoreName)
-                        .count();
-                }).then(function (count) {
+            return window.db[opts.objectStoreName]
+                .count()
+                .then(function (count) {
                     store.trigger('count', count);
                 });
-        },
-
-        initialiseIdb: function initializeIdb(database_opts) {
-            /**
-             * options include name for the database, name for the table, version, keyPath, indexes
-             * @type {{dbname: string, version: number, objectStoreName: string, keyPath: string, indexes: [*]}}
-             */
-                // TODO: Input validation for this function
-            var opts = _.extend({}, database_opts);
-
-            return idb.open(opts.dbname, opts.version, function (upgradeDb) {
-                var idbstore;
-                // eslint-disable-next-line default-case
-                switch (upgradeDb.oldVersion) {
-                    /* Add additional schema upgrades here */
-                case 0:
-                    idbstore = upgradeDb.createObjectStore(opts.objectStoreName, { keyPath: opts.keyPath });
-                    _.each(opts.indexes, function initIndex(i) {
-                        idbstore.createIndex(i.indexName, i.field);
-                    });
-                }
-            });
         }
     };
 }(window.mixins = window.mixins || {}));

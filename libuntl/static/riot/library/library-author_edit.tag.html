@@ -1,0 +1,21 @@
+<library-author_edit>
+     <h4>Author Edit</h4>
+    <p>{JSON.stringify(message)}</p>
+
+    <script>
+        var tag = this;
+        function store(){
+            return window.stores.author;
+        }
+        tag.store = store();
+
+        tag.on('route', function(id) {
+            tag.message = 'now loading...';
+            store().find(_.toInteger(id)).then(function(thing) {
+                tag.update({
+                    message: thing
+                })
+            })
+        })
+    </script>
+</library-author_edit>

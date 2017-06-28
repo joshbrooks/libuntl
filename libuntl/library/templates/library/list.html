@@ -4,19 +4,106 @@
 {% load i18n %}
 {% load static %}
 {% block script %}
+        <script>
+            window.globals = {stats: {{ counts }}};
+        </script>
+        <script>
+
+            idb.delete('libuntl');
+
+
+            window.db = new Dexie('libuntl');
+            db.version(0.3).stores({
+                authors: 'id',
+                resources: 'id,timestamp,modified,pubtype'
+            });
+            db.version(0.4).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype'
+            });
+            db.version(0.5).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype',
+                organizations: 'id,modified,name,type'
+            });
+            db.version(0.6).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name'
+            });
+            db.version(0.7).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype,*searchIndex',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name'
+            });
+            db.version(0.9).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype,*searchIndex,*organization,*author',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name'
+            });
+            db.version(1.0).stores({
+                authors: 'id,modified',
+                resources: 'id,timestamp,modified,pubtype,*searchIndex,*organization,*author',
+                organizations: 'id,modified,name,type',
+                tags: 'id,modified,name',
+                pubtypes: 'id,modified,name'
+            });
+            db.resources.hook("creating", function (primKey, obj, trans) {
+
+                obj.searchIndex = _.uniq(_.values(obj.name).join(' ').split(' '));
+                // console.log(obj.searchIndex);
+            });
+            db.resources.hook("updating", function (mods, primKey, obj, trans) {
+                if (_.has(mods, 'name')) {
+                    // return {search: console.log(_.values(obj.name).join(' ').split(' '))};
+                }
+            });
+        </script>
+
         <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
         <script type="text/javascript" src="{% static 'riot/library/resource.store.js' %}"></script>
 
+        <script type="riot/tag" src="{%  static 'riot/app.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-pagination.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-dropdown.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-inputs.tag.html' %}"></script>
+
         <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-resource_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-resource_edit.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-author_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-author_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-author_edit.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-organization_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-organization_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-organization_edit.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-tag_list.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-tag_detail.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-tag_edit.tag.html' %}"></script>
+
+        <script type="riot/tag" src="{%  static 'riot/library/library-home.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/library/library-upload.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-forms.tag.html' %}"></script>
+
     <script>
-    $(document).ready(function(){riot.mount('library-resource_list')})
+    riot.compile(function() {
+        riot.mount('app');
+        route.start(true)
+      });
     </script>
 {% endblock %}
 {% block content %}
     <div class="row">
         <div class="col col-xs-12">
-            <h1>Welcome to the UNTL Online Library</h1>
-            <library-resource_list></library-resource_list>
+
+            <app></app>
         </div>
     </div>
 {% endblock %}

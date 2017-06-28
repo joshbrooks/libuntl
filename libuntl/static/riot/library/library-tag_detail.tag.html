@@ -1,0 +1,20 @@
+<library-tag_detail>
+    <p>Tag Detail</p>
+    <p>{JSON.stringify(message)}</p>
+
+    <script>
+        var tag = this;
+        function store(){ return window.stores.tag; }
+        tag.store = store();
+        tag.authors = [];
+        tag.authors = [];
+        tag.organizations = [];
+        tag.on('route', function(id) {
+            tag.message = 'now loading...';
+            store().find(_.toInteger(id)).then(function(thing) {
+                tag.update({ message: thing });
+            })
+        })
+    </script>
+
+</library-tag_detail>

@@ -1,0 +1,100 @@
+<!-- Single button -->
+<bootstrap-dropdown>
+    <hr>
+    <h4>{opts.label} <a class="btn btn-primary btn-xs" if={!opts.single} onclick="{add_dropdown}">+</a></h4>
+    <br>
+    <div class="btn-group" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
+
+      <a type="button" class="{ell:1} btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="{placeholder: _.isUndefined(_.get(selected_name, index))}">
+            {_.get(selected_name, index) || 'Click to search...'}
+        </span>
+      </a>
+
+      <ul class="dropdown-menu">
+        <li each="{opt in options}" role="{separator: opt[0] == '_'}" class="{divider: opt[0] == '_', disabled: _.includes(selected, opt)}" disabled="{_.includes(selected, opt)}" onclick="{invoke}" data-index="{index}" >
+            <a href="#">{opt[1]} </a>
+        </li>
+      </ul>
+
+          <a style="width: 20%" class="btn btn-primary btn-sm {disabled: index==0}" disabled="{disabled: index==0}" onclick="{remove_dropdown}">Clear</a>
+
+    </div>
+
+
+
+    <style>
+        bootstrap-dropdown ul.dropdown-menu {
+            overflow-y:auto;
+            max-height: 300px;
+            max-width:300px;
+        }
+        .ell {
+            text-overflow:ellipsis;
+            overflow-x:hidden;
+        }
+
+        span.placeholder {
+            color: gray;
+        }
+        .dropdown-menu a {
+            text-overflow:ellipsis;
+            overflow-x:hidden;
+        }
+    </style>
+
+    <script>
+        var tag = this;
+
+        function add_dropdown(){
+            if (tag.opts.single) {return}
+            tag.repeats += 1;
+            tag.selected.push(undefined);
+            tag.selected_name.push(undefined);
+        }
+
+        function remove_dropdown(i){
+            tag.repeats -= 1;
+            _.pullAt(tag.selected, i);
+            _.pullAt(tag.selected_name, i);
+            tag.update();
+        }
+
+        tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
+        tag.add_dropdown = add_dropdown;
+
+        var defaults = {
+            repeats: 1,
+            trigger: 'dropdown_select',
+            make_options: function(option){
+                return[option.id, option.name.en || option.name.tet || option.name || '?']
+            }
+        };
+        tag.on('mount', function(){
+            _.defaults(tag.opts, defaults);
+            tag.repeats = tag.opts.repeats || 1;
+            tag.selected = _.fill(new Array(tag.repeats), undefined);
+            tag.selected_name = _.fill(new Array(tag.repeats), undefined);
+
+            if (!_.isUndefined(window.stores[tag.opts.store])) {
+                tag.update({options: _.map(window.stores[tag.opts.store].objects, tag.opts.make_options)});
+                window.stores[tag.opts.store].on('load-end', function (objects) {
+                    tag.update({options: _.map(objects, tag.opts.make_options)});
+                });
+            }
+        });
+
+        tag.invoke = function(e, a,b,c){
+            e.preventDefault();
+            var index = $(e.currentTarget).data('index') || 0
+            tag.parent.trigger(tag.opts.trigger, tag, e);
+            tag.selected[index] =  e.item.opt
+            tag.selected_name[index] =  e.item.opt[1];
+        };
+
+        tag.on('update', function(){console.log(tag.options)})
+
+
+    </script>
+
+</bootstrap-dropdown>

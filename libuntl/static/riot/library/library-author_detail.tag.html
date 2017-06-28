@@ -1,0 +1,69 @@
+
+<library-author_detail_publication>
+
+    <td>
+        <a href="#resources/{opts.resource.id}">{opts.resource.id}</a>
+    </td>
+    <td>
+        <p each="{code, val in opts.resource.name}">{code} ({val})</p>
+    </td>
+
+    <script>
+        var tag = this;
+    </script>
+
+</library-author_detail_publication>
+
+<library-author_detail>
+
+    <nav aria-label="...">
+      <ul class="pager">
+        <li class="previous"><a href="#authors"><span aria-hidden="true">&larr;</span> Author list</a></li>
+      </ul>
+    </nav>
+    <virtual if="{_.isObject(message)}">
+        <h1>{message.name.name}</h1>
+        <strong>Author</strong>
+        <p>Last updated {message.modified}</p>
+    </virtual>
+
+    <h4>Publications</h4>
+
+    <table class="table table-condensed table-bordered">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr if="{resources}" data-is="library-author_detail_publication" each="{resource in resources}" resource="{resource}"></tr>
+        </tbody>
+    </table>
+
+    <script>
+        var tag = this;
+        tag.message = {'name':{'name':'author'}, 'modified': '?'}
+        function store(){
+            return window.stores.author;
+        }
+        tag.store = store();
+
+        function resources(){
+            window.db.resources.where("author").anyOf(tag.message.id).toArray(
+                function setResources (a) {
+                    tag.update({resources:a});
+                    debugger;
+                }
+            );
+        }
+
+        tag.on('route', function(id) {
+            tag.update({message: 'now loading...'});
+            store().find(_.toInteger(id)).then(function(thing) {
+                tag.update({message: thing});
+                resources();
+            })
+        })
+    </script>
+</library-author_detail>

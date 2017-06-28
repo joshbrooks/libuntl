@@ -1,43 +1,61 @@
+<library-resource_item>
+    <h1>{message}</h1>
+    <td>
+        <p each="{ label, code in opts.resource.name }">
+            <span class="small">{code} </span>
+            <a href="#/resources/{parent.opts.resource.id}">
+                {label}
+            </a>
+        </p>
+
+    </td>
+
+    <script>
+        var tag = this;
+        tag.expanded = false;
+        tag.on('mount', function(){})
+        tag.expand = function(){
+            tag.expanded = !tag.expanded;
+        }
+
+    </script>
+</library-resource_item>
+
+
 <library-resource_list>
-    <p>{page}</p>
-    <p onclick="{fn.pagination.next}">Next {page} + 1</p>
-    <p onclick="{fn.pagination.prev}">Prev {page} - 1</p>
+    <h1>Publications</h1>
 
-
-    <div class="panel panel-default" if="{ !resources }">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                There are no resources to display
-            </h3>
+    <div class="row">
+        <div class="col col-sm-3">
+            <bootstrap-dropdown label="Publication Type" trigger="change_pubtype" store="pubtype"></bootstrap-dropdown>
+            <bootstrap-dropdown label="Organization" trigger="something" store="organization"></bootstrap-dropdown>
+            <bootstrap-dropdown label="Tag" trigger="something" store="tag"></bootstrap-dropdown>
         </div>
-    </div>
 
-    <div class="panel panel-default" each="{ resource in resources }">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-            <span each="{ label, code in resource.name }">
-                <p>{label} <span class="small">{code}</span></p>
-            </span>
-            </h3>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col col-xs-2">{ resource.year }</div>
-                <div class="col col-xs-3">
-                </div>
+        <div class="col col-sm-9">
+        <bootstrap-pager page="{page}" pages="{pages}"></bootstrap-pager>
+        <bootstrap-input-group placeholder="Search title..." btn="Search" trigger="search"></bootstrap-input-group>
 
-                <div class="col col-xs-4">
-                    <div class="row" each="{ label, code in resource.description }">
-                        <div class="col col-xs-12"><p>{label} <span class="small">{code}</span></p>
-                        </div>
-                    </div>
+            <div class="panel panel-default" if="{ !resources }">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        There are no resources to display
+                    </h3>
                 </div>
-                <div class="col col-xs-1">{ resource.cover }</div>
-                <div class="col col-xs-1">{ resource.pubtype_id }</div>
-                <div class="col col-xs-1">{ resource.user_id }</div>
             </div>
+            <table class="table table-condensed table-bordered">
+                <thead>
+                    <tr>
+                        <th>Hello</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-is="library-resource_item" each="{ resource in resources }" if="{resource}" resource="{resource}" ></tr>
+                </tbody>
+            </table>
         </div>
     </div>
+
     <style>
         library-resource_list .small {
             color: #a3a3a3;
@@ -52,64 +70,175 @@
 
         function message(message){
             tag.message = message;
+            console.log(tag.message, tag)
         }
+
+        function get_choices_pubtype(){
+            return window.db.pubtypes.toArray().then(
+                function(i){ return _.map(i, function(i){return [i.id , i.name.en]})}
+            )
+        }
+
+        tag.get_choices_pubtype = get_choices_pubtype;
 
         function store(){
             return window.stores.resource;
         }
+
+        tag.get_res = function(){
+            return store().getAll()
+        };
+
+
+        function update(opts){
+            tag.update(opts);
+        }
+
+        tag.on('update', function(){
+            tag.resources = tag.resources || [];
+            tag.pages = _.ceil(tag.count / tag.page_size);
+            if (tag.page > tag.pages) { tag.page = 1 };
+        });
+
+        function listener() {
+            // tag.actions.push(arguments);
+            // tag.update();
+            var action = arguments[0];
+
+            switch (action) {
+                case 'update-start':
+                    message('Downloading new resources');
+                    break;
+                case 'update-continued':
+                    update();
+                    message('Downloading new resources');
+                    break;
+                case 'update-end':
+                    store().get();
+
+                    message('Have a nice day');
+                    break;
+                case 'pagination':
+                    tag.resources = arguments[1];
+                    /* When the current page is out of range reset to 1 */
+                    update({resources: arguments[1]});
+                    break;
+                case 'resources_restored':
+                    update();
+                    break;
+                case 'load-end':
+                    //store().get();
+                    break;
+
+                case 'detail_for':
+                    console(arguments);
+                    break;
+                case 'count':
+                    if (arguments[1] !== tag.count){
+                        update({count: arguments[1]});
+                    }
+                    break;
+                default:
+                    break;
+                    message(action)
+            }
+        }
+
+        tag.on('change_pubtype', function(){
+            console.log(arguments);
+            var triggering_tag = arguments[0];
+            var event = arguments[1];
+            var event_name = triggering_tag.opts.event;
+            var option = event.item.opt;
+            var action = option[0];
+
+            triggering_tag.update({display:option[1]});
+
+            tag.update({page: 1, search : { type: 'equals', word: action, field: 'pubtype' }});
+            page();
+
+        });
+        tag.on('search', function(){
+            var triggering_tag = arguments[0];
+            var event = arguments[1];
+            var text = triggering_tag.refs.text.value;
+            tag.update({page:1, search: {type: 'startsWithIgnoreCase', word:text, field:'searchIndex'}});
+            page();
+        });
 
         tag.header = {
             id:'id',
             description:'description',
             pubtype_id: 'Publication type'
         };
-        tag.on('mount', function(){
 
+        tag.on('unmount', function(){
+            store().off('*', listener);
+        });
+
+        tag.on('mount', function(){
             tag.opts = _.defaults(tag.opts, {
                 page: 1,
                 per_page:10
             });
-            store().on('resources_restored', function(){
-                tag.update()});
-            store().on('*', function(){
-                tag.actions.push(arguments);
-                tag.update();
-                var action = arguments[0];
-                switch (action) {
-                    case 'update-start':
-                        message('Downloading new resources');
-                        break;
-                    case 'update-continued':
-                        tag.update();
-                        message('Downloading new resources');
-                        break;
-                    case 'update-done':
-                        tag.update();
-                        message('Have a nice day');
-                        break;
-                    case 'pagination':
-                        tag.resources = arguments[1];
-                        tag.update();
-                        break;
-                    default:
-                        break;
-                        message(action)
-                }
-            })
+            store().on('*', listener);
+            store().page({page: tag.page, page_size: tag.page_size});
         });
+
+        function page(){
+            var opts = {page: tag.page, page_size: tag.page_size};
+            if (tag.search){
+                opts.search = tag.search;
+            }
+            console.log(opts);
+            store().page(opts);
+        }
 
         tag.fn = {
             display:{
                 name: function(name){return JSON.stringify(name)}
             },
             pagination: {
-                next: function(){tag.page += 1; store().page({page: tag.page, page_size: tag.page_size})},
-                prev: function(){tag.page -= 1; store().page({page: tag.page, page_size: tag.page_size})},
-                first: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})},
-                last: function(){tag.page = 1; store().page({page: tag.page, page_size: tag.page_size})}
+                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; page();},
+                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1;  page();},
+                first: function(e){e.preventDefault(); tag.page = 1;  page();},
+                last: function(e){e.preventDefault(); tag.page = 1;  page();},
+                set_page: function(e){e.preventDefault(); tag.page = e.item.page;  page();},
+                back: function(){return Urls.resource_list()}
             }
         };
+
 
     </script>
 
 </library-resource_list>
+
+<library-resource-authors>
+    <h4>Authors</h4>
+    <p each="{auth in authors}"><a href="#authors/{auth.id}"> {auth.name.name} </a></p>
+    <script>
+        var tag = this;
+        tag.items = _.map(opts.resource.author, function(i){return {name: '...'}});
+        function filter(result){return _.includes(tag.opts.resource.author, result.id)}
+        function setAuthor (a) {tag.update({authors:a});}
+        tag.on('mount', function() {
+
+            window.db.authors.filter(filter).toArray(setAuthor);
+        })
+    </script>
+
+</library-resource-authors>
+
+<library-resource-organizations>
+     <h4>Organizations</h4>
+    <p each="{item in items}"><a href="#organizations/{item.id}"> {item.name} </a></p>
+    <script>
+        var tag = this;
+        tag.items = _.map(opts.resource.organization, function(i){return {name: '...'}});
+        function filter(result){return _.includes(tag.opts.resource.organization, result.id)}
+        function set (a) {tag.update({items:a})}
+        tag.on('mount', function() {
+            window.db.organizations.filter(filter).toArray(set);
+        })
+    </script>
+</library-resource-organizations>
