@@ -159,7 +159,7 @@
                     }
                     // store.count(); // Sends a "count" signal with the number of records in the store
 
-                    if (data.next && opts.getAll) {
+                    if (data.next) {
                         opts.offset += opts.limit;
                         store.trigger('update-continued', _.extend(opts, { data: data }), store.getAll());
                         store.update(last_modified, opts);

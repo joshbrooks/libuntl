@@ -27,9 +27,9 @@
 
     <div class="row">
         <div class="col col-sm-3">
-            <bootstrap-dropdown label="Publication Type" trigger="change_pubtype" store="pubtype"></bootstrap-dropdown>
-            <bootstrap-dropdown label="Organization" trigger="something" store="organization"></bootstrap-dropdown>
-            <bootstrap-dropdown label="Tag" trigger="something" store="tag"></bootstrap-dropdown>
+            <bootstrap-dropdown label="Publication Type" store="pubtype"></bootstrap-dropdown>
+            <bootstrap-dropdown label="Organization" store="organization"></bootstrap-dropdown>
+            <bootstrap-dropdown label="Tag" store="tag"></bootstrap-dropdown>
         </div>
 
         <div class="col col-sm-9">
@@ -50,7 +50,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-is="library-resource_item" each="{ resource in resources }" if="{resource}" resource="{resource}" ></tr>
+                    <tr data-is="library-resource_item" each="{ resource in page_resources }" if="{resource}" resource="{resource}" ></tr>
                 </tbody>
             </table>
         </div>
@@ -96,8 +96,11 @@
 
         tag.on('update', function(){
             tag.resources = tag.resources || [];
-            tag.pages = _.ceil(tag.count / tag.page_size);
-            if (tag.page > tag.pages) { tag.page = 1 };
+        });
+
+        tag.on('dropdown_select', function(drop_tag){
+            _.set(tag, ['filters', drop_tag.opts.store], drop_tag.selected);
+            filter();
         });
 
         function listener() {
@@ -114,29 +117,24 @@
                     message('Downloading new resources');
                     break;
                 case 'update-end':
-                    store().get();
+                    store().getAll();
 
                     message('Have a nice day');
                     break;
                 case 'pagination':
                     tag.resources = arguments[1];
                     /* When the current page is out of range reset to 1 */
-                    update({resources: arguments[1]});
+                    page();
                     break;
                 case 'resources_restored':
                     update();
                     break;
                 case 'load-end':
-                    //store().get();
+                    //store().getAll();
                     break;
 
                 case 'detail_for':
                     console(arguments);
-                    break;
-                case 'count':
-                    if (arguments[1] !== tag.count){
-                        update({count: arguments[1]});
-                    }
                     break;
                 default:
                     break;
@@ -185,13 +183,28 @@
             store().page({page: tag.page, page_size: tag.page_size});
         });
 
+        function filter(){
+            store().getAll().then(function(objects){
+                var _objects = _(objects);
+                _.each(tag.filters, function(value,key) {
+                    var values = _.map(value, '0');
+                    if (values.length === 0 ){ return }
+                    console.log(key, values);
+                    _objects = _objects.filter(function (object) {
+                        if (_.isArray(object[key])){return _.intersection(object[key], values).length > 0}
+                        else {return _.includes(values, object[key])};
+                    })
+                });
+                tag.resources = _objects.value();
+                page();
+            });
+        }
+
         function page(){
-            var opts = {page: tag.page, page_size: tag.page_size};
-            if (tag.search){
-                opts.search = tag.search;
-            }
-            console.log(opts);
-            store().page(opts);
+            var pages = _.ceil(tag.resources.length / tag.page_size);
+            if (tag.page > tag.pages) { tag.page = 1 }
+            var page_resources = _.slice(tag.resources, (tag.page -1) * tag.page_size, tag.page * tag.page_size )
+            tag.update({pages: pages, page_resources: page_resources})
         }
 
         tag.fn = {

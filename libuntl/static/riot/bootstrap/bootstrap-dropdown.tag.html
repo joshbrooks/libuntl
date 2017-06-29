@@ -12,12 +12,17 @@
       </a>
 
       <ul class="dropdown-menu">
-        <li each="{opt in options}" role="{separator: opt[0] == '_'}" class="{divider: opt[0] == '_', disabled: _.includes(selected, opt)}" disabled="{_.includes(selected, opt)}" onclick="{invoke}" data-index="{index}" >
+        <li each="{opt in options}" role="{separator: opt[0] == '_'}"
+            class="{divider: opt[0] == '_', disabled: _.includes(selected, opt)}"
+            disabled="{_.includes(selected, opt)}"
+            onclick="{invoke}"
+            data-index="{index}"
+        >
             <a href="#">{opt[1]} </a>
         </li>
       </ul>
 
-          <a style="width: 20%" class="btn btn-primary btn-sm {disabled: index==0}" disabled="{disabled: index==0}" onclick="{remove_dropdown}">Clear</a>
+          <a style="width: 20%" class="btn btn-primary btn-sm" onclick="{remove_dropdown}">&times;</a>
 
     </div>
 
@@ -57,6 +62,8 @@
             tag.repeats -= 1;
             _.pullAt(tag.selected, i);
             _.pullAt(tag.selected_name, i);
+            if (tag.repeats = 0){ add_dropdown() };
+            tag.parent.trigger(tag.opts.trigger, tag)
             tag.update();
         }
 
@@ -84,15 +91,14 @@
             }
         });
 
-        tag.invoke = function(e, a,b,c){
+        tag.invoke = function(e){
             e.preventDefault();
             var index = $(e.currentTarget).data('index') || 0
-            tag.parent.trigger(tag.opts.trigger, tag, e);
-            tag.selected[index] =  e.item.opt
+            tag.selected[index] =  e.item.opt;
             tag.selected_name[index] =  e.item.opt[1];
-        };
 
-        tag.on('update', function(){console.log(tag.options)})
+            tag.parent.trigger(tag.opts.trigger, tag)
+        };
 
 
     </script>
