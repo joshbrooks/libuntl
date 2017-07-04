@@ -50,7 +50,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-is="library-resource_item" each="{ resource in page_resources }" if="{resource}" resource="{resource}" ></tr>
+                    <tr data-is="library-resource_item" each="{ resource in resources }" if="{resource}" resource="{resource}" ></tr>
                 </tbody>
             </table>
         </div>
@@ -124,7 +124,7 @@
                 case 'pagination':
                     tag.resources = arguments[1];
                     /* When the current page is out of range reset to 1 */
-                    page();
+                    filter();
                     break;
                 case 'resources_restored':
                     update();
@@ -153,7 +153,7 @@
             triggering_tag.update({display:option[1]});
 
             tag.update({page: 1, search : { type: 'equals', word: action, field: 'pubtype' }});
-            page();
+            filter();
 
         });
         tag.on('search', function(){
@@ -161,7 +161,7 @@
             var event = arguments[1];
             var text = triggering_tag.refs.text.value;
             tag.update({page:1, search: {type: 'startsWithIgnoreCase', word:text, field:'searchIndex'}});
-            page();
+            filter();
         });
 
         tag.header = {
@@ -184,27 +184,24 @@
         });
 
         function filter(){
-            store().getAll().then(function(objects){
-                var _objects = _(objects);
-                _.each(tag.filters, function(value,key) {
-                    var values = _.map(value, '0');
-                    if (values.length === 0 ){ return }
-                    console.log(key, values);
-                    _objects = _objects.filter(function (object) {
-                        if (_.isArray(object[key])){return _.intersection(object[key], values).length > 0}
-                        else {return _.includes(values, object[key])};
-                    })
+            var results = store().filter(tag.filters);
+            results.then(function(objects){
+                objects[0]
+                .offset((tag.page -1) * tag.page_size)
+                .limit(tag.page_size)
+                .sortBy('id' || tag.ordering)
+                .then(function(r) {
+                    tag.update({
+                        resources: r,
+                        pages:_.ceil(objects[1] / tag.page_size)
+                    });
+                    page();
                 });
-                tag.resources = _objects.value();
-                page();
-            });
+            })
         }
 
         function page(){
-            var pages = _.ceil(tag.resources.length / tag.page_size);
-            if (tag.page > tag.pages) { tag.page = 1 }
-            var page_resources = _.slice(tag.resources, (tag.page -1) * tag.page_size, tag.page * tag.page_size )
-            tag.update({pages: pages, page_resources: page_resources})
+            if (tag.page > tag.pages && tag.pages !== 0) { tag.page = 1; filter(); }
         }
 
         tag.fn = {
@@ -212,11 +209,11 @@
                 name: function(name){return JSON.stringify(name)}
             },
             pagination: {
-                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; page();},
-                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1;  page();},
-                first: function(e){e.preventDefault(); tag.page = 1;  page();},
-                last: function(e){e.preventDefault(); tag.page = 1;  page();},
-                set_page: function(e){e.preventDefault(); tag.page = e.item.page;  page();},
+                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; filter();},
+                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1;  filter();},
+                first: function(e){e.preventDefault(); tag.page = 1;  filter();},
+                last: function(e){e.preventDefault(); tag.page = 1;  filter();},
+                set_page: function(e){e.preventDefault(); tag.page = e.item.page;  filter();},
                 back: function(){return Urls.resource_list()}
             }
         };

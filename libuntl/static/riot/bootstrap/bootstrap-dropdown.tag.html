@@ -58,13 +58,16 @@
             tag.selected_name.push(undefined);
         }
 
-        function remove_dropdown(i){
+        function remove_dropdown(e){
             tag.repeats -= 1;
-            _.pullAt(tag.selected, i);
-            _.pullAt(tag.selected_name, i);
-            if (tag.repeats = 0){ add_dropdown() };
-            tag.parent.trigger(tag.opts.trigger, tag)
+            _.pullAt(tag.selected, e);
+            _.pullAt(tag.selected_name,e);
+            if (tag.repeats === 0){ add_dropdown() };
             tag.update();
+            tag.parent.trigger(tag.opts.trigger, tag)
+
+
+
         }
 
         tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
