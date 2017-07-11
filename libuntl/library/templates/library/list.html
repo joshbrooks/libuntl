@@ -102,6 +102,11 @@
 {% block content %}
     <div class="row">
         <div class="col col-xs-12">
+            {% get_available_languages as LANGUAGES %}
+            {%  get_current_language as LANGUAGE %}
+            {{ LANGUAGE }}
+            {% for L in LANGUAGES %}<h3>{{ L }}</h3>
+            {% endfor %}
 
             <app></app>
         </div>

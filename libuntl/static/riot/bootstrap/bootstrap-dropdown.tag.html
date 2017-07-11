@@ -1,9 +1,9 @@
 <!-- Single button -->
 <bootstrap-dropdown>
     <hr>
-    <h4>{opts.label} <a class="btn btn-primary btn-xs" if={!opts.single} onclick="{add_dropdown}">+</a></h4>
+    <h4>{opts.label}</h4>
     <br>
-    <div class="btn-group" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
+    <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
 
       <a type="button" class="{ell:1} btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="{placeholder: _.isUndefined(_.get(selected_name, index))}">
@@ -22,7 +22,7 @@
         </li>
       </ul>
 
-          <a style="width: 20%" class="btn btn-primary btn-sm" onclick="{remove_dropdown}">&times;</a>
+          <a style="width: 20%" class="btn btn-default btn-sm" onclick="{remove_dropdown}">&times;</a>
 
     </div>
 
@@ -65,9 +65,6 @@
             if (tag.repeats === 0){ add_dropdown() };
             tag.update();
             tag.parent.trigger(tag.opts.trigger, tag)
-
-
-
         }
 
         tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
@@ -96,10 +93,10 @@
 
         tag.invoke = function(e){
             e.preventDefault();
-            var index = $(e.currentTarget).data('index') || 0
+            var index = $(e.currentTarget).data('index') || 0;
             tag.selected[index] =  e.item.opt;
             tag.selected_name[index] =  e.item.opt[1];
-
+            if (!_.isUndefined(_.last(tag.selected)) && !opts.single){tag.add_dropdown()}
             tag.parent.trigger(tag.opts.trigger, tag)
         };
 

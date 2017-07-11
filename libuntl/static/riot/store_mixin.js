@@ -1,6 +1,7 @@
 /**
  * @mixin
  */
+/* globals Promise */
 (function (mixins) {
     function cast(values) {
         return _.map(_.compact(values), function (v) {
@@ -159,7 +160,15 @@
             /* 'filters' is a key-value pairing of index and attribute to search by */
             var store = this;
             var activeFilters = _.omitBy(filters, excludeEmptyValueList); // reject zero length filters
-            var queries = Promise.all(_.map(activeFilters, function (values, key) { return store.indexPrimaryKeys(key, values); }));
+            var queries;
+            if (_.size(activeFilters) === 0) {
+                queries = store.get_objects().toCollection();
+                return Promise.all([queries, queries.count()]);
+            }
+            queries = Promise.all(_.map(activeFilters, function (values, key) {
+                return store.indexPrimaryKeys(key, values);
+            }));
+
             return queries.then(function (pkArrays) {
                 var pks = _.intersection.apply(null, pkArrays);
                 return [store.get_objects()

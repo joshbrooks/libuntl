@@ -99,7 +99,7 @@
         });
 
         tag.on('dropdown_select', function(drop_tag){
-            _.set(tag, ['filters', drop_tag.opts.store], drop_tag.selected);
+            _.set(tag, ['filters', drop_tag.opts.store], _.compact(drop_tag.selected));
             filter();
         });
 
@@ -193,7 +193,7 @@
                 .then(function(r) {
                     tag.update({
                         resources: r,
-                        pages:_.ceil(objects[1] / tag.page_size)
+                        pages:_.min(_.ceil(objects[1] / tag.page_size), 1)
                     });
                     page();
                 });
@@ -201,7 +201,7 @@
         }
 
         function page(){
-            if (tag.page > tag.pages && tag.pages !== 0) { tag.page = 1; filter(); }
+            if (tag.page > tag.pages) { tag.page = 1; filter(); }
         }
 
         tag.fn = {
