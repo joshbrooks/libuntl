@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "bootstrap-drawer": "^1.0.6",
     "compass": "^0.1.1",
     "dexie": "^1.5.1",
     "idb": "^2.0.3",
