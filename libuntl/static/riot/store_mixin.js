@@ -1,13 +1,27 @@
 /**
  * @mixin
  */
+/* globals Promise */
 (function (mixins) {
+    function cast(values) {
+        return _.map(_.compact(values), function (v) {
+            return isNaN(v[0]) ? v[0] : parseInt(v[0], 10);
+        });
+    }
+    function excludeEmptyValueList(v) {
+        return _.size(v) === 0;
+    }
+
+
     mixins.StoreMixin = {
         /**
          * Loads data into the store
          * @memberof StoreMixin
          * @method load
          */
+
+        get_objects: function objects() { return window.db[this.opts.objectStoreName]; },
+        indexPrimaryKeys: function indexPrimaryKeys(key, values) { return this.get_objects().where(key).anyOf(cast(values)).primaryKeys(); },
         load: function (/** object*/ data) {
             /* Specify "sortBy" in the Store to sort data by a given property */
             if (this.sortBy) {
@@ -81,7 +95,7 @@
             var store = this;
             var opts = _.defaults({}, store.opts, opts_);
             var promise = window.db[opts.objectStoreName].toArray();
-            promise.then(function (objects) { store.objects = objects; return objects});
+            promise.then(function (objects) { store.objects = objects; return objects; });
             return promise;
         },
         /**
@@ -125,6 +139,44 @@
                 .then();
         },
 
+        /*
+        This is a 'dumb' version of filter
+         */
+        filter_: function (filters) {
+            this.getAll().then(function (objects) {
+                var _objects = _(objects);
+                _.each(filters, function (value, key) {
+                    var values = _.map(value, '0');
+                    if (values.length === 0) { return; }
+                    console.log(key, values);
+                    _objects = _objects.filter(function (object) {
+                        if (_.isArray(object[key])) { return _.intersection(object[key], values).length > 0; } return _.includes(values, object[key]);
+                    });
+                });
+                return _objects.value();
+            });
+        },
+        filter: function (filters) {
+            /* 'filters' is a key-value pairing of index and attribute to search by */
+            var store = this;
+            var activeFilters = _.omitBy(filters, excludeEmptyValueList); // reject zero length filters
+            var queries;
+            if (_.size(activeFilters) === 0) {
+                queries = store.get_objects().toCollection();
+                return Promise.all([queries, queries.count()]);
+            }
+            queries = Promise.all(_.map(activeFilters, function (values, key) {
+                return store.indexPrimaryKeys(key, values);
+            }));
+
+            return queries.then(function (pkArrays) {
+                var pks = _.intersection.apply(null, pkArrays);
+                return [store.get_objects()
+                    .where('id')
+                    .anyOf(pks), _.size(pks)];
+            });
+        },
+
         page: function (opts_) {
             var store = this;
             var defaults = { page: 1, page_size: 10 };
@@ -159,7 +211,7 @@
                     }
                     // store.count(); // Sends a "count" signal with the number of records in the store
 
-                    if (data.next && opts.getAll) {
+                    if (data.next) {
                         opts.offset += opts.limit;
                         store.trigger('update-continued', _.extend(opts, { data: data }), store.getAll());
                         store.update(last_modified, opts);

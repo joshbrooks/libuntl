@@ -23,16 +23,36 @@
 
 
 <library-resource_list>
-    <h1>Publications</h1>
+    <div class="row"><div class="col-sm-10 col-sm-push-1"><h4>Publications</h4></div></div>
 
-    <div class="row">
-        <div class="col col-sm-3">
-            <bootstrap-dropdown label="Publication Type" trigger="change_pubtype" store="pubtype"></bootstrap-dropdown>
-            <bootstrap-dropdown label="Organization" trigger="something" store="organization"></bootstrap-dropdown>
-            <bootstrap-dropdown label="Tag" trigger="something" store="tag"></bootstrap-dropdown>
+
+        <div id="drawerExample" style="margin-top:52px;" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
+
+            <div class="drawer-controls">
+                <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="#drawerExample" class="btn btn-default folded" aria-expanded="false">
+                    Filters
+                </a>
+            </div>
+
+            <div class="drawer-contents">
+                <div class="drawer-heading">
+                    <h5>Filter</h5>
+                    <a href="#drawerExample" class="drawer-close pull-right" data-toggle="drawer" aria-controls="drawer" aria-foldedopen="false">Close</a>
+                    <hr>
+                </div>
+                <div class="drawer-body">
+                    <bootstrap-dropdown label="Publication Type" placeholder="Publication type" store="pubtype"></bootstrap-dropdown>
+                    <bootstrap-dropdown label="Organization" store="organization" placeholder="Organisation"></bootstrap-dropdown>
+                    <bootstrap-dropdown label="Tag" store="tag" placeholder="Tag"></bootstrap-dropdown>
+                </div>
+                <div class="drawer-footer">
+                    <small>&copy; Joshua Brooks</small>
+                </div>
+            </div>
         </div>
 
-        <div class="col col-sm-9">
+    <div class="row">
+        <div class="col col-sm-12">
         <bootstrap-pager page="{page}" pages="{pages}"></bootstrap-pager>
         <bootstrap-input-group placeholder="Search title..." btn="Search" trigger="search"></bootstrap-input-group>
 
@@ -96,8 +116,11 @@
 
         tag.on('update', function(){
             tag.resources = tag.resources || [];
-            tag.pages = _.ceil(tag.count / tag.page_size);
-            if (tag.page > tag.pages) { tag.page = 1 };
+        });
+
+        tag.on('dropdown_select', function(drop_tag){
+            _.set(tag, ['filters', drop_tag.opts.store], _.compact(drop_tag.selected));
+            filter();
         });
 
         function listener() {
@@ -114,29 +137,24 @@
                     message('Downloading new resources');
                     break;
                 case 'update-end':
-                    store().get();
+                    store().getAll();
 
                     message('Have a nice day');
                     break;
                 case 'pagination':
                     tag.resources = arguments[1];
                     /* When the current page is out of range reset to 1 */
-                    update({resources: arguments[1]});
+                    filter();
                     break;
                 case 'resources_restored':
                     update();
                     break;
                 case 'load-end':
-                    //store().get();
+                    //store().getAll();
                     break;
 
                 case 'detail_for':
                     console(arguments);
-                    break;
-                case 'count':
-                    if (arguments[1] !== tag.count){
-                        update({count: arguments[1]});
-                    }
                     break;
                 default:
                     break;
@@ -155,7 +173,7 @@
             triggering_tag.update({display:option[1]});
 
             tag.update({page: 1, search : { type: 'equals', word: action, field: 'pubtype' }});
-            page();
+            filter();
 
         });
         tag.on('search', function(){
@@ -163,7 +181,7 @@
             var event = arguments[1];
             var text = triggering_tag.refs.text.value;
             tag.update({page:1, search: {type: 'startsWithIgnoreCase', word:text, field:'searchIndex'}});
-            page();
+            filter();
         });
 
         tag.header = {
@@ -185,13 +203,25 @@
             store().page({page: tag.page, page_size: tag.page_size});
         });
 
+        function filter(){
+            var results = store().filter(tag.filters);
+            results.then(function(objects){
+                objects[0]
+                .offset((tag.page -1) * tag.page_size)
+                .limit(tag.page_size)
+                .sortBy('id' || tag.ordering)
+                .then(function(r) {
+                    tag.update({
+                        resources: r,
+                        pages:_.min(_.ceil(objects[1] / tag.page_size), 1)
+                    });
+                    page();
+                });
+            })
+        }
+
         function page(){
-            var opts = {page: tag.page, page_size: tag.page_size};
-            if (tag.search){
-                opts.search = tag.search;
-            }
-            console.log(opts);
-            store().page(opts);
+            if (tag.page > tag.pages) { tag.page = 1; filter(); }
         }
 
         tag.fn = {
@@ -199,11 +229,11 @@
                 name: function(name){return JSON.stringify(name)}
             },
             pagination: {
-                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; page();},
-                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1;  page();},
-                first: function(e){e.preventDefault(); tag.page = 1;  page();},
-                last: function(e){e.preventDefault(); tag.page = 1;  page();},
-                set_page: function(e){e.preventDefault(); tag.page = e.item.page;  page();},
+                next: function(e){e.preventDefault(); if (tag.page >= tag.pages) {return} tag.page += 1; filter();},
+                prev: function(e){e.preventDefault(); if (tag.page === 1){return} tag.page -= 1;  filter();},
+                first: function(e){e.preventDefault(); tag.page = 1;  filter();},
+                last: function(e){e.preventDefault(); tag.page = 1;  filter();},
+                set_page: function(e){e.preventDefault(); tag.page = e.item.page;  filter();},
                 back: function(){return Urls.resource_list()}
             }
         };
