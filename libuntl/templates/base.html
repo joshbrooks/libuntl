@@ -13,6 +13,7 @@
         <script type="text/javascript" src="{% static 'moment/min/moment.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'idb/lib/idb.js' %}"></script>
         <script type="text/javascript" src="{% static 'dexie/dist/dexie.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap-drawer/dist/js/drawer.min.js' %}"></script>
         <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
 
         <script src="/jsreverse" type="text/javascript"></script>
@@ -21,6 +22,7 @@
         {% block script %}
         {% endblock %}
         <link type="text/css" rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'bootstrap-drawer/dist/css/bootstrap-drawer.min.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'css/site.css' %}" />
         {% block style %}
         {% endblock %}

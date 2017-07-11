@@ -24,15 +24,31 @@
 
 <library-resource_list>
     <h1>Publications</h1>
+                <div id="drawerExample" style="margin-top:52px;" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
+                    <div class="drawer-controls">
+                        <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" class="btn btn-primary btn-sm">Filters</a>
+                    </div>
+                    <div class="drawer-contents">
+                        <div class="drawer-heading">
+                            <h5>Filter</h5>
+                            <a href="#drawerExample" class="drawer-close pull-right" data-toggle="drawer" aria-controls="drawer" aria-foldedopen="false">Close</a>
+                            <hr>
+                        </div>
+
+                        <div class="drawer-body">
+            <bootstrap-dropdown label="Publication Type" placeholder="Publication type" store="pubtype"></bootstrap-dropdown>
+            <bootstrap-dropdown label="Organization" store="organization" placeholder="Organisation"></bootstrap-dropdown>
+            <bootstrap-dropdown label="Tag" store="tag" placeholder="Tag"></bootstrap-dropdown>
+                        </div>
+                        <div class="drawer-footer">
+                            <small>&copy; Joshua Brooks</small>
+                        </div>
+                    </div>
+                </div>
+                </div>
 
     <div class="row">
-        <div class="col col-sm-3">
-            <bootstrap-dropdown label="Publication Type" store="pubtype"></bootstrap-dropdown>
-            <bootstrap-dropdown label="Organization" store="organization"></bootstrap-dropdown>
-            <bootstrap-dropdown label="Tag" store="tag"></bootstrap-dropdown>
-        </div>
-
-        <div class="col col-sm-9">
+        <div class="col col-sm-12">
         <bootstrap-pager page="{page}" pages="{pages}"></bootstrap-pager>
         <bootstrap-input-group placeholder="Search title..." btn="Search" trigger="search"></bootstrap-input-group>
 

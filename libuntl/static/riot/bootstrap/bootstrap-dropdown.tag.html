@@ -1,17 +1,13 @@
 <!-- Single button -->
 <bootstrap-dropdown>
-    <hr>
-    <h4>{opts.label}</h4>
-    <br>
     <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
-
-      <a type="button" class="{ell:1} btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a type="button" class="{ell:1} btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
         <span class="{placeholder: _.isUndefined(_.get(selected_name, index))}">
-            {_.get(selected_name, index) || 'Click to search...'}
+            {_.get(selected_name, index) || parent.opts.placeholder || 'Click to search...'}
         </span>
       </a>
 
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" if="{open[index]}">
         <li each="{opt in options}" role="{separator: opt[0] == '_'}"
             class="{divider: opt[0] == '_', disabled: _.includes(selected, opt)}"
             disabled="{_.includes(selected, opt)}"
@@ -25,7 +21,7 @@
           <a style="width: 20%" class="btn btn-default btn-sm" onclick="{remove_dropdown}">&times;</a>
 
     </div>
-
+    <hr>
 
 
     <style>
@@ -46,27 +42,39 @@
             text-overflow:ellipsis;
             overflow-x:hidden;
         }
+
+        ul {position: absolute!important;}
     </style>
 
     <script>
         var tag = this;
+        tag.open = false;
 
         function add_dropdown(){
             if (tag.opts.single) {return}
             tag.repeats += 1;
             tag.selected.push(undefined);
             tag.selected_name.push(undefined);
+            tag.open.push(undefined);
         }
 
         function remove_dropdown(e){
             tag.repeats -= 1;
             _.pullAt(tag.selected, e);
             _.pullAt(tag.selected_name,e);
-            if (tag.repeats === 0){ add_dropdown() };
+            _.pullAt(tag.open, e);
+            if (tag.repeats === 0){ add_dropdown() }
             tag.update();
             tag.parent.trigger(tag.opts.trigger, tag)
         }
 
+        function toggle(e, set) {
+            var open = _.fill(new Array(tag.repeats), false);
+            open[e] = set || !tag.open[e];
+            tag.update({open: open});
+        }
+
+        tag.toggle = function(e){toggle(e.item.index)};
         tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
         tag.add_dropdown = add_dropdown;
 
@@ -82,11 +90,14 @@
             tag.repeats = tag.opts.repeats || 1;
             tag.selected = _.fill(new Array(tag.repeats), undefined);
             tag.selected_name = _.fill(new Array(tag.repeats), undefined);
+            tag.open = _.fill(new Array(tag.repeats), undefined);
 
             if (!_.isUndefined(window.stores[tag.opts.store])) {
                 tag.update({options: _.map(window.stores[tag.opts.store].objects, tag.opts.make_options)});
                 window.stores[tag.opts.store].on('load-end', function (objects) {
-                    tag.update({options: _.map(objects, tag.opts.make_options)});
+                    var options = _.map(objects, tag.opts.make_options)
+                    options = _.orderBy(options, 1)
+                    tag.update({options: options});
                 });
             }
         });
@@ -97,7 +108,8 @@
             tag.selected[index] =  e.item.opt;
             tag.selected_name[index] =  e.item.opt[1];
             if (!_.isUndefined(_.last(tag.selected)) && !opts.single){tag.add_dropdown()}
-            tag.parent.trigger(tag.opts.trigger, tag)
+            tag.parent.trigger(tag.opts.trigger, tag);
+            toggle(e.item.index, false)
         };
 
 
