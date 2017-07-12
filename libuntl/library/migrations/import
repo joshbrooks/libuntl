@@ -161,6 +161,38 @@ create table importer.library_resource_author
 
 INSERT INTO importer.library_resource_author(resource_id, author_id) SELECT publication_id, author_id FROM library_publication_author;
 
+create table importer.library_organization
+(
+	id serial not null
+		constraint library_organization_pkey
+			primary key,
+	created timestamp with time zone not null,
+	modified timestamp with time zone not null,
+	acronyms jsonb,
+	description jsonb,
+	contact jsonb,
+	type_id text
+		constraint library_organization_type_id_b39e6f18_fk_library_orgtype_id
+			references library_organizationtype
+				deferrable initially deferred,
+	name text
+)
+;
+
+INSERT INTO importer.library_organization(
+   id, name, description, contact, verified)
+SELECT name,
+    jsonb_strip_nulls(jsonb_build_object('en', description_en, 'tet', description_tet, 'pt', description_pt, 'id', description_ind)),
+    jsonb_strip_nulls(jsonb_build_object(
+        'phone', phone_primary,
+        'phone_secondary', phone_secondary,
+        'email', email,
+        'fax', fax
+        'web', web,
+        'facebook', facebook
+    )),
+    verified FROM public.library_organization;
+
 -- TODO: Add organizations, organisationtype, resource_organisation models
 
 
