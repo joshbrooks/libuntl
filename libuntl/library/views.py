@@ -1,6 +1,7 @@
 import datetime
 import json
 
+from django.core.exceptions import FieldError
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
@@ -84,8 +85,12 @@ def resource_stats(as_response=True):
         stat = {}
         stat['count'] = model.objects.count()
         if with_modified:
-            stat['last_modified'] = model.objects.order_by('-modified').first().modified
-            stat['first_modified'] = model.objects.order_by('modified').first().modified
+            try:
+                stat['last_modified'] = model.objects.order_by('-modified').first().modified
+                stat['first_modified'] = model.objects.order_by('modified').first().modified
+            except FieldError:
+                with_modified = False
+                pass
         return stat
 
     counts = {}
