@@ -29,7 +29,7 @@ class Link(TimeStampedModel):
     cover = models.ImageField(max_length=200, blank=True, null=True)
     language = models.TextField(blank=True, null=True)
     title = models.TextField(blank=True, null=True)
-    resource_base = models.ForeignKey('Resource')
+    resource = models.ForeignKey('Resource')
     url = models.URLField(blank=True, null=True)
     file = models.FileField(max_length=200, blank=True, null=True)
 
