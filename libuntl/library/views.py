@@ -15,24 +15,25 @@ from django.contrib.contenttypes.models import ContentType
 
 app_label = 'library'
 
-class ResourceList(TemplateView):
 
+class ResourceList(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(TemplateView, self).__init__() or {}
         context['counts'] = mark_safe(json.dumps(resource_stats(as_response=False), cls=JSONEncoder, indent=1))
         return context
 
-
     template_name = 'library/list.html'
+
 
 class Stats(View):
     """
     Returns object counts and and data for graphs
     """
-    def get(self, request, *args, **kwargs):
 
+    def get(self, request, *args, **kwargs):
         # return resource_stats()
         return resource_mtimes(request)
+
 
 class Index(View):
     """
@@ -46,7 +47,7 @@ class Index(View):
             for word_set in resource.name.values():
                 for word in word_set.split(' '):
                     word_lower = word.lower()
-                    if not word_lower in r:
+                    if word_lower not in r:
                         # Brackets
                         word_lower.replace('(', '')
                         word_lower.replace(')', '')
@@ -64,6 +65,7 @@ class Index(View):
 
         return JsonResponse(r, encoder=JSONEncoder)
 
+
 class Modified(View):
     def get(self, request, *args, **kwargs):
         models = {'resource': Resource,
@@ -74,13 +76,13 @@ class Modified(View):
         counts = {}
         for name, model in models.items():
             first = model.objects.order_by('modified').first().modified
-            counts[name] = [(o[0], (o[1]-first).microseconds) for o in model.objects.all().values_list('id', 'modified')]
+            counts[name] = [(o[0], (o[1] - first).microseconds) for o in
+                            model.objects.all().values_list('id', 'modified')]
 
         return JsonResponse(counts, encoder=JSONEncoder)
 
 
 def resource_stats(as_response=True):
-
     def render_model(model, with_modified=True):
         stat = {}
         stat['count'] = model.objects.count()
@@ -101,17 +103,18 @@ def resource_stats(as_response=True):
         if model:
             counts[ct_model.name] = render_model(model)
     if as_response:
-        return JsonResponse(counts, json_dumps_params={'indent':1}, encoder=JSONEncoder)
+        return JsonResponse(counts, json_dumps_params={'indent': 1}, encoder=JSONEncoder)
     else:
         return counts
+
 
 def resource_mtimes(request):
     since = request.GET.get('since', None)
     fields = ('id', 'modified')
     return resource_properties(since=since, fields=fields)
 
-def resource_properties(app_label='library', model_label=None, since=None, fields=('id', 'modified'), objects=None):
 
+def resource_properties(app_label='library', model_label=None, since=None, fields=('id', 'modified'), objects=None):
     counts = {}
     counts['time'] = datetime.datetime.now()
     ct_models = ContentType.objects.all()
@@ -125,7 +128,7 @@ def resource_properties(app_label='library', model_label=None, since=None, field
         model = ct_model.model_class()
         if model:
             counts[ct_model.name] = []
-            first_modified = model.objects.order_by('-modified').first().modified
+            first_modified = model.objects.order_by('-modified', 'id').first().modified
 
             objects = model.objects.filter(modified__lt=counts['time'])
             if since:
@@ -139,4 +142,4 @@ def resource_properties(app_label='library', model_label=None, since=None, field
 
 def id_and_modified_times(app_label, model_label):
     r = ContentType.objects.filter(app_label=app_label, model_label=model_label).model_class.values('id', 'modified')
-    return JsonResponse(r, json_dumps_params={'indent':1}, encoder=JSONEncoder)
+    return JsonResponse(r, json_dumps_params={'indent': 1}, encoder=JSONEncoder)
