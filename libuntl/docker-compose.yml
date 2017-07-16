@@ -1,0 +1,32 @@
+version: '2'
+services:
+  db:
+    environment: 
+        USER: libuntl
+        DATABASE: libuntl_db
+        RESTORE_FROM_DIRECTORY: /source
+    image: timor-postgis
+    restart: always
+    ports:
+    - "5435:5432"
+  legacy:
+    environment: 
+        USER: django
+        DATABASE: timordata_db
+        RESTORE_FROM_DIRECTORY: /source
+    image: timor-postgis
+    restart: always
+    ports:
+    - "5436:5432"
+    volumes:
+    - /home/josh/github/timordata/timordata-postgres:/source
+  pagadmin4:
+    image: pgadmin:pgadmin4-1.5
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./pgadmin/:/var/lib/pgadmin4
+      - ./pgadmin/log/:/var/log/pgadmin4
+    links:
+      - legacy
+      - db

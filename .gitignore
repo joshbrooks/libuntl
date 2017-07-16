@@ -72,3 +72,5 @@ bower_components
 node_modules
 .idea/
 /libuntl/imports/
+/libuntl/pgadmin/
+!/libuntl/library/migrations/import.sql
