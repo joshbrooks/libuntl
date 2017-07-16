@@ -86,7 +86,7 @@ def resource_stats(as_response=True):
     def render_model(model, with_modified=True):
         stat = {}
         stat['count'] = model.objects.count()
-        if with_modified:
+        if stat['count'] > 0 and with_modified:
             try:
                 stat['last_modified'] = model.objects.order_by('-modified').first().modified
                 stat['first_modified'] = model.objects.order_by('modified').first().modified
