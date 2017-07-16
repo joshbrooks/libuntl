@@ -20,9 +20,11 @@ from django.contrib import admin
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
+from library import views
 
 urlpatterns = [
     url(r'^', include('library.urls')),
+    url(r'^upload/', views.Upload.as_view()),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include('django.conf.urls.i18n')),

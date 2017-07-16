@@ -83,7 +83,9 @@
             repeats: 1,
             trigger: 'dropdown_select',
             make_options: function(option){
-                var name = option.name.en || option.name.tet || option.name.name || option.name ||  '?';
+                var name;
+                if ( _.isUndefined(option.name)){ name = '?'}
+                else name = option.name.en || option.name.tet || option.name.name || option.name ||  '?';
                 return[option.id, name]
             }
         };
