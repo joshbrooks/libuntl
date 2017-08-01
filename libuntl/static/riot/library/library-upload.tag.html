@@ -8,12 +8,13 @@
             <form data-is="bootstrap-form">
                 <label data-is="bootstrap-form-input" name='title' type="text" label="Title"></label>
                 <label data-is="bootstrap-form-input" name='file' type="file" label="File"></label>
-
-
-                <bootstrap-dropdown single=true label="Publication Type" trigger="change_pubtype" store="pubtype"></bootstrap-dropdown>
+                <label>Publication type:
+                <bootstrap-dropdown single=true label="Publication Type" trigger="change_pubtype" store="pubtype" placeholder="Publication type"></bootstrap-dropdown>
+                </label>
+                <label>Organisations
                 <bootstrap-dropdown label="Organization" trigger="something" store="organization"></bootstrap-dropdown>
+                    </label>
                 <bootstrap-dropdown label="Tag" trigger="something" store="tag"></bootstrap-dropdown>
-                <bootstrap-dropdown label="Authors" trigger="something" store="author"></bootstrap-dropdown>
 
 
                 <span data-is="bootstrap-async-submit"></span>
