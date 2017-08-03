@@ -5,11 +5,17 @@
         <div class="col-sm-1 col-md-3"></div>
         <div class="col col-sm-10 col-md-6">
 
-            <form data-is="bootstrap-form">
+            <div data-is="filedrop">
+            </div>
+
+            <div each="{file in files}">
+                {file.name}
+                {file.lastModified}
+                {file.lastModifiedDate}
+                {file.size}
+                {file.types}
+
                 <label data-is="bootstrap-form-input" name='title' type="text" label="Title"></label>
-                <label data-is="bootstrap-form-input" name='file' type="file" label="File"></label>
-
-
                 <bootstrap-dropdown single=true label="Publication Type" trigger="change_pubtype" store="pubtype"></bootstrap-dropdown>
                 <bootstrap-dropdown label="Organization" trigger="something" store="organization"></bootstrap-dropdown>
                 <bootstrap-dropdown label="Tag" trigger="something" store="tag"></bootstrap-dropdown>
@@ -18,9 +24,65 @@
 
                 <span data-is="bootstrap-async-submit"></span>
 
-            </form>
+            </div>
         </div>
         <div class="col-sm-1 col-md-3"></div>
     </div>
 
+    <script>
+        var tag = this;
+
+        tag.on('files_dropped', function(files){
+            tag.update({files:_.concat(tag.files||[], files)});
+        })
+
+    </script>
+
+
 </library-upload>
+
+<filedrop>
+    <div class="filedrop" id='drop-zone' ondrop="{ondrop}"
+        ondragover="{ondragover}"
+        ondragend="{ondragend}"
+        ondragleave="{ondragleave}"
+    >
+        <p>{text}</p>
+
+    </div>
+    <style>
+        .filedrop {
+            width:300px;
+            height:300px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        var tag=this;
+        tag.text='Drag files here'
+
+        tag.ondragleave = function(e) {
+            e.preventDefault();
+            tag.update({text:'Drag files here'})
+            return false;
+        };
+
+        tag.ondragover = function (e) {
+            e.preventDefault();
+            tag.update({text:"Drop files to upload"});
+            return false; };
+
+        tag.ondragend = function (e) {
+            e.preventDefault();
+            tag.update({text:'Drag files here'});
+            return false; };
+        tag.ondrop = function(e){
+            e.preventDefault();
+            tag.update({text:'Drag more files here'});
+            var files = e.dataTransfer.files;
+            tag.parent.trigger('files_dropped', _.map(files));
+        }
+
+    </script>
+
+</filedrop>
