@@ -1,14 +1,19 @@
 <!-- Single button -->
 <bootstrap-dropdown>
     <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
-      <a type="button" class="{ell:1} btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
+      <a type="button" class="ell btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
         <span class="{placeholder: _.isUndefined(_.get(selected_name, index))}">
             {_.get(selected_name, index) || parent.opts.placeholder || 'Click to search...'}
         </span>
       </a>
 
-      <ul class="dropdown-menu" if="{open[index]}">
-        <li each="{opt in options}" role="{separator: opt[0] == '_'}"
+      <ul class="dropdown-menu" if="{open[index]}" style="display:block">
+
+          <li if="{searchable}"><input placeholder="Search" ref="searchbox" oninput="{search}"> </li>
+          <li if="{searchable}" role="separator" class="divider"></li>
+
+          <li if="{paginated}" onclick="{page_up}" class="align-center"><a><span class="glyphicon glyphicon-chevron-up"></span></a> </li>
+        <li each="{opt in page(options)}" role="{separator: opt[0] == '_'}"
             class="{divider: opt[0] == '_', disabled: _.includes(selected, opt)}"
             disabled="{_.includes(selected, opt)}"
             onclick="{invoke}"
@@ -16,6 +21,7 @@
         >
             <a href="#">{opt[1]} </a>
         </li>
+          <li if="{paginated}" onclick="{page_down}" class="align-center"><a><span class="glyphicon glyphicon-chevron-down"></span></a></li>
       </ul>
 
           <a style="width: 20%" class="btn btn-default btn-sm" onclick="{remove_dropdown}">&times;</a>
@@ -27,9 +33,9 @@
     <style>
         bootstrap-dropdown ul.dropdown-menu {
             overflow-y:auto;
-            max-height: 300px;
-            max-width:300px;
             display: block;
+            max-height: 330px;
+            max-width:310px;
         }
         .ell {
             text-overflow:ellipsis;
@@ -50,6 +56,23 @@
     <script>
         var tag = this;
         tag.open = false;
+
+        tag.tag_page = 1;
+        tag.pagesize = 10;
+        tag.paginated = true;
+        tag.searchable = true;
+
+        tag.search = function(e){
+            console.log(tag.refs.searchbox.value)
+        };
+
+        function page(options){
+            return _.slice(options, tag.tag_page*tag.pagesize - tag.pagesize, tag.tag_page*tag.pagesize)
+        }
+
+        tag.page = page;
+        tag.page_up = function page_up(){tag.update({tag_page: tag.tag_page - 1})}
+        tag.page_down = function page_down(){tag.update({tag_page:tag.tag_page + 1})}
 
         function add_dropdown(){
             if (tag.opts.single) {return}
