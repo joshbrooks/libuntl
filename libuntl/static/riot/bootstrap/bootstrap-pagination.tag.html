@@ -87,3 +87,69 @@
     </script>
 
 </bootstrap-pager>
+
+<bootstrap-pagination-triggers>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="#" class='{disabled: no_prev_page}'  disabled="{no_previous_page}" onclick="{ prev }" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li each="{page in page_range}" class="{active: _.toInteger(current_page) == page}">
+            <a href="#" onclick="{ set_page }"> { page }</a></li>
+        <li>
+          <a href="#" class='{disabled: no_next_page}' disabled="{no_next_page}" onclick="{ next }" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <style>
+        bootstrap-pagination li a.selected {
+            font-weight: bold;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var tag = this;
+
+        tag.on('mount', function(){
+            _.extend(tag.opts, tag.defaults);
+        });
+
+        tag.on('update', function(){
+            var page = _.toInteger(tag.opts.page || 1);
+            var show_pages = tag.opts.show_pages || 2;
+            var pages = tag.opts.pages || tag.parent.pages || 5;
+            var page_range = _.range(1, (pages  +1 ));
+
+            if (page_range.length > show_pages){
+                /* determine which page links to show */
+
+                var min = page - show_pages;
+                if (min < 1) { min = 1 }
+                var max = min + 1 + show_pages * 2;
+                if (max > pages - 1) { max = pages - 1 }
+                page_range = _.range(min, max);
+            }
+            if (!_.isEqual(tag.page_range,page_range)){
+                tag.update({
+                    current_page: _.toInteger(page),
+                    page_range:page_range,
+                    no_previous_page: page === 1,
+                    no_next_page: page === pages
+
+                })
+            }
+        });
+
+        tag.prev = function(e){e.preventDefault(); if (tag.no_previous_page){return}; tag.parent.trigger('set_page', tag.parent.tag_page - 1) };
+        tag.set_page = function(e){e.preventDefault(); tag.parent.trigger('set_page', e.item.page) };
+        tag.next = function(e){e.preventDefault(); if (tag.no_next_page){return}; tag.parent.trigger('set_page', tag.parent.tag_page + 1) };
+
+    </script>
+
+</bootstrap-pagination-triggers>

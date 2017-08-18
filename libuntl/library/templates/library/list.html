@@ -9,7 +9,7 @@
         </script>
         <script>
 
-{#            idb.delete('libuntl');#}
+            idb.delete('libuntl');
 
 
             window.db = new Dexie('libuntl');
@@ -57,6 +57,18 @@
                 organizations: 'id,modified,name,type,*searchIndex',
                 tags: 'id,modified,name',
                 pubtypes: 'id,modified,name'
+            });
+            db.resources.hook("creating", function (primKey, obj, trans) {obj.searchIndex = _.uniq(_.values(obj.name).join(' ').split(' '));});
+            db.organizations.hook("creating", function (primKey, obj, trans) {
+                /* Create a search index field on organisation */
+                var words;
+                if (_.isString(obj.name)) {
+                    words = _.uniq(_.split(obj.name, ' '));
+                } else if (_.isObject(obj.name)) {
+                    words = _.uniq(_.split(_.values(obj.name), ' '));
+                }
+                _.remove(words, function(word){return _.size(word) < 3});
+                obj.searchIndex = words;
             });
 
             createWords = function(obj, indexFrom,indexTo){

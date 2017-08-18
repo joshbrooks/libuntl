@@ -63,22 +63,15 @@
         tag.searchable = true;
 
         tag.search = function(e){
-            console.log(tag.refs.searchbox.value);
-            if (_.trim(tag.refs.searchbox.value) === tag.search_value){
-                return
-            }
-            tag.search_value = _.trim(tag.refs.searchbox.value);
 
-            if (tag.search_value === ''){
-                tag.update({options: _.map(window.stores[tag.opts.store].objects, tag.opts.make_options)});
-            }
-
-            if (!_.isUndefined(window.stores[tag.opts.store])) {
-                var promise = window.stores[tag.opts.store].search({search: tag.refs.searchbox.value});
-                promise.toArray().then(function(a) {
-                    tag.update({options: _.map(a, tag.opts.make_options)});
-                })
-            }
+            console.log(tag.refs.searchbox.value)
+            db[tag.opts.table].where('searchIndex')
+                .startsWithIgnoreCase(tag.refs.searchbox.value).toArray().then(function(options){
+                   tag.tag_page = 1;
+                   debugger;
+                    tag.update({options:options})
+                debugger;
+            })
         };
 
         function page(options){
@@ -140,7 +133,6 @@
                     var options = _.map(objects, tag.opts.make_options);
                     options = _.orderBy(options, 1);
                     tag.update({options: options});
-                    debugger;
                 });
             }
         });
@@ -159,3 +151,193 @@
     </script>
 
 </bootstrap-dropdown>
+
+
+<!-- Single button -->
+<bootstrap-dropdown-fromtable>
+    <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
+      <a type="button" class="ell btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
+        <span class="{placeholder: _.isUndefined(_.get(selected_name, index))}">
+            {_.get(selected_name, index) || parent.opts.placeholder || 'Click to search...'}
+        </span>
+      </a>
+
+      <ul class="dropdown-menu" if="{open[index]}" style="display:block">
+
+          <li if="{searchable}"><input placeholder="Search" ref="searchbox" oninput="{on_search}"> </li>
+          <li if="{searchable}" role="separator" class="divider"></li>
+
+          <li if="{paginated}" onclick="{page_up}" class="align-center"><a><span class="glyphicon glyphicon-chevron-up"></span></a> </li>
+        <li each="{opt in options}"
+            disabled="{_.includes(selected, opt)}"
+            onclick="{invoke}"
+        >
+            <a href="#">{display_option(opt)} </a>
+        </li>
+          <li if="{paginated}" onclick="{page_down}" class="align-center"><a><span class="glyphicon glyphicon-chevron-down"></span></a></li>
+
+          <li>
+              <bootstrap-pagination-triggers page="{tag_page}" pages="{pages}"></bootstrap-pagination-triggers>
+
+          </li>
+
+      </ul>
+
+          <a style="width: 20%" class="btn btn-default btn-sm" onclick="{remove_dropdown}">&times;</a>
+
+    </div>
+    <hr>
+
+
+    <style>
+        bootstrap-dropdown ul.dropdown-menu {
+            overflow-y:auto;
+            display: block;
+            max-height: 330px;
+            max-width:310px;
+        }
+        .ell {
+            text-overflow:ellipsis;
+            overflow-x:hidden;
+        }
+
+        span.placeholder {
+            color: gray;
+        }
+        .dropdown-menu a {
+            text-overflow:ellipsis;
+            overflow-x:hidden;
+        }
+
+        ul {position: absolute!important;}
+    </style>
+
+    <script>
+        var tag = this;
+        tag.open = false;
+
+        tag.search = '';
+        tag.tag_page = 1;
+        tag.pagesize = 10;
+        tag.paginated = true;
+        tag.searchable = true;
+
+        tag.on_search = function(){
+            tag.tag_page = 1;
+            tag.update({search:tag.refs.searchbox.value});
+            tag.get_options();
+        };
+
+        tag.on('set_page', function(page){
+            tag.update({tag_page: page});
+            tag.get_options()
+        });
+
+        tag.get_options = function(){
+
+             function search(promise){
+                /* Add a search to the options promise */
+                if ( tag.search === '') { return promise }
+                return promise.where(tag.opts.search_field || 'searchIndex')
+                    .startsWithIgnoreCase(tag.refs.searchbox.value);
+            }
+
+            function paginate(promise){
+                /* Adds a pagination to the promise */
+                var offset = (tag.tag_page - 1) * tag.pagesize;
+                return promise.offset(offset).limit(tag.pagesize)
+            }
+
+            tag.pages = search(db[tag.opts.table]).count().then(function(size) {
+                console.log(size, tag.pagesize, size / tag.pagesize )
+                tag.update({pages: size / tag.pagesize})
+            });
+
+            paginate(
+                search(
+                    db[tag.opts.table]
+                )
+            ).toArray().then(
+                function(array){
+                    console.log(array)
+                    tag.update({options:array})})
+        };
+
+        tag.display_option = function(option) {
+            var display;
+            var paths = tag.opts.display_paths || 'name.en,name.tet,name';
+            paths = paths.split(',');
+            _.each(paths, function (path) {
+                display = _.get(option, path);
+                if (!_.isUndefined(display)) {
+                    return false; // break the loop
+                }
+            });
+            if (_.isUndefined(display)){debugger}
+            return display || '?';
+        };
+
+        tag.page_up = function page_up(){tag.update({tag_page: tag.tag_page - 1}); tag.get_options();};
+        tag.page_down = function page_down(){tag.update({tag_page:tag.tag_page + 1}); tag.get_options();};
+
+        function add_dropdown(){
+            if (tag.opts.single) {return}
+            tag.repeats += 1;
+            tag.selected.push(undefined);
+            tag.selected_name.push(undefined);
+            tag.open.push(undefined);
+        }
+
+        function remove_dropdown(e){
+            tag.repeats -= 1;
+            _.pullAt(tag.selected, e);
+            _.pullAt(tag.selected_name,e);
+            _.pullAt(tag.open, e);
+            if (tag.repeats === 0){ add_dropdown() }
+            tag.update();
+            tag.parent.trigger(tag.opts.trigger, tag)
+        }
+
+        function toggle(e, set) {
+            var open = _.fill(new Array(tag.repeats), false);
+            open[e] = set || !tag.open[e];
+            tag.update({open: open});
+        }
+
+        tag.toggle = function(e){toggle(e.item.index)};
+        tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
+        tag.add_dropdown = add_dropdown;
+
+        var defaults = {
+            repeats: 1,
+            trigger: 'dropdown_select',
+            make_options: function(option){
+                var name;
+                if ( _.isUndefined(option.name)){ name = '?'}
+                else name = option.name.en || option.name.tet || option.name.name || option.name ||  '?';
+                return[option.id, name]
+            }
+        };
+        tag.on('mount', function(){
+            _.defaults(tag.opts, defaults);
+            tag.repeats = tag.opts.repeats || 1;
+            tag.selected = _.fill(new Array(tag.repeats), undefined);
+            tag.selected_name = _.fill(new Array(tag.repeats), undefined);
+            tag.open = _.fill(new Array(tag.repeats), undefined);
+            tag.get_options();
+        });
+
+        tag.invoke = function(e){
+            e.preventDefault();
+            var index = $(e.currentTarget).data('index') || 0;
+            tag.selected[index] =  e.item.opt;
+            tag.selected_name[index] =  e.item.opt[1];
+            if (!_.isUndefined(_.last(tag.selected)) && !opts.single){tag.add_dropdown()}
+            tag.parent.trigger(tag.opts.trigger, tag);
+            toggle(e.item.index, false)
+        };
+
+
+    </script>
+
+</bootstrap-dropdown-fromtable>
