@@ -169,34 +169,47 @@
 <bootstrap-dropdown-fromtable>
     <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
       <a type="button" class="ell btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
-        <span class="{placeholder: _.isUndefined(_.get(selected_name, index))}">
-            {_.get(selected_name, index) || parent.opts.placeholder || 'Click to search...'}
-        </span>
+
+        <span if="{selected}">{ display_option(selected[index]) }</span>
+        <span if="{!selected}" class="{placeholder}">{parent.opts.placeholder || 'Click to search...'}</span>
       </a>
 
-      <ul class="dropdown-menu" if="{open[index]}" style="display:block">
+      <div class="dropdown-menu row" if="{open[index]}" style="display:block">
 
-          <li if="{searchable}"><input placeholder="Search" ref="searchbox" oninput="{on_search}"> </li>
-          <li if="{searchable}" role="separator" class="divider"></li>
+          <div class="col-xs-11" if="{searchable}">
+              <input  placeholder="Search" ref="searchbox" oninput="{on_search}">
+          </div>
 
-          <li if="{paginated}" onclick="{page_up}" class="align-center"><a><span class="glyphicon glyphicon-chevron-up"></span></a> </li>
-        <li each="{opt in options}"
-            disabled="{_.includes(selected, opt)}"
-            onclick="{invoke}"
-        >
-            <a href="#">{display_option(opt)} </a>
-        </li>
-          <li if="{paginated}" onclick="{page_down}" class="align-center"><a><span class="glyphicon glyphicon-chevron-down"></span></a></li>
+          <div class="col-xs-1" if="{paginated}">
+              <a onclick="{page_up}" class="{disabled:page_up_disabled}">
+                  <span class="glyphicon glyphicon-chevron-up"></span>
+              </a>
+          </div>
 
-          <li>
-              <bootstrap-pagination-triggers page="{tag_page}" pages="{pages}"></bootstrap-pagination-triggers>
+          <div class="col-xs-12 option" each="{opt in options}"
+                disabled="{_.includes(selected, opt)}"
+                onclick="{invoke}"
+                data-index="{index}"
+          >
+              <p>{display_option(opt)} </p>
+          </div>
 
-          </li>
+          <div class="col-xs-1" if="{paginated}"></div>
+          <div class="col-xs-10" if="{paginated}" class="align-center">
+              {tag_page} / {pages}
+          </div>
+          <div class="col-xs-1" if="{paginated}">
+              <a onclick="{page_down}" class="{disabled:page_down_disabled}">
+                  <span class="glyphicon glyphicon-chevron-down"></span>
+              </a>
+          </div>
 
-      </ul>
 
+
+
+
+      </div>
           <a style="width: 20%" class="btn btn-default btn-sm" onclick="{remove_dropdown}">&times;</a>
-
     </div>
     <hr>
 
@@ -231,6 +244,7 @@
         tag.search = '';
         tag.tag_page = 1;
         tag.pagesize = 10;
+        tag.pages = 1;
         tag.paginated = true;
         tag.searchable = true;
 
@@ -261,8 +275,7 @@
             }
 
             tag.pages = search(db[tag.opts.table]).count().then(function(size) {
-                console.log(size, tag.pagesize, size / tag.pagesize )
-                tag.update({pages: size / tag.pagesize})
+                tag.update({pages: _.ceil(size / tag.pagesize)})
             });
 
             paginate(
@@ -271,7 +284,7 @@
                 )
             ).toArray().then(
                 function(array){
-                    console.log(array)
+                    console.log(array);
                     tag.update({options:array})})
         };
 
@@ -285,12 +298,17 @@
                     return false; // break the loop
                 }
             });
-            if (_.isUndefined(display)){debugger}
-            return display || '?';
+            if (_.isUndefined(display)){console.log('oops')}
+            return display || tag.parent.opts.placeholder || '?'
         };
 
-        tag.page_up = function page_up(){tag.update({tag_page: tag.tag_page - 1}); tag.get_options();};
-        tag.page_down = function page_down(){tag.update({tag_page:tag.tag_page + 1}); tag.get_options();};
+
+        tag.page_up = function page_up(){
+            if (!tag.page_up_enabled){return}
+            tag.update({tag_page: tag.tag_page - 1}); tag.get_options();};
+        tag.page_down = function page_down(){
+            if (!tag.page_down_enabled){return}
+            tag.update({tag_page:tag.tag_page + 1}); tag.get_options();};
 
         function add_dropdown(){
             if (tag.opts.single) {return}
@@ -302,9 +320,8 @@
 
         function remove_dropdown(e){
             tag.repeats -= 1;
-            _.pullAt(tag.selected, e);
-            _.pullAt(tag.selected_name,e);
-            _.pullAt(tag.open, e);
+            _.pull(tag.selected, e);
+            _.pull(tag.open, e);
             if (tag.repeats === 0){ add_dropdown() }
             tag.update();
             tag.parent.trigger(tag.opts.trigger, tag)
@@ -341,14 +358,21 @@
 
         tag.invoke = function(e){
             e.preventDefault();
+            if (_.includes(tag.selected, e.item.opt)){return};
             var index = $(e.currentTarget).data('index') || 0;
-            tag.selected[index] =  e.item.opt;
-            tag.selected_name[index] =  e.item.opt[1];
+            tag.selected[index] = e.item.opt;
             if (!_.isUndefined(_.last(tag.selected)) && !opts.single){tag.add_dropdown()}
             tag.parent.trigger(tag.opts.trigger, tag);
-            toggle(e.item.index, false)
+            toggle(e.item.index, false);
+            tag.update({search:'', page:1});
+            tag.get_options();
+
         };
 
+        tag.on('update', function() {
+            tag.page_up_enabled = tag.tag_page > 1;
+            tag.page_down_enabled = tag.tag_page < tag.pages;
+        });
 
     </script>
 
