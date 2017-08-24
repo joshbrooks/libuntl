@@ -91,6 +91,19 @@
             return window.db[opts.objectStoreName].get(id);
         },
 
+        /**
+         * Search for text in an indexed field
+         * @param field
+         * @param search
+         * @returns {Collection<T, Key>}
+         */
+        search: function (fn_opts) {
+            var defaults = { field: 'searchIndex', search: 'Belun' };
+            var store = this;
+            var opts = _.defaults({}, fn_opts, store.opts, defaults);
+            return window.db[opts.objectStoreName].where(opts.field).startsWithIgnoreCase(opts.search).distinct();
+        },
+
         getAll: function getAll(opts_) {
             var store = this;
             var opts = _.defaults({}, store.opts, opts_);
