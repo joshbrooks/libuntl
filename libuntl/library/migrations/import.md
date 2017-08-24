@@ -5,6 +5,11 @@
  ```
  --file="/home/josh/Desktop/dump.sql" --schema='importer' --data-only --column-inserts --dbname="timordata_db"
  ```
+
+```
+pg_dump -h localhost --port 5436 -U postgres --file="/home/josh/Desktop/dump.sql" --schema='importer' --data-only --column-inserts --dbname="timordata_db"
+```
+
  - Change ocurences of 'importer' to 'public'
  - Set the search path to 'public'
  - Run

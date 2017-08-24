@@ -170,6 +170,9 @@ create table importer.library_organizationtype
   description jsonb
 );
 
+INSERT INTO importer.library_organizationtype (id, name) SELECT code, jsonb_build_object('en', orgtype) FROM public.nhdb_organizationclass;
+
+
 create table importer.library_organization
 (
   id serial not null
@@ -190,7 +193,7 @@ create table importer.library_organization
 
 INSERT INTO importer.library_organization(
 created, modified,
-  id, name, description, contact)
+  id, name, description, contact, type_id)
   SELECT now(), now(), id, name,
     jsonb_strip_nulls(jsonb_build_object('en', description_en, 'tet', description_tet, 'pt', description_pt, 'id', description_ind)),
     jsonb_strip_nulls(jsonb_build_object(
@@ -200,7 +203,7 @@ created, modified,
                           'fax', fax,
                           'web', web,
                           'facebook', facebook
-                      ))
+                      )), orgtype_id
   FROM public.nhdb_organization;
 
 create table importer.library_resource_organization
