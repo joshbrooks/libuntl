@@ -33,6 +33,7 @@
     <style>
         bootstrap-dropdown ul.dropdown-menu {
             overflow-y:auto;
+            display: block;
             max-height: 330px;
             max-width:310px;
         }
@@ -120,7 +121,10 @@
             repeats: 1,
             trigger: 'dropdown_select',
             make_options: function(option){
-                return[option.id, option.name.en || option.name.tet || option.name || '?']
+                var name;
+                if ( _.isUndefined(option.name)){ name = '?'}
+                else name = option.name.en || option.name.tet || option.name.name || option.name ||  '?';
+                return[option.id, name]
             }
         };
         tag.on('mount', function(){
@@ -133,9 +137,10 @@
             if (!_.isUndefined(window.stores[tag.opts.store])) {
                 tag.update({options: _.map(window.stores[tag.opts.store].objects, tag.opts.make_options)});
                 window.stores[tag.opts.store].on('load-end', function (objects) {
-                    var options = _.map(objects, tag.opts.make_options)
+                    var options = _.map(objects, tag.opts.make_options);
                     options = _.orderBy(options, 1);
                     tag.update({options: options});
+                    debugger;
                 });
             }
         });

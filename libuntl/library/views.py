@@ -35,6 +35,15 @@ class Stats(View):
         return resource_mtimes(request)
 
 
+class Upload(View):
+    """
+    Uploads
+    """
+    def post(self, request, *args, **kwargs):
+
+        raise AssertionError
+        return
+
 class Index(View):
     """
     Create indexes of the words contained in Resource title
