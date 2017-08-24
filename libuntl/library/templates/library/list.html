@@ -58,8 +58,17 @@
                 tags: 'id,modified,name',
                 pubtypes: 'id,modified,name'
             });
-            db.resources.hook("creating", function (primKey, obj, trans) {obj.searchIndex = _.uniq(_.values(obj.name).join(' ').split(' '));});
-            db.organizations.hook("creating", function (primKey, obj, trans) {obj.searchIndex = _.uniq(_.values(obj.name).join(' ').split(' '));});
+
+            createWords = function(obj, indexFrom,indexTo){
+                var stringToIndex = _.get(obj, indexFrom, '');
+                var words = stringToIndex.replace(/[^a-zA-Z ]/g, ' ').split(' ');
+
+                obj[indexTo] = _.filter(words, function(word){return word.length > 1});
+                console.log(obj[indexTo]);
+            }
+
+            db.resources.hook("creating", function (primKey, obj, trans) {createWords(obj, 'name', 'searchIndex')});
+            db.organizations.hook("creating", function (primKey, obj, trans) {createWords(obj, 'name', 'searchIndex')});
 
             db.resources.hook("updating", function (mods, primKey, obj, trans) {
                 if (_.has(mods, 'name')) {
