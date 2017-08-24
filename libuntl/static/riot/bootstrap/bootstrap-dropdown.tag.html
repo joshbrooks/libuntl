@@ -306,8 +306,8 @@
 
         function remove_dropdown(e){
             tag.repeats -= 1;
-            _.pull(tag.selected, e);
-            _.pull(tag.open, e);
+            _.pullAt(tag.selected, e);
+            _.pullAt(tag.open, e);
             if (tag.repeats === 0){ add_dropdown() }
             tag.update();
             tag.parent.trigger(tag.opts.trigger, tag)
