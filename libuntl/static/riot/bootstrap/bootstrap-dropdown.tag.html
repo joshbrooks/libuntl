@@ -62,7 +62,22 @@
         tag.searchable = true;
 
         tag.search = function(e){
-            console.log(tag.refs.searchbox.value)
+            console.log(tag.refs.searchbox.value);
+            if (_.trim(tag.refs.searchbox.value) === tag.search_value){
+                return
+            }
+            tag.search_value = _.trim(tag.refs.searchbox.value);
+
+            if (tag.search_value === ''){
+                tag.update({options: _.map(window.stores[tag.opts.store].objects, tag.opts.make_options)});
+            }
+
+            if (!_.isUndefined(window.stores[tag.opts.store])) {
+                var promise = window.stores[tag.opts.store].search({search: tag.refs.searchbox.value});
+                promise.toArray().then(function(a) {
+                    tag.update({options: _.map(a, tag.opts.make_options)});
+                })
+            }
         };
 
         function page(options){
