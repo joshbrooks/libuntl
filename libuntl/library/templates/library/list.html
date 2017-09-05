@@ -10,125 +10,105 @@
         <script>
 
             idb.delete('libuntl');
-
-
-            window.db = new Dexie('libuntl');
-            db.version(0.3).stores({
-                authors: 'id',
-                resources: 'id,timestamp,modified,pubtype'
-            });
-            db.version(0.4).stores({
-                authors: 'id,modified',
-                resources: 'id,timestamp,modified,pubtype'
-            });
-            db.version(0.5).stores({
-                authors: 'id,modified',
-                resources: 'id,timestamp,modified,pubtype',
-                organizations: 'id,modified,name,type'
-            });
-            db.version(0.6).stores({
-                authors: 'id,modified',
-                resources: 'id,timestamp,modified,pubtype',
-                organizations: 'id,modified,name,type',
-                tags: 'id,modified,name'
-            });
-            db.version(0.7).stores({
-                authors: 'id,modified',
-                resources: 'id,timestamp,modified,pubtype,*searchIndex',
-                organizations: 'id,modified,name,type',
-                tags: 'id,modified,name'
-            });
-            db.version(0.9).stores({
-                authors: 'id,modified',
-                resources: 'id,timestamp,modified,pubtype,*searchIndex,*organization,*author',
-                organizations: 'id,modified,name,type',
-                tags: 'id,modified,name'
-            });
-            db.version(1.0).stores({
-                authors: 'id,modified',
-                resources: 'id,timestamp,modified,pubtype,*searchIndex,*organization,*author',
-                organizations: 'id,modified,name,type',
-                tags: 'id,modified,name',
-                pubtypes: 'id,modified,name'
-            });
-            db.version(1.1).stores({
-                authors: 'id,modified',
-                resources: 'id,timestamp,modified,pubtype,*searchIndex,*organization,*author',
-                organizations: 'id,modified,name,type,*searchIndex',
-                tags: 'id,modified,name',
-                pubtypes: 'id,modified,name'
-            });
-            db.resources.hook("creating", function (primKey, obj, trans) {obj.searchIndex = _.uniq(_.values(obj.name).join(' ').split(' '));});
-            db.organizations.hook("creating", function (primKey, obj, trans) {
-                /* Create a search index field on organisation */
-                var words;
-                if (_.isString(obj.name)) {
-                    words = _.uniq(_.split(obj.name, ' '));
-                } else if (_.isObject(obj.name)) {
-                    words = _.uniq(_.split(_.values(obj.name), ' '));
-                }
-                _.remove(words, function(word){return _.size(word) < 3});
-                obj.searchIndex = words;
-            });
-
-            createWords = function(obj, indexFrom,indexTo){
-                var stringToIndex = _.get(obj, indexFrom, '');
-                var words = stringToIndex.replace(/[^a-zA-Z ]/g, ' ').split(' ');
-
-                obj[indexTo] = _.filter(words, function(word){return word.length > 1});
-                console.log(obj[indexTo]);
+            function split(thestring){
+                if (!_.isString(thestring)){console.warn('Not a string:', thestring); return [];}
+                /* Return a string split into words */
+                var words = thestring.replace(/[^A-Za-z ]/gi, ' ').split(' ');
+                // Remove short words liks 'a', 'de' etc
+                words = _.reject(words, function(word){return word.length < 3});
+                return _.uniq(words) // Return an array of words
             }
 
-            db.resources.hook("creating", function (primKey, obj, trans) {createWords(obj, 'name', 'searchIndex')});
-            db.organizations.hook("creating", function (primKey, obj, trans) {createWords(obj, 'name', 'searchIndex')});
+            function words(object, field_name){
+                /* Return an object field into separate words */
+                return split(_.get(object, field_name));
+            }
 
-            db.resources.hook("updating", function (mods, primKey, obj, trans) {
-                if (_.has(mods, 'name')) {
-                    // return {search: console.log(_.values(obj.name).join(' ').split(' '))};
-                }
+            function objectwords(object, field_name){
+                /* Return values from an object split into individual words */
+                /* Use where a 'name' object has translated strings as values */
+                var strings = _.values(_.get(object, field_name));
+                var words = _.map(strings, function(thestring){return split(thestring)});
+                return _.flatten(words);
+            }
+
+            window.db = new Dexie('libuntl');
+            db.version(0.1).stores({
+                authors: 'id,modified',
+                resources: 'id,modified,pubtype,*searchIndex,*organization,*author',
+                organizations: 'id,modified,name,type,*searchIndex',
+                tags: 'id,modified,name,*searchIndex',
+                pubtypes: 'id,modified,name,*searchIndex'
             });
+
+            /* Resources have a translated title */
+            db.resources.hook("creating", function (primKey, obj, trans) {obj.searchIndex = objectwords(obj, 'name')});
+            db.organizations.hook("creating", function (primKey, obj, trans) {obj.searchIndex = words(obj, 'name')});
+            db.tags.hook("creating", function (primKey, obj, trans) {obj.searchIndex = objectwords(obj, 'name')});
+            db.pubtypes.hook("creating", function (primKey, obj, trans) {obj.searchIndex = objectwords(obj, 'name')});
+        </script>
+        <script>
+
+            function load(data, tablename){
+                var mode = 'rw?';
+                var table = _.get(db, tablename);
+                db.transaction(mode, table, function () {
+                    _.each(data, function(d){
+                        table.put(d)
+                    })
+                })
+            }
+
+
+            $.getJSON('/api/resource?limit=10000').then(function(resources){window.r = resources.results; load(resources.results, 'resources'); })
+            $.getJSON('/api/organization?limit=10000').then(function(resources){window.o = resources.results; load(resources.results, 'organizations'); })
+            $.getJSON('/api/tag?limit=10000').then(function(resources){window.t = resources.results; load(resources.results, 'tags'); })
+            $.getJSON('/api/pubtype?limit=10000').then(function(resources){window.p = resources; load(resources, 'pubtypes'); })
+
+
         </script>
 
-        <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
-        <script type="text/javascript" src="{% static 'riot/library/resource.store.js' %}"></script>
 
-        <script type="riot/tag" src="{%  static 'riot/app.tag.html' %}"></script>
+    {#        <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>#}
+{#        <script type="text/javascript" src="{% static 'riot/library/resource.store.js' %}"></script>#}
 
-        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-pagination.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-dropdown.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-inputs.tag.html' %}"></script>
-
-        <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-resource_detail.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-resource_edit.tag.html' %}"></script>
-
-        <script type="riot/tag" src="{%  static 'riot/library/library-author_list.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-author_detail.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-author_edit.tag.html' %}"></script>
-
-        <script type="riot/tag" src="{%  static 'riot/library/library-organization_list.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-organization_detail.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-organization_edit.tag.html' %}"></script>
-
-        <script type="riot/tag" src="{%  static 'riot/library/library-tag_list.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-tag_detail.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-tag_edit.tag.html' %}"></script>
-
-        <script type="riot/tag" src="{%  static 'riot/library/library-home.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/library/library-upload.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-forms.tag.html' %}"></script>
-
-    <script>
-    riot.compile(function() {
-        riot.mount('app');
-        route.start(true)
-      });
-    </script>
+{#        <script type="riot/tag" src="{%  static 'riot/app.tag.html' %}"></script>#}
+{##}
+{#        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-pagination.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-dropdown.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-inputs.tag.html' %}"></script>#}
+{##}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-resource_list.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-resource_detail.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-resource_edit.tag.html' %}"></script>#}
+{##}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-author_list.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-author_detail.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-author_edit.tag.html' %}"></script>#}
+{##}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-organization_list.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-organization_detail.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-organization_edit.tag.html' %}"></script>#}
+{##}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-tag_list.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-tag_detail.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-tag_edit.tag.html' %}"></script>#}
+{##}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-home.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/library/library-upload.tag.html' %}"></script>#}
+{#        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-forms.tag.html' %}"></script>#}
+{##}
+{#    <script>#}
+{#    riot.compile(function() {#}
+{#        riot.mount('app');#}
+{#        route.start(true)#}
+{#      });#}
+{#    </script>#}
 {% endblock %}
 {% block content %}
     <div class="row">
         <div class="col col-xs-12">
-            <app></app>
+{#            <app></app>#}
         </div>
     </div>
 {% endblock %}
