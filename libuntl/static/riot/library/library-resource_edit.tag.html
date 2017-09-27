@@ -1,4 +1,17 @@
 <library-resource_edit>
+    <h4> Edit Resource </h4>
+
+    {message.id}<br>
+    {message.modified}<br>
+    {message.year}<br>
+    {message.pubtype}<br>
+
+    <hr>
+    <button onclick="{save}">Save</button>
+    <bootstrap-languages path="name"></bootstrap-languages>
+    <hr>
+    <bootstrap-tags tags="{message.searchIndex || []}"></bootstrap-tags>
+    <hr>
     <p>{JSON.stringify(message)}</p>
     <h4>Authors</h4>
     <p>{JSON.stringify(authors)}</p>
@@ -9,20 +22,47 @@
         var tag = this;
         function store(){ return window.stores.resource; }
         function filter(result){return _.includes(tag.message.author, result.id)};
-        function setAuthor (a) {tag.update({authors:a})};
+        function setAuthor (a) {tag.update({authors:a})}
         function filterOrganizations(result){return _.includes(tag.message.organization, result.id)};
-        function setOrganizations (a) {tag.update({organizations:a})};
+        function setOrganizations (a) {tag.update({organizations:a})}
+
+        function item(){return store().find(_.toInteger(tag.id))}
 
         tag.store = store();
+        tag.message = {};
+        tag.updates = {};
+
         tag.on('route', function(id) {
-            tag.message = 'now loading...';
-            tag.authors = 'now loading...';
-            tag.organizations = 'now loading...';
+            var loading = 'now loading...';
+            tag.update({
+                id: id,
+                message:loading,
+                organizations: loading,
+                authors: loading
+            });
+            tag.trigger('load_data');
+        });
+
+        tag.on('load_data', function(){
+            var id = tag.id;
             store().find(_.toInteger(id)).then(function(thing) {
-                tag.update({ message: thing });
+                // TODO: Handle "undefined" return from non existant resource
+                tag.update({ message: thing, updates:{} });
                 window.db.authors.filter(filter).toArray(setAuthor);
                 window.db.organizations.filter(filterOrganizations).toArray(setOrganizations);
             })
-        })
+        });
+
+        tag.on('on_child_input', function(e, _tag){
+            var path = _tag.opts.path; // Path obtained from child tag
+            var data = e.currentTarget.value;
+            _.set(tag.updates, path, data);
+            });
+
+        tag.save = function(){tag.trigger('save')};
+        tag.on('save', function(){
+            console.log(tag.updates)
+        });
+
     </script>
 </library-resource_edit>

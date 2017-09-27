@@ -26,3 +26,40 @@
 
     </script>
 </bootstrap-input-group>
+
+<bootstrap-input-text>
+    <label>{ opts.label || 'label' } ({opts.path})</label>
+    <input value={val} oninput="{on_input}" type="text" placeholder="{opts.placeholder || 'placeholder'}">
+    <script>
+        var tag=this;
+        tag.on_input = function(e){tag.parent.trigger('on_child_input', e, tag)};
+        tag.on('update', function(i){
+            tag.val = _.get(tag.parent.message, tag.opts.path)
+        })
+
+    </script>
+</bootstrap-input-text>
+
+<bootstrap-tags>
+    <virtual each="{tag in opts.tags}">
+        <a class="btn btn-sm btn-primary">{tag}</a>
+    </virtual>
+</bootstrap-tags>
+
+<bootstrap-languages>
+    <bootstrap-input-text path="{opts.path}.en" label="name (en)"></bootstrap-input-text>
+    <bootstrap-input-text path="{opts.path}.tet" label="name (tet)"></bootstrap-input-text>
+    <bootstrap-input-text path="{opts.path}.ind" label="name (ind)"></bootstrap-input-text>
+    <bootstrap-input-text path="{opts.path}.pt" label="name (pt)"></bootstrap-input-text>
+
+    <script>
+        var tag = this;
+        tag.message = {};
+        tag.on('mount', function(){console.log(tag.opts.path); debugger})
+        tag.on_child_input = function(e, _tag){tag.parent.trigger('on_child_input', e, _tag)};
+        tag.on('update', function(i){
+            tag.message = tag.parent.message;
+        })
+    </script>
+
+</bootstrap-languages>
