@@ -47,19 +47,52 @@
 </bootstrap-tags>
 
 <bootstrap-languages>
-    <bootstrap-input-text path="{opts.path}.en" label="name (en)"></bootstrap-input-text>
-    <bootstrap-input-text path="{opts.path}.tet" label="name (tet)"></bootstrap-input-text>
-    <bootstrap-input-text path="{opts.path}.ind" label="name (ind)"></bootstrap-input-text>
-    <bootstrap-input-text path="{opts.path}.pt" label="name (pt)"></bootstrap-input-text>
+    <h4>Name</h4>
+    <p >{code} : {value}</p>
+
+    <div class="input-group" each="{value, code in things}">
+      <span class="input-group-addon">{code}</span>
+      <input type="text" class="form-control" value={value} aria-label="Text for language {code}">
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Add name
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li onclick="{add.en}"><a href="#">En</a></li>
+        <li onclick="{add.tet}"><a href="#">Tet</a></li>
+        <li onclick="{add.ind}"><a href="#">Ind</a></li>
+        <li onclick="{add.pt}"><a href="#">Pt</a></li>
+      </ul>
+    </div>
 
     <script>
         var tag = this;
+        tag.things = {};
         tag.message = {};
         tag.on('mount', function(){console.log(tag.opts.path); debugger})
         tag.on_child_input = function(e, _tag){tag.parent.trigger('on_child_input', e, _tag)};
         tag.on('update', function(i){
             tag.message = tag.parent.message;
+            tag.things = _.get(tag.parent.message, tag.opts.path);
+        });
+
+        tag.add = {};
+        var languages = ['en', 'pt', 'ind', 'tet'];
+        _(languages).each(function(l){
+            tag.add[l] = function(e){e.preventDefault(); tag.trigger('add_language', l)}
+        });
+
+        tag.on('add_language', function(code){
+            debugger;
+            tag.parent.message.name[code] = '';
+            tag.parent.update();
         })
+
+
+
     </script>
 
 </bootstrap-languages>

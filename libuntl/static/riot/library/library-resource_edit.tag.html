@@ -2,6 +2,7 @@
     <h4> Edit Resource </h4>
 
     {message.id}<br>
+    {message.created}<br>
     {message.modified}<br>
     {message.year}<br>
     {message.pubtype}<br>
@@ -9,14 +10,21 @@
     <hr>
     <button onclick="{save}">Save</button>
     <bootstrap-languages path="name"></bootstrap-languages>
-    <hr>
-    <bootstrap-tags tags="{message.searchIndex || []}"></bootstrap-tags>
+
+    <h4>Tags</h4>
+    <span data-is="library-resource-tag-edit" each="{tagstring in tagStrings}" tagstring="{tagstring}"></span>
+
+    <h4>Authors</h4>
+
+    <span data-is="library-resource-author-edit" each="{author in authors}" author="{author}"></span>
+
+    <h4>Organizations</h4>
+    <span data-is="library-resource-organization-edit" each="{organization in organizations}" organization="{organization}"></span>
+    <span data-is="libary-resource-organization-add"></span>
     <hr>
     <p>{JSON.stringify(message)}</p>
-    <h4>Authors</h4>
-    <p>{JSON.stringify(authors)}</p>
-    <h4>Organizations</h4>
-    <p>{JSON.stringify(organizations)}</p>
+
+
 
     <script>
         var tag = this;
@@ -25,8 +33,14 @@
         function setAuthor (a) {tag.update({authors:a})}
         function filterOrganizations(result){return _.includes(tag.message.organization, result.id)};
         function setOrganizations (a) {tag.update({organizations:a})}
-
-        function item(){return store().find(_.toInteger(tag.id))}
+        function filterTags(result){return _.includes(tag.message.tag, result.id)};
+        function setTags (a) {tag.update({tagStrings:a})}
+        function enrich(thing){
+            // Modify the object this tag references - eg "momentize" dates
+            if(!_.isUndefined(thing.modified)){thing.modified = moment(thing.modified)}
+            if(!_.isUndefined(thing.created)){thing.created = moment(thing.created)}
+            return thing;
+        }
 
         tag.store = store();
         tag.message = {};
@@ -37,8 +51,6 @@
             tag.update({
                 id: id,
                 message:loading,
-                organizations: loading,
-                authors: loading
             });
             tag.trigger('load_data');
         });
@@ -47,9 +59,10 @@
             var id = tag.id;
             store().find(_.toInteger(id)).then(function(thing) {
                 // TODO: Handle "undefined" return from non existant resource
-                tag.update({ message: thing, updates:{} });
+                tag.update({ message: enrich(thing), updates:{} });
                 window.db.authors.filter(filter).toArray(setAuthor);
                 window.db.organizations.filter(filterOrganizations).toArray(setOrganizations);
+                window.db.tags.filter(filterTags).toArray(setTags);
             })
         });
 
@@ -66,3 +79,22 @@
 
     </script>
 </library-resource_edit>
+
+<library-resource-author-edit>
+    <a class="btn btn-sm btn-default">{opts.author.name.name}</a>
+</library-resource-author-edit>
+
+<library-resource-organization-edit>
+    <a class="btn btn-sm btn-default">{opts.organization.name}</a>
+</library-resource-organization-edit>
+
+<library-resource-tag-edit>
+    <a class="btn btn-sm btn-default">{opts.tagstring.name.en}</a>
+</library-resource-tag-edit>
+
+<libary-resource-organization-add>
+    <a class="btn btn-sm btn-primary">Add another organization</a>
+    <script>
+
+    </script>
+</libary-resource-organization-add>
