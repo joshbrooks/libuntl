@@ -42,11 +42,8 @@ class Common(Configuration):
         'rest_framework_swagger',
         'graphene_django',
 
-
-
         'libuntl',
         'library',
-        'example_app',
     ]
 
     MIDDLEWARE = [
