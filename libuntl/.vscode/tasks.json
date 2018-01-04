@@ -8,6 +8,6 @@
             "type": "shell",
             "command": "DJANGO_SECRET_KEY=dev ./manage.py runserver",
         
-        }
+        },
     ]
 }

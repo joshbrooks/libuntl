@@ -60,17 +60,18 @@
             }
 
 
-            $.getJSON('/api/resource?limit=10000').then(function(resources){window.r = resources.results; load(resources.results, 'resources'); })
+            {% comment %} $.getJSON('/api/resource?limit=10000').then(function(resources){window.r = resources.results; load(resources.results, 'resources'); })
             $.getJSON('/api/organization?limit=10000').then(function(resources){window.o = resources.results; load(resources.results, 'organizations'); })
             $.getJSON('/api/tag?limit=10000').then(function(resources){window.t = resources.results; load(resources.results, 'tags'); })
-            $.getJSON('/api/pubtype?limit=10000').then(function(resources){window.p = resources; load(resources, 'pubtypes'); })
+            $.getJSON('/api/pubtype?limit=10000').then(function(resources){window.p = resources; load(resources, 'pubtypes'); }) {% endcomment %}
 
 
         </script>
-
-
-            <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
+<script type="text/javascript" data-main="{% static 'dist/app.js' %}" src="{% static 'requirejs/require.js'%}"></script>
+        {% comment %} <script type="text/javascript" src="{% static 'riot/store_mixin.js' %}"></script>
         <script type="text/javascript" src="{% static 'riot/library/resource.store.js' %}"></script>
+
+        
 
         <script type="riot/tag" src="{%  static 'riot/app.tag.html' %}"></script>
 
@@ -96,14 +97,14 @@
 
         <script type="riot/tag" src="{%  static 'riot/library/library-home.tag.html' %}"></script>
         <script type="riot/tag" src="{%  static 'riot/library/library-upload.tag.html' %}"></script>
-        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-forms.tag.html' %}"></script>
+        <script type="riot/tag" src="{%  static 'riot/bootstrap/bootstrap-forms.tag.html' %}"></script> {% endcomment %}
 
-    <script>
+    {% comment %} <script>
     riot.compile(function(){
         riot.mount('app');
         route.start(true)
       });
-    </script>
+    </script> {% endcomment %}
 {% endblock %}
 {% block content %}
     <div class="row">

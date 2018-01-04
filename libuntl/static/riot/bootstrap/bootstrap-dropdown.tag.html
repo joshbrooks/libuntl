@@ -1,4 +1,3 @@
-<!-- Single button -->
 <bootstrap-dropdown>
     <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
       <a type="button" class="ell btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
@@ -8,12 +7,11 @@
       </a>
 
       <ul class="dropdown-menu" if="{open[index]}" style="display:block">
-
-          <li if="{searchable}"><input placeholder="Search" ref="searchbox" oninput="{search}"> </li>
-          <li if="{searchable}" role="separator" class="divider"></li>
-
-          <li if="{paginated}" onclick="{page_up}" class="align-center"><a><span class="glyphicon glyphicon-chevron-up"></span></a> </li>
-        <li each="{opt in page(options)}" role="{separator: opt[0] == '_'}"
+          <li if="{opts.searchable}"><input placeholder="Search" ref="searchbox" oninput="{search}"> </li>
+          <li if="{opts.searchable}" role="separator" class="divider"></li>
+          <li if="{opts.paginated}" onclick="{page_up}" class="align-center"><a><span class="glyphicon glyphicon-chevron-up"></span></a> </li>
+        
+          <li each="{opt in options}" role="{separator: opt[0] == '_'}"
             class="{divider: opt[0] == '_', disabled: _.includes(selected, opt)}"
             disabled="{_.includes(selected, opt)}"
             onclick="{invoke}"
@@ -55,32 +53,50 @@
 
     <script>
         var tag = this;
-        tag.open = false;
-
+        /* These properties are assigned to the tag */
+        tag.all_options = []; /* All of the options available to a tag (no filtering or pagination applied) */
+        tag.options = [];
+        tag.tag_page = 1;
+        tag.repeats = 1;
         tag.tag_page = 1;
         tag.pagesize = 10;
         tag.paginated = true;
-        tag.searchable = true;
+        tag.searchable =  true;
+
+         function get_paginated_options(options, page_number){
+            var end =  page_number * tag.pagesize;
+            var start = end - tag.pagesize;
+            return _.slice(options, start, end)
+        }
 
         tag.search = function(e){
-
-            console.log(tag.refs.searchbox.value)
-            db[tag.opts.table].where('searchIndex')
+            tag.table.where('searchIndex')
                 .startsWithIgnoreCase(tag.refs.searchbox.value).toArray().then(function(options){
-                   tag.tag_page = 1;
-                    tag.update({options:options})
+                    tag.set_options(options);
             })
         };
 
-        function page(options){
-            return _.slice(options, tag.tag_page*tag.pagesize - tag.pagesize, tag.tag_page*tag.pagesize)
-        }
+        tag.on('set_options', function(options){
+            var paginated_options = get_paginated_options(options,  1);
+            tag.update({
+                all_options: options,
+                options: paginated_options, 
+                tag_page:1
+            }) 
+        })
 
-        tag.page = page;
-        tag.page_up = function page_up(){tag.update({tag_page: tag.tag_page - 1})}
-        tag.page_down = function page_down(){tag.update({tag_page:tag.tag_page + 1})}
+        tag.on('set_page', function(page){
+            var paginated_options = get_paginated_options(tag.all_options,  page);
+            tag.update({
+                options: paginated_options, 
+                tag_page:page
+            })  
+        });
 
-        function add_dropdown(){
+        tag.page_up = function page_up(){tag.trigger('set_page', tag.tag_page + 1)};
+        tag.page_down = function page_down(){tag.trigger('set_page', tag.tag_page - 1)};
+
+        tag.add_dropdown = function add_dropdown(){
             if (tag.opts.single) {return}
             tag.repeats += 1;
             tag.selected.push(undefined);
@@ -88,7 +104,7 @@
             tag.open.push(undefined);
         }
 
-        function remove_dropdown(e){
+        tag.remove_dropdown = function remove_dropdown(e){
             tag.repeats -= 1;
             _.pullAt(tag.selected, e);
             _.pullAt(tag.selected_name,e);
@@ -104,22 +120,20 @@
             tag.update({open: open});
         }
 
-        tag.toggle = function(e){toggle(e.item.index)};
-        tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
-        tag.add_dropdown = add_dropdown;
-
-        var defaults = {
-            repeats: 1,
+        tag.toggle =  function(e){debugger; toggle(e.item.index)};
+        tag.defaults = {
             trigger: 'dropdown_select',
+            open:false,
             make_options: function(option){
                 var name;
                 if ( _.isUndefined(option.name)){ name = '?'}
                 else name = option.name.en || option.name.tet || option.name.name || option.name ||  '?';
                 return[option.id, name]
-            }
+            },
         };
+
         tag.on('mount', function(){
-            _.defaults(tag.opts, defaults);
+            _.defaults(tag.opts, tag.defaults);
             tag.repeats = tag.opts.repeats || 1;
             tag.selected = _.fill(new Array(tag.repeats), undefined);
             tag.selected_name = _.fill(new Array(tag.repeats), undefined);
@@ -149,217 +163,3 @@
     </script>
 
 </bootstrap-dropdown>
-
-
-<!-- Single button -->
-<bootstrap-dropdown-fromtable>
-    <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
-      <a type="button" class="ell btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
-
-        <span if="{selected}">{ display_option(selected[index]) }</span>
-        <span if="{!selected}" class="{placeholder}">{parent.opts.placeholder || 'Click to search...'}</span>
-      </a>
-
-      <div class="dropdown-menu row" if="{open[index]}" style="display:block">
-
-          <div class="col-xs-11" if="{searchable}">
-              <input  placeholder="Search" ref="searchbox" oninput="{on_search}">
-          </div>
-
-          <div class="col-xs-1" if="{paginated}">
-              <a onclick="{page_up}" class="{disabled:page_up_disabled}">
-                  <span class="glyphicon glyphicon-chevron-up"></span>
-              </a>
-          </div>
-
-          <div class="col-xs-12 option" each="{opt in options}"
-                disabled="{_.includes(selected, opt)}"
-                onclick="{invoke}"
-                data-index="{index}"
-          >
-              <p>{display_option(opt)} </p>
-          </div>
-
-          <div class="col-xs-1" if="{paginated}"></div>
-          <div class="col-xs-10" if="{paginated}" class="align-center">
-              {tag_page} / {pages}
-          </div>
-          <div class="col-xs-1" if="{paginated}">
-              <a onclick="{page_down}" class="{disabled:page_down_disabled}">
-                  <span class="glyphicon glyphicon-chevron-down"></span>
-              </a>
-          </div>
-
-
-
-
-
-      </div>
-          <a style="width: 20%" class="btn btn-default btn-sm" onclick="{remove_dropdown}">&times;</a>
-    </div>
-    <hr>
-
-
-    <style>
-        bootstrap-dropdown ul.dropdown-menu {
-            overflow-y:auto;
-            display: block;
-            max-height: 330px;
-            max-width:310px;
-        }
-        .ell {
-            text-overflow:ellipsis;
-            overflow-x:hidden;
-        }
-
-        span.placeholder {
-            color: gray;
-        }
-        .dropdown-menu a {
-            text-overflow:ellipsis;
-            overflow-x:hidden;
-        }
-
-        ul {position: absolute!important;}
-    </style>
-
-    <script>
-        var tag = this;
-        tag.open = false;
-
-        tag.search = '';
-        tag.tag_page = 1;
-        tag.pagesize = 10;
-        tag.pages = 1;
-        tag.paginated = true;
-        tag.searchable = true;
-
-        tag.on_search = function(){
-            tag.tag_page = 1;
-            tag.update({search:tag.refs.searchbox.value});
-            tag.get_options();
-        };
-
-        tag.on('set_page', function(page){
-            tag.update({tag_page: page});
-            tag.get_options()
-        });
-
-        tag.get_options = function(){
-
-             function search(promise){
-                /* Add a search to the options promise */
-                if ( tag.search === '') { return promise }
-                return promise.where(tag.opts.search_field || 'searchIndex')
-                    .startsWithIgnoreCase(tag.refs.searchbox.value);
-            }
-
-            function paginate(promise){
-                /* Adds a pagination to the promise */
-                var offset = (tag.tag_page - 1) * tag.pagesize;
-                return promise.offset(offset).limit(tag.pagesize)
-            }
-
-            tag.pages = search(db[tag.opts.table]).count().then(function(size) {
-                tag.update({pages: _.ceil(size / tag.pagesize)})
-            });
-
-            paginate(
-                search(
-                    db[tag.opts.table]
-                )
-            ).toArray().then(
-                function(array){
-                    console.log(array);
-                    tag.update({options:array})})
-        };
-
-        tag.display_option = function(option) {
-            var display;
-            var paths = tag.opts.display_paths || 'name.en,name.tet,name';
-            paths = paths.split(',');
-            _.each(paths, function (path) {
-                display = _.get(option, path);
-                if (!_.isUndefined(display)) {
-                    return false; // break the loop
-                }
-            });
-            if (_.isUndefined(display)){console.log('oops')}
-            return display || tag.parent.opts.placeholder || '?'
-        };
-
-
-        tag.page_up = function page_up(){
-            if (!tag.page_up_enabled){return}
-            tag.update({tag_page: tag.tag_page - 1}); tag.get_options();};
-        tag.page_down = function page_down(){
-            if (!tag.page_down_enabled){return}
-            tag.update({tag_page:tag.tag_page + 1}); tag.get_options();};
-
-        function add_dropdown(){
-            if (tag.opts.single) {return}
-            tag.repeats += 1;
-            tag.selected.push(undefined);
-            tag.selected_name.push(undefined);
-            tag.open.push(undefined);
-        }
-
-        function remove_dropdown(e){
-            tag.repeats -= 1;
-            _.pullAt(tag.selected, e);
-            _.pullAt(tag.open, e);
-            if (tag.repeats === 0){ add_dropdown() }
-            tag.update();
-            tag.parent.trigger(tag.opts.trigger, tag)
-        }
-
-        function toggle(e, set) {
-            var open = _.fill(new Array(tag.repeats), false);
-            open[e] = set || !tag.open[e];
-            tag.update({open: open});
-        }
-
-        tag.toggle = function(e){toggle(e.item.index)};
-        tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
-        tag.add_dropdown = add_dropdown;
-
-        var defaults = {
-            repeats: 1,
-            trigger: 'dropdown_select',
-            make_options: function(option){
-                var name;
-                if ( _.isUndefined(option.name)){ name = '?'}
-                else name = option.name.en || option.name.tet || option.name.name || option.name ||  '?';
-                return[option.id, name]
-            }
-        };
-        tag.on('mount', function(){
-            _.defaults(tag.opts, defaults);
-            tag.repeats = tag.opts.repeats || 1;
-            tag.selected = _.fill(new Array(tag.repeats), undefined);
-            tag.selected_name = _.fill(new Array(tag.repeats), undefined);
-            tag.open = _.fill(new Array(tag.repeats), undefined);
-            tag.get_options();
-        });
-
-        tag.invoke = function(e){
-            e.preventDefault();
-            if (_.includes(tag.selected, e.item.opt)){return};
-            var index = $(e.currentTarget).data('index') || 0;
-            tag.selected[index] = e.item.opt;
-            if (!_.isUndefined(_.last(tag.selected)) && !opts.single){tag.add_dropdown()}
-            tag.parent.trigger(tag.opts.trigger, tag);
-            toggle(e.item.index, false);
-            tag.update({search:'', page:1});
-            tag.get_options();
-
-        };
-
-        tag.on('update', function() {
-            tag.page_up_enabled = tag.tag_page > 1;
-            tag.page_down_enabled = tag.tag_page < tag.pages;
-        });
-
-    </script>
-
-</bootstrap-dropdown-fromtable>
