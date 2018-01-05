@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@types/lodash": "^4.14.92",
     "bootstrap": "^3.3.7",
     "bootstrap-drawer": "^1.0.6",
     "compass": "^0.1.1",
@@ -12,6 +13,7 @@
     "requirejs": "^2.3.5",
     "riot": "^3.4.3",
     "riot-route": "^3.1.1",
+    "riot-typescript": "^1.0.10",
     "riotcontrol": "^0.0.3",
     "webpack": "^2.4.1"
   }

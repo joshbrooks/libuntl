@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/lodash@^4.14.92":
+  version "4.14.92"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.92.tgz#6e3cb0b71a1e12180a47a42a744e856c3ae99a57"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
@@ -306,6 +310,21 @@ chalk@^1.1.3:
 chokidar@^1.4.3, chokidar@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.6.1.tgz#2f4447ab5e96e50fb3d789fd90d4c72e0e4c70c2"
+  dependencies:
+    anymatch "^1.3.0"
+    async-each "^1.0.0"
+    glob-parent "^2.0.0"
+    inherits "^2.0.1"
+    is-binary-path "^1.0.0"
+    is-glob "^2.0.0"
+    path-is-absolute "^1.0.0"
+    readdirp "^2.0.0"
+  optionalDependencies:
+    fsevents "^1.0.0"
+
+chokidar@^1.6.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
     anymatch "^1.3.0"
     async-each "^1.0.0"
@@ -1176,7 +1195,7 @@ once@^1.3.0, once@^1.3.3:
   dependencies:
     wrappy "1"
 
-optionator@^0.8.2:
+optionator@^0.8.1, optionator@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
   dependencies:
@@ -1479,6 +1498,18 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
+riot-cli@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/riot-cli/-/riot-cli-2.6.2.tgz#2efd43bed8b286d558dc09b55a5f0e80c9f10c09"
+  dependencies:
+    chalk "^1.1.3"
+    chokidar "^1.6.0"
+    co "^4.6.0"
+    optionator "^0.8.1"
+    riot-compiler "^2.5.3"
+    rollup "^0.36.1"
+    shelljs "^0.7.3"
+
 riot-cli@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/riot-cli/-/riot-cli-3.0.1.tgz#65843bffc12734bc68d1b3d23b4c3f1b0ee450e5"
@@ -1491,13 +1522,27 @@ riot-cli@^3.0.0:
     rollup "^0.41.6"
     shelljs "^0.7.7"
 
+riot-compiler@^2.5.3, riot-compiler@^2.5.5:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/riot-compiler/-/riot-compiler-2.5.7.tgz#dc418366f1178d39c6c18fd9fc0190cbeecc1695"
+
 riot-compiler@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/riot-compiler/-/riot-compiler-3.2.1.tgz#c65ce56efb1228572523d665746dc4cc17a19ba9"
 
+riot-observable@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/riot-observable/-/riot-observable-2.5.0.tgz#5fb9682685b6ebd52d54ad0f4c4e72af9eb904c4"
+
 riot-observable@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/riot-observable/-/riot-observable-3.0.0.tgz#8bbd2daf72a2141bb043082df4023dc504bad2eb"
+
+riot-route@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/riot-route/-/riot-route-2.5.0.tgz#aafcd0ee2df470db89a587770cd557760b2ac2b5"
+  dependencies:
+    riot-observable "^2.5.0"
 
 riot-route@^3.1.1:
   version "3.1.1"
@@ -1505,9 +1550,31 @@ riot-route@^3.1.1:
   dependencies:
     riot-observable "^3.0.0"
 
+riot-tmpl@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/riot-tmpl/-/riot-tmpl-2.4.2.tgz#daa1a86c430dbf5ed79530014355f10692ad67b7"
+
 riot-tmpl@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/riot-tmpl/-/riot-tmpl-3.0.3.tgz#35f070c552cd70d78645d33de94aa5248d57ae50"
+
+riot-typescript@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/riot-typescript/-/riot-typescript-1.0.10.tgz#7f11e192a799ff6311ac4d37ac01ba0916fb0a50"
+  dependencies:
+    riot "^2.6.2"
+
+riot@^2.6.2:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/riot/-/riot-2.6.8.tgz#22382e467a50215571e53b20ddf5216a23c6b3a1"
+  dependencies:
+    riot-cli "^2.6.2"
+    riot-compiler "^2.5.5"
+    riot-observable "^2.5.0"
+    riot-route "^2.5.0"
+    riot-tmpl "^2.4.2"
+    simple-dom "0.3.2"
+    simple-html-tokenizer "^0.2.5"
 
 riot@^3.4.3:
   version "3.4.3"
@@ -1527,6 +1594,12 @@ riotcontrol@^0.0.3:
 ripemd160@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
+
+rollup@^0.36.1:
+  version "0.36.4"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.36.4.tgz#a224494c5386c1d73d38f7bb86f69f5eb011a3d2"
+  dependencies:
+    source-map-support "^0.4.0"
 
 rollup@^0.41.6:
   version "0.41.6"
@@ -1560,6 +1633,14 @@ sha.js@^2.3.6:
   dependencies:
     inherits "^2.0.1"
 
+shelljs@^0.7.3:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
+  dependencies:
+    glob "^7.0.0"
+    interpret "^1.0.0"
+    rechoir "^0.6.2"
+
 shelljs@^0.7.7:
   version "0.7.7"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.7.tgz#b2f5c77ef97148f4b4f6e22682e10bba8667cff1"
@@ -1575,6 +1656,10 @@ signal-exit@^3.0.0:
 simple-dom@0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/simple-dom/-/simple-dom-0.3.2.tgz#0663d10f1556f1500551d518f56e3aba0871371d"
+
+simple-html-tokenizer@^0.2.5:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.2.6.tgz#a6efab7bc705cf3a96f1aaeaa1a76365f0d16c33"
 
 simple-html-tokenizer@^0.4.1:
   version "0.4.1"
