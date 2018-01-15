@@ -6,7 +6,8 @@
         {
             "label": "Run Django Server",
             "type": "shell",
-            "command": "DJANGO_SECRET_KEY=dev ./manage.py runserver"
+            "command": "DJANGO_SECRET_KEY=dev ./manage.py runserver",
+            "problemMatcher": []
         },
         {
             "type": "typescript",
@@ -18,7 +19,8 @@
         {
             "label": "Riot Watcher",
             "type": "shell",
-            "command": "riot -m -w --config riot.config"
+            "command": "riot -m -w --config riot.config",
+            "problemMatcher": []
         }
     ]
 }

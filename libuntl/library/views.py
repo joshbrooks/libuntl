@@ -1,14 +1,16 @@
 import datetime
 import json
 
+from django.contrib.postgres.fields import JSONField
 from django.core.exceptions import FieldError
+from django.db.models import Func, Value, F, QuerySet, Model
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
 from django.views.generic import View, TemplateView
 from rest_framework.utils.encoders import JSONEncoder
 
-from library.models import Resource, Author, Organization, Tag
+from library.models import Resource, Author, Organization, Tag, OrganizationType, PublicationType, Link
 from django.shortcuts import HttpResponse
 from rest_framework.renderers import JSONRenderer
 from django.contrib.contenttypes.models import ContentType
@@ -152,3 +154,46 @@ def resource_properties(app_label='library', model_label=None, since=None, field
 def id_and_modified_times(app_label, model_label):
     r = ContentType.objects.filter(app_label=app_label, model_label=model_label).model_class.values('id', 'modified')
     return JsonResponse(r, json_dumps_params={'indent': 1}, encoder=JSONEncoder)
+
+
+class Lookups(View):
+    def get(self, request, *args, **kwargs):
+
+        def j(qs:QuerySet or Model, fields: [str or tuple]) -> list:
+            if hasattr(qs, 'objects'):
+                qs = qs.objects.all()
+            return queryset_to_json(qs, fields)
+
+        return JsonResponse(
+            data=dict(
+                # organizations=j(Organization, ['id', 'name', ('description','desc'), 'modified']),
+                organizationtypes=j(OrganizationType, ['id', 'name', 'description', 'modified']),
+                pubtypes=j(PublicationType, ['id', 'name', 'description', 'modified']),
+                tags=j(Tag, ['id', 'name', 'description', 'modified']),
+            ),
+            encoder=JSONEncoder, 
+            json_dumps_params={'indent': 2}
+        )
+
+
+def queryset_to_json(qs:QuerySet, fields: [str or tuple]) -> list:
+
+    def json_function_factory(fields: [str or tuple]):
+
+        def field(field_name: str, alias: str = None) -> list:
+            return [Value(alias or field_name), F(field_name)]
+
+        _fields = []
+        for f in fields:
+            if isinstance(f, str):
+                _fields.extend(field(f))
+            if isinstance(f, list) or isinstance(f, tuple):
+                assert len(f) == 2
+                _fields.extend(field(f[0], f[1]))
+
+        return Func(*_fields,
+                    function='JSON_BUILD_OBJECT',
+                    output_field=JSONField()
+                    )
+
+    return list(qs.annotate(c=json_function_factory(fields)).values_list('c', flat=True))

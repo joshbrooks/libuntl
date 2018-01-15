@@ -106,8 +106,13 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <div class="col col-xs-12">
-            <app></app>
-        </div>
+
+            <div class="col col-xs-3">
+                <a href="#organizationlist">organizations</a>
+                <a href="#resourcelist">Resources</a>
+                <a href="#lookuplist">Lookups</a>
+            </div>
+            <div class="col col-xs-9"><app></app></div>
+        
     </div>
 {% endblock %}

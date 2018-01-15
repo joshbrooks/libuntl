@@ -6,6 +6,8 @@ from rest_framework import serializers, viewsets
 from rest_framework import routers
 import django_filters
 
+from datetime import datetime
+
 router = routers.SimpleRouter()
 
 
@@ -15,7 +17,12 @@ class TimeStampFilter(BaseFilterBackend):
     """
     def filter_queryset(self, request, queryset, view):
         if 'modified__gt' in request.GET:
-            queryset = queryset.filter(modified__gt=request.GET['modified__gt'])
+            # Handle a timestamp value
+            request__gt = request.GET['modified__gt']
+            if request__gt.isdigit():
+                request__gt = datetime.utcfromtimestamp(int(request__gt)/ 1000)
+                print(request__gt)
+            queryset = queryset.filter(modified__gt=request__gt)
         if 'modified__lt' in request.GET:
             queryset = queryset.filter(modified__lt=request.GET['modified__lt'])
         return queryset
@@ -71,8 +78,7 @@ router.register(r'pubtype', PublicationTypeViewSet)
 class ResourceModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Resource
-        fields = '__all__'
-
+        fields = ['id', 'year','name','description','pubtype','author','organization','tag','cover','user', 'modified']
 
 class ResourceBaseViewSet(viewsets.ModelViewSet):
     queryset = models.Resource.objects.prefetch_related('author', 'organization')
@@ -102,7 +108,7 @@ router.register(r'tag', TagViewSet)
 class LinkModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Link
-        fields = '__all__'
+        fields = ('id','created','modified','cover','language','title','url','file','resource')
 
 
 class LinkViewSet(viewsets.ModelViewSet):

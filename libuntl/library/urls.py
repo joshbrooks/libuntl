@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'stats/$', views.Stats.as_view()),
     url(r'index/$', views.Index.as_view()),
     url(r'modified/$', views.Modified.as_view()),
-    url(r'upload/$', views.Upload.as_view())
+    url(r'upload/$', views.Upload.as_view()),
+    url(r'lookups/$', views.Lookups.as_view()),
 ]
