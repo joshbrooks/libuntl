@@ -8,27 +8,44 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col col-md-3 col-sm-6 col-xs-12">
+<form class="form-inline">
+  <div class="form-group">
+    <label for="SearchOrganizationName">Search</label>
+    <input id="SearchOrganizationName" type="text" class="form-control" placeholder="Search for a name" oninput={search} value={searchstring}></input>
+  </div>
+</form>
 
-
-
-    <input oninput={search} value={searchstring}></input>
-
+    </div>
+    <div class="col col-md-9 col-sm-6 col-xs-12">
 <nav aria-label="Page navigation">
-  <ul class="pagination">
+  <ul class="pagination" style="margin-top:0;">
+
     <li class="page-item">
       <a class="page-link" onclick={down} aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
+        <span aria-hidden="true" class={'disabled': down_disabled }>&laquo;</span>
         <span class="sr-only">Previous</span>
       </a>
     </li>
+
+    <li class="page-item">
+        <a class="page-link" aria-label="page Number">
+            <span aria-hidden="true">Page {current_page} of {pages}</span>
+            <span class="sr-only">Previous</span>
+        </a>
+    </li>
+
     <li class="page-item">
       <a class="page-link" onclick={up} aria-label="Previous">
-        <span aria-hidden="true">&raquo;</span>
+        <span aria-hidden="true"  class={'disabled': up_disabled }>&raquo;</span>
         <span class="sr-only">Previous</span>
       </a>
     </li>
 </ul>
 </nav>
+    </div>
+</div>
 
     <div class="row">
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 listitem" each={item in list}>
@@ -48,6 +65,7 @@
     <style>
         .listitem {padding-bottom: 30px;}
         .listitem:hover {}
+        span.disabled {color :gray;}
     </style>
 
     <script>
