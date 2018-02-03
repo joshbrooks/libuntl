@@ -1,16 +1,55 @@
 <organizationlist>
-<a href="#organizationedit/create">Add an Organization</a>
+<div class="row">
+    <div class="col col-xs-9">
+        <h3> Organizations Page </h3>
+    </div>
+    <div class="col col-xs-3">
+        <a class="btn btn-xl btn-default" href="#organizationedit/create">Add an Organization</a>
+    </div>
+</div>
+
+
+
+
     <input oninput={search} value={searchstring}></input>
-    <button onclick={up}>Up</button>
-    <button onclick={down}>Down</button>
-    <span>{current_page} / {pages}</span>
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" onclick={down} aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" onclick={up} aria-label="Previous">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+</ul>
+</nav>
 
     <div class="row">
-        <div class="col-xs-3" each={item in list}>
-            <div  style="height:200px; border:1px solid black; border-radius: 5px; ">{_.invoke(item, 'get_name') || item.name}
-                <a href="/#organizationdetail/{item.id}">Forward</a>
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 listitem" each={item in list}>
+        <a href="/#organizationdetail/{item.id}">
+            <div style="height:200px; border:1px solid black; border-radius: 5px; padding: 5px; overflow:hidden;">
+                <div style="text-align:center; height:25%">
+                    <h4>{_.invoke(item, 'get_name') || item.name}</h4>
+                </div>
+                <div style="height:75%;">
+                    <img if="{item.logo}" src="/static/img/{item.logo}" height='100%' width='100%'>
+                    <img if="{!item.logo}" src="/static/img/organisation_empty_logo.jpg" height='100%' width='100%'>
+                </div>
             </div>
+            </a>
         </div>
+    </div>
+    <style>
+        .listitem {padding-bottom: 30px;}
+        .listitem:hover {}
+    </style>
+
     <script>
         declare const _;
         declare const stores;
@@ -117,7 +156,6 @@
     
     <router>
         <route path="organizationlist">
-            <h4> organizations </h4>
             <organizationlist></organizationlist>
         </route>
         <route path="organizationdetail/*">
@@ -224,22 +262,31 @@
 <organization-tag>
     <virtual if={item}>
         <a href="/#organizationlist">Back</a>
-        <h4>{item.name}</h4>
-            <h5>Contact</h5>
+        <h1>{item.name}</h1>
+        <h1><span class="small">{item.acronym}</span></h1>
+                <img if="{item.logo}" src="/static/img/{item.logo}" height='200px' width='200px'>
+                <img if="{!item.logo}" src="/static/img/organisation_empty_logo.jpg" height='200px' width='200px'>
+            <h2>About</h2>
+            
+            <h2>Projects</h2>
+
+            <h2>Publications and Resources</h2>
+                <p if={!related || !related.resource || !related.resource.length}>
+                There are no resources
+                </p>
+            <p if={related && related.resource} each={resource in related.resource}>
+                <a href="#resourcedetail/{resource.id}">{resource.name.en}</a>
+            </p>
+
+            <h2>Contact</h2>
                 <div class="col col-xs-12">
                     <div if={item && item.contact} class="row" each={i,j in item.contact}>
                         <div class="col col-xs-2"><strong>{j}</strong></div>
                         <div class="col col-xs-3">{i}</div>
-                        <div class="clearfix">
+                        <div class="clearfix"></div>
                     </div>
                 </div>
-            <h5 if={related && related.resource && related.resource.length}>Resources ({related.resource.length})</h5>
-            <p if={!related || !related.resource || !related.resource.length}>
-            There are no resources
-            </p>
-            <p if={related && related.resource} each={resource in related.resource}>
-                <a href="#resourcedetail/{resource.id}">{resource.name.en}</a>
-            </p>
+        
 
         <a class="btn btn-link btn-default btn-sm" href="/#organizationedit/{item.id}">Edit</a>
 
@@ -257,7 +304,7 @@
     declare const stores;
     const storeName='organization';
     const load = (item) => {
-        if (!item){tag.update({item: undefined, error: {message: 'Sorry, that organisation might have been removed'}}); return}
+        if (!item){tag.update({item: undefined, error: {message: 'Sorry, that organization might have been removed'}}); return}
         item.getRelated().then(function(related){tag.update({item: item, related:related});})
     }
     const get = (number) => stores.getStore(storeName).get(number).then(load)
@@ -268,7 +315,7 @@
 <organization-edit>
 
     <h4 if={item}>{item.name}</h4>
-    <h4 if={object_id = 'create'}>Create Organization</h4>
+    <h4 if={object_id == 'create'}>Create Organization</h4>
     <a if={item.id} href="/#organizationdetail/{item.id}">Back</a>
     <a if={!item.id} href="/#organizationlist">Back</a>
 
