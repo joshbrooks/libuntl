@@ -173,6 +173,10 @@
 <app>
     
     <router>
+        <route path=''>
+            <h4>Welcome</h4>
+        </route>
+
         <route path="organizationlist">
             <organizationlist></organizationlist>
         </route>
