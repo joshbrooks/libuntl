@@ -6,8 +6,12 @@
         {
             "label": "Run Django Server",
             "type": "shell",
-            "command": "DJANGO_SECRET_KEY=dev ./manage.py runserver",
-            "problemMatcher": []
+            "command": "DJANGO_SECRET_KEY=dev /home/josh/.virtualenvs/libuntl/bin/python ./manage.py runserver",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "type": "typescript",
