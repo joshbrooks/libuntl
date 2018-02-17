@@ -88,7 +88,5 @@ export class MyAppDatabase extends Dexie {
                 obj.modified = new Date()
             }
         })
-
-
     }
 }
