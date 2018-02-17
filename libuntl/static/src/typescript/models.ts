@@ -2,6 +2,7 @@ import * as $ from "jquery";
 import * as _ from "lodash";
 import { ObjectFactory } from "./storeFactory";
 import * as Stores from "./stores";
+import * as Urls from "./urls";
 
 let preferred_language = 'en'
 
@@ -78,7 +79,7 @@ export module Models {
     export class Resource extends Resty implements IResource {
         public words: string[]
         constructor(
-            public id:number,
+            public id:Number,
             public year?:Number,
             public name?: ITranslatedField,
             public description?: ITranslatedField,
@@ -102,7 +103,7 @@ export module Models {
             /* Related links */
             let linkStore = await <Stores.Stores.LinkSearch>  new ObjectFactory().getStore('link') 
             let linkTable = await linkStore.store.table();
-            let linkCollection = linkTable.where('resource').equals(this.id);
+            let linkCollection = linkTable.where('resource').equals(<number>this.id);
             let linkArray = await <Promise<Link[]>> linkCollection.toArray()
             
             let related: IRelatedFields = {organization: organization_array, link:linkArray}
