@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/home/josh/.virtualenvs/libuntl/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins", "pylint_django"
+    ]
+}
