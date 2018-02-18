@@ -192,7 +192,7 @@
 
         page: function (opts_) {
             var store = this;
-            var defaults = { page: 1, page_size: 10 };
+            var defaults = { page: 1, page_size: 12 };
             var opts = _.defaults(opts_, store.opts, defaults);
             var pagination = _.defaults({ offset: (opts.page - 1) * opts.page_size, limit: (opts.page_size) }, opts);
             store.get(pagination);

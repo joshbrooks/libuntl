@@ -303,8 +303,7 @@
             document.removeEventListener('click', handleClickOutside);
         });
 
-
-        fn = {
+        var fn = {
             display: {
                 name: function () {
                     if (_.isString(tag.data)) { return tag.store.get_choice(tag.opts.choice_fieldname, tag.data); }
@@ -323,8 +322,6 @@
         };
 
         tag.fn = fn;
-
-
         tag.show_more = show_more;
         tag.get_choices = get_choices;
         tag.toggle_dropdown = toggle_dropdown;

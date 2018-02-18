@@ -41,9 +41,9 @@
                     <hr>
                 </div>
                 <div class="drawer-body">
-                    <bootstrap-dropdown label="Publication Type" placeholder="Publication type" store="pubtype"></bootstrap-dropdown>
-                    <bootstrap-dropdown label="Organization" store="organization" placeholder="Organisation"></bootstrap-dropdown>
-                    <bootstrap-dropdown label="Tag" store="tag" placeholder="Tag"></bootstrap-dropdown>
+                    <bootstrap-dropdown label="Publication Type" placeholder="Publication type" store="pubtype" table="pubtypes"></bootstrap-dropdown>
+                    <bootstrap-dropdown label="Organization" store="organization" table="organizations" placeholder="organization"></bootstrap-dropdown>
+                    <bootstrap-dropdown label="Tag" store="tag" placeholder="Tag" table="tags"></bootstrap-dropdown>
                 </div>
                 <div class="drawer-footer">
                     <small>&copy; Joshua Brooks</small>
@@ -197,7 +197,7 @@
         tag.on('mount', function(){
             tag.opts = _.defaults(tag.opts, {
                 page: 1,
-                per_page:10
+                per_page:12
             });
             store().on('*', listener);
             store().page({page: tag.page, page_size: tag.page_size});

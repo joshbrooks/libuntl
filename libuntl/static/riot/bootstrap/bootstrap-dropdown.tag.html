@@ -1,4 +1,3 @@
-<!-- Single button -->
 <bootstrap-dropdown>
     <div class="btn-group btn-group-sm" style="width:100%" role="group" each="{index in _.range(repeats || 1)}">
       <a type="button" class="ell btn btn-sm btn-default dropdown-toggle" style="width: 80%; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" onclick="{toggle}" aria-haspopup="true" aria-expanded="false">
@@ -8,12 +7,11 @@
       </a>
 
       <ul class="dropdown-menu" if="{open[index]}" style="display:block">
-
-          <li if="{searchable}"><input placeholder="Search" ref="searchbox" oninput="{search}"> </li>
-          <li if="{searchable}" role="separator" class="divider"></li>
-
-          <li if="{paginated}" onclick="{page_up}" class="align-center"><a><span class="glyphicon glyphicon-chevron-up"></span></a> </li>
-        <li each="{opt in page(options)}" role="{separator: opt[0] == '_'}"
+          <li if="{opts.searchable}"><input placeholder="Search" ref="searchbox" oninput="{search}"> </li>
+          <li if="{opts.searchable}" role="separator" class="divider"></li>
+          <li if="{opts.paginated}" onclick="{page_up}" class="align-center"><a><span class="glyphicon glyphicon-chevron-up"></span></a> </li>
+        
+          <li each="{opt in options}" role="{separator: opt[0] == '_'}"
             class="{divider: opt[0] == '_', disabled: _.includes(selected, opt)}"
             disabled="{_.includes(selected, opt)}"
             onclick="{invoke}"
@@ -55,41 +53,50 @@
 
     <script>
         var tag = this;
-        tag.open = false;
-
+        /* These properties are assigned to the tag */
+        tag.all_options = []; /* All of the options available to a tag (no filtering or pagination applied) */
+        tag.options = [];
+        tag.tag_page = 1;
+        tag.repeats = 1;
         tag.tag_page = 1;
         tag.pagesize = 10;
         tag.paginated = true;
-        tag.searchable = true;
+        tag.searchable =  true;
 
-        tag.search = function(e){
-            console.log(tag.refs.searchbox.value);
-            if (_.trim(tag.refs.searchbox.value) === tag.search_value){
-                return
-            }
-            tag.search_value = _.trim(tag.refs.searchbox.value);
-
-            if (tag.search_value === ''){
-                tag.update({options: _.map(window.stores[tag.opts.store].objects, tag.opts.make_options)});
-            }
-
-            if (!_.isUndefined(window.stores[tag.opts.store])) {
-                var promise = window.stores[tag.opts.store].search({search: tag.refs.searchbox.value});
-                promise.toArray().then(function(a) {
-                    tag.update({options: _.map(a, tag.opts.make_options)});
-                })
-            }
-        };
-
-        function page(options){
-            return _.slice(options, tag.tag_page*tag.pagesize - tag.pagesize, tag.tag_page*tag.pagesize)
+         function get_paginated_options(options, page_number){
+            var end =  page_number * tag.pagesize;
+            var start = end - tag.pagesize;
+            return _.slice(options, start, end)
         }
 
-        tag.page = page;
-        tag.page_up = function page_up(){tag.update({tag_page: tag.tag_page - 1})}
-        tag.page_down = function page_down(){tag.update({tag_page:tag.tag_page + 1})}
+        tag.search = function(e){
+            tag.table.where('searchIndex')
+                .startsWithIgnoreCase(tag.refs.searchbox.value).toArray().then(function(options){
+                    tag.set_options(options);
+            })
+        };
 
-        function add_dropdown(){
+        tag.on('set_options', function(options){
+            var paginated_options = get_paginated_options(options,  1);
+            tag.update({
+                all_options: options,
+                options: paginated_options, 
+                tag_page:1
+            }) 
+        })
+
+        tag.on('set_page', function(page){
+            var paginated_options = get_paginated_options(tag.all_options,  page);
+            tag.update({
+                options: paginated_options, 
+                tag_page:page
+            })  
+        });
+
+        tag.page_up = function page_up(){tag.trigger('set_page', tag.tag_page + 1)};
+        tag.page_down = function page_down(){tag.trigger('set_page', tag.tag_page - 1)};
+
+        tag.add_dropdown = function add_dropdown(){
             if (tag.opts.single) {return}
             tag.repeats += 1;
             tag.selected.push(undefined);
@@ -97,7 +104,7 @@
             tag.open.push(undefined);
         }
 
-        function remove_dropdown(e){
+        tag.remove_dropdown = function remove_dropdown(e){
             tag.repeats -= 1;
             _.pullAt(tag.selected, e);
             _.pullAt(tag.selected_name,e);
@@ -113,22 +120,20 @@
             tag.update({open: open});
         }
 
-        tag.toggle = function(e){toggle(e.item.index)};
-        tag.remove_dropdown = function(e){ remove_dropdown(e.item.index)};
-        tag.add_dropdown = add_dropdown;
-
-        var defaults = {
-            repeats: 1,
+        tag.toggle =  function(e){toggle(e.item.index)};
+        tag.defaults = {
             trigger: 'dropdown_select',
+            open:false,
             make_options: function(option){
                 var name;
                 if ( _.isUndefined(option.name)){ name = '?'}
                 else name = option.name.en || option.name.tet || option.name.name || option.name ||  '?';
                 return[option.id, name]
-            }
+            },
         };
+
         tag.on('mount', function(){
-            _.defaults(tag.opts, defaults);
+            _.defaults(tag.opts, tag.defaults);
             tag.repeats = tag.opts.repeats || 1;
             tag.selected = _.fill(new Array(tag.repeats), undefined);
             tag.selected_name = _.fill(new Array(tag.repeats), undefined);
@@ -140,7 +145,6 @@
                     var options = _.map(objects, tag.opts.make_options);
                     options = _.orderBy(options, 1);
                     tag.update({options: options});
-                    debugger;
                 });
             }
         });

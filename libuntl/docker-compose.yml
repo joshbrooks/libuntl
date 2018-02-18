@@ -2,21 +2,26 @@ version: '2'
 services:
   db:
     environment: 
-        USER: libuntl
-        DATABASE: libuntl_db
-        RESTORE_FROM_DIRECTORY: /source
-    image: timor-postgis
+        POSTGRES_USER: libuntl
+        POSTGRES_PASS: libuntl
+        POSTGRES_DBNAME: libuntl_db
+    image: kartoza/postgis:9.6-2.4
     restart: always
     ports:
     - "5435:5432"
+    volumes:
+    - ./.source/db:/source
+    - ./.postgresql_data/db:/var/lib/postgresql
+
   legacy:
     environment: 
-        USER: django
-        DATABASE: timordata_db
-        RESTORE_FROM_DIRECTORY: /source
-    image: timor-postgis
+        POSTGRES_USER: django
+        POSTGRES_PASS: django
+        POSTGRES_DBNAME: timordata_db
+    image: kartoza/postgis:9.6-2.4
     restart: always
     ports:
     - "5436:5432"
     volumes:
-    - /home/josh/github/timordata/timordata-postgres:/source
+    - ./.source/legacy:/source
+    - /home/josh/github/timordata/timordata-postgres:/var/lib/postgresql

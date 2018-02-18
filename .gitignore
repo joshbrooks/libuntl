@@ -71,6 +71,7 @@ local_settings.py
 bower_components
 node_modules
 .idea/
+/libuntl/.vscode
 /libuntl/imports/
 /libuntl/pgadmin/
 !/libuntl/library/migrations/import.sql

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "sourceMap": true,
+        "module": "amd",
+        "moduleResolution": "node",
+        "outDir": "static/dist",
+        "types":["node"],
+        "lib":[
+            "es2015",
+            "dom"
+        ]
+    },
+    "include": [
+        "./static/src/typescript/storeFactory.ts"
+    ],
+}

@@ -150,14 +150,12 @@
     tag.dropdown_open = false;
     function get_chosen(){return _.filter(tag.choices, '_chosen')}
     tag.on('update', function(){tag.chosen = get_chosen()});
-    function clear(e){e.preventDefault(); console.log(e);debugger}
+    function clear(e){e.preventDefault(); console.log(e);}
     function choose(e) {
         e.preventDefault();
         console.log(e);
         var choice = e.item.choice;
-        debugger;
         choice._chosen = !choice._chosen;
-        debugger;
         }
     /**
      * Toggle the dropdown
@@ -208,7 +206,7 @@
     tag.on('mount', function () {
         console.log(tag);
         store();
-        tag.store.getAll().then(function(authors){console.log(authors); debugger;})
+        tag.store.getAll().then(function(authors){console.log(authors);})
         tag.store.on('');
         document.addEventListener('click', handleClickOutside);
     });

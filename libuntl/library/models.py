@@ -75,7 +75,7 @@ class Tag(TimeStampedModel):
     description = JSONField(null=True, blank=True)
 
 
-class OrganizationType(models.Model):
+class OrganizationType(TimeStampedModel):
     id = models.TextField(primary_key=True)
     name = JSONField()
     description = JSONField(null=True, blank=True)
