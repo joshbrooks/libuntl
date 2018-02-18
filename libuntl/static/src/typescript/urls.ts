@@ -1,4 +1,4 @@
-enum Method {
+export enum Method {
 	get,
 	put,
 	post,
@@ -40,7 +40,7 @@ class DRFUrl extends Url {
 }
 
 class UrlStore {
-    urls: Url[]
+    urls: Url[] = [];
 	_register(url: Url) {
 		this.urls.push(url)
 	}
@@ -48,7 +48,10 @@ class UrlStore {
 
 export class DRFUrlStore extends UrlStore {
     urls: DRFUrl[];
-    register(_app:string, _model:string, _actions) {
+    register(_app:string, _model:string, _actions: Method[]) {
         this._register(new DRFUrl(_app, _model, _actions))
-    }
+	}
+	constructor(){
+		super()
+	}
 }

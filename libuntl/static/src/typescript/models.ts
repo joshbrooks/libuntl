@@ -174,7 +174,7 @@ export module Models {
             this.modified = _modified;
         };
                 
-        get_url(){return  (this.id) ? `/api/organization/${this.id}/` : `/api/organization/`}
+        get_url(){debugger; return  (this.id) ? `/api/organization/${this.id}/` : `/api/organization/`}
 
         
 
