@@ -1,7 +1,8 @@
 repo_name: joshbrooks/libuntl
 report_id: e39ea5f9ac6797b11a94b715d65ad021
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T23:11:57+00:00'
+timestamp: '2024-01-04T15:17:13+00:00'
 requested_by: joshbrooks
 provider: github
 branch: master
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/joshbrooks/libuntl
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/joshbrooks/libuntl
   detection_source: Repo Metadata
 - name: Python
   description: A clear and powerful object-oriented programming language, comparable
@@ -35,6 +38,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/joshbrooks/libuntl
   detection_source: Repo Metadata
 - name: SQL
   description: It is a domain-specific language used in programming
@@ -44,6 +48,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/library/migrations/import.sql
   detection_source: libuntl/library/migrations/import.sql
   last_updated_by: joshbrooks
   last_updated_on: 2017-07-12 15:10:45.000000000 Z
@@ -56,6 +61,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/joshbrooks/libuntl
   detection_source: Repo Metadata
 - name: Bootstrap
   description: Simple and flexible HTML, CSS, and JS for popular UI components and
@@ -68,7 +74,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Front-End Frameworks
   image_url: https://img.stackshare.io/service/1101/C9QJ7V3X.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-07-11 10:02:06.000000000 Z
@@ -81,6 +87,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/994/4aGjtNQv.png
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/requirements/common.txt
   detection_source: libuntl/requirements/common.txt
   last_updated_by: joshbrooks
   last_updated_on: 2017-05-02 00:38:02.000000000 Z
@@ -93,6 +100,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/package.json
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -105,7 +113,7 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/2647/v9dRXi8N_400x400.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -119,7 +127,7 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1021/lxEKmMnB_400x400.jpg
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2018-01-15 08:51:49.000000000 Z
@@ -132,6 +140,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/.eslintrc
   detection_source: libuntl/.eslintrc
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -143,6 +152,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/joshbrooks/libuntl
   detection_source: Repo Metadata
 - name: Gunicorn
   description: A Python WSGI HTTP Server for UNIX
@@ -153,7 +163,7 @@ tools:
   category: Application Hosting
   sub_category: Web Servers
   image_url: https://img.stackshare.io/service/1091/gunicorn.png
-  detection_source_url: libuntl/requirements/production.txt
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/requirements/production.txt
   detection_source: libuntl/requirements/production.txt
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -165,6 +175,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Hosted Package Repository
   image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/requirements/production.txt
   detection_source: libuntl/requirements/production.txt
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -177,6 +188,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/4837/py.jpg
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/requirements/dev.txt
   detection_source: libuntl/requirements/dev.txt
   last_updated_by: joshbrooks
   last_updated_on: 2018-02-18 10:52:24.000000000 Z
@@ -189,7 +201,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/852/1781835.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2018-01-04 01:34:57.000000000 Z
@@ -203,7 +215,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: JS Build Tools / JS Task Runners
   image_url: https://img.stackshare.io/service/1682/IMG_4636.PNG
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -215,6 +227,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/5848/44mC-kJ3.jpg
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/yarn.lock
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -226,6 +239,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/package.json
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -237,6 +251,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Shells
   image_url: https://img.stackshare.io/service/4477/820a0bb9a44fe5a1d640993ab1e6fd84_400x400.png
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/requirements/dev.txt
   detection_source: libuntl/requirements/dev.txt
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -250,7 +265,7 @@ tools:
   category: Application Utilities
   sub_category: Mapping APIs
   image_url: https://img.stackshare.io/service/2392/leaflet_upic.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -263,7 +278,7 @@ tools:
   category: Libraries
   sub_category: Javascript Utilities & Libraries
   image_url: https://img.stackshare.io/service/2438/lodash.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2018-01-05 08:54:09.000000000 Z
@@ -278,7 +293,7 @@ tools:
   category: Libraries
   sub_category: Javascript Utilities & Libraries
   image_url: https://img.stackshare.io/service/3643/Xrtdc94q_400x400.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
@@ -291,6 +306,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/joshbrooks/libuntl
   detection_source: Repo Metadata
 - name: "@types/jquery"
   description: TypeScript definitions for jQuery
@@ -302,7 +318,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16363/default_97104dc50154593d2dde1d791400955934c9c715.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2018-01-15 08:51:49.000000000 Z
@@ -316,7 +332,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15945/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2018-01-15 08:51:49.000000000 Z
@@ -330,7 +346,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15809/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2018-01-15 08:51:49.000000000 Z
@@ -344,7 +360,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15847/default_4479dbac220be99e50e724b2df6cf415241d71fd.png
-  detection_source_url: libuntl/yarn.lock
+  detection_source_url: https://github.com/joshbrooks/libuntl/blob/master/libuntl/yarn.lock
   detection_source: libuntl/package.json
   last_updated_by: joshbrooks
   last_updated_on: 2017-04-29 10:33:02.000000000 Z
